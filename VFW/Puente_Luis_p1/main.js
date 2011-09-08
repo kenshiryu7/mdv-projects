@@ -21,7 +21,7 @@ function getItems(){
             Notes
         ];
         
-        alert(DrumsetPraList);
+        console.log(localStorage.getItem(prname));
      }
 }
 
