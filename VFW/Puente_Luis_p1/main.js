@@ -1,6 +1,21 @@
 //Luis Puente
 //local storage
 
+var clearLink = document.getElementById("clear");
+var anchorTags = clearLink.getElementsByTagName("a");
+
+function mouseHover() {
+    for ( var i=0, j=anchorTags.length; i < j; i++) {
+        anchorTags[i].style.color = "#009900";
+    }
+}
+
+function mouseOut() {
+    for ( var i=0, j=anchorTags.length; i < j; i++) {
+        anchorTags[i].style.color = "blue";
+    }
+}
+
 function getItems(){
     if(localStorage.getItem("apppracticeC")) {
         var practiceC   = localStorage.getItem("apppracticeC");
@@ -21,7 +36,7 @@ function getItems(){
             Notes
         ];
         
-        console.log(localStorage.getItem(prname));
+        alert(DrumsetPraList);
      }
 }
 
@@ -41,4 +56,9 @@ function storeData(id) {
     localStorage.setItem("appfavirote", favirote);
     localStorage.setItem("appdate", date);
     localStorage.setItem("appNotes", Notes);
+}
+
+function clearLocal() {
+    localStorage.clear();
+    return false;
 }

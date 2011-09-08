@@ -54,14 +54,14 @@
 		<li><label for="Notes">Notes:</label><textarea id="Notes"></textarea>
 	    </ul>
 	</fieldset>
-	    <input type="submit" value="Save Data" onclick="storeData()"/>
+	    <input type="submit" value="Save Data" id="sdata" onclick="storeData();"/>
 	</form>
 	<!-- may consider adding more to the form -->
 	<!-- will change the local storage info later -->
         <nav>
-	    <ul>
-	        <li><a href="#" id="lstore">clear local storage</a></li>
-	    </ul>
+	    <p id="clear">
+	        <li><a href="#" onclick="clearLocal();location.reload();"  id="lstore">clear local storage</a></li>
+	    </p>
 	</nav>
     <script src="main.js"></script>
     <script>getItems();</script>
