@@ -24,7 +24,7 @@ form {
     font-family:helvetica;
     background-color:#ABABAB;
     padding-top:5px;
-    padding-bottom:0px;
+    padding-bottom:10px;
 }
 label {
     display: block;
@@ -65,4 +65,10 @@ fieldset {
 }
 nav {
     padding-left:120px;
+    display: none;
+    
 }
+
+a:visited { color: red;}
+a:hover { color: green;}
+a:active { color: orange;}
