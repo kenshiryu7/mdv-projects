@@ -73,6 +73,7 @@ function getItems(){
             getList.appendChild(newData);
         }
        // alert(DrumsetPraList);
+       anchorTags[0].style.color = "blue";
      }
 }
 
