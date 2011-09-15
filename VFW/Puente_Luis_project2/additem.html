@@ -18,9 +18,12 @@
         <h1>Drumset Practice List</h1>
 	<form action="" method="post">
 	 <ul>    
-	    <li><label for="practiceC">Select Practice Catagory:</label></li>
+	    <li><label for="practiceC">Select Practice Category:</label></li>
 	    <!-- practice options such as style, patterns, or hands, and feet -->
 	    <li><select id="practiceC"></li>
+		<li><optgroup>
+		    <li><option></option></li>
+		</optgroup>
 		<li><optgroup label="Rudiments"></li>
 		    <li><option value="Hands">Hands</option></li>
 		    <li><option value="Feet">Feet</option></li>
@@ -31,7 +34,7 @@
 		    <li><option value="Rock">Rock</option></li>
 		    <li><option value="Funk">Funk</option></li>
 		<li></optgroup></li>
-		<li><optgroup label="Ostinotos"></li>
+		<li><optgroup label="Ostinatos"></li>
 		    <li><option value="Feet/Hands">Feet/Hands</option></li>
 		    <li><option value="Hands/Feet">Hands/Feet</option></li>
 		<li></optgroup></li>   
@@ -44,6 +47,7 @@
 		<li><label for="prname">Practice Name:</label><input type="text" id="prname" placeholder="Improving Left hand"/></li>
 	     <label for="timesig">Time Signature:</label>
 		<select id="timesig">
+		    <option></option>
 		    <option value="4/4">4/4</option>
 		    <option value="6/8">6/8</option>
 		    <option value="3/4">3/4</option>
@@ -51,7 +55,7 @@
 	        <li><label for="BPMs">BPM's:</label><input type="range" min="60" max="250" id="BPMs"/>
 	        <li><label for="favorite">Save in Favorites?</label><input type="checkbox" id="favorite"/>
 		<li><label for="nextPr">Next Practice Date</label><input type="date" value="2011-09-01" id="date"/>
-		<li><label for="Notes">Notes:</label><textarea id="Notes"></textarea>
+		<li><label for="Notes">Notes:</label><textarea placeholder="write notes here" id="Notes"></textarea>
 	    </ul>
 	</fieldset>
 	    <input type="submit" value="Save Data" id="sdata" onclick="storeData();"/>
