@@ -65,7 +65,7 @@ fieldset {
 }
 nav {
     padding-left:120px;
-    display: none;
+    display: block;
 
 }
 

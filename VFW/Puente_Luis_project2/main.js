@@ -63,8 +63,16 @@ function getItems(){
             date,
             Notes
         ];
-        
-        alert(DrumsetPraList);
+        document.getElementById("form").style.display = "none";
+        document.getElementById("clear").style.display = "block";
+        var getList = document.getElementById("new");
+        for (var i=0, j=DrumsetPraList.length; i < j; i++) {
+            var newData = document.createElement("p");
+            var itemTxt = document.createTextNode(DrumsetPraList[i]);
+            newData.appendChild(itemTxt);
+            getList.appendChild(newData);
+        }
+       // alert(DrumsetPraList);
      }
 }
 
