@@ -4,17 +4,45 @@
 var clearLink = document.getElementById("clear");
 var anchorTags = clearLink.getElementsByTagName("a");
 
-function mouseHover() {
-    for ( var i=0, j=anchorTags.length; i < j; i++) {
-        anchorTags[i].style.color = "#009900";
+function validateForm() {
+    var selectPraC = document.forms[0]["practiceC"].value;
+    if (selectPraC =="") {
+        alert("Please select practice Category");
+        document.getElementById("practiceC").style.border = "1px solid red";
+        return false;
+    } else {
+        document.getElementById("practiceC").style.border = "1px solid 9BC4E2";
     }
-}
-
-function mouseOut() {
-    for ( var i=0, j=anchorTags.length; i < j; i++) {
-        anchorTags[i].style.color = "blue";
+    var practiceName = document.forms[0]["prname"].value;
+    if (practiceName =="") {
+        alert("Please Select a Practice Name");
+        document.getElementById("prname").style.border = "1px solid red";
+        return false;
+    } else {
+        document.getElementById("prname").style.border = "1px solid 9BC4E2";
     }
-}
+    
+    var timeSignature = document.forms[0]["timesig"].value;
+    if (timeSignature =="") {
+        alert("Please select a time signature");
+        document.getElementById("timesig").style.border = "1px solid red";
+        return false;
+    } else {
+        document.getElementById("timesig").style.border = "1px solid 9BC4E2";
+    }
+    
+    var practiceDate = document.forms[0]["date"].value;
+    if (practiceDate =="") {
+        alert("Please input next practice date");
+        document.getElementById("date").style.border = "1px solid red";
+        return false;
+    } else {
+        document.getElementById("date").style.border = "1px solid 9BC4E2";
+    }
+    
+    alert("Data Saved!");
+    storeData();
+}     
 
 function getItems(){
     if(localStorage.getItem("apppracticeC")) {
