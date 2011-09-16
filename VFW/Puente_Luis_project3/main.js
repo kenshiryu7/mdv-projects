@@ -4,6 +4,9 @@
 var clearLink = document.getElementById("clear");
 var anchorTags = clearLink.getElementsByTagName("a");
 
+
+//validate form function. Would like to add regEXp for possibly the date varif.
+
 function validateForm() {
     var selectPraC = document.forms[0]["practiceC"].value;
     if (selectPraC =="") {
@@ -44,6 +47,7 @@ function validateForm() {
     storeData();
 }
 
+
 function pCatArray() {
     var rudiments = ["hands", "feet", "Drumset"];
     var beats     = ["Jazz","Rock", "Funk"];
@@ -75,6 +79,12 @@ function getItems(){
             date,
             Notes
         ];
+        
+        //unable to finish the work up to allow images per catName...need help...
+        var newImg = document.createElement("img");
+        var setSrc = newImg.setAttribute("src=","img/" + "catName" + ".png");
+        newDiv.appendChild(newImg);
+        
         document.getElementById("form").style.display = "none";
         document.getElementById("clear").style.display = "block";
         var getList = document.getElementById("new");
@@ -84,10 +94,7 @@ function getItems(){
             newData.appendChild(itemTxt);
             getList.appendChild(newData);
         }
-        /*var beatsImg = "img/beats.png";
-        var ostinatos = "img/Ostinatos.png";
-        var rudiments = "img/Rudiments.png";
-        */
+        
        // alert(DrumsetPraList);
        anchorTags[0].style.color = "blue";
      }
