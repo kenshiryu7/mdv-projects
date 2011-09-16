@@ -42,7 +42,19 @@ function validateForm() {
     
     alert("Data Saved!");
     storeData();
-}     
+}
+
+function pCatArray() {
+    var rudiments = ["hands", "feet", "Drumset"];
+    var beats     = ["Jazz","Rock", "Funk"];
+    var ostinatos = ["Feet/Hands","Hands/Feet"];
+    var category = rudiments, beats, ostinatos;
+    for (var i=0, j=category.length; i < j; i++) {
+        var makeOptionGroup = document.createElement("optgroup");
+        for(var k=0, l=category[i].length; k < l; k++) {
+        }
+    }
+}
 
 function getItems(){
     if(localStorage.getItem("apppracticeC")) {
@@ -72,6 +84,10 @@ function getItems(){
             newData.appendChild(itemTxt);
             getList.appendChild(newData);
         }
+        /*var beatsImg = "img/beats.png";
+        var ostinatos = "img/Ostinatos.png";
+        var rudiments = "img/Rudiments.png";
+        */
        // alert(DrumsetPraList);
        anchorTags[0].style.color = "blue";
      }
@@ -97,5 +113,7 @@ function storeData(id) {
 
 function clearLocal() {
     localStorage.clear();
+    document.getElementById("clear").style.display = "none";
+
     return false;
 }

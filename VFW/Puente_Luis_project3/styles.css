@@ -63,10 +63,9 @@ fieldset {
     margin-top:20px;
     margin-left:145px;
 }
-nav {
+#clear {
+    display: none;
     padding-left:120px;
-    display: block;
-
 }
 
 a:visited { color: red;}
