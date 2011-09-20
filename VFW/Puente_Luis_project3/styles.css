@@ -17,9 +17,9 @@ h1 {
 body {
     border: 1px solid black;
     width: 360px;
-    background-color:#B8B8B8;
-    
+    background-color:#B8B8B8;    
 }
+
 form {
     font-family:helvetica;
     background-color:#ABABAB;
@@ -28,15 +28,22 @@ form {
 }
 label {
     display: block;
-    margin: 5px;
+    list-style:none;
+
 }
 
-fieldset {
-    margin:5px;
+form ul li {
+    list-style:none;
+    text-align:left;
+}
+
+form ul > li select{
+    
 }
 
 #prname {
     margin-bottom:20px;
+    width:80%;
 }
 
 #timesig {
@@ -45,6 +52,7 @@ fieldset {
 
 #BPMs {
     margin-bottom:20px;
+    width:80%;
 }
    
 #favorite {
@@ -57,6 +65,7 @@ fieldset {
 
 #Notes {
     margin-bottom:20px;
+    width:80%;
 }
 
 #sdata {
@@ -66,6 +75,10 @@ fieldset {
 #clear {
     display: none;
     padding-left:120px;
+}
+
+#new {
+    padding-left:10px;
 }
 
 a:visited { color: red;}

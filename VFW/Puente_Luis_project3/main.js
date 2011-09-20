@@ -46,6 +46,31 @@ function validateForm() {
     alert("Data Saved!");
     storeData();
 }
+//make practice categories dynamically. help for images?
+
+/*var praCat = ["", "Rudiments", "Beats", "Ostinatos"],
+    
+    formTag     = document.getElementsByTagName("form"),
+    makePara    = document.createElement("p"),
+    makeSelect  = document.createElement("select")
+;
+
+makeSelect.setAttribute("id", "praCat");
+
+var makePraCat = function (name) {
+    for( var i=0, j=praCat.length; i < j; i++) {
+        var makeOpt = document.createElement("option");
+        var optText = document.createTextNode(praCat[i]);
+        makeOpt.setAttribute("value", praCat[i]);
+        makeOpt.appendChild(optText);
+        makeSelect.appendChild(makeOpt);
+    };
+    makePara.appendChild(makeSelect);
+    var getUl = formTag[0].firstChild;
+    var paraSelect = formTag[0].insertBefore(makePara, getUl);
+};
+
+makePraCat();*/
 
 /*
 function pCatArray() {
@@ -61,6 +86,49 @@ function pCatArray() {
 }
 */
 function getItems(){
+   
+   /*var getListdiv = document.getElementById("list");
+   
+   for (var i = 0, len = localStorage.length; i < len; i++) {
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(key);
+        value = value.split(";");
+        var practiceC   =value[0];
+        var prname      =value[1];
+        var timesig     =value[2];
+        var BPMs        =value[3];
+        var favirote    =value[4];
+        var date        =value[5];
+        var Notes       =value[6];
+        var newDiv = document.createElement("div");
+        for (var k = 0, allLength = value.length; k < allLength; k++) {
+            var newParas = document.createElement("p");
+            var itemTxt = document.createTextNode(value[k]);
+            newParas.appendChild(itemTxt);
+            newDiv.appendChild(newParas);
+            getListdiv.appendChild(newDiv);
+        }
+        
+        var newImg = document.createElement("img");
+        var setSrc = newImg.setAttribute("src=","img/" + practiceC + ".png");
+        getList.appendChild(newImg);*/
+/*   
+   //add delete single item link
+   var deleteLink = document.createElement("a");
+   var setHref    = deleteLink.setAttribute("href", "#");
+   var setOnclick = deleteLink.setAttribute("onclick", "deleteItem(" + key + ");");
+   var deleteText = document.createTextNode("delete item");
+   deleteLink.appendChild(deleteText);
+   newDiv.appendChild(deleteLink);
+   
+   //add edit single item
+   var editLink         = document.createElement("a");
+   var setEditHref      = editLink.setAttribute("href", "#");
+   var setEditOnclick   = editLink.setAttribute("onclick", "editItem(" + key + ");");
+   var editText         = document.createTextNode("edit item");
+   editLink.appendChild(editText);
+   newDiv.appendChild(editLink);
+ */       
     if(localStorage.getItem("apppracticeC")) {
         var practiceC   = localStorage.getItem("apppracticeC");
         var prname      = localStorage.getItem("appprname");
@@ -79,12 +147,7 @@ function getItems(){
             date,
             Notes
         ];
-        //unable to finish the work up to allow images per catName...need help...
-       /* var newImg = document.createElement("img");
-        var setSrc = newImg.setAttribute("src=","img/" + "catName" + ".png");
-        newDiv.appendChild(newImg);
-       */
-       
+        
         document.getElementById("form").style.display = "none";
         document.getElementById("clear").style.display = "block";
         var getList = document.getElementById("new");
@@ -94,6 +157,11 @@ function getItems(){
             newData.appendChild(itemTxt);
             getList.appendChild(newData);
         }
+        //unable to finish the work up to allow images per catName...need help...
+        /*var newImg = document.createElement("img");
+        var setSrc = newImg.setAttribute("src=","img/" + practiceC + ".png");
+        getList.appendChild(newImg);*/
+        
         //alert(DrumsetPraList);
        anchorTags[0].style.color = "blue";
      }
