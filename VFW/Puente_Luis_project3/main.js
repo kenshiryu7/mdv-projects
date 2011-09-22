@@ -46,6 +46,7 @@ function validateForm() {
     alert("Data Saved!");
     storeData();
 }
+
 //make practice categories dynamically. help for images?
 
 /*var praCat = ["", "Rudiments", "Beats", "Ostinatos"],
@@ -86,8 +87,8 @@ function pCatArray() {
 }
 */
 function getItems(){
-   
-   /*var getListdiv = document.getElementById("list");
+  
+   var getListdiv = document.getElementById("new");
    
    for (var i = 0, len = localStorage.length; i < len; i++) {
         var key = localStorage.key(i);
@@ -102,17 +103,25 @@ function getItems(){
         var Notes       =value[6];
         var newDiv = document.createElement("div");
         for (var k = 0, allLength = value.length; k < allLength; k++) {
-            var newParas = document.createElement("p");
+            var newPara = document.createElement("p");
             var itemTxt = document.createTextNode(value[k]);
-            newParas.appendChild(itemTxt);
-            newDiv.appendChild(newParas);
+            newPara.appendChild(itemTxt);
+            newDiv.appendChild(newPara);
             getListdiv.appendChild(newDiv);
         }
-        
+        //attemp to adding images per category
+        var image ="";
+            if (practiceC =="") {image ="";}
+            if (practiceC =="Hands" || "Feet" || "Drumset") {image ="Rudiments.png";}
+            if (practiceC =="Jazz" || "Rock" || "Funk") {image ="beats.png";}
+            if (practiceC =="Feet/Hands" || "Hands/Feet") {image = "Ostinatos.png";}
+         
+         //add images   
         var newImg = document.createElement("img");
-        var setSrc = newImg.setAttribute("src=","img/" + practiceC + ".png");
-        getList.appendChild(newImg);*/
-/*   
+        var setSrc = newImg.setAttribute("src=","img/" + image + ".png");
+        getList.appendChild(newImg);
+        
+        
    //add delete single item link
    var deleteLink = document.createElement("a");
    var setHref    = deleteLink.setAttribute("href", "#");
@@ -128,9 +137,9 @@ function getItems(){
    var editText         = document.createTextNode("edit item");
    editLink.appendChild(editText);
    newDiv.appendChild(editLink);
- */       
+      
     if(localStorage.getItem("apppracticeC")) {
-        var practiceC   = localStorage.getItem("apppracticeC");
+    /*  var practiceC   = localStorage.getItem("apppracticeC");
         var prname      = localStorage.getItem("appprname");
         var timesig     = localStorage.getItem("apptimesig");
         var BPMs        = localStorage.getItem("appBPMs");
@@ -147,7 +156,8 @@ function getItems(){
             date,
             Notes
         ];
-        
+    */
+    
         document.getElementById("form").style.display = "none";
         document.getElementById("clear").style.display = "block";
         var getList = document.getElementById("new");
@@ -157,17 +167,44 @@ function getItems(){
             newData.appendChild(itemTxt);
             getList.appendChild(newData);
         }
-        //unable to finish the work up to allow images per catName...need help...
-        /*var newImg = document.createElement("img");
-        var setSrc = newImg.setAttribute("src=","img/" + practiceC + ".png");
-        getList.appendChild(newImg);*/
-        
-        //alert(DrumsetPraList);
-       anchorTags[0].style.color = "blue";
-     }
+    } else {
+            var  prname    = "enter practoce name";
+            var  timesig   = "enter a time signature";
+            var  BPMs      = "enter a BPM's"
+            
+            document.getElementById("prname").value = prname;
+            document.getElementById("timesig").value = timesig;
+            document.getElementById("BPMs").value = BPMs;
+        }
 }
 
+//save items function. get date and time from comp...
+function saveItems(id) {
+    var d = new Date();
+    var key = (d.getTime());
+    var practiceC = document.getElementById("practiceC").value;
+    var prname    = document.getElementById("prname").value;
+    var timesig   = document.getElementById("timesig").value;
+    var BPMs      = document.getElementById("BPMs").value;
+    var favirote  = document.getElementById("favirote").value;
+    var date      = document.getElementById("date").value;
+    var Notes     = document.getElementById("Notes"),value;
+    
+    var allItems  = [
+            practiceC,
+            prname,
+            timesig,
+            BPMs,
+            favorite,
+            date,
+            Notes
+        ];
+    localStorage.setItem(key, allItems);
+}
+
+
 function storeData(id) {
+    validateForm();
     var practiceC    = document.getElementById("practiceC").value;
     var prname       = document.getElementById("prname").value;
     var timesig      = document.getElementById("timesig").value;
@@ -184,6 +221,83 @@ function storeData(id) {
     localStorage.setItem("appdate", date);
     localStorage.setItem("appNotes", Notes);
 }
+
+
+function editItem(id) {
+    
+    var value = localStorage.getItem(id);
+    var itemId = id;
+    
+    value.value.split(";");
+    var practiceC   = value[0];
+    var prname      = value[1];
+    var timesig     = value[2];
+    var BPMs        = value[3];
+    var favorite    = value[4];
+    var date        = value[5];
+    var Notes       = value[6];
+    
+    //populates form fields with current localStorage values
+    document.getElementById("practiceC").value = practiceC;
+    document.getElementById("prname").value = prname;
+    document.getElementById("timesig").value = timesig;
+    document.getElementById("BPMs").value = BPMs;
+    if (favirote =="on") {
+        document.getElementById("favirote").setAttribute("checked", "checked");
+    }
+    document.getElementById("date").value = date;
+    document.getElementById("Notes").value = Notes;
+    
+    //reveal editItems button, hide submit button
+    var editItem = document.getElementById('editItem');
+    editItem.style.display = "block";
+    var submit = document.getElementById("submit");
+    submit.style.display = "none";
+    
+    //capture editItem button's click
+    document.getElementById("editItem").onclick = function () {
+        
+        var practiceC       = document.getElementById("practiceC").value;
+        var prname          = document.getElementById("prname").value;
+        var timesig         = document.getElementById("timesig").value;
+        var BPMs            = document.getElementById("BPMs").value;
+        var favorite        = document.getElementById("favorite").value;
+        var date            = document.getElementById("date").value;
+        var Notes           = document.getElementById("Notes").value;
+        var allItems        = [
+            practiceC,
+            prname,
+            timesig,
+            BPMs,
+            favorite,
+            date,
+            Notes
+        ];
+        if ( practiceC != "" && prname != "" && timesig != ""){
+            localStorage.setItem(itemId, allItems.join(";"));
+            alert("Updated Practice Log");
+        } else {
+            alert("please fill required fields.");
+        }
+    };
+    
+} //editItem
+
+
+//Delete single Items
+
+function deleteItem(id) {
+    var ask = confirm("Are you sure?");
+    if (ask) {
+        localStorage.removeItem(id);
+        window.location.reload();
+    } else {
+        alert("Item not removed!");
+    }
+}
+
+
+//Delete all Items
 
 function clearLocal() {
     localStorage.clear();
