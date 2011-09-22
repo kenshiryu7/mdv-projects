@@ -84,3 +84,17 @@ form ul > li select{
 a:visited { color: red;}
 a:hover { color: green;}
 a:active { color: orange;}
+
+#log {
+    text-align:center;
+    margin-top:50px;
+}
+
+#indexBod {
+    background-color:#ABABAB;
+}
+
+#launchimg {
+    padding-top:10px;
+    padding-bottom:150px;
+}
