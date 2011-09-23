@@ -37,9 +37,6 @@ form ul li {
     text-align:left;
 }
 
-form ul > li select{
-    
-}
 
 #prname {
     margin-bottom:20px;
@@ -81,6 +78,7 @@ form ul > li select{
     padding-left:10px;
 }
 
+a { margin: 10px;}
 a:visited { color: red;}
 a:hover { color: green;}
 a:active { color: orange;}

@@ -44,7 +44,7 @@ function validateForm() {
     }
     
     alert("Data Saved!");
-    storeData();
+    saveItems();
 }
 
 //make practice categories dynamically. help for images?
@@ -86,7 +86,7 @@ function pCatArray() {
     }
 }
 */
-function getItems(){
+function getItems() {
   
    var getListdiv = document.getElementById("new");
    
@@ -98,7 +98,7 @@ function getItems(){
         var prname      =value[1];
         var timesig     =value[2];
         var BPMs        =value[3];
-        var favirote    =value[4];
+        var favorite    =value[4];
         var date        =value[5];
         var Notes       =value[6];
         var newDiv = document.createElement("div");
@@ -109,6 +109,7 @@ function getItems(){
             newDiv.appendChild(newPara);
             getListdiv.appendChild(newDiv);
         }
+   }
         //attemp to adding images per category
         var image ="";
             if (practiceC =="") {image ="";}
@@ -118,8 +119,8 @@ function getItems(){
          
          //add images   
         var newImg = document.createElement("img");
-        var setSrc = newImg.setAttribute("src=","img/" + image + ".png");
-        getList.appendChild(newImg);
+        var setSrc = newImg.setAttribute("src","img/" + image);
+        getListdiv.appendChild(newImg);
         
         
    //add delete single item link
@@ -139,6 +140,8 @@ function getItems(){
    newDiv.appendChild(editLink);
       
     if(localStorage.getItem("apppracticeC")) {
+        var clearLink = document.getElementById("clear");
+        clearLink.style.display = "block";
     /*  var practiceC   = localStorage.getItem("apppracticeC");
         var prname      = localStorage.getItem("appprname");
         var timesig     = localStorage.getItem("apptimesig");
@@ -158,7 +161,7 @@ function getItems(){
         ];
     */
     
-        document.getElementById("form").style.display = "none";
+        /*document.getElementById("form").style.display = "none";
         document.getElementById("clear").style.display = "block";
         var getList = document.getElementById("new");
         for (var i=0, j=DrumsetPraList.length; i < j; i++) {
@@ -166,9 +169,9 @@ function getItems(){
             var itemTxt = document.createTextNode(DrumsetPraList[i]);
             newData.appendChild(itemTxt);
             getList.appendChild(newData);
-        }
+        }*/
     } else {
-            var  prname    = "enter practoce name";
+            var  prname    = "enter practice name";
             var  timesig   = "enter a time signature";
             var  BPMs      = "enter a BPM's"
             
@@ -186,9 +189,9 @@ function saveItems(id) {
     var prname    = document.getElementById("prname").value;
     var timesig   = document.getElementById("timesig").value;
     var BPMs      = document.getElementById("BPMs").value;
-    var favirote  = document.getElementById("favirote").value;
+    var favorite  = document.getElementById("favorite").value;
     var date      = document.getElementById("date").value;
-    var Notes     = document.getElementById("Notes"),value;
+    var Notes     = document.getElementById("Notes").value;
     
     var allItems  = [
             practiceC,
@@ -199,12 +202,11 @@ function saveItems(id) {
             date,
             Notes
         ];
-    localStorage.setItem(key, allItems);
+    localStorage.setItem(key, allItems.join(";"));
 }
 
 
 function storeData(id) {
-    validateForm();
     var practiceC    = document.getElementById("practiceC").value;
     var prname       = document.getElementById("prname").value;
     var timesig      = document.getElementById("timesig").value;
@@ -228,7 +230,7 @@ function editItem(id) {
     var value = localStorage.getItem(id);
     var itemId = id;
     
-    value.value.split(";");
+    value = value.split(";");
     var practiceC   = value[0];
     var prname      = value[1];
     var timesig     = value[2];
@@ -249,9 +251,9 @@ function editItem(id) {
     document.getElementById("Notes").value = Notes;
     
     //reveal editItems button, hide submit button
-    var editItem = document.getElementById('editItem');
+    var editItem = document.getElementById("editItem");
     editItem.style.display = "block";
-    var submit = document.getElementById("submit");
+    var submit = document.getElementById("sdata");
     submit.style.display = "none";
     
     //capture editItem button's click
