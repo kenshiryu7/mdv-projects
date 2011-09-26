@@ -109,19 +109,20 @@ function getItems() {
             newDiv.appendChild(newPara);
             getListdiv.appendChild(newDiv);
         }
-   }
+   
         //attemp to adding images per category
         var image ="";
             if (practiceC =="") {image ="";}
             if (practiceC =="Hands" || "Feet" || "Drumset") {image ="Rudiments.png";}
-            if (practiceC =="Jazz" || "Rock" || "Funk") {image ="beats.png";}
             if (practiceC =="Feet/Hands" || "Hands/Feet") {image = "Ostinatos.png";}
-         
+            if (practiceC =="Jazz" || "Rock" || "Funk") {image ="beats.png";}
+        
+    
          //add images   
         var newImg = document.createElement("img");
         var setSrc = newImg.setAttribute("src","img/" + image);
         getListdiv.appendChild(newImg);
-        
+       
         
    //add delete single item link
    var deleteLink = document.createElement("a");
@@ -138,8 +139,9 @@ function getItems() {
    var editText         = document.createTextNode("edit item");
    editLink.appendChild(editText);
    newDiv.appendChild(editLink);
-      
-    if(localStorage.getItem("apppracticeC")) {
+   }
+   
+    if(localStorage.length >=1) {
         var clearLink = document.getElementById("clear");
         clearLink.style.display = "block";
     /*  var practiceC   = localStorage.getItem("apppracticeC");
