@@ -246,8 +246,8 @@ function editItem(id) {
     document.getElementById("prname").value = prname;
     document.getElementById("timesig").value = timesig;
     document.getElementById("BPMs").value = BPMs;
-    if (favirote =="on") {
-        document.getElementById("favirote").setAttribute("checked", "checked");
+    if (favorite =="on") {
+        document.getElementById("favorite").setAttribute("checked", "checked");
     }
     document.getElementById("date").value = date;
     document.getElementById("Notes").value = Notes;
@@ -309,3 +309,214 @@ function clearLocal() {
 
     return false;
 }
+
+//attempt at dummy data
+
+(function(storage) {
+    var appName ="Drumset Practice List";
+
+var drumKey = appName + ".installed";
+
+if(storage.getItem(drumKey) !== null) {return;}
+
+var initalData = [
+    {
+    "practiceC":    "Hands",
+    "prname" :      "left hand exc",
+    "timesig":      "4/4",
+    "BPMs":         "60",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "I hate working the left hand!"
+    },
+    {
+    "practiceC":    "Feet",
+    "prname" :      "right foot exc",
+    "timesig":      "4/4",
+    "BPMs":         "100",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "great exc for speed"
+    },
+    {
+    "practiceC":    "Drumset",
+    "prname" :      "around the set",
+    "timesig":      "4/4",
+    "BPMs":         "110",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "great for fills!"
+    },
+    {
+    "practiceC":    "Hands",
+    "prname" :      "speed exc",
+    "timesig":      "4/4",
+    "BPMs":         "220",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "good build up"
+    },
+    {
+    "practiceC":    "Feet",
+    "prname" :      "speed exc",
+    "timesig":      "4/4",
+    "BPMs":         "200",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "hard but productive"
+    },
+    {
+    "practiceC":    "Drumset",
+    "prname" :      "toms only",
+    "timesig":      "4/4",
+    "BPMs":         "120",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "nice exc around set"
+    },
+    {
+    "practiceC":    "Jazz",
+    "prname" :      "independence",
+    "timesig":      "3/4",
+    "BPMs":         "140",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "hard time, good practice"
+    },
+    {
+    "practiceC":    "Rock",
+    "prname" :      "basic fat beat",
+    "timesig":      "6/8",
+    "BPMs":         "105",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "good stuff!!"
+    },
+    {
+    "practiceC":    "Funk",
+    "prname" :      "the nasty",
+    "timesig":      "6/8",
+    "BPMs":         "90",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "Can change tempo for diff feel"
+    },
+    {
+    "practiceC":    "Jazz",
+    "prname" :      "Elvin Jones Triplets",
+    "timesig":      "4/4",
+    "BPMs":         "130",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "need more practice"
+    },
+    {
+    "practiceC":    "Rock",
+    "prname" :      "John Bohnom Triplets",
+    "timesig":      "4/4",
+    "BPMs":         "90",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "awesome"
+    },
+    {
+    "practiceC":    "Funk",
+    "prname" :      "Fast Funk",
+    "timesig":      "6/8",
+    "BPMs":         "140",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "hard but awesome!!"
+    },
+    {
+    "practiceC":    "Feet/Hands",
+    "prname" :      "feet patterns",
+    "timesig":      "4/4",
+    "BPMs":         "90",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "hate this!!"
+    },
+    {
+    "practiceC":    "Hands/Feet",
+    "prname" :      "soloing over feet",
+    "timesig":      "4/4",
+    "BPMs":         "100",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "nice  but why?"
+    },
+    {
+    "practiceC":    "Feet/Hands",
+    "prname" :      "independence exc for feet",
+    "timesig":      "4/4",
+    "BPMs":         "90",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "good stuff!"
+    },
+    {
+    "practiceC":    "Hands/Feet",
+    "prname" :      "killer ",
+    "timesig":      "4/4",
+    "BPMs":         "80",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "tough but necessary"
+    },
+    {
+    "practiceC":    "Hands",
+    "prname" :      "warm ups",
+    "timesig":      "4/4",
+    "BPMs":         "80",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "great exercise!"
+    },
+    {
+    "practiceC":    "Feet",
+    "prname" :      "double pedal exc",
+    "timesig":      "4/4",
+    "BPMs":         "90",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "finally! need better pedal"
+    },
+    {
+    "practiceC":    "Drumset",
+    "prname" :      "simple yet awesome",
+    "timesig":      "4/4",
+    "BPMs":         "120",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "love this"
+    },
+    {
+    "practiceC":    "Jazz",
+    "prname" :      "relax, speed",
+    "timesig":      "4/4",
+    "BPMs":         "185",
+    "favorite":     "",
+    "date":         "9-27-2011",
+    "Notes":        "Slow build up helps"
+    },
+];
+
+var populate = function(data) {
+    for (var i in data) {
+        var item = data[i];
+        var key  = item.id;
+        
+        var value = [item.id, item.name, item.cat].join(";");
+        //easy way
+        //var value = JSON.stringify(item);
+        storage.setItem(key, value);
+     }
+    };
+
+    console.log("Pupulating initial data.");
+    populate(initialData);
+
+    storage.setItem(drumKey,"");
+    console.log(storage);
+})(window.localStorage);
