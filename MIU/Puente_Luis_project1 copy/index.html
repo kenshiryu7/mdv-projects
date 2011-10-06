@@ -45,11 +45,15 @@
 		    <h1>Drumset Practice Log<h1>
 		</div>
 		    <div data-role="content">
+			<!-- search input -->
+		<div data-role="fieldcontain">
+		    <label for="search"></label>
+		    <input type="search" name="search" id="search" value="Search"/>
+		</div>
 			<img src="img/launch3.png" style="width:100%;" style="margin:0px;"/>
-			<p><a href="additem.html" data-role="button" data-theme="b">Log Your Own Practice!</a></p>
+			<p><a href="additem.html" data-role="button" data-theme="a">Log Your Own Practice!</a></p>
 		    
-		    <div data-role="collapsible-set" data-inset="true" data-theme="a">
-		        <div data-role="collapsible" data-collapsed="true">
+		        <div>
 			    <h3>Rudiments</h3>
 			    <ul data-role="listview">
 				<li>
@@ -78,7 +82,7 @@
 				</li>
 			    </ul>
 			</div>
-			<div data-role="collapsible" data-collapsed="true">
+			<div>
 			    <h3>Beats</h3>
 			    <ul data-role="listview">
 				<li>
@@ -106,7 +110,7 @@
 				</li>
 			    </ul>
 			</div>
-			<div data-role="collapsible" data-collapsed="true">
+			<div>
 			    <h3>Ostinatos</h3>
 			    <ul data-role="listview">
 				<li>
@@ -127,13 +131,7 @@
 				    </a>	
 				</li>
 			    </ul>
-		    </div>
 		    </div>	
-		</div>
-		<!-- search input -->
-		<div data-role="fieldcontain">
-		    <label for="search"></label>
-		    <input type="search" name="search" id="search" value="Search"/>
 		</div>
 		<div data-role="footer">
 			<h4>footer</h4>
@@ -172,7 +170,7 @@
 		    <h1>Hands</h1>
 		</div>    
 		    <div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-filter="true">
 				<li>
 				    <a href="#single">
 					<h4>Single Stroke</h4>
@@ -200,7 +198,7 @@
 		    <h1>Feet</h1>
 		</div>    
 		    <div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-filter="true">
 				<li>
 				    <a href="#four">
 					<h4>Single Stroke Four</h4>
@@ -223,7 +221,7 @@
 		    <h1>Drumset</h1>
 		</div>    
 		    <div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-filter="true">
 				<li>
 				    <a href="#diddle">
 					<h4>Paradiddle on the Drumset</h4>
@@ -262,7 +260,7 @@
 		    <h1>Jazz</h1>
 		</div>    
 		    <div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-filter="true">
 				<li>
 				    <a href="#basic">
 					<h4>The basic Jazz pattern</h4>
@@ -285,7 +283,7 @@
 		    <h1>Rock</h1>
 		</div>    
 		    <div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-filter="true">
 				<li>
 				    <a href="#rockone">
 					<h4>The basic Rock beat</h4>
@@ -308,7 +306,7 @@
 		    <h1>Funk</h1>
 		</div>    
 		    <div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-filter="true">
 				<li>
 				    <a href="#funky">
 					<h4>A simple Funk Beat</h4>
@@ -350,7 +348,7 @@
 		    <h1>Feet / Hands</h1>
 		</div>    
 		    <div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-filter="true">
 				<li>
 				    <a href="#fthd1">
 					<h4>Example Text 1</h4>
@@ -373,7 +371,7 @@
 		    <h1>Hands / Feet</h1>
 		</div>    
 		    <div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-filter="true">
 				<li>
 				    <a href="#txt">
 					<h4>Example Text 1</h4>
