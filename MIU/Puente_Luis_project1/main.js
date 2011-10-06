@@ -113,9 +113,9 @@ function getItems() {
         //attemp to adding images per category
         var image ="";
             if (practiceC =="") {image ="";}
-            if (practiceC =="Hands" || "Feet" || "Drumset") {image ="Rudiments.png";}
-            if (practiceC =="Feet/Hands" || "Hands/Feet") {image = "Ostinatos.png";}
-            if (practiceC =="Jazz" || "Rock" || "Funk") {image ="beats.png";}
+            if ((practiceC =="Hands") || (practiceC =="Feet") || (practiceC =="Drumset")) {image ="Rudiments.png";}
+            if ((practiceC =="Feet/Hands") || (practiceC =="Hands/Feet")) {image = "Ostinatos.png";}
+            if ((practiceC =="Jazz") || (practiceC =="Rock") || (practiceC =="Funk")) {image ="beats.png";}
         
     
          //add images   

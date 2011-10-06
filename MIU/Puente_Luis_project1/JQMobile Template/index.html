@@ -1,0 +1,68 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Testing JQuery</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<link rel="stylesheet" href="css/style.css"/>
+	
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	
+	<div data-role="page" id="home">
+		<div data-role="header" data-position="fixed">
+			<h1>JQuery Test</h1>
+		</div>
+		<div data-role="content">
+			<p>Testing oh yippy!</p>
+			<p><a href="#page1" data-role="button" data-icon="arrow-r" data-iconpos="right">Button 1</a></p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h4>footer</h4>
+		</div>
+	</div>
+	<div data-role="page" id="page1" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>JQuery Test page 1</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li>
+					<a>	
+						<img src="images/test1.jpg"/>
+						<h3>Yooooo!!!</h3>
+						<p>just checking to see what this will look like</p>
+					</a>	
+				</li>
+				<li>I pull the blood!</li>
+				<li>Look to me!</li>
+			</ul>	
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<h4>footer</h4>
+		</div>
+	</div>
+	
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
+</body>
+</html>

@@ -89,10 +89,10 @@ a:active { color: orange;}
     font-size:30px;
 }
 
-#indexBod {
-    background-color:#ABABAB;
+/*#indexBod {
+    background-image:url(img/BG1.png);
 }
-
+*/
 #launchimg {
     padding-right:20px;
     width:340px;
@@ -103,6 +103,7 @@ a:active { color: orange;}
 #click {
     text-align:center;
     font-size:20px;
+    color:#FFF;
 }
 
 #editItem {
@@ -118,6 +119,7 @@ h2 {
     text-align:center;
     font-size:16px;
     font-weight:100;
+    color:#FFF;
 }
 
 
