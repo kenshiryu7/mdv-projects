@@ -8,7 +8,7 @@ var parsepForm = function(data){
 
 $(document).ready(function(){
     
-    var pform = $('#forms'),
+    var pform = $('#form'),
         errorsLink = $('#errorsLink')
     ;
     
