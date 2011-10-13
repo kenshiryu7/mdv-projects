@@ -51,7 +51,7 @@
 		    <input type="search" name="search" id="search" value="Search"/>
 		</div>
 			<img src="img/launch3.png" style="width:100%;" style="margin:0px;"/>
-			<p><a href="additem.html" data-role="button" data-theme="a">Log Your Own Practice!</a></p>
+			<p><a href="#logPractice" data-role="button" data-theme="a">Log Your Own Practice!</a></p>
 		    
 		        <div>
 			    <h3>Rudiments</h3>
@@ -615,6 +615,73 @@
 			<h4>footer</h4>
 		    </div>
 	    </div>
+	    <!-- form: Log your practice -->
+	    <div data-role="page" data-add-back-btn="true" id="logPractice">
+	        <div data-role="header">
+	            <h1>Log Your Own Practice Details</h1>
+		</div>
+		<div data-role="content">
+		    <form action="" method="post" id="form">
+			<div data-role="fieldcontain">
+			    <label for="pcategory" style="color:#FFF;">Select Practice Category</label>
+			    <select name="pcategory" id="pcategory" data-native-menu="false" class="required">
+				<option data-placeholder="true" value>Select Category</option>
+				<optgroup label="Rudiments">
+				    <option value="hands">Hands</option>
+				    <option value="feet">Feet</option>
+				    <option value="drumset">Drumset</option>
+				</optgroup>
+				<optgroup label="Beats">
+				    <option value="jazz">Jazz</option>
+				    <option value="rock">Rock</option>
+				    <option value="Funk">Funk</option>
+				</optgroup>
+				<optgroup label="Ostinatos">
+				    <option value="feethands">Feet/Hands</option>
+				    <option value="handsfeet">Hands/Feet</option>
+				</optgroup>  
+			    </select>
+			</div>
+			<div data-role="fieldcontain">
+			    <label for="pname" style="color:#FFF;">Name of Practice Session:</label>
+			    <input type="text" name="pname" id="pname" placeholder="name" class="required"/>
+			</div>
+			<div data-role="fieldcontain">
+			    <label for="timesig" style="color:#FFF;">Select a Time Signature</label>
+			    <select name="timesig" id="timesig" data-native-menu="false" class="required">
+				<option data-placeholder="true" value>Select Time Signature</option>
+				<option value="time-1">4/4</option>
+				<option value="time-2">6/8</option>
+				<option value="time-3">3/4</option>
+			    </select>
+			</div>  
+			<div data-role="fieldcontain">
+			    <label for="bpms" style="color:#FFF;">BPM:</label>
+			    <input type="range" name="bpms" id="bpms" min="60" max="250"/>
+			</div>
+			<div data-role="fieldcontain">
+			    <label for="favorite" style="color:#FFF;">Save in Favorites?:</label>
+			    <select data-role="slider">
+				<option value="off">No</option>
+				<option value="on">Yes</option>
+			    </select>
+			</div>
+			<div data-role="fieldcontain">
+			    <label for="notes" style="color:#FFF;">Notes:</label>
+			    <textarea placeholder="notes here" class="required"></textarea>
+			</div>
+			<div data-role="fieldcontain">
+			    <input type="reset" value="Reset" />
+			    <input type="submit" value="Log Practice Details" />
+			</div>
+			
+			<!--<a href="#recordErrors" id="errorsLink" data-rel="dialog" data-transition="pop">Errors</a>-->
+		    </form>
+		</div>
+		<div data-role="footer" data-position="fixed">
+		    <h4>footer</h4>
+		</div>
+	    </div>
 	    <!--<h1>Drumset Practice List</h1>
             <h2><input type="text" value="search Logs" id="search"/><input type="submit" value="GO!"></h2>
                 <div>
@@ -635,6 +702,7 @@
 	    <!-- JavaScript under here -->
 	    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	    <script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
-	    <script type="text/javascript" src="js/main.js"></script>
+	    <script type="text/javascript" src="JQMobile Template/js/libs/jquery.validate.min.js"></script>
+	    <script type="text/javascript" src="JQMobile Template/js/main1.js"></script>
         </body>
 </html>
