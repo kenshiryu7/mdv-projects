@@ -115,7 +115,7 @@ function getItems() {
         var favorite    =value[4];
         var date        =value[5];
         var Notes       =value[6];
-        var newDiv = document.createElement("div");
+        var newDiv = $("<div>");
         for (var k = 0, allLength = value.length; k < allLength; k++) {
             var newPara = document.createElement("p");
             var itemTxt = document.createTextNode(value[k]);
@@ -133,23 +133,23 @@ function getItems() {
         
     
          //add images   
-        var newImg = document.createElement("img");
-        var setSrc = newImg.setAttribute("src","img/" + image);
+        var newImg = $("<img>");
+        var setSrc = newImg.attr("src","img/" + image);
         getListdiv.appendChild(newImg);
        
         
    //add delete single item link
-   var deleteLink = document.createElement("a");
-   var setHref    = deleteLink.setAttribute("href", "#");
-   var setOnclick = deleteLink.setAttribute("onclick", "deleteItem(" + key + ");");
+   var deleteLink = $("<a>");
+   var setHref    = deleteLink.attr("href", "#");
+   var setOnclick = deleteLink.attr("onclick", "deleteItem(" + key + ");");
    var deleteText = document.createTextNode("delete item");
    deleteLink.appendChild(deleteText);
    newDiv.appendChild(deleteLink);
    
    //add edit single item
-   var editLink         = document.createElement("a");
-   var setEditHref      = editLink.setAttribute("href", "#");
-   var setEditOnclick   = editLink.setAttribute("onclick", "editItem(" + key + ");");
+   var editLink         = $("<a>");
+   var setEditHref      = editLink.attr("href", "#");
+   var setEditOnclick   = editLink.attr("onclick", "editItem(" + key + ");");
    var editText         = document.createTextNode("edit item");
    editLink.appendChild(editText);
    newDiv.appendChild(editLink);
@@ -261,7 +261,7 @@ function editItem(id) {
     $('#timesig').val(timesig);
     $('#BPMs').val(BPMs);
     if (favorite =="on") {
-        $('#favorite').setAttribute("checked", "checked");
+        $('#favorite').attr("checked", "checked");
     }
     $('#date').val(date);
     $('#Notes').val(Notes);
@@ -272,7 +272,7 @@ function editItem(id) {
     var submit = $('#sdata').show();
     
     //capture editItem button's click
-    document.getElementById("editItem").onclick = function () {
+    $('#editItem').onclick = function () {
         
         var practiceC       = $('#practiceC').val();
         var prname          = $('#prname').val();
