@@ -133,26 +133,26 @@ function getItems() {
         
     
          //add images   
-        var newImg = $("<img>");
+        var newImg = $("<img/>");
         var setSrc = newImg.attr("src","img/" + image);
-        getListdiv.appendChild(newImg);
+        getListdiv.appendTo(newImg);
        
         
    //add delete single item link
-   var deleteLink = $("<a>");
+   var deleteLink = $("<a/>");
    var setHref    = deleteLink.attr("href", "#");
    var setOnclick = deleteLink.attr("onclick", "deleteItem(" + key + ");");
    var deleteText = document.createTextNode("delete item");
-   deleteLink.appendChild(deleteText);
-   newDiv.appendChild(deleteLink);
+   deleteLink.appendTo(deleteText);
+   newDiv.appendTo(deleteLink);
    
    //add edit single item
-   var editLink         = $("<a>");
+   var editLink         = $("<a/>");
    var setEditHref      = editLink.attr("href", "#");
    var setEditOnclick   = editLink.attr("onclick", "editItem(" + key + ");");
    var editText         = document.createTextNode("edit item");
-   editLink.appendChild(editText);
-   newDiv.appendChild(editLink);
+   editLink.appendTo(editText);
+   newDiv.appendTo(editLink);
    }
    
     if(localStorage.length >=1) {
