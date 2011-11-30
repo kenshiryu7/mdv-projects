@@ -515,7 +515,7 @@ var initalData = [
     },
 ];
 
-var populate = function(data) {
+/*var populate = function(data) {
     for (var i in data) {
         var item = data[i];
         var key  = item.id;
@@ -529,7 +529,7 @@ var populate = function(data) {
 
     console.log("Pupulating initial data.");
     populate(initialData);
-
+*/
     storage.setItem(drumKey,"");
     console.log(storage);
 })(window.localStorage);
