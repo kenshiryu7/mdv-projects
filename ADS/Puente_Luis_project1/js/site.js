@@ -529,11 +529,11 @@ var initalData = [
 
     console.log("Pupulating initial data.");
     populate(initialData);
-*/
+
     storage.setItem(drumKey,"");
     console.log(storage);
 })(window.localStorage);
  
- 
+*/ 
     
 });
