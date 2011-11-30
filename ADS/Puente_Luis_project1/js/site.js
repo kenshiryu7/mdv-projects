@@ -325,7 +325,7 @@ function clearLocal() {
 
 //attempt at dummy data
 
-(function(storage) {
+/*(function(storage) {
     var appName ="Drumset Practice List";
 
 var drumKey = appName + ".installed";
@@ -514,7 +514,7 @@ var initalData = [
     "Notes":        "Slow build up helps"
     },
 ];
-
+*/
 /*var populate = function(data) {
     for (var i in data) {
         var item = data[i];
