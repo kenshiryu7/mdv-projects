@@ -1,8 +1,8 @@
 //
 
-$(document).ready(function(){
+$(function(){
 	    
-	    /*$.ajax({
+	    $.ajax({
 		"url": 'xhr/json.json',
 		"type": 'GET',
 		"dataType":'json',
@@ -10,6 +10,5 @@ $(document).ready(function(){
 		    console.log(response);
 		}
 	    });
-            */
-            $.getJSON('xhr/json.json', function(response){console.log(response);});
+            
 });
