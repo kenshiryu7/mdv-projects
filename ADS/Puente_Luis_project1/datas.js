@@ -3,7 +3,7 @@
 $.ready(function(){
 	    
 	    $.ajax({
-		"url": 'xhr/json.php',
+		"url": 'xhr/json.json',
 		"type": 'GET',
 		"dataType":'json',
 		"success":function(response) {
