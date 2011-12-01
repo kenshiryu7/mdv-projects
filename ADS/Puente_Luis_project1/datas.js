@@ -1,6 +1,6 @@
 //
 
-$.ready(function(){
+$(document).ready(function(){
 	    
 	    $.ajax({
 		"url": 'xhr/json.json',
