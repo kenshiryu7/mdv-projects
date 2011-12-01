@@ -7,7 +7,7 @@ $(function(){
 		"type": 'GET',
 		"dataType":'json',
 		"success":function(response) {
-		    console.log(response);
+		    console.log($.parseJSON(response));
 		}
 	    });
 	    
