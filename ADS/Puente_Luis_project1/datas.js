@@ -1,4 +1,3 @@
-//
 //Json data function
 
 $(function(){
@@ -41,5 +40,4 @@ $(function(){
 		    console.log(response);
 		}
 	    });
-            
 });
