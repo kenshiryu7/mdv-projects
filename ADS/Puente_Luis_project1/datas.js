@@ -18,7 +18,7 @@ $(function(){
 $(function(){
 	    
 	    $.ajax({
-		"url": 'xhr/xml.php',
+		"url": 'xhr/xml.xml',
 		"type": 'GET',
 		"dataType":'xml',
 		"success":function(response) {
@@ -33,7 +33,7 @@ $(function(){
 $(function(){
 	    
 	    $.ajax({
-		"url": 'xhr/csv.php',
+		"url": 'xhr/csv.csv',
 		"type": 'GET',
 		"dataType":'csv',
 		"success":function(response) {
