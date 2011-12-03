@@ -119,11 +119,11 @@ function getItems() {
         var Notes       =value[6];
         var newDiv = $("<div>");
         for (var k = 0, allLength = value.length; k < allLength; k++) {
-            var newPara = document.createElement("p");
-            var itemTxt = document.createTextNode(value[k]);
-            newPara.appendChild(itemTxt);
-            newDiv.appendChild(newPara);
-            getListdiv.appendChild(newDiv);
+            var newPara = $("<p/>");
+            var itemTxt = $('value[k]').text();
+            newPara.appendTo(itemTxt);
+            newDiv.appendTo(newPara);
+            getListdiv.appendTo(newDiv);
         }
    
        //attemp to adding images per category
@@ -144,7 +144,7 @@ function getItems() {
    var deleteLink = $("<a/>");
    var setHref    = deleteLink.attr("href", "#");
    var setOnclick = deleteLink.attr("onclick", "deleteItem(" + key + ");");
-   var deleteText = document.createTextNode("delete item");
+   var deleteText = $("delete item").text();
    deleteLink.appendTo(deleteText);
    newDiv.appendTo(deleteLink);
    
@@ -152,7 +152,7 @@ function getItems() {
    var editLink         = $("<a/>");
    var setEditHref      = editLink.attr("href", "#");
    var setEditOnclick   = editLink.attr("onclick", "editItem(" + key + ");");
-   var editText         = document.createTextNode("edit item");
+   var editText         = $("edit item").text();
    editLink.appendTo(editText);
    newDiv.appendTo(editLink);
    }
@@ -275,7 +275,7 @@ function editItem(id) {
     var submit = $('#sdata').show();
     
     //capture editItem button's click
-    $('#editItem').onclick = function () {
+    $('#editItem').click() = function () {
         
         var practiceC       = $('#practiceC').val();
         var prname          = $('#prname').val();
