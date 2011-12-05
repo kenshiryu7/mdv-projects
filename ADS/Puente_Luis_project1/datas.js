@@ -1,43 +1,53 @@
+$(function(){
 //Json data function
 
-$(function(){
+function getJson(){
 	    
 	    $.ajax({
 		"url": 'xhr/json.json',
 		"type": 'GET',
 		"dataType":'json',
-		"success":function(response) {
+		"success":function(data, response) {
+                    alert("JSON data loaded.");
 		    console.log(response);
 		}
 	    });
             
-});
+}
 
 //XML data function
 
-$(function(){
+function getXML(){
 	    
 	    $.ajax({
 		"url": 'xhr/xml.xml',
 		"type": 'GET',
 		"dataType":'xml',
-		"success":function(response) {
+		"success":function(data, response) {
+                    alert("XML data loaded");
 		    console.log(response);
 		}
 	    });
             
-});
+}
 
 //CSV data function
 
-$(function(){
+function getCSV(){
 	    
 	    $.ajax({
 		"url": 'xhr/csv.csv',
 		"type": 'GET',
 		"dataType":'csv',
-		"success":function(response) {
+		"success":function(data, response) {
+                    alert("CSV data loaded");
 		    console.log(response);
 		}
 	    });
+}
+
+$("#jsonB").bind("click", getJson);
+$("#xmlB").bind("click", getXML);
+$("#csvB").bind("click", getCSV);
+
 });

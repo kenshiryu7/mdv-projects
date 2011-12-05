@@ -61,45 +61,7 @@ function validateForm() {
     saveItems();
 }
 
-//make practice categories dynamically. help for images?
 
-/*var praCat = ["", "Rudiments", "Beats", "Ostinatos"],
-    
-    formTag     = document.getElementsByTagName("form"),
-    makePara    = document.createElement("p"),
-    makeSelect  = document.createElement("select")
-;
-
-makeSelect.setAttribute("id", "praCat");
-
-var makePraCat = function (name) {
-    for( var i=0, j=praCat.length; i < j; i++) {
-        var makeOpt = document.createElement("option");
-        var optText = document.createTextNode(praCat[i]);
-        makeOpt.setAttribute("value", praCat[i]);
-        makeOpt.appendChild(optText);
-        makeSelect.appendChild(makeOpt);
-    };
-    makePara.appendChild(makeSelect);
-    var getUl = formTag[0].firstChild;
-    var paraSelect = formTag[0].insertBefore(makePara, getUl);
-};
-
-makePraCat();*/
-
-/*
-function pCatArray() {
-    var rudiments = ["hands", "feet", "Drumset"];
-    var beats     = ["Jazz","Rock", "Funk"];
-    var ostinatos = ["Feet/Hands","Hands/Feet"];
-    var category = rudiments, beats, ostinatos;
-    for (var i=0, j=category.length; i < j; i++) {
-        var makeOptionGroup = document.createElement("optgroup");
-        for(var k=0, l=category[i].length; k < l; k++) {
-        }
-    }
-}
-*/
 
 
 function getItems() {
@@ -161,34 +123,7 @@ function getItems() {
         var clearLink = $('#clear').show();
         
         
-    /*  var practiceC   = localStorage.getItem("apppracticeC");
-        var prname      = localStorage.getItem("appprname");
-        var timesig     = localStorage.getItem("apptimesig");
-        var BPMs        = localStorage.getItem("appBPMs");
-        var favorite    = localStorage.getItem("appfavorite");
-        var date        = localStorage.getItem("appdate");
-        var Notes       = localStorage.getItem("appNotes");
-        
-        var DrumsetPraList = [
-            practiceC,
-            prname,
-            timesig,
-            BPMs,
-            favorite,
-            date,
-            Notes
-        ];
-    */
-    
-        /*document.getElementById("form").style.display = "none";
-        document.getElementById("clear").style.display = "block";
-        var getList = document.getElementById("new");
-        for (var i=0, j=DrumsetPraList.length; i < j; i++) {
-            var newData = document.createElement("p");
-            var itemTxt = document.createTextNode(DrumsetPraList[i]);
-            newData.appendChild(itemTxt);
-            getList.appendChild(newData);
-        }*/
+   
     } else {
             var  prname    = "enter practice name";
             var  timesig   = "enter a time signature";
@@ -199,6 +134,7 @@ function getItems() {
            $('#BPMs').val(BPMs);
         }
 }
+
 
 //save items function. get date and time from comp...
 function saveItems(id) {
@@ -326,224 +262,59 @@ function clearLocal() {
     return false;
 }
 
+//functions to Attempt Data parse into form fields
 
 
+function getJson(){
+	    
+	    $.ajax({
+		"url": 'xhr/json.json',
+		"type": 'GET',
+		"dataType":'json',
+		"success":function(data, response) {
+                    alert("JSON data loaded.");
+		    console.log(response);
+		}
+	    });
+            
+}
 
+//XML data function
 
+function getXML(){
+	    
+	    $.ajax({
+		"url": 'xhr/xml.xml',
+		"type": 'GET',
+		"dataType":'xml',
+		"success":function(data, response) {
+                    alert("XML data loaded");
+		    console.log(response);
+                    $(data).find('items').each(function(){
+                        
+                    });
+		}
+	    });
+            
+}
 
+//CSV data function
 
+function getCSV(){
+	    
+	    $.ajax({
+		"url": 'xhr/csv.csv',
+		"type": 'GET',
+		"dataType":'csv',
+		"success":function(data, response) {
+                    alert("CSV data loaded");
+		    console.log(response);
+		}
+	    });
+}
 
-//attempt at dummy data
-
-/*(function(storage) {
-    var appName ="Drumset Practice List";
-
-var drumKey = appName + ".installed";
-
-if(storage.getItem(drumKey) !== null) {return;}
-
-var initalData = [
-    {
-    "practiceC":    "Hands",
-    "prname" :      "left hand exc",
-    "timesig":      "4/4",
-    "BPMs":         "60",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "I hate working the left hand!"
-    },
-    {
-    "practiceC":    "Feet",
-    "prname" :      "right foot exc",
-    "timesig":      "4/4",
-    "BPMs":         "100",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "great exc for speed"
-    },
-    {
-    "practiceC":    "Drumset",
-    "prname" :      "around the set",
-    "timesig":      "4/4",
-    "BPMs":         "110",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "great for fills!"
-    },
-    {
-    "practiceC":    "Hands",
-    "prname" :      "speed exc",
-    "timesig":      "4/4",
-    "BPMs":         "220",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "good build up"
-    },
-    {
-    "practiceC":    "Feet",
-    "prname" :      "speed exc",
-    "timesig":      "4/4",
-    "BPMs":         "200",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "hard but productive"
-    },
-    {
-    "practiceC":    "Drumset",
-    "prname" :      "toms only",
-    "timesig":      "4/4",
-    "BPMs":         "120",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "nice exc around set"
-    },
-    {
-    "practiceC":    "Jazz",
-    "prname" :      "independence",
-    "timesig":      "3/4",
-    "BPMs":         "140",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "hard time, good practice"
-    },
-    {
-    "practiceC":    "Rock",
-    "prname" :      "basic fat beat",
-    "timesig":      "6/8",
-    "BPMs":         "105",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "good stuff!!"
-    },
-    {
-    "practiceC":    "Funk",
-    "prname" :      "the nasty",
-    "timesig":      "6/8",
-    "BPMs":         "90",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "Can change tempo for diff feel"
-    },
-    {
-    "practiceC":    "Jazz",
-    "prname" :      "Elvin Jones Triplets",
-    "timesig":      "4/4",
-    "BPMs":         "130",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "need more practice"
-    },
-    {
-    "practiceC":    "Rock",
-    "prname" :      "John Bohnom Triplets",
-    "timesig":      "4/4",
-    "BPMs":         "90",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "awesome"
-    },
-    {
-    "practiceC":    "Funk",
-    "prname" :      "Fast Funk",
-    "timesig":      "6/8",
-    "BPMs":         "140",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "hard but awesome!!"
-    },
-    {
-    "practiceC":    "Feet/Hands",
-    "prname" :      "feet patterns",
-    "timesig":      "4/4",
-    "BPMs":         "90",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "hate this!!"
-    },
-    {
-    "practiceC":    "Hands/Feet",
-    "prname" :      "soloing over feet",
-    "timesig":      "4/4",
-    "BPMs":         "100",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "nice  but why?"
-    },
-    {
-    "practiceC":    "Feet/Hands",
-    "prname" :      "independence exc for feet",
-    "timesig":      "4/4",
-    "BPMs":         "90",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "good stuff!"
-    },
-    {
-    "practiceC":    "Hands/Feet",
-    "prname" :      "killer ",
-    "timesig":      "4/4",
-    "BPMs":         "80",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "tough but necessary"
-    },
-    {
-    "practiceC":    "Hands",
-    "prname" :      "warm ups",
-    "timesig":      "4/4",
-    "BPMs":         "80",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "great exercise!"
-    },
-    {
-    "practiceC":    "Feet",
-    "prname" :      "double pedal exc",
-    "timesig":      "4/4",
-    "BPMs":         "90",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "finally! need better pedal"
-    },
-    {
-    "practiceC":    "Drumset",
-    "prname" :      "simple yet awesome",
-    "timesig":      "4/4",
-    "BPMs":         "120",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "love this"
-    },
-    {
-    "practiceC":    "Jazz",
-    "prname" :      "relax, speed",
-    "timesig":      "4/4",
-    "BPMs":         "185",
-    "favorite":     "",
-    "date":         "9-27-2011",
-    "Notes":        "Slow build up helps"
-    },
-];
-*/
-/*var populate = function(data) {
-    for (var i in data) {
-        var item = data[i];
-        var key  = item.id;
-        
-        var value = [item.id, item.name, item.cat].join(";");
-        //easy way
-        //var value = JSON.stringify(item);
-        storage.setItem(key, value);
-     }
-    };
-
-    console.log("Pupulating initial data.");
-    populate(initialData);
-
-    storage.setItem(drumKey,"");
-    console.log(storage);
-})(window.localStorage);
- 
-*/ 
+$("#jsonB").bind("click", getJson);
+$("#xmlB").bind("click", getXML);
+$("#csvB").bind("click", getCSV);
     
 });
