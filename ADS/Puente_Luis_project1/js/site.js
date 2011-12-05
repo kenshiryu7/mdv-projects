@@ -289,7 +289,8 @@ function getXML(){
 		"dataType":'xml',
 		"success":function(data, response) {
                     alert("XML data loaded");
-		    console.log(response);
+                    var myData = $.parseXML(data);
+		    console.log(myData);
                     $(data).find('items').each(function(){
                         
                     });
