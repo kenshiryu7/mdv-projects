@@ -275,8 +275,9 @@ function getJson(){
 		"success":function(data, response) {
                     alert("JSON data loaded");
 		    console.log(response);
-                    for (var i=0, j=response.items.length; i<j; i++) {
-                        var itemJson = response.items[i];
+                    console.log(data)
+                    for (var i=0, j=data.items.length; i<j; i++) {
+                        var itemJson = data.items[i];
                         $(''+
                             '<div class="jsonD">'+
                                '<h2>'+itemJson.practicC+'</h2>'+
@@ -287,7 +288,7 @@ function getJson(){
                                 '<p>'+itemJson.date+'</p>'+
                                 '<p>'+itemJson.Notes+'</p>'+
                              '</div>'   
-                        ).appendTo('#jsonD');
+                        ).appendTo('#json');
                     };
 		}
 	    });
@@ -323,7 +324,7 @@ function getXML(){
                                 '<p>'+ pDate +'</p>'+
                                 '<p>'+ note +'</p>'+
                         '</div>'
-                        ).appendTo("#xmlD");
+                        ).appendTo("#xml");
                     });
 		}
 	    });
