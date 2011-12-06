@@ -271,7 +271,7 @@ function getJson(){
 		"url": 'xhr/json.json',
 		"type": 'GET',
 		"dataType":'json',
-                "error": function(xhr, status, err){alert("err");consol.log(status, err);},
+                "error": function(xhr, status, err){alert("err");console.log(status, err);},
 		"success":function(data, response) {
                     alert("JSON data loaded");
 		    console.log(response);
