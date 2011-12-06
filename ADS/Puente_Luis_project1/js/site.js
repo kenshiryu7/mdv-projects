@@ -274,6 +274,19 @@ function getJson(){
 		"success":function(data, response) {
                     alert("JSON data loaded.");
 		    console.log(response);
+                    for (var i=0, j=response.items.length; i<j; i++) {
+                        var itemJson = response.items[i];
+                        $(''+
+                            '<div class="jsonD">'+
+                               '<h2>'+itemJson.practicC+'</h2>'+
+                                '<p>'+itemJson.prname+'</p>'+
+                                '<p>'+itemJson.timesig+'</p>'+
+                                '<p>'+itemJson.BPMs+'</p>'+
+                                '<p>'+itemJson.favorite+'</p>'+
+                                '<p>'+itemJson.date+'</p>'+
+                                '<p>'+itemJson.Notes+'</p>'
+                        ).appendTo('#json');
+                    };
 		}
 	    });
             
@@ -289,10 +302,8 @@ function getXML(){
 		"dataType":'xml',
 		"success":function(data, response) {
                     alert("XML data loaded");
-                    var myData = $.parseXML(data);
-		    console.log(myData);
-                    $(data).find('items').each(function(){
-                        
+                    $(data).find('item').each(function(index, item){
+                        console.log(item);
                     });
 		}
 	    });
@@ -317,5 +328,8 @@ function getCSV(){
 $("#jsonB").bind("click", getJson);
 $("#xmlB").bind("click", getXML);
 $("#csvB").bind("click", getCSV);
+$("#log").bind("click", validateForm);
+
+
     
 });

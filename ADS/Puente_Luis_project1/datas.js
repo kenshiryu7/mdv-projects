@@ -26,6 +26,9 @@ function getXML(){
 		"success":function(data, response) {
                     alert("XML data loaded");
 		    console.log(response);
+                    $(data).find('items').each(function(){
+                        
+                    });
 		}
 	    });
             
