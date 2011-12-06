@@ -288,6 +288,7 @@ function getJson(){
                              '</div>'   
                         ).appendTo('#jsonD');
                     };
+                    function(xhr, status, err){alert("err");consol.log(status, err);}
 		}
 	    });
             
