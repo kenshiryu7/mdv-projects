@@ -272,7 +272,7 @@ function getJson(){
 		"type": 'GET',
 		"dataType":'json',
 		"success":function(data, response) {
-                    alert("JSON data loaded.");
+                    alert("JSON data loaded");
 		    console.log(response);
                     for (var i=0, j=response.items.length; i<j; i++) {
                         var itemJson = response.items[i];
@@ -284,7 +284,8 @@ function getJson(){
                                 '<p>'+itemJson.BPMs+'</p>'+
                                 '<p>'+itemJson.favorite+'</p>'+
                                 '<p>'+itemJson.date+'</p>'+
-                                '<p>'+itemJson.Notes+'</p>'
+                                '<p>'+itemJson.Notes+'</p>'+
+                             '</div>'   
                         ).appendTo('#jsonD');
                     };
 		}
@@ -304,9 +305,24 @@ function getXML(){
                     alert("XML data loaded");
                     $(data).find('item').each(function(){
                     //console.log(item);
-                    $(
-                        
-                    ).appendTo("#xmlD");
+                    var pra_C = $(this).find('practiceC').text()
+                    var pName = $(this).find('prname').text()
+                    var time = $(this).find('timesig').text()
+                    var beatP = $(this).find('bpms').text()
+                    var favs = $(this).find('favorite').text()
+                    var pDate = $(this).find('date').text()
+                    var note = $(this).find('notes').text()
+                    $(''+
+                        '<div class="xmlD">'+
+                               '<h2>'+ pra_C +'</h2>'+
+                                '<p>'+ pName +'</p>'+
+                                '<p>'+ time +'</p>'+
+                                '<p>'+ beatP +'</p>'+
+                                '<p>'+ favs +'</p>'+
+                                '<p>'+ pDate +'</p>'+
+                                '<p>'+ note +'</p>'+
+                        '</div>'
+                        ).appendTo("#xmlD");
                     });
 		}
 	    });
