@@ -271,6 +271,7 @@ function getJson(){
 		"url": 'xhr/json.json',
 		"type": 'GET',
 		"dataType":'json',
+                "error": function(xhr, status, err){alert("err");consol.log(status, err);},
 		"success":function(data, response) {
                     alert("JSON data loaded");
 		    console.log(response);
@@ -288,7 +289,6 @@ function getJson(){
                              '</div>'   
                         ).appendTo('#jsonD');
                     };
-                    function(xhr, status, err){alert("err");consol.log(status, err);}
 		}
 	    });
             
