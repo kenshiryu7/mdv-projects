@@ -1,6 +1,6 @@
 <items>
    
-        <item id="0">
+        <item >
             <practiceC>Hands</practiceC>
             <prname>left hand exc</prname>
             <timesig>4/4</timesig>
@@ -10,7 +10,7 @@
             <notes>I hate working the left hand!</notes>
         </item>
         
-        <item id="1">
+        <item >
             <practiceC>Feet</practiceC>
             <prname>left foot exc</prname>
             <timesig>4/4</timesig>
@@ -20,7 +20,7 @@
             <notes>I hate working the left foot!</notes>
         </item>
         
-        <item id="2">
+        <item >
             <practiceC>Hands</practiceC>
             <prname>right hand exc</prname>
             <timesig>4/4</timesig>
@@ -30,7 +30,7 @@
             <notes>I hate working the right hand!</notes>
         </item>
         
-        <item id="3">
+        <item >
             <practiceC>Hands</practiceC>
             <prname>both hands exc</prname>
             <timesig>4/4</timesig>
@@ -40,7 +40,7 @@
             <notes>I hate working both hands!</notes>
         </item>
         
-        <item id="4">
+        <item >
             <practiceC>Feet</practiceC>
             <prname>Feet speed</prname>
             <timesig>4/4</timesig>

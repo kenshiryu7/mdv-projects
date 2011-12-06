@@ -285,7 +285,7 @@ function getJson(){
                                 '<p>'+itemJson.favorite+'</p>'+
                                 '<p>'+itemJson.date+'</p>'+
                                 '<p>'+itemJson.Notes+'</p>'
-                        ).appendTo('#json');
+                        ).appendTo('#jsonD');
                     };
 		}
 	    });
@@ -302,8 +302,11 @@ function getXML(){
 		"dataType":'xml',
 		"success":function(data, response) {
                     alert("XML data loaded");
-                    $(data).find('item').each(function(index, item){
-                        console.log(item);
+                    $(data).find('item').each(function(){
+                    //console.log(item);
+                    $(
+                        
+                    ).appendTo("#xmlD");
                     });
 		}
 	    });
