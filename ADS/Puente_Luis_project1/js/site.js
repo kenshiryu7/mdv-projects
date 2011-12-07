@@ -280,7 +280,7 @@ function getJson(){
                         var itemJson = data.items[i];
                         $(''+
                             '<div class="jsonD">'+
-                               '<h2>'+itemJson.practicC+'</h2>'+
+                               '<h2>'+itemJson.practiceC+'</h2>'+
                                 '<p>'+itemJson.prname+'</p>'+
                                 '<p>'+itemJson.timesig+'</p>'+
                                 '<p>'+itemJson.BPMs+'</p>'+
