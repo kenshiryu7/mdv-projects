@@ -2,6 +2,9 @@
   "env": {
     "local": {
       "db": "http://127.0.0.1:5984/asdproject" 
+    },
+    "cloudant": {
+      "db": "https://verythentorentseedyseave:j6tBy3PjQJb1JiFHcpX5LCsB@kenshiryu7.cloudant.com/asdproject" 
     }
   }
 }
