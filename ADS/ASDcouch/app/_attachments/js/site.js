@@ -333,7 +333,7 @@ function getXML(){
 
 //CSV data function
 
-function getCSV(){
+/*function getCSV(){
 	    
 	    $.ajax({
 		"url": 'xhr/csv.csv',
@@ -344,11 +344,43 @@ function getCSV(){
 		    console.log(response);
 		}
 	    });
+}*/
+
+
+function getCouch(){
+	
+	$.ajax({
+		"url":"_view/weeks",
+		"dataType":"json",
+		"success": function(data) {
+			$.each(data.rows, function(index, weeks){
+					//console.log(weeks);
+					var practiceC = weeks.value.practiceC;
+					var prname	  = weeks.value.prname;
+					var timesig	  = weeks.value.timesig;
+					var bpms	  = weeks.value.BPMs;
+					var favorite  = weeks.value.favorite;
+					var date	  = weeks.value.date;
+					var notes     = weeks.value.Notes;				
+					$('#couch').append(
+						$('<h2>').text(practiceC),
+						$('<p>').text(prname),
+						$('<p>').text(timesig),
+						$('<p>').text(bpms),
+						$('<p>').text(favorite),
+						$('<p>').text(date),
+						$('<p>').text(notes)
+						);
+					
+			});
+			//$('#couch').listview('refresh');
+		}	
+	});
 }
 
 $("#jsonB").bind("click", getJson);
 $("#xmlB").bind("click", getXML);
-$("#csvB").bind("click", getCSV);
+$("#couchB").bind("click", getCouch);
 $("#log").bind("click", validateForm);
 
 
