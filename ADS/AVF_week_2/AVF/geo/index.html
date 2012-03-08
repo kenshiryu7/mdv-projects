@@ -1,0 +1,95 @@
+<!doctype html>
+ 
+<html>    
+<head>
+    <title>Geolocation</title>
+    
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Mobile IE needs ClearType for smoothing fonts -->
+<meta http-equiv="cleartype" content="on">
+    
+<!-- Javascript -->
+
+<script type="text/javascript" src="phonegap-1.4.1.js"></script>
+<script type="text/javascript">
+    
+    function onPageLoad() {
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+
+//phonegap is ready
+function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+
+
+function getLocation(){
+    try {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+    catch(error)
+    {
+    alert(error)
+    }
+    }
+
+function onSuccess(position) {
+                    var element = document.getElementById('geolocation');
+                    element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
+                    'Longitude: ' + position.coords.longitude + '<br />' +
+                    'Altitude: ' + position.coords.altitude + '<br />' +
+                    'Accuracy: ' + position.coords.accuracy + '<br />' +
+                    'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '<br />' +
+                    'Heading: ' + position.coords.heading + '<br />' +
+                    'Speed: ' + position.coords.speed + '<br />' +
+                    'Timestamp: ' + new Date(position.timestamp) + '<br />';
+                }
+                
+                function onError(error) {
+                    alert('code: ' + error.code + '\n' +
+                          'message: ' + error.message + '\n');
+                }
+
+
+
+    
+</script>
+
+</head>
+<body onload="onPageLoad()">
+    <DIV class="phoneGapAPITitle">
+            <header>
+            <TABLE width="100%">
+                <TR>
+                    <TD>
+                        <h2>HTML5 Geolocation</h2>
+                    </TD>
+                    <TD>
+                        <a href="index.html">Back to Launch</a>
+                    </TD>
+                </TR>
+                
+            </TABLE>
+            </header>
+        </DIV>
+        
+        <DIV>    
+            <TABLE>
+                <TR>
+                    <TD>
+                        <button onclick="getLocation();">Let's see If I can find you</button>
+                    </TD>
+                </TR>
+                
+          </TABLE>
+       </DIV>
+
+
+
+</body>
+</html>
