@@ -1,0 +1,50 @@
+<!doctype html>
+ 
+<html>    
+<head>
+    <title>Notification</title>
+    
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Mobile IE needs ClearType for smoothing fonts -->
+<meta http-equiv="cleartype" content="on">
+    
+<!-- Javascript -->
+
+    <script type="text/javascript" charset="utf-8" src=".../phonegap-1.4.1.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    
+        //wait for phonegap to load//
+        
+        document.addEventListener("deviceready", onDeviceReady, false);
+        
+        //Phonegap is ready//
+        
+        function onDeviceReady() {
+            navigator.notification.alert(message, alertcallback, [title], [buttonName);
+        }
+        
+        //alert dialog dismissed//
+        
+        function alertDismissed() {
+            
+        }
+        
+        //custom alert attempt//
+        
+        function showAlert() {
+            navigator.notification.alert(
+              'it worked!',
+              alertDismissed,
+              'Hope this works',
+              'Finished'
+            );
+        }
+    </script>
+    </head>
+    <body>
+        <p><button href="#" onclick="showAlert(); return false">Alert</button></p>
+    </body>
+</html>    
