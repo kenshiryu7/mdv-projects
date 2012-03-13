@@ -13,7 +13,7 @@
     
 <!-- Javascript -->
 
-    <script type="text/javascript" charset="utf-8" src=".../phonegap-1.4.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
     <script type="text/javascript" charset="utf-8">
     
         //wait for phonegap to load//
@@ -37,8 +37,9 @@
     +                           'Altitude Accuracy: '   + position.coords.altitudeAccuracy  + '<br />'
     +                           'Heading: '             + position.coords.heading           + '<br />'
     +                           'Speed: '               + position.coords.speed             + '<br />'
-    +                           'Timestamp: '           + new Date(position.timestamp)      + '<br
-    />';
+    +                           'Timestamp: '           + new Date(position.timestamp)      + '<br />'
+    
+    ;
         }
         
         //onError Callback recieves a PositionError object
@@ -53,12 +54,12 @@
     </script>
     </head>
     <body>
-        <p id="geolocation">Finding your location as best as I can</p>
+        <p >Finding your location as best as I can</p>
         <DIV>    
             <TABLE>
                 <TR>
                     <TD>
-                        <button onclick="onSuccess();">Let's see If I can find you</button>
+                        <button id="geolocation">Let's see If I can find you</button>
                     </TD>
                 </TR>
                 
