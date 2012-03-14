@@ -10,10 +10,13 @@
 
 <!-- Mobile IE needs ClearType for smoothing fonts -->
 <meta http-equiv="cleartype" content="on">
-    
+  
+<style>
+	     body {background-image:url(img/BG1.jpg)}
+</style>             
 <!-- Javascript -->
 
-    <script type="text/javascript" charset="utf-8" src=".../phonegap-1.4.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
     
         //wait for phonegap to load//
@@ -23,7 +26,7 @@
         //Phonegap is ready//
         
         function onDeviceReady() {
-            navigator.notification.alert(message, alertcallback, [title], [buttonName);
+            navigator.notification.alert(message, alertcallback, [title], [buttonName]);
         }
         
         //alert dialog dismissed...is this needed to make it work?//
@@ -46,5 +49,6 @@
     </head>
     <body>
         <p><button href="#" onclick="showAlert(); return false">Alert</button></p>
+        <p><a href="basic_index.html">Back to Launch Page</a></p>
     </body>
 </html>    
