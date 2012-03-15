@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Camera</title>
+        
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Mobile IE needs ClearType for smoothing fonts -->
+<meta http-equiv="cleartype" content="on">
+         
+         <script type="text/javascript" charset="utf-8" src="../../phonegap-1.4.1.js"></script>
+         <script type="text/javascript" charset="utf-8">
+         
+         document.addEventListener("deviceready", onDeviceReady, false);
+         
+         function onDeviceReady() {
+            checkConnection();
+         }
+         
+         function checkConnection() {
+            var networkState = navigator.network.connection.type;
+            
+            var states = {};
+            states[Connection.UNKNOWN] = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI] = 'Wifi connection';
+            states[Connection.CELL_2G] = 'Cell 2G connection';
+            states[Connection.CELL_3G] = 'Cell 3G connection';
+            states[Connection.Cell_4G] = 'Cell 4G connection';
+            states[Connection.NONE] = 'No network connection';
+            
+            alert('Connection type: ' + states[networkState]);
+         }
+         
+         </script>
+    </head>     
+    <body>
+        <p>Hopefully a dialog box will report the network status...Hopefully.</p>
+        <script type="text/javascript" src="../../jquery.mobile-1.0.1/jquery171.js"></script>
+    </body>
+</html>
