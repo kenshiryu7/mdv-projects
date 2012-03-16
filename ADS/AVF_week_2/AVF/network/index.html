@@ -24,13 +24,13 @@
             var networkState = navigator.network.connection.type;
             
             var states = {};
-            states[Connection.UNKNOWN] = 'Unknown connection';
+            states[Connection.UNKNOWN]  = 'Unknown connection';
             states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI] = 'Wifi connection';
-            states[Connection.CELL_2G] = 'Cell 2G connection';
-            states[Connection.CELL_3G] = 'Cell 3G connection';
-            states[Connection.Cell_4G] = 'Cell 4G connection';
-            states[Connection.NONE] = 'No network connection';
+            states[Connection.WIFI]     = 'Wifi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.Cell_4G]  = 'Cell 4G connection';
+            states[Connection.NONE]     = 'No network connection';
             
             alert('Connection type: ' + states[networkState]);
          }
@@ -39,6 +39,7 @@
     </head>     
     <body>
         <p>Hopefully a dialog box will report the network status...Hopefully.</p>
+        <p><a href="../../index.html">Back to Launch Page</a></p>
         <script type="text/javascript" src="../../jquery.mobile-1.0.1/jquery171.js"></script>
     </body>
 </html>
