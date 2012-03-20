@@ -72,13 +72,17 @@
         </script>
     </head>
     <body>
+        <div data-role="header" data-position="inline">
+            <h1>Camera</h1>
+            <a href="../../index.html"  class="ui-btn-right">Back</a>
+         </div> 
         <button onclick="capturePhoto();">Capture Photo</button> <br>
         <button onclick="capturePhotoEdit();" >Capture Editable Photo</button> <br>
         <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button> <br>
         <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);" >From Photo Album</button> <br>
         <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
         <img style="display:none;" id="largeImage" src="" />
-        <p><a href="../../index.html">Back to Launch Page</a></p>
+        
         
         <script type="text/javascript" src="../../jquery.mobile-1.0.1/jquery171.js"></script>
     </body>
