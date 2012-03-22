@@ -16,7 +16,7 @@
 </style>             
 <!-- Javascript -->
 
-    <script type="text/javascript" charset="utf-8" src="../../phonegap-1.4.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
     
         //wait for phonegap to load//
@@ -26,7 +26,7 @@
         //Phonegap is ready//
         
         function onDeviceReady() {
-            navigator.notification.alert(message, alertcallback, [title], [buttonName]);
+    
         }
         
         //alert dialog dismissed...is this needed to make it work?//
@@ -53,7 +53,7 @@
             <a href="../../index.html"  class="ui-btn-right">Back</a>
          </div>
 	
-        <p><button href="#" onclick="showAlert(); return false">Alert</button></p>
+        <p><a href="#" onclick="showAlert(); return false;">Alert</a></p>
         
         <script type="text/javascript" src="../../jquery.mobile-1.0.1/jquery171.js"></script>
     </body>
