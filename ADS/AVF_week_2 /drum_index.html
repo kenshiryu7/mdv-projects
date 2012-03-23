@@ -1,0 +1,875 @@
+<!doctype html>
+
+<!-- Quick Launch Page -->
+
+<html>
+    <head>
+	<meta charset="utf-8">
+	
+	<title>Drumset Log</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<link rel="stylesheet" href="JQMobile_Template/css/style.css"/>
+	
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="JQMobile_Template/js/libs/modernizr.custom.min.js"></script>
+	
+	<!--<meta charset="utf-8"/>
+        <title>Drumset Practice List</title>
+	<meta name="description" content= "" />
+	<meta name="keywords" content= "" />
+	<meta name="robots" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css" />
+	-->
+	<!--added BG image --> 
+	<style type="text/css">
+	    .ui-page {
+		background:url(img/BG1.png);
+	    }
+	</style>
+    </head>
+        <body>
+            <div data-role="page" id="home">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Main Menu</h1>
+		</div>
+		    <div data-role="content">
+			<img src="img/launch3.png" style="text-align:center;width:100%" id="mainimg" />
+			<p><a href="#logPractice" data-role="button" data-theme="b">Log Your Own Practice!</a></p>
+		    
+		    <div data-role="collapsible-set" data-inset="true" data-theme="a">
+		        <div data-role="collapsible" data-collapsed="true">
+			    <h3>Rudiments</h3>
+			    <ul data-role="listview">
+				<li>
+				    <a href="#rud?">
+					<h4>What are rudiments?</h4>
+				    </a>
+				</li>    
+				<li>
+				    
+				    <a href="#hands">
+					<img src="img/hands.jpg"/>
+					<h4>Hands</h4>
+				    </a>	
+				</li>
+				<li>
+				    <a href="#feet">
+					<img src="img/feet1.jpg"/>
+					<h4>Feet</h4>
+				    </a>	
+				</li>
+				<li>
+				    <a href="#drums">
+					<img src="img/drumset.png"/>
+					<h4>Drumset</h4>
+				    </a>	
+				</li>
+			    </ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true">
+			    <h3>Beats</h3>
+			    <ul data-role="listview">
+				<li>
+				    <a href="#drum?">
+					<h4>What is a Drum Beat?</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#jazz">
+					<img src="img/jazz.png"/>
+					<h4>Jazz</h4>
+				    </a>	
+				</li>
+				<li>
+				    <a href="#rock">
+					<img src="img/rock.png"/>
+					<h4>Rock</h4>
+				    </a>	
+				</li>
+				<li>
+				    <a href="#funk">
+					<img src="img/funk.jpg"/>
+					<h4>Funk</h4>
+				    </a>	
+				</li>
+			    </ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true">
+			    <h3>Ostinatos</h3>
+			    <ul data-role="listview">
+				<li>
+				    <a href="#ost?">
+					<h4>What is an Ostinato?</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#feethands">
+					<img src="img/feethands.jpg"/>
+					<h4>Feet / Hands</h4>
+				    </a>	
+				</li>
+				<li>
+				    <a href="#handsfeet">
+					<img src="img/handsfeet2.jpg"/>
+					<h4>Hands / Feet</h4>
+				    </a>	
+				</li>
+			    </ul>
+		    </div>
+		    </div>
+		    <!-- search input -->
+		    <div data-role="fieldcontain">
+			<label for="search"></label>
+			<input type="search" name="search"  id="search" value="Search"/>
+		    </div>
+		    <div data-role="content">
+		    <p><a href="index.html" data-role="button" data-theme="e">Back to Launch Page</a></p>
+		</div>
+		</div>
+		<div data-role="footer" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		</div>
+	    </div>
+
+	    <!--leads to rudiment - what is - page details --> 
+	    <div data-role="page" id="rud?" >
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Rudiments?</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>    
+		    <div data-role="content" style="color:#FFF;">
+			<p>Drum rudiments are patterns originally made for the snare drum in marching bands.</p>
+			<p>A rudiment is typically used for exercising the hands, as well as practicing patterns played by both hands.</p>
+			<p>Although originally made for the hands, a rudiment can be exercised by the feet and all the limbs on a drumset</p>
+			<p>There are about 40 written drum rudiments. Drummers often mix and match rudiments to create there own exercises or patterns.</p>
+			<p>Some of the rudiment categories include:</p>
+			<ul>
+			    <li>Single stroke rolls</li>
+			    <p>Pattern that has hands alternating between single hits</p>
+			    <li>Double stroke rolls</li>
+			    <p>Pattern that has hands alternating between double hits</p>
+			    <li>Diddles</li>
+			    <p>Patterns that mix up both single and double strokes to make unique pattern</p>
+			    <li>Flams</li>
+			    <p>pattern that has both Left and Right hands hitting at the same time with one hand hitting slightly accented and ahead of the other</p>
+			</ul>
+			<p>There are many more rudiments, and rudiments within these categories. You may easily find these in searches through out the internet.</p>
+		    </div>
+		    <div data-role="footer" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to rudiment - hands - page details --> 
+	    <div data-role="page" id="hands">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Hands</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>    
+		    <div data-role="content">
+			<ul data-role="listview">
+				<li>
+				    <a href="#single">
+					<h4>Single Stroke</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#six">
+					<h4>6 Stroke Open Roll</h4>
+				    </a>	
+				</li>
+				<li>
+				    <a href="#paradiddle">
+					<h4>Single Paradiddle</h4>
+				    </a>	
+				</li>
+			    </ul>
+		    </div>
+		    <div data-role="footer" data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to rudiment - feet - page details --> 
+	    <div data-role="page" id="feet">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Feet</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>     
+		    <div data-role="content">
+			<ul data-role="listview">
+				<li>
+				    <a href="#four">
+					<h4>Single Stroke Four</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#seven">
+					<h4>Single Stroke Seven</h4>
+				    </a>	
+				</li>
+			    </ul>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to rudiment - drumset - page details --> 
+	    <div data-role="page" id="drums">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Drumset</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>    
+		    <div data-role="content">
+			<ul data-role="listview">
+				<li>
+				    <a href="#diddle">
+					<h4>Paradiddle on the Drumset</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#drag">
+					<h4>Drag rudiment on the drumset</h4>
+				    </a>	
+				</li>
+			</ul>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to beats - what is - page details --> 
+	    <div data-role="page" id="drum?" >
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Drumbeat?</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>  
+		    <div data-role="content" style="color:#FFF;">
+			<p>A drum beat is simply a rythmic pattern played repeatedly or looped within a time signature. This is the technical term.</p>
+			<p>A drum beat is a groove that pulsates a song. The driving energy of a song.</p>
+			<p>Depending on the style of music, a drum beat may be used to help drive the song, whether a fast or slow tune.</p>
+			<p>Yet, drums are not always played with a drum beat, as often with jazz or orchestral music for example. The drums or percussion are used for accented sounds and comping of the tune</p>
+			<p> Comping is  a term used in jazz that the rythem section (drums) uses to support the feel of the song. Typically comping is used as improvisation.</p>
+		    </div>
+		    <div data-role="footer" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>    
+	    <!--leads to beats - jazz -  page details --> 
+	    <div data-role="page" id="jazz">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Jazz</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>    
+		    <div data-role="content">
+			<ul data-role="listview">
+				<li>
+				    <a href="#basic">
+					<h4>The basic Jazz pattern</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#waltz">
+					<h4>the basic jazz waltz</h4>
+				    </a>	
+				</li>
+			    </ul>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to beats - rock -  page details --> 
+	    <div data-role="page" id="rock">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Rock</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>    
+		    <div data-role="content">
+			<ul data-role="listview">
+				<li>
+				    <a href="#rockone">
+					<h4>The basic Rock beat</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#rocktwo">
+					<h4>The Basic Rock beat 2</h4>
+				    </a>	
+				</li>
+			    </ul>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to beats - funk -  page details --> 
+	    <div data-role="page" id="funk">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Funk</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>   
+		    <div data-role="content">
+			<ul data-role="listview">
+				<li>
+				    <a href="#funky">
+					<h4>A simple Funk Beat</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#funked">
+					<h4>A second simple Funk Beat</h4>
+				    </a>	
+				</li>
+			    </ul>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to ostinatos - what is -  page details --> 
+	    <div data-role="page" id="ost?">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Ostinato?</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>   
+		    <div data-role="content" style="color:#FFF;">
+			<p>An ostinato used on a drumset is typically used for excerise and practice for independence and dexterity of the limbs.</p>
+			<p>Ostinatos are typically played by 2 or 3 limbs while the drummer reads a sheet of music with the 4rth Limb, thus demanding independence from that limb</p>
+			<p>Although primarily used for independence exercises, ostinatos are great in learning some styles that demand independence such as jazz and latin (samba, songo, etc.).</p>
+			<p>In the Examples listed:</p>
+			<ul>
+			    <li>Feet/Hands means playing a given exercise of sheet music or your own independant notation with your Feet OVER a pattern played by your hands.</li>
+			    <li>Hands/Feet means playing a given exercise of sheet music or your own independant notation with your hands OVER a pattern played by your feet.</li>
+			</ul>
+		    </div>
+		    <div data-role="footer" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to ostinatos - feet/hands  -  page details --> 
+	    <div data-role="page" id="feethands">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Feet/Hands</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>   
+		    <div data-role="content">
+			<ul data-role="listview">
+				<li>
+				    <a href="#fthd1">
+					<h4>Example Text 1</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#fthd2">
+					<h4>Example Text 2</h4>
+				    </a>	
+				</li>
+			</ul>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads to ostinatos - hands/feet -  page details --> 
+	    <div data-role="page" id="handsfeet">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Hands/Feet</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>    
+		    <div data-role="content">
+			<ul data-role="listview">
+				<li>
+				    <a href="#txt">
+					<h4>Example Text 1</h4>
+				    </a>
+				</li>    
+				<li>
+				    <a href="#txttwo">
+					<h4>Example Text 2</h4>
+				    </a>	
+				</li>
+			</ul>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--leads from list hands - single roll -->
+	    <div data-role="page" id="single">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Single Stroke</h1>
+		    <a href="#hands" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>   
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/single.png"/>
+			<p>The Single stroke is a repeatedly alternating stick pattern between hands</p>
+			<p>This is a very basic rudiment, yet difficult to master speed and smooth sound</p>
+			<p>Often drummers will use double rolls for ease of speed, and singles for nice loud rolls</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from list hands - 6 stroke open roll-->
+	    <div data-role="page" id="six">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>6 Stroke Roll</h1>
+		    <a href="#hands" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>  
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/6.png"/>
+			<p>The six stroke open roll is played by bouncing each stick twice in an equal manner. Resuting in the same level of sound and tone if played on the same drum.
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from hands - single paradiddle -->
+	    <div data-role="page" id="paradiddle">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>S. Paradiddle</h1>
+		    <a href="#hands" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div> 
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/paradiddle.png"/>
+			<p>The paradiddle combines double strokes and single to make one unique pattern. The > symbols indicate to play that note accented or a bit louder.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from feet - single four -->
+	    <div data-role="page" id="four">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>S. Stroke 4</h1>
+		    <a href="#feet" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>     
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/four.png"/>
+			<p>The single stroke four rudiment was originally made for the hands, later to be used be drummers. Single stroke rudiments are a great execrise for stamina of the feet.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from feet - seven stroke -->
+	    <div data-role="page" id="seven">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>S. Stroke 7</h1>
+		    <a href="#feet" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>     
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/seven.png"/>
+			<p>The single stroke seven rudiment also was made for the hands for marching band. This is another rudiment to help increase stamina in the feet. Especially for double bass players.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from drumset - paradiddle -->
+	    <div data-role="page" id="diddle">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Paradiddle</h1>
+		    <a href="#drums" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>     
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/paradiddle.png"/>
+			<p>This is a simple rudiment to apply on the drumset. For every Accented notation ">". Kick the bass drum. For every first Left hand hit, accent it on the snare drum. Nice little basic groove.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from drumset - drag  -->
+	    <div data-role="page" id="drag">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>The Drag</h1>
+		    <a href="#drums" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>      
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/drag.png"/>
+			<p>A drag is an easy rudiment to play. The double bounce is shown here to alternate the left hand followed by a Right accent and then vice versa. You can use this to play simple fills by playing the bounces on a tom and the accents on the snare. Or another example, to play the bounces on the snare and the accents on a crash cymbal with a kick on the bass drum.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from jazz - jazz1 -->
+	    <div data-role="page" id="basic">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Basic Pattern</h1>
+		    <a href="#jazz" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>      
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/jazz1.png"/>
+			<p>The basic Jazz pattern on the drumset is mainly a swing pattern on the ride cymbal and a click of the hi-hat with the left foot on beat 2 and 4. This is a repeating pattern(ostinato of sorts) that you may play comping, or any pattern with the left hand</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from jazz - waltz  -->
+	    <div data-role="page" id="waltz">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Jazz Waltz</h1>
+		    <a href="#jazz" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>      
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/waltz.png"/>
+			<p>The jazz waltz pattern is similar to the basic pattern except the time signature is 3/4 instead of 4/4. Typically a waltz like feeling is produced by playing the left foot hi-hat click on beat 2 and 3. </p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from rock- rock1 -->
+	    <div data-role="page" id="rockone">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Basic Rock</h1>
+		    <a href="#rock" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>   
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/rock1.png"/>
+			<p>Just about the standard beat for any basic rock, pop, funk, or hip hop song.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from rock - rock2  -->
+	    <div data-role="page" id="rocktwo">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Basic Rock 2</h1>
+		    <a href="#rock" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>     
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/rock2.png"/>
+			<p>Another basic beat. This one is a half time feel. A little fatter bottom sound.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from funk - funky -->
+	    <div data-role="page" id="funky">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Simple Funk</h1>
+		    <a href="#funk" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>   
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/funky.png"/>
+			<p>A very basic funk pattern using the opening slosh of the hi-hat with 16th notes played on the hi-hat as well.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from funk - funked  -->
+	    <div data-role="page" id="funked">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Simple Funk 2</h1>
+		    <a href="#funk" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>     
+		    <div data-role="content" style="color:#FFF;">
+			<img src="img/funked.png"/>
+			<p>A basic funk pattern using rolls on the hi-hat repeating the same pattern on the kick and snare.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from feet/hands - example text1 -->
+	    <div data-role="page" id="fthd1">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Example 1</h1>
+		    <a href="#feethands" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>      
+		    <div data-role="content" style="color:#FFF;">
+			<p>In this example, Play the 8th notes with the right hand either on the ride or hi-hat. Play beat 2 and 4 on the snare with the left hand. You may also play the left foot hi-hat if you would like either on beat 2 and 4 or on beat 1,2,3 and 4.</p>
+			<p>With your right foot on the bass drum, follow some sheet music, or you may make up your own patterns. Remember to rest between a few bars. If you are struggling with a particular note over the hand patterns, concentrate on working on those notes.</p>
+		    </div>	
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from feet/hands - example text2  -->
+	    <div data-role="page" id="fthd2">
+		<div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Example 2</h1>
+		    <a href="#feethands" data-icon="arrow-l" class="ui-btn-right">Previous</a>
+		</div>      
+		    <div data-role="content" style="color:#FFF;">
+			<p>In this pattern. Play 8th notes with the right hand on either the ride cymbol or hi-hat. Play beat two and 4 with the left hand on the snare drum. </p>
+			<p>With the Left foot, follow along with some sheet music or play your own patterns. Remember to work on any notes that you may be having difficulty with. You will notice that although this is similar to example 1 text, the feel of the left foot and hi-hat pedal is very different to control.</p>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from hands/feet - example text1 -->
+	    <div data-role="page" id="txt" data-add-back-btn="true">
+		<div data-role="header">
+		    <h1>Example 1 text</h1>
+		</div>    
+		    <div data-role="content" style="color:#FFF;">
+			<p>In this example. We are unable to show an image at this time. If you read along, you may be able to understand the example given.</p>
+			<p>Play the Jazz basic pattern given under the Jazz tab. Right hand ride cymbol, left foot hi-hat click. This should leave your left hand and right foot open.</p>
+			<p>With the Left hand play quarter notes for the first 4 bars. Then rest for a bar. Repeat</p>
+			<p>With the Right foot on the bass drum play beat 1 and 3 for 4 bars, rest 1 bar. Repeat.
+			<p>You are encouraged to find some sheet music and play your open limbs(in this case the left hand and right foot) by following the notes on the sheet music.<p/>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!-- leads from hands/feet - example text2  -->
+	    <div data-role="page" id="txttwo" data-add-back-btn="true">
+		<div data-role="header">
+		    <h1>Example 2 text</h1>
+		</div>    
+		    <div data-role="content" style="color:#FFF;">
+			<p>In this example play 8th notes on the ride cymbol with the right hand. Play beat 1 and 3 on the bass drum with the right foot. You may play your left foot click on beat 2 and 4 if you would like.</p>
+			<p>With the Open Left hand, begin to play your own patterns. Mix and match quarter notes, eight notes, and sixteenth notes.</p>
+			<p>You are encouraged to find some sheet music and play your open limbs(in this case the left hand and right foot) by following the notes on the sheet music.</>
+		    </div>
+		    <div data-role="footer"  data-position="fixed" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    
+	    <!-- form: Log your practice -->
+	    <div data-role="page" id="logPractice">
+	        <div>
+		    <img src="img/drumlogo1.png" style="width:50%; padding-left:10px; padding-top:5px; padding-bottom:5px;"/>
+		</div>
+		<div data-role="header" data-position="inline">
+		    <h1>Practice Log</h1>
+		    <a href="#home" data-icon="arrow-l" class="ui-btn-right">Main</a>
+		</div>    
+		<div data-role="content">
+		    <form action="" method="post" id="form">
+			<div data-role="fieldcontain">
+			    <label for="pcategory" style="color:#FFF;">Select Practice Category</label>
+			    <select name="pcategory" id="pcategory" data-native-menu="false" class="required">
+				<option data-placeholder="true" value>Select Category</option>
+				<optgroup label="Rudiments">
+				    <option value="hands">Hands</option>
+				    <option value="feet">Feet</option>
+				    <option value="drumset">Drumset</option>
+				</optgroup>
+				<optgroup label="Beats">
+				    <option value="jazz">Jazz</option>
+				    <option value="rock">Rock</option>
+				    <option value="Funk">Funk</option>
+				</optgroup>
+				<optgroup label="Ostinatos">
+				    <option value="feethands">Feet/Hands</option>
+				    <option value="handsfeet">Hands/Feet</option>
+				</optgroup>  
+			    </select>
+			</div>
+			<div data-role="fieldcontain">
+			    <label for="pname" style="color:#FFF;">Name of Practice Session:</label>
+			    <input type="text" name="pname" id="pname" placeholder="Ex: Left hand lead" class="required"/>
+			</div>
+			<div data-role="fieldcontain">
+			    <label for="timesig" style="color:#FFF;">Select a Time Signature</label>
+			    <select name="timesig" id="timesig" data-native-menu="false" class="required">
+				<option data-placeholder="true" value>Select Time Signature</option>
+				<option value="time-1">4/4</option>
+				<option value="time-2">6/8</option>
+				<option value="time-3">3/4</option>
+			    </select>
+			</div>  
+			<div data-role="fieldcontain">
+			    <label for="bpms" style="color:#FFF;">BPM:</label>
+			    <input type="range" name="bpms" id="bpms" value="90" min="60" max="250"/>
+			</div>
+			<div data-role="fieldcontain">
+			    <label for="favorite" id="favorite" style="color:#FFF;">Save in Favorites?:</label>
+			    <select data-role="slider">
+				<option value="off">No</option>
+				<option value="on">Yes</option>
+			    </select>
+			</div>
+			<div data-role="fieldcontain">
+			    <label for="notes" style="color:#FFF;">Notes:</label>
+			    <textarea id="notes" placeholder="Ex: Great independence exercise!"></textarea>
+			</div>
+			<div data-role="fieldcontain">
+			    <input type="submit" id="log" value="  Log Practice  " data-theme="e" data-inline="true"/>
+			    <input type="reset" value="Reset" data-theme="a" data-inline="true"/>
+			</div>
+			
+			<a href="#recordErrors" id="errorsLink" data-rel="dialog" data-transition="pop">Errors</a>
+		    </form>
+		    <div data-role="footer" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		     </div>
+		</div>
+	    <!--Buttons for data types-->
+	
+	   <!--  <div data-role="content">
+			<p><a href="#" class="jsonBut" id="jsonB" data-role="button" data-theme="b"> Click to Load json Data</a></p>
+		<div id="json" style="color: #FFF;">
+		    <div class="jsonD" >
+			<h2></h2>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		    </div>
+		</div>	
+	     </div>
+	     <div data-role="content">
+			<p><a href="#" class="xmlBut" id="xmlB" data-role="button" data-theme="b"> Click to Load XML Data</a></p>
+		<div id="xml" style="color: #FFF;">
+		    <div class="xmlD">
+			
+		    </div>
+		</div>		
+	     </div>
+	     <div data-role="content">
+			<p><a href="#" class="csvBut" id="csvB" data-role="button" data-theme="b"> Click to Load CSV Data</a></p>
+		<div id="csv">
+		    <div class="csvD">-->
+			
+		    </div>
+    		</div>
+	    </div>	
+	     
+	    </div>    
+		<div data-role="footer" class="footer">
+			<h4>CO. Drum Roll 2011</h4>
+		    </div>
+	    </div>
+	    <!--errors pop up box-->
+	    <div data-role="dialog" id="recordErrors">
+	        <div data-role="header">
+	            <h1>Missing Fields</h1>
+		</div>
+		<div data-role="content">
+		    <ul>
+			<li>Test</li>
+		    </ul>
+		</div>
+	    
+	    <!--<h1>Drumset Practice List</h1>
+            <h2><input type="text" value="search Logs" id="search"/><input type="submit" value="GO!"></h2>
+                <div>
+		    <a href="additem.html" id="logo">
+		        <img id="launchimg" src= "img/drumLog2.png"/>
+		    </a>
+		    <p id="click">Click Image to Log!</p>
+		</div>
+	    <p id= "description"> A site dedicated to help drummers Log details of improvements through practice, as well as which practices are more rewarding.<p>
+	    <div>	
+		<p id="browse">
+		    <a href="#" ><img id="rudbutt" src="img/Rud.png"/></a>
+		    <a href="#" ><img id="beats" src="img/Beatbutt.png"/></a>
+		    <a href="#" ><img id="ostin" src="img/OstButt.png"/></a>
+		</p>
+	    </div>
+	-->
+	    <!-- JavaScript under here -->
+	    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	    <script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+	    <script type="text/javascript" src="JQMobile_Template/js/libs/jquery.validate.min.js"></script>
+	    <script type="text/javascript" src="JQMobile_Template/js/main1.js"></script>
+	    <script type="text/javascript" src="js/site.js"></script>
+        </body>
+</html>
