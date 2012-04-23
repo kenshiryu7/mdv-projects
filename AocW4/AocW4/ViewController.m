@@ -42,7 +42,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 
-//////////////////Username UILabel and Textfield and Login button//////////////
+//////////////////Username UILabel, Textfield and Login button//////////////
     
 //username//
     uName = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 10.0f , 90.0f, 20.0f)];
@@ -63,8 +63,23 @@
     if(logButt != nil)
     {
         logButt.frame = CGRectMake(200.0f, 40.0f, 100.0f, 30.0f);
+        
+        logButt.tintColor = [UIColor grayColor];
         [logButt setTitle:@"Login" forState:UIControlStateNormal];
+        [logButt setTitle:@"Yeah!" forState:UIControlStateHighlighted];
         [logButt addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        //onClick is in viewDidLoad//
+    }
+    
+////////////////////UILabel for "Please Enter Username"/////////////////////
+    
+    openMessage = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 130.0f, 320.0f, 100.0f)];
+    if(openMessage != nil)
+    {
+        openMessage.textAlignment = UITextAlignmentCenter;
+        openMessage.textColor = [UIColor blueColor];
+        openMessage.backgroundColor = [UIColor lightGrayColor];
+        openMessage.text = @"Please Enter Username";
     }
         
 //Adding all self view addSubs at bottom. Seems a little easier to view//    
@@ -72,6 +87,7 @@
     [self.view addSubview:uName];
     [self.view addSubview:unTextF];
     [self.view addSubview:logButt];
+    [self.view addSubview:openMessage];
     
     self.view.backgroundColor = [UIColor whiteColor];
     [super viewWillAppear:animated];

@@ -10,9 +10,13 @@
 
 @interface ViewController : UIViewController
 {
+//first section//
     UILabel *uName;
     UITextField *unTextF;
     UIButton *logButt;
+    
+//second section//    
+    UILabel *openMessage;
 
 }
 
