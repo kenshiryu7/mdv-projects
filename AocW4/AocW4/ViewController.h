@@ -20,6 +20,10 @@
 
 //show date button//
     UIButton *showDate;
+    
+//information "i" button
+    UIButton *infoButt;
+    UILabel *appInfo;
 }
 
 

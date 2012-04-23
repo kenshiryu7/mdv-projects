@@ -104,6 +104,24 @@
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////Information button. Small "i" button./////////////////////////////////////
 //////////////////////                /////////////////////////////////////
+ 
+//info dark button//
+    infoButt = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    if(infoButt != nil)
+    {
+        infoButt.frame = CGRectMake(10.0f, 360.0f, 25.0f, 25.0f);
+        [infoButt addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+
+//hidden UILabel under info button//
+    appInfo = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 385.0f, 300.0f, 20.0f)];
+    if(appInfo != nil)
+    {
+        appInfo.textColor = [UIColor redColor];
+        appInfo.text =@"";
+        appInfo.numberOfLines = 3;
+    }
+                                                    
     
     
 //Adding all self view addSubs at bottom. Seems a little easier to view//    
@@ -113,6 +131,8 @@
     [self.view addSubview:logButt];
     [self.view addSubview:openMessage];
     [self.view addSubview:showDate];
+    [self.view addSubview:infoButt];
+    [self.view addSubview:appInfo];
     
     self.view.backgroundColor = [UIColor whiteColor];
     [super viewWillAppear:animated];
