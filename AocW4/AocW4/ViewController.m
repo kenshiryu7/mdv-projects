@@ -33,6 +33,17 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+
+    uName = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 10.0f , 120.0f, 20.0f)];
+    if(uName != nil)
+    {
+        uName.text =@"Username:";
+    }
+    
+    
+    [self.view addSubview:uName];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     [super viewWillAppear:animated];
 }
 
