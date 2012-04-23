@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 {
     UILabel *uName;
+    UITextField *unTextF;
 }
 
 
