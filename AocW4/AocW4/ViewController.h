@@ -10,14 +10,16 @@
 
 @interface ViewController : UIViewController
 {
-//first section//
+//username, textfield for username and Login button//
     UILabel *uName;
     UITextField *unTextF;
     UIButton *logButt;
     
-//second section//    
+//Please enter username text label//    
     UILabel *openMessage;
 
+//show date button//
+    UIButton *showDate;
 }
 
 

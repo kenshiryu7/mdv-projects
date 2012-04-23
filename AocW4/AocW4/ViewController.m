@@ -64,14 +64,15 @@
     {
         logButt.frame = CGRectMake(200.0f, 40.0f, 100.0f, 30.0f);
         
-        logButt.tintColor = [UIColor grayColor];
+        logButt.tintColor = [UIColor lightGrayColor];
         [logButt setTitle:@"Login" forState:UIControlStateNormal];
         [logButt setTitle:@"Yeah!" forState:UIControlStateHighlighted];
         [logButt addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
         //onClick is in viewDidLoad//
     }
-    
+////////////////////////////////////////////////////////////////////////////    
 ////////////////////UILabel for "Please Enter Username"/////////////////////
+////////////////////                                   /////////////////////
     
     openMessage = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 130.0f, 320.0f, 100.0f)];
     if(openMessage != nil)
@@ -81,13 +82,37 @@
         openMessage.backgroundColor = [UIColor lightGrayColor];
         openMessage.text = @"Please Enter Username";
     }
-        
+  
+    
+///////////////////////////////////////////////////////////////////////////
+//////////////////////Show Date Button/////////////////////////////////////
+//////////////////////                /////////////////////////////////////
+    
+//Show Date//
+    
+    showDate = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    if(showDate != nil)
+    {
+        showDate.frame = CGRectMake(10.0f, 270.0f, 150.0f, 50.0f);
+        showDate.tintColor = [UIColor lightGrayColor];
+        [showDate setTitle:@"Show Date" forState:UIControlStateNormal];
+        [showDate setTitle:@"Here you go!" forState:UIControlStateHighlighted];
+        [showDate addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+
+    
+///////////////////////////////////////////////////////////////////////////
+//////////////////////Information button. Small "i" button./////////////////////////////////////
+//////////////////////                /////////////////////////////////////
+    
+    
 //Adding all self view addSubs at bottom. Seems a little easier to view//    
     
     [self.view addSubview:uName];
     [self.view addSubview:unTextF];
     [self.view addSubview:logButt];
     [self.view addSubview:openMessage];
+    [self.view addSubview:showDate];
     
     self.view.backgroundColor = [UIColor whiteColor];
     [super viewWillAppear:animated];
