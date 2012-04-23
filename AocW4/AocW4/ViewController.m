@@ -24,6 +24,13 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+//////////////////////OnClick Function for Login Button//////////////////////////////////////
+
+-(void)onClick
+{
+    NSString *userLoginConfirm = [unTextF text];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -31,23 +38,40 @@
     // e.g. self.myOutlet = nil;
 }
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
 
-//Username UILabel and Textfield//
+//////////////////Username UILabel and Textfield and Login button//////////////
+    
+//username//
     uName = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 10.0f , 90.0f, 20.0f)];
     if(uName != nil)
     {
         uName.text =@"Username:";
     }
+
+//textField//    
     unTextF = [[UITextField alloc] initWithFrame:CGRectMake(100.0f, 10.0f, 200.0f, 25.0f)];
     if(unTextF != nil)
     {
         unTextF.borderStyle = UITextBorderStyleRoundedRect;
     }
+
+//Login button//
+    logButt = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    if(logButt != nil)
+    {
+        logButt.frame = CGRectMake(200.0f, 40.0f, 100.0f, 30.0f);
+        [logButt setTitle:@"Login" forState:UIControlStateNormal];
+        [logButt addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+        
+//Adding all self view addSubs at bottom. Seems a little easier to view//    
     
-    [self.view addSubview:unTextF];
     [self.view addSubview:uName];
+    [self.view addSubview:unTextF];
+    [self.view addSubview:logButt];
     
     self.view.backgroundColor = [UIColor whiteColor];
     [super viewWillAppear:animated];

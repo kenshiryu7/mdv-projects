@@ -12,6 +12,8 @@
 {
     UILabel *uName;
     UITextField *unTextF;
+    UIButton *logButt;
+
 }
 
 
