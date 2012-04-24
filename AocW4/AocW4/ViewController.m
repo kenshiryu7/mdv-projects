@@ -8,6 +8,13 @@
 
 #import "ViewController.h"
 
+
+//defining tags for login, date, and info button//
+
+#define LOGIN 0
+#define DATE  1
+#define INFO  2
+
 @implementation ViewController
 
 - (void)didReceiveMemoryWarning
@@ -20,16 +27,56 @@
 
 - (void)viewDidLoad
 {
+
+    NSDate *dateView = [NSDate date];
+    
+    NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
+    if(dateForm != nil)
+    {
+        [dateForm setDateFormat:@"MM.dd.yyyy  HH:mm:ss zzzz"];
+        
+        
+    }
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+
 //////////////////////OnClick Function for Login Button//////////////////////////////////////
+
 
 -(void)onClick
 {
-    NSString *userLoginConfirm = [unTextF text];
+    if(logButt.tag == LOGIN)
+    {
+        NSString *userLoginConfirm = [unTextF text];
+    }
+    else if(showDate.tag == DATE)
+    {
+        NSDate *dateView = [NSDate date];
+        
+        NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
+        if(dateForm != nil)
+        {
+            [dateForm setDateFormat:@"MM.dd.yyyy  HH:mm:ss zzzz"];
+            
+
+        UIAlertView *dateAlert = [[UIAlertView alloc] initWithTitle:@"Date" message:dateView delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            
+            if(dateAlert != nil)
+            {
+                [dateAlert show];
+            }
+        }
+    }
+    else if(infoButt.tag == INFO)
+    {
+        
+    }
 }
+
+
 
 - (void)viewDidUnload
 {
@@ -67,6 +114,8 @@
         logButt.tintColor = [UIColor lightGrayColor];
         [logButt setTitle:@"Login" forState:UIControlStateNormal];
         [logButt setTitle:@"Yeah!" forState:UIControlStateHighlighted];
+        
+        logButt.tag = LOGIN;
         [logButt addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
         //onClick is in viewDidLoad//
     }
@@ -94,11 +143,18 @@
     if(showDate != nil)
     {
         showDate.frame = CGRectMake(10.0f, 270.0f, 150.0f, 50.0f);
+        
         showDate.tintColor = [UIColor lightGrayColor];
         [showDate setTitle:@"Show Date" forState:UIControlStateNormal];
         [showDate setTitle:@"Here you go!" forState:UIControlStateHighlighted];
+        
+        showDate.tag = DATE;
         [showDate addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
     }
+    
+//Date view alert//
+    
+    
 
     
 ///////////////////////////////////////////////////////////////////////////
@@ -110,6 +166,8 @@
     if(infoButt != nil)
     {
         infoButt.frame = CGRectMake(10.0f, 360.0f, 25.0f, 25.0f);
+        
+        infoButt.tag = INFO;
         [infoButt addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
     }
 
@@ -133,6 +191,7 @@
     [self.view addSubview:showDate];
     [self.view addSubview:infoButt];
     [self.view addSubview:appInfo];
+    
     
     self.view.backgroundColor = [UIColor whiteColor];
     [super viewWillAppear:animated];

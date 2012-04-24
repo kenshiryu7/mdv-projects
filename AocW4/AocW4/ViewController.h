@@ -20,6 +20,7 @@
 
 //show date button//
     UIButton *showDate;
+    //NSDate *dateView;
     
 //information "i" button
     UIButton *infoButt;
