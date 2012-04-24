@@ -50,6 +50,7 @@
 {
     if(logButt.tag == LOGIN)
     {
+        //just started//
         NSString *userLoginConfirm = [unTextF text];
     }
     else if(showDate.tag == DATE)
@@ -60,9 +61,10 @@
         if(dateForm != nil)
         {
             [dateForm setDateFormat:@"MM.dd.yyyy  HH:mm:ss zzzz"];
+            NSString *showDateString = [dateForm stringFromDate:dateView];
             
-
-        UIAlertView *dateAlert = [[UIAlertView alloc] initWithTitle:@"Date" message:dateView delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+//is (NSString*)needed in message with showDAteString? tried and not functioning//
+        UIAlertView *dateAlert = [[UIAlertView alloc] initWithTitle:@"Date" message:showDateString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             
             if(dateAlert != nil)
             {
@@ -72,7 +74,7 @@
     }
     else if(infoButt.tag == INFO)
     {
-        
+        //need to work on//
     }
 }
 
