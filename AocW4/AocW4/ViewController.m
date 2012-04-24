@@ -61,7 +61,7 @@
         NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
         if(dateForm != nil)
         {
-            [dateForm setDateFormat:@"MM.dd.yyyy  HH:mm:ss zzzz"];
+            [dateForm setDateFormat:@"MMMM dd, yyyy  hh:mm:ss a zzzz"];
             NSString *showDateString = [dateForm stringFromDate:dateView];
             
 //is (NSString*)needed in message with showDAteString? tried and not functioning//
