@@ -43,7 +43,7 @@
 }
 
 
-//////////////////////OnClick Function for Login Button//////////////////////////////////////
+//////////////////////OnClick Function for Login, Date, and Info Button//////////////////////////////////////
 
 
 -(IBAction)onClick:(UIButton*)button
@@ -64,8 +64,7 @@
             [dateForm setDateFormat:@"MMMM dd, yyyy  hh:mm:ss a zzzz"];
             NSString *showDateString = [dateForm stringFromDate:dateView];
             
-//is (NSString*)needed in message with showDAteString? tried and not functioning//
-        UIAlertView *dateAlert = [[UIAlertView alloc] initWithTitle:@"Date" message:showDateString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+         UIAlertView *dateAlert = [[UIAlertView alloc] initWithTitle:@"Date" message:showDateString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             
             if(dateAlert != nil)
             {
@@ -76,6 +75,18 @@
     else if(button.tag == INFO)
     {
         //need to work on//
+        
+        
+        
+        NSString *devInfo =@"This application was created by: Luis Puente.";
+        appInfo.text = devInfo;
+                
+        //testing button with UIAlertView//
+        /*UIAlertView *infoAlert = [[UIAlertView alloc] initWithTitle:@"test" message:@"testing estoop" delegate:nil cancelButtonTitle:@"I kill you" otherButtonTitles:nil, nil];
+        if (infoAlert != nil) 
+        {
+            [infoAlert show];
+        }*/
     }
 }
 
@@ -168,19 +179,21 @@
     infoButt = [UIButton buttonWithType:UIButtonTypeInfoDark];
     if(infoButt != nil)
     {
-        infoButt.frame = CGRectMake(10.0f, 360.0f, 25.0f, 25.0f);
+        infoButt.frame = CGRectMake(10.0f, 340.0f, 25.0f, 25.0f);
         
         infoButt.tag = INFO;
         [infoButt addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
     }
 
 //hidden UILabel under info button//
-    appInfo = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 385.0f, 300.0f, 20.0f)];
+    appInfo = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 370.0f, 320.0f, 40.0f)];
     if(appInfo != nil)
     {
         appInfo.textColor = [UIColor redColor];
-        appInfo.text =@"";
+        appInfo.textAlignment = UITextAlignmentLeft;
         appInfo.numberOfLines = 3;
+        appInfo.text =@"";
+        
     }
                                                     
     
