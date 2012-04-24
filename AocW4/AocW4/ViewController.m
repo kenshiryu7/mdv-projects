@@ -46,14 +46,15 @@
 //////////////////////OnClick Function for Login Button//////////////////////////////////////
 
 
--(void)onClick
+-(IBAction)onClick:(UIButton*)button
 {
-    if(logButt.tag == LOGIN)
+  
+    if(button.tag == LOGIN)
     {
         //just started//
         NSString *userLoginConfirm = [unTextF text];
     }
-    else if(showDate.tag == DATE)
+    else if(button.tag == DATE)
     {
         NSDate *dateView = [NSDate date];
         
@@ -72,7 +73,7 @@
             }
         }
     }
-    else if(infoButt.tag == INFO)
+    else if(button.tag == INFO)
     {
         //need to work on//
     }
@@ -118,7 +119,7 @@
         [logButt setTitle:@"Yeah!" forState:UIControlStateHighlighted];
         
         logButt.tag = LOGIN;
-        [logButt addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        [logButt addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         //onClick is in viewDidLoad//
     }
 ////////////////////////////////////////////////////////////////////////////    
@@ -151,7 +152,7 @@
         [showDate setTitle:@"Here you go!" forState:UIControlStateHighlighted];
         
         showDate.tag = DATE;
-        [showDate addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        [showDate addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     
 //Date view alert//
@@ -170,7 +171,7 @@
         infoButt.frame = CGRectMake(10.0f, 360.0f, 25.0f, 25.0f);
         
         infoButt.tag = INFO;
-        [infoButt addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        [infoButt addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
     }
 
 //hidden UILabel under info button//
