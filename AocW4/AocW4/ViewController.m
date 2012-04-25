@@ -65,7 +65,7 @@
         }
         else
         {
-            NSString *userTextFilled = @"user:%@, has been logged in", userLoginConfirm;
+            NSString *userTextFilled = [NSString stringWithFormat:@"user: %@, has been logged in", userLoginConfirm];
             [openMessage setText:(NSString*)userTextFilled];
         }
         
