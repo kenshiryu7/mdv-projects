@@ -28,16 +28,7 @@
 - (void)viewDidLoad
 {
 
-    NSDate *dateView = [NSDate date];
-    
-    NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
-    if(dateForm != nil)
-    {
-        [dateForm setDateFormat:@"MM.dd.yyyy  HH:mm:ss zzzz"];
         
-        
-    }
-    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
