@@ -54,7 +54,7 @@
        
         NSString *userLoginConfirm = [unTextF text];
     //using hint from instruction "length" see if works//
-        NSInteger *length = [userLoginConfirm length];
+        int length = [userLoginConfirm length];
     
         //An if else statement to tell if text field is filled or not//
        
@@ -65,7 +65,7 @@
         }
         else
         {
-            NSString *userTextFilled = [NSString stringWithFormat:@"user: %@, has been logged in", userLoginConfirm];
+            NSString *userTextFilled = [NSString stringWithFormat:@"User: %@, has been logged in", userLoginConfirm];
             [openMessage setText:(NSString*)userTextFilled];
         }
         
