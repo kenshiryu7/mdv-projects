@@ -51,8 +51,24 @@
   
     if(button.tag == LOGIN)
     {
-        //just started//
+       
         NSString *userLoginConfirm = [unTextF text];
+    //using hint from instruction "length" see if works//
+        NSInteger *length = [userLoginConfirm length];
+    
+        //An if else statement to tell if text field is filled or not//
+       
+        if(length == 0)// setting == 0 should say empty//
+        {
+            NSString *emptyUN = @"Username cannot be empty.";
+            [openMessage setText:(NSString*)emptyUN];
+        }
+        else
+        {
+            NSString *userTextFilled = @"user:%@, has been logged in", userLoginConfirm;
+            [openMessage setText:(NSString*)userTextFilled];
+        }
+        
     }
     else if(button.tag == DATE)
     {
@@ -74,19 +90,10 @@
     }
     else if(button.tag == INFO)
     {
-        //need to work on//
-        
-        
-        
+               
         NSString *devInfo =@"This application was created by: Luis Puente.";
         appInfo.text = devInfo;
                 
-        //testing button with UIAlertView//
-        /*UIAlertView *infoAlert = [[UIAlertView alloc] initWithTitle:@"test" message:@"testing estoop" delegate:nil cancelButtonTitle:@"I kill you" otherButtonTitles:nil, nil];
-        if (infoAlert != nil) 
-        {
-            [infoAlert show];
-        }*/
     }
 }
 
