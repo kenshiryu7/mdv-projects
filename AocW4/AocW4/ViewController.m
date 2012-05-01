@@ -7,7 +7,11 @@
 //
 
 #import "ViewController.h"
-
+/*Github link
+ 
+ https://github.com/kenshiryu7/mdv-projects/tree/master/AocW4/AocW4
+ 
+ */
 
 //defining tags for login, date, and info button//
 
@@ -58,6 +62,7 @@
         {
             NSString *userTextFilled = [NSString stringWithFormat:@"User: %@, has been logged in", userLoginConfirm];
             [openMessage setText:(NSString*)userTextFilled];
+            
         }
         
     }
@@ -82,8 +87,19 @@
     else if(button.tag == INFO)
     {
                
-        NSString *devInfo =@"This application was created by: Luis Puente.";
-        appInfo.text = devInfo;
+        /*NSString *devInfo =@"This application was created by: Luis Puente.";
+        appInfo.text = devInfo;*/
+        
+        //assigning the string.text within the if else if, able to have on else if off when button pressed//
+        
+        if (appInfo.text.length ==0) //if not displaying...display label string// 
+        {
+            appInfo.text =@"This application was created by: Luis Puente.";
+        }
+        else if(appInfo.text.length > 0) //if displaying...hide label string//
+        {
+            appInfo.text = @"";
+        }
                 
     }
 }
