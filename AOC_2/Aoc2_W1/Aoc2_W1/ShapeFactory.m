@@ -21,9 +21,13 @@
        {
            return [[TriangleClass alloc] init];
        }
-       else //I'm not sure how to make it specifcally say "2" but if its not 0 ir 1 it must be 2
+       else if(shapeType == 2)
        {
            return [[RectangleClass alloc] init];
+       }
+       else
+       {
+           return FALSE;
        }
 }
 
