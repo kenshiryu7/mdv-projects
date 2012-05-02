@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad
 {
+//UILabels to display string : area value//
     
     shapeTriangle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 300.0f, 20.0f)];
     if(shapeTriangle != nil)

@@ -11,5 +11,14 @@
 @implementation ShapeClass
 
 
-
+-(id)init
+{
+    self = [super init];
+    if(self != nil)
+    {
+        //any init for this object
+    }
+    
+    return self;
+}
 @end
