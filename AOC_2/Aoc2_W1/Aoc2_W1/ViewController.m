@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "ShapeClass.h"
+#import "TriangleClass.h"
+#import "SquareClass.h"
+#import "RectangleClass.h"
 
 @implementation ViewController
 

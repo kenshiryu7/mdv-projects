@@ -10,7 +10,7 @@
 
 @implementation ShapeClass
 
-
+//possibly used for other classes?//
 -(id)init
 {
     self = [super init];
@@ -20,6 +20,10 @@
     }
     
     return self;
+}
+-(int)GetNumSides
+{
+    return numSides;
 }
 
 -(NSString*)GetName
