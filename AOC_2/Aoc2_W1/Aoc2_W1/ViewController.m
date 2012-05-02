@@ -11,6 +11,7 @@
 #import "TriangleClass.h"
 #import "SquareClass.h"
 #import "RectangleClass.h"
+#import "ShapeFactory.h"
 
 @implementation ViewController
 

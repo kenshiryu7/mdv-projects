@@ -10,4 +10,23 @@
 
 @implementation TriangleClass
 
+-(id)init
+{
+    self = [super init];
+    if(self != nil)
+    {
+        numSides = 3; //triangle has 3 sides
+        name = @"Triangle";
+    }
+    return self;
+}
+
+
+-(int)GetArea
+{
+    return 0.5f *(8.0f * 12.0f); //0.5 * (base * height)
+}
+
+
+
 @end

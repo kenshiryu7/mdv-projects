@@ -10,4 +10,22 @@
 
 @implementation SquareClass
 
+-(id)init
+{
+    self = [super init];
+    if(self != nil)
+    {
+        numSides = 4; //square has 4 sides
+        name = @"Square";
+    }
+    return self;
+}
+
+-(int)GetArea
+{
+    return (4.0f * 4.0f); //base * height
+}
+
+
+
 @end

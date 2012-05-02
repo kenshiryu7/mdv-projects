@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TriangleClass.h"
+#import "SquareClass.h"
+#import "RectangleClass.h"
 
 @interface ShapeFactory : NSObject
+{
+    int index;
+}
+
++(id)CreateShape:(NSInteger)shapeType;
 
 @end
