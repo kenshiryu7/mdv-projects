@@ -25,13 +25,13 @@
 
 - (void)viewDidLoad
 {
-    shapeClass = [[ShapeClass alloc] init];
-    if(shapeClass != nil)
+     ShapeFactory *shapeFactory = [[ShapeFactory alloc] init];
+    if(shapeFactory != nil)
     {
         
     }
     
-//UILabels to display string : area value//
+/*UILabels to display string : area value ---added at beginning of project
     
     shapeTriangle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 300.0f, 20.0f)];
     if(shapeTriangle != nil)
@@ -56,7 +56,7 @@
         shapeRect.backgroundColor = [UIColor clearColor];
         [self.view addSubview:shapeRect];
     }
-
+*/
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

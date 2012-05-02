@@ -16,6 +16,6 @@
     int index;
 }
 
-+(id)CreateShape:(NSInteger)shapeType;
++(ShapeClass*)CreateShape:(NSInteger)shapeType;
 
 @end
