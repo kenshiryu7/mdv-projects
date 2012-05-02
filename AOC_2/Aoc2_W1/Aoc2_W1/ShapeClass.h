@@ -14,5 +14,8 @@
     NSString *name;
 }
 
+-(int)GetNumSides;
+-(NSString*)GetName;
+-(int)GetArea;
 
 @end

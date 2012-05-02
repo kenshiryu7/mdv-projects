@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ShapeClass.h"
 
 @implementation ViewController
 
@@ -20,6 +21,12 @@
 
 - (void)viewDidLoad
 {
+    shapeClass = [[ShapeClass alloc] init];
+    if(shapeClass != nil)
+    {
+        
+    }
+    
 //UILabels to display string : area value//
     
     shapeTriangle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 300.0f, 20.0f)];

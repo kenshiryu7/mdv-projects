@@ -21,4 +21,15 @@
     
     return self;
 }
+
+-(NSString*)GetName
+{
+    return name;
+}
+
+-(int)GetArea
+{
+    return 0;
+}
+
 @end

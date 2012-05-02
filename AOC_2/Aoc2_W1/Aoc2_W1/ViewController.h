@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShapeClass.h"
 
 @interface ViewController : UIViewController
 {
     UILabel *shapeTriangle;
     UILabel *shapeSquare;
     UILabel *shapeRect;
+    
+    ShapeClass *shapeClass;
 }
 
 @end
