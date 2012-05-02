@@ -20,6 +20,32 @@
 
 - (void)viewDidLoad
 {
+    
+    shapeTriangle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 300.0f, 20.0f)];
+    if(shapeTriangle != nil)
+    {
+        shapeTriangle.text =@"Shape triangle Area:";
+        shapeTriangle.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:shapeTriangle];
+    }
+    
+    shapeSquare = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 90.0f, 300.0f, 20.0f)];
+    if(shapeSquare != nil)
+    {
+        shapeSquare.text =@"Shape square Area:";
+        shapeSquare.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:shapeSquare];
+    }
+
+    shapeRect = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 140.0f, 300.0f, 20.0f)];
+    if(shapeRect != nil)
+    {
+        shapeRect.text =@"Shape rectangle Area:";
+        shapeRect.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:shapeRect];
+    }
+
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

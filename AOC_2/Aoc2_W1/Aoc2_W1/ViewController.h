@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    UILabel *shapeTriangle;
+    UILabel *shapeSquare;
+    UILabel *shapeRect;
+}
 
 @end

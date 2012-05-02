@@ -15,6 +15,7 @@
 		C46661DC1550ECED005A06FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C46661DB1550ECED005A06FC /* AppDelegate.m */; };
 		C46661DF1550ECED005A06FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C46661DE1550ECED005A06FC /* ViewController.m */; };
 		C46661E21550ECED005A06FC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46661E01550ECED005A06FC /* ViewController.xib */; };
+		C46661EA1550EE13005A06FC /* ShapeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C46661E91550EE13005A06FC /* ShapeClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		C46661DD1550ECED005A06FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C46661DE1550ECED005A06FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C46661E11550ECED005A06FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		C46661E81550EE13005A06FC /* ShapeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeClass.h; sourceTree = "<group>"; };
+		C46661E91550EE13005A06FC /* ShapeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				C46661DE1550ECED005A06FC /* ViewController.m */,
 				C46661E01550ECED005A06FC /* ViewController.xib */,
 				C46661D21550ECED005A06FC /* Supporting Files */,
+				C46661E81550EE13005A06FC /* ShapeClass.h */,
+				C46661E91550EE13005A06FC /* ShapeClass.m */,
 			);
 			path = Aoc2_W1;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				C46661D81550ECED005A06FC /* main.m in Sources */,
 				C46661DC1550ECED005A06FC /* AppDelegate.m in Sources */,
 				C46661DF1550ECED005A06FC /* ViewController.m in Sources */,
+				C46661EA1550EE13005A06FC /* ShapeClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
