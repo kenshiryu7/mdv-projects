@@ -10,7 +10,9 @@
 
 @interface ShapeClass : NSObject
 {
+
 @protected
+   
     int _numSides;
     NSString *_name;
 }
