@@ -28,8 +28,39 @@
      ShapeFactory *shapeFactory = [[ShapeFactory alloc] init];
     if(shapeFactory != nil)
     {
-        
+        TriangleClass *triangle =  (TriangleClass*)[shapeFactory CreateShape:1];
+        [triangle GetArea];
+        triangleShape = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 40.0f, 300.0f, 20.0f)];
+        if(triangleShape != nil)
+        {
+            triangleShape.backgroundColor = [UIColor clearColor];
+            triangleShape.text = [NSString stringWithFormat:@"Shape %@ Area: %d",[triangle GetName],[triangle GetArea]];
+        }
+        [self.view addSubview:triangleShape];
     }
+    {
+        SquareClass *square =  (SquareClass*)[shapeFactory CreateShape:0];
+        [square GetArea];
+        squareShape = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 90.0f, 300.0f, 20.0f)];
+        if(squareShape != nil)
+        {
+            squareShape.backgroundColor = [UIColor clearColor];
+            squareShape.text = [NSString stringWithFormat:@"Shape %@ Area: %d",[square GetName],[square GetArea]];
+        }
+        [self.view addSubview:squareShape];
+    }
+    RectangleClass *rectangle = (RectangleClass*)[shapeFactory CreateShape:2];
+    [rectangle GetArea];
+    rectangleShape = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 140.0f, 300.0f, 20.0f)];
+    if(rectangleShape != nil)
+    {
+        rectangleShape.backgroundColor = [UIColor clearColor];
+        rectangleShape.text = [NSString stringWithFormat:@"Shape %@ Area: %d",[rectangle GetName],[rectangle GetArea]];
+    }
+    [self.view addSubview:rectangleShape];
+
+
+    
     
 /*UILabels to display string : area value ---added at beginning of project
     

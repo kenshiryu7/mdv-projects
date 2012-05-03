@@ -17,7 +17,7 @@
 @implementation ShapeFactory
 
 
-+(ShapeClass*)CreateShape:(NSInteger)shapeType; //used shapeType instead of index. Makes more sense to what its calling//
+-(ShapeClass*)CreateShape:(NSInteger)shapeType; //used shapeType instead of index. Makes more sense to what its calling//
 {
        if(shapeType == 0)
        {

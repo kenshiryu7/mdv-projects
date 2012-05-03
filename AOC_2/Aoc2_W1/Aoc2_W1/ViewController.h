@@ -14,9 +14,9 @@
 
 @interface ViewController : UIViewController
 {
-    UILabel *shapeTriangle;
-    UILabel *shapeSquare;
-    UILabel *shapeRect;
+    UILabel *triangleShape;
+    UILabel *squareShape;
+    UILabel *rectangleShape;
     
     ShapeClass *shapeClass;
 }
