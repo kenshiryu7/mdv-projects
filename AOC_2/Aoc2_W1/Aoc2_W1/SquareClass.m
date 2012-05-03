@@ -15,8 +15,8 @@
     self = [super init];
     if(self != nil)
     {
-        numSides = 4; //square has 4 sides
-        name = @"Square";
+        _numSides = 4; //square has 4 sides
+        _name = @"Square";
     }
     return self;
 }

@@ -15,8 +15,8 @@
     self = [super init];
     if(self != nil)
     {
-        numSides = 6; //Can't set to 4 bc square is 4. Try 6.
-        name = @"Triangle";
+        _numSides = 6; //Can't set to 4 bc square is 4. Try 6.
+        _name = @"Triangle";
     }
     return self;
 }

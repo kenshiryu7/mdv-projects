@@ -21,19 +21,19 @@
 {
        if(shapeType == 0)
        {
-           return [[SquareClass alloc] init];
+           return [[SquareClass alloc] initWithDetails:4 name:@"Square"];
        }
        else if(shapeType == 1)
        {
-           return [[TriangleClass alloc] init];
+           return [[TriangleClass alloc] initWithDetails:3 name:@"Triangle"];
        }
        else if(shapeType == 2)
        {
-           return [[RectangleClass alloc] init];
+           return [[RectangleClass alloc] initWithDetails:6 name:@"Rectangle"];
        }
        else
        {
-           return FALSE;
+           return nil;
        }
 }
 

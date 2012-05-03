@@ -15,8 +15,8 @@
     self = [super init];
     if(self != nil)
     {
-        numSides = 3; //triangle has 3 sides
-        name = @"Triangle";
+        _numSides = 3; //triangle has 3 sides
+        _name = @"Triangle";
     }
     return self;
 }
