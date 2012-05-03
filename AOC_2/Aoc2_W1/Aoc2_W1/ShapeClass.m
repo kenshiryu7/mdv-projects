@@ -10,8 +10,22 @@
 
 @implementation ShapeClass
 
+-(id)initWithDetails:(int)numSides name:(NSString*)name;
+{
+    self = [super init];
+    if(self != nil)
+    {
+        _numSides = numSides;
+        _name = name;
+        
+    }
+    
+    return self;
+}
+
+
 //possibly used for other classes?//
--(id)init
+/*-(id)init
 {
     self = [super init];
     if(self != nil)
@@ -21,14 +35,16 @@
     
     return self;
 }
+*/ 
+ 
 -(int)GetNumSides
 {
-    return numSides;
+    return _numSides;
 }
 
 -(NSString*)GetName
 {
-    return name;
+    return _name;
 }
 
 -(int)GetArea

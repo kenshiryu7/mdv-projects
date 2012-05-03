@@ -10,12 +10,14 @@
 
 @interface ShapeClass : NSObject
 {
-    int numSides;
-    NSString *name;
+    int _numSides;
+    NSString *_name;
 }
 
 -(int)GetNumSides;
 -(NSString*)GetName;
 -(int)GetArea;
+
+-(id)initWithDetails:(int)numSides name:(NSString*)name;
 
 @end
