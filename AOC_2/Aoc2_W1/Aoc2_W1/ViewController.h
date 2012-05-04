@@ -11,6 +11,7 @@
 #import "TriangleClass.h"
 #import "SquareClass.h"
 #import "RectangleClass.h"
+#import "ShapeFactory.h"
 
 @interface ViewController : UIViewController
 {
@@ -19,6 +20,7 @@
     UILabel *rectangleShape;
     
     ShapeClass *shapeClass;
+    ShapeFactory *shapeFactory;
 }
 
 @end

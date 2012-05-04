@@ -28,7 +28,7 @@
     
     //Instance for shapefactory. Will try to get static method to work later.
     
-     ShapeFactory *shapeFactory = [[ShapeFactory alloc] init];
+     shapeFactory = [[ShapeFactory alloc] init];
     if(shapeFactory != nil)
     {
 //Triangle output        
