@@ -15,6 +15,8 @@
 		C466622B1557793F005A06FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C466622A1557793F005A06FC /* AppDelegate.m */; };
 		C466622E1557793F005A06FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C466622D1557793F005A06FC /* ViewController.m */; };
 		C46662311557793F005A06FC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C466622F1557793F005A06FC /* ViewController.xib */; };
+		C466623815578302005A06FC /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C466623715578302005A06FC /* SecondView.xib */; };
+		C466623B1557833F005A06FC /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C466623A1557833F005A06FC /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		C466622C1557793F005A06FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C466622D1557793F005A06FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C46662301557793F005A06FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		C466623715578302005A06FC /* SecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
+		C46662391557833F005A06FC /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C466623A1557833F005A06FC /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,9 @@
 				C466622D1557793F005A06FC /* ViewController.m */,
 				C466622F1557793F005A06FC /* ViewController.xib */,
 				C46662211557793F005A06FC /* Supporting Files */,
+				C466623715578302005A06FC /* SecondView.xib */,
+				C46662391557833F005A06FC /* SecondViewController.h */,
+				C466623A1557833F005A06FC /* SecondViewController.m */,
 			);
 			path = Aoc2_W2;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 			files = (
 				C46662251557793F005A06FC /* InfoPlist.strings in Resources */,
 				C46662311557793F005A06FC /* ViewController.xib in Resources */,
+				C466623815578302005A06FC /* SecondView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +173,7 @@
 				C46662271557793F005A06FC /* main.m in Sources */,
 				C466622B1557793F005A06FC /* AppDelegate.m in Sources */,
 				C466622E1557793F005A06FC /* ViewController.m in Sources */,
+				C466623B1557833F005A06FC /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
