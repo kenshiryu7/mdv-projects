@@ -20,11 +20,21 @@
 
 - (void)viewDidLoad
 {
+
     
     onOffSwitch.on = false;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(IBAction)onColorChange:(id)sender
+{
+    UISegmentedControl *segControl = (UISegmentedControl*)sender;
+    if(segControl != nil)
+    {
+        int selectedIndex = segControl.selectedSegmentIndex;
+    }
 }
 
 - (void)viewDidUnload
@@ -42,6 +52,11 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    //follow along from video//
+    
+     int selectedIndex = segmentControl.selectedSegmentIndex;
+    
+    
     [super viewDidAppear:animated];
 }
 
