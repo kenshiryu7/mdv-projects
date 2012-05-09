@@ -20,6 +20,9 @@
 
 - (void)viewDidLoad
 {
+    
+    onOffSwitch.on = false;
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -33,7 +36,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    
+       [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
