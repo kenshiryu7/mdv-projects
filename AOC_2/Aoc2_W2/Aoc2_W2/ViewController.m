@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SecondViewController.h"
 
 @implementation ViewController
 
@@ -74,6 +75,15 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+-(IBAction)onSecondView:(id)sender
+{
+    SecondViewController *secondView = [[SecondViewController alloc] initWithNibName:@"SecondView" bundle:nil];
+    if(secondView != nil)
+    {
+        [self presentModalViewController:secondView animated:TRUE];
+    }
 }
 
 @end

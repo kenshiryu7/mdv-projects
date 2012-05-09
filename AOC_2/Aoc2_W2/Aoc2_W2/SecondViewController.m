@@ -57,4 +57,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+//action to go back to first view//
+
+-(IBAction)onClose:(id)sender
+{
+    [self dismissModalViewControllerAnimated:TRUE];
+}
+
 @end
