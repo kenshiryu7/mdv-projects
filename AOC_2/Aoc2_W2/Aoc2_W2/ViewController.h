@@ -11,7 +11,7 @@
 @interface ViewController : UIViewController
 {
 
-//UILabel for background color
+//UILabel for background color text//
     
     IBOutlet UILabel *bgColorLabel;  //May have label change with color change//
     
@@ -19,6 +19,12 @@
     
     IBOutlet UITextField *display;
     IBOutlet UISwitch *onOffSwitch;
+    
+//variables for calculator//
+    
+    float result;
+    int currentOperation;
+    float currentNumber;
     
 //segment buttons for 3 colors
     
@@ -41,5 +47,12 @@
 //segment controls//
 
 -(IBAction)onColorChange:(id)sender;
+
+//actions for digits, equals, plus//
+
+-(IBAction)digitPressed:(id)sender;
+-(IBAction)operationPressed:(id)sender;
+-(IBAction)cancelInput:(id)sender;
+-(IBAction)clearDisplay:(id)sender;
 
 @end

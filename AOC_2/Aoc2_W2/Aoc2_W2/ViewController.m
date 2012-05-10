@@ -91,6 +91,13 @@
     }
 }
 
+//action for digits pressed and displaying in textfield//
+
+-(IBAction)digitPressed:(id)sender
+{
+    currentNumber = currentNumber *10 + (float)[sender tag];
+    display.text = [NSString stringWithFormat:@"%2f", currentNumber];
+}
 
 //Action for secondView display.
 
