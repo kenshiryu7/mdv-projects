@@ -19,50 +19,6 @@
 
 #pragma mark - View lifecycle
 
--(IBAction)onColorChange:(id)sender
-{
-    UISegmentedControl *segControl = (UISegmentedControl*)sender;
-    if(segControl != nil)
-    {
-        int selectedIndex = segControl.selectedSegmentIndex;
-        
-       /* switch (selectedIndex)
-        {
-                //trying case method to see if will work//                
-            case 0:
-                self.view.backgroundColor = [UIColor whiteColor];
-                break;
-                
-            case 1:
-                self.view.backgroundColor = [UIColor blueColor];
-                break;
-                
-            case 2:
-                self.view.backgroundColor = [UIColor greenColor];
-                break;
-                
-            default:
-                self.view.backgroundColor = [UIColor whiteColor];
-                break;
-        }*/
-        
-        //This wasnt working. Break point not working either. Is code wrong?//        
-        
-         if(selectedIndex == 0)
-         {
-         self.view.backgroundColor = [UIColor whiteColor];
-         }
-         else if( selectedIndex == 1)
-         {
-         self.view.backgroundColor = [UIColor blueColor];
-         }
-         else if( selectedIndex == 2)
-         {
-         self.view.backgroundColor = [UIColor greenColor];
-         }
-    }
-}
-
 - (void)viewDidLoad
 {
 //how screen should look when first opening. White BG and switch off.
@@ -118,27 +74,88 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
+////////////////////////////////   All Action calls here   //////////////////////////////////////////////////
+
 //switch on/off action
 
 -(IBAction)onSwitched:(id)sender
 {
-    
+    //using video example to see if i can put the pieces together//
+    UISwitch *thisSwitch = (UISwitch*)sender;
+    if(thisSwitch != nil)
+    {
+        int tag = thisSwitch.tag;
+        NSString *temp = [NSString stringWithFormat:@"testing %d", tag];
+        NSLog(@"%@",temp);
+    }
 }
-
-//Action for color segment button//
-
 
 
 //Action for secondView display.
 
 -(IBAction)onSecondView:(id)sender
 {
-    SecondViewController *secondView = [[SecondViewController alloc] initWithNibName:@"SecondView" bundle:nil];
-    if(secondView != nil)
+    if(onOffSwitch.on != false)
     {
-        [self presentModalViewController:secondView animated:TRUE];
+        SecondViewController *secondView = [[SecondViewController alloc] initWithNibName:@"SecondView" bundle:nil];
+        if(secondView != nil)
+        {
+            [self presentModalViewController:secondView animated:TRUE];
+        }
+    }    
+}
+
+//Action for color segment button//
+
+-(IBAction)onColorChange:(id)sender
+{
+    if(onOffSwitch.on != false)
+    {    
+        UISegmentedControl *segControl = (UISegmentedControl*)sender;
+        if(segControl != nil)
+        {
+            int selectedIndex = segControl.selectedSegmentIndex;
+        
+            /* switch (selectedIndex)
+             {
+             //trying case method to see if will work//                
+             case 0:
+             self.view.backgroundColor = [UIColor whiteColor];
+             break;
+         
+             case 1:
+             self.view.backgroundColor = [UIColor blueColor];
+             break;
+         
+             case 2:
+             self.view.backgroundColor = [UIColor greenColor];
+             break;
+         
+             default:
+             self.view.backgroundColor = [UIColor whiteColor];
+             break;
+             }*/
+        
+            //This wasnt working. Break point not working either. Is code wrong?//        
+        
+            if(selectedIndex == 0)
+            {
+                self.view.backgroundColor = [UIColor whiteColor];
+            }
+            else if( selectedIndex == 1)
+            {
+                self.view.backgroundColor = [UIColor blueColor];
+            }
+            else if( selectedIndex == 2)
+            {
+                self.view.backgroundColor = [UIColor greenColor];
+            }
+        }
+    
     }
 }
+
 
 
 
