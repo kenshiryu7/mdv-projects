@@ -127,7 +127,6 @@
 						<string key="NSFrame">{{20, 420}, {280, 30}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:273</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -575,14 +574,6 @@
 					<int key="connectionID">26</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">digit1</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="421035528"/>
-					</object>
-					<int key="connectionID">60</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">onSwitched:</string>
 						<reference key="source" ref="787459631"/>
@@ -900,7 +891,6 @@
 					<string key="className">ViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="cancelInput:">id</string>
 						<string key="clearDisplay:">id</string>
 						<string key="digitPressed:">id</string>
 						<string key="onColorChange:">id</string>
@@ -909,10 +899,6 @@
 						<string key="operationPressed:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="cancelInput:">
-							<string key="name">cancelInput:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="clearDisplay:">
 							<string key="name">clearDisplay:</string>
 							<string key="candidateClassName">id</string>
@@ -940,7 +926,6 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="bgColorLabel">UILabel</string>
-						<string key="digit1">UIButton</string>
 						<string key="display">UITextField</string>
 						<string key="onOffSwitch">UISwitch</string>
 						<string key="secondViewInfo">UIButton</string>
@@ -950,10 +935,6 @@
 						<object class="IBToOneOutletInfo" key="bgColorLabel">
 							<string key="name">bgColorLabel</string>
 							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="digit1">
-							<string key="name">digit1</string>
-							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="display">
 							<string key="name">display</string>
