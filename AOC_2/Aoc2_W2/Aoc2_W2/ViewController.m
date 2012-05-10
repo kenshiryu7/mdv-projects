@@ -23,7 +23,8 @@
 {
 //how screen should look when first opening. White BG and switch off.
     
-    display.text = @"0";
+    display.text = @"The calculator is off";
+    display.textAlignment = UITextAlignmentCenter;
     onOffSwitch.on = false;
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -88,13 +89,26 @@
         int tag = thisSwitch.tag;
         NSString *temp = [NSString stringWithFormat:@"testing %d", tag];
         NSLog(@"%@",temp);
-//if statement to turn bg back to white and display to 0 when clicked//        
-        if(tag == 0)
+//if statement to turn bg back to white and display to 0 when clicked//
+//Works with tag but tag only states if clicked. Using onoffswitch.on instead//
+        /*if(tag == 0)
         {
             self.view.backgroundColor = [UIColor whiteColor];
+            display.textAlignment = UITextAlignmentRight;
+            display.text = @"0";
+        }*/
+        if(onOffSwitch.on)
+        {
+            
+            display.textAlignment = UITextAlignmentRight;
             display.text = @"0";
         }
-
+        else
+        {
+            self.view.backgroundColor = [UIColor whiteColor];
+            display.textAlignment = UITextAlignmentCenter;
+            display.text =@"The calculator is off";
+        }
     }
 }
 
@@ -202,17 +216,21 @@
         
             if(selectedIndex == 0)
             {
+                bgColorLabel.textColor = [UIColor blackColor];
                 self.view.backgroundColor = [UIColor whiteColor];
+               
             }
             else if( selectedIndex == 1)
             {
                 //attempt at changing info dark to light when bg turns blue. Not working//
                 //secondViewInfo = [UIButton buttonWithType:UIButtonTypeInfoLight];
+                bgColorLabel.textColor = [UIColor whiteColor];
                 self.view.backgroundColor = [UIColor blueColor];
                 
             }
             else if( selectedIndex == 2)
             {
+                bgColorLabel.textColor = [UIColor grayColor];
                 self.view.backgroundColor = [UIColor greenColor];
             }
         }

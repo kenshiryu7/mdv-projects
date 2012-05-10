@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController
 {
-
+        
 //UILabel for background color text//
     
     IBOutlet UILabel *bgColorLabel;  //May have label change with color change//
@@ -52,7 +52,6 @@
 
 -(IBAction)digitPressed:(id)sender;
 -(IBAction)operationPressed:(id)sender;
--(IBAction)cancelInput:(id)sender;
 -(IBAction)clearDisplay:(id)sender;
 
 @end
