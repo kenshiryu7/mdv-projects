@@ -26,7 +26,7 @@
     {
         int selectedIndex = segControl.selectedSegmentIndex;
         
-        switch (selectedIndex)
+       /* switch (selectedIndex)
         {
                 //trying case method to see if will work//                
             case 0:
@@ -44,11 +44,11 @@
             default:
                 self.view.backgroundColor = [UIColor whiteColor];
                 break;
-        }
+        }*/
         
         //This wasnt working. Break point not working either. Is code wrong?//        
         
-        /* if(selectedIndex == 0)
+         if(selectedIndex == 0)
          {
          self.view.backgroundColor = [UIColor whiteColor];
          }
@@ -59,7 +59,7 @@
          else if( selectedIndex == 2)
          {
          self.view.backgroundColor = [UIColor greenColor];
-         }*/
+         }
     }
 }
 
