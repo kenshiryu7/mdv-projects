@@ -23,7 +23,7 @@
 {
 //how screen should look when first opening. White BG and switch off.
     
-    
+    display.text = @"0";
     onOffSwitch.on = false;
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -88,6 +88,13 @@
         int tag = thisSwitch.tag;
         NSString *temp = [NSString stringWithFormat:@"testing %d", tag];
         NSLog(@"%@",temp);
+//if statement to turn bg back to white and display to 0 when clicked//        
+        if(tag == 0)
+        {
+            self.view.backgroundColor = [UIColor whiteColor];
+            display.text = @"0";
+        }
+
     }
 }
 
@@ -95,8 +102,55 @@
 
 -(IBAction)digitPressed:(id)sender
 {
+    if(onOffSwitch.on != false)
+    {    
     currentNumber = currentNumber *10 + (float)[sender tag];
-    display.text = [NSString stringWithFormat:@"%2f", currentNumber];
+    display.text = [NSString stringWithFormat:@"%.0f", currentNumber];
+    }
+}
+
+//operation equals and add//
+
+-(IBAction)operationPressed:(id)sender
+{
+    if(onOffSwitch.on != false)
+    {    
+
+        if(currentOperation == 0) 
+        {
+            result = currentNumber;
+        }
+        else
+        {
+            switch (currentOperation)
+            {
+                case 1:
+                    result = result + currentNumber;
+                    break;
+                case 2:
+                    currentOperation = 0;
+                    break;
+            }
+        }
+        currentNumber = 0;
+        display.text = [NSString stringWithFormat:@"%.0f", result];
+        if([sender tag] == 0)
+            result = 0;
+        currentOperation = [sender tag];
+    }
+    
+}
+
+//action to clear text display and show 0//
+
+-(IBAction)clearDisplay:(id)sender
+{
+    if(onOffSwitch.on != false)
+    {    
+        currentNumber = 0;
+        display.text =@"0";
+        currentOperation = 0;
+    }
 }
 
 //Action for secondView display.
@@ -152,7 +206,10 @@
             }
             else if( selectedIndex == 1)
             {
+                //attempt at changing info dark to light when bg turns blue. Not working//
+                //secondViewInfo = [UIButton buttonWithType:UIButtonTypeInfoLight];
                 self.view.backgroundColor = [UIColor blueColor];
+                
             }
             else if( selectedIndex == 2)
             {
