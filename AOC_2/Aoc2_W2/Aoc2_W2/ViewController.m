@@ -19,11 +19,57 @@
 
 #pragma mark - View lifecycle
 
+-(IBAction)onColorChange:(id)sender
+{
+    UISegmentedControl *segControl = (UISegmentedControl*)sender;
+    if(segControl != nil)
+    {
+        int selectedIndex = segControl.selectedSegmentIndex;
+        
+        switch (selectedIndex)
+        {
+                //trying case method to see if will work//                
+            case 0:
+                self.view.backgroundColor = [UIColor whiteColor];
+                break;
+                
+            case 1:
+                self.view.backgroundColor = [UIColor blueColor];
+                break;
+                
+            case 2:
+                self.view.backgroundColor = [UIColor greenColor];
+                break;
+                
+            default:
+                self.view.backgroundColor = [UIColor whiteColor];
+                break;
+        }
+        
+        //This wasnt working. Break point not working either. Is code wrong?//        
+        
+        /* if(selectedIndex == 0)
+         {
+         self.view.backgroundColor = [UIColor whiteColor];
+         }
+         else if( selectedIndex == 1)
+         {
+         self.view.backgroundColor = [UIColor blueColor];
+         }
+         else if( selectedIndex == 2)
+         {
+         self.view.backgroundColor = [UIColor greenColor];
+         }*/
+    }
+}
+
 - (void)viewDidLoad
 {
-
+//how screen should look when first opening. White BG and switch off.
+    
     
     onOffSwitch.on = false;
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -44,6 +90,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    onOffSwitch.on = false;
     //follow along from video//
     
      //int selectedIndex = segmentControl.selectedSegmentIndex;
@@ -70,28 +118,15 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+//switch on/off action
+
+-(IBAction)onSwitched:(id)sender
+{
+    
+}
+
 //Action for color segment button//
 
--(IBAction)onColorChange:(id)sender
-{
-    UISegmentedControl *segControl = (UISegmentedControl*)sender;
-    if(segControl != nil)
-    {
-        int selectedIndex = segControl.selectedSegmentIndex;
-        if(selectedIndex == 0)
-        {
-            self.view.backgroundColor = [UIColor whiteColor];
-        }
-        else if( selectedIndex == 1)
-        {
-            self.view.backgroundColor = [UIColor blueColor];
-        }
-        else if( selectedIndex == 2)
-        {
-            self.view.backgroundColor = [UIColor greenColor];
-        }
-    }
-}
 
 
 //Action for secondView display.
@@ -104,5 +139,7 @@
         [self presentModalViewController:secondView animated:TRUE];
     }
 }
+
+
 
 @end
