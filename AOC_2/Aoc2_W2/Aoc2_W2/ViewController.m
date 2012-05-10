@@ -29,15 +29,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
--(IBAction)onColorChange:(id)sender
-{
-    UISegmentedControl *segControl = (UISegmentedControl*)sender;
-    if(segControl != nil)
-    {
-        int selectedIndex = segControl.selectedSegmentIndex;
-    }
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -55,7 +46,9 @@
 {
     //follow along from video//
     
-     int selectedIndex = segmentControl.selectedSegmentIndex;
+     //int selectedIndex = segmentControl.selectedSegmentIndex;
+   
+    self.view.backgroundColor = [UIColor whiteColor];
     
     
     [super viewDidAppear:animated];
@@ -76,6 +69,32 @@
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+//Action for color segment button//
+
+-(IBAction)onColorChange:(id)sender
+{
+    UISegmentedControl *segControl = (UISegmentedControl*)sender;
+    if(segControl != nil)
+    {
+        int selectedIndex = segControl.selectedSegmentIndex;
+        if(selectedIndex == 0)
+        {
+            self.view.backgroundColor = [UIColor whiteColor];
+        }
+        else if( selectedIndex == 1)
+        {
+            self.view.backgroundColor = [UIColor blueColor];
+        }
+        else if( selectedIndex == 2)
+        {
+            self.view.backgroundColor = [UIColor greenColor];
+        }
+    }
+}
+
+
+//Action for secondView display.
 
 -(IBAction)onSecondView:(id)sender
 {
