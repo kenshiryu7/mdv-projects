@@ -118,6 +118,8 @@
 {
     if(onOffSwitch.on != false)
     {    
+        //adds a digit to a 10s place if pressed multiple times//
+        
     currentNumber = currentNumber *10 + (float)[sender tag];
     display.text = [NSString stringWithFormat:@"%.0f", currentNumber];
     }
