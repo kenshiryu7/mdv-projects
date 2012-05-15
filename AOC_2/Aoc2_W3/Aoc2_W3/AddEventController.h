@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface AddEventController : UIViewController
+{
+    IBOutlet UIButton *saveButt;
+    IBOutlet UIButton *closeKeys;
+    IBOutlet UITextField *textEvent;
+    IBOutlet UIDatePicker *datePicker;
+}
+
+-(IBAction)onSave:(id)sender;
+-(IBAction)dismissKeys:(id)sender;
 
 @end
