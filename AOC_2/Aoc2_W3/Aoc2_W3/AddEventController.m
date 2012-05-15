@@ -19,6 +19,13 @@
     return self;
 }
 
+//resignFirstResonder tip from AOC 1. Works at this time.
+
+-(IBAction)dismissKeys:(id)sender
+{
+    [textEvent resignFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
