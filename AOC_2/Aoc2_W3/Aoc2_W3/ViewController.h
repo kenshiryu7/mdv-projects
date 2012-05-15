@@ -17,4 +17,8 @@
     IBOutlet UIButton *addEvent;
 }
 
+//Action for Add Event button//
+
+-(IBAction)onAddEvent:(id)sender;
+
 @end

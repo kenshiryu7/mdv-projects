@@ -57,5 +57,17 @@
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Action to lead to second view
+
+-(IBAction)onAddEvent:(id)sender
+{
+    AddEventController *showAddEvent = [[AddEventController alloc] initWithNibName:@"AddEvent" bundle:nil];
+    if(showAddEvent != nil)
+    {
+        [self presentModalViewController:showAddEvent animated:TRUE];
+    }
+}
 
 @end
