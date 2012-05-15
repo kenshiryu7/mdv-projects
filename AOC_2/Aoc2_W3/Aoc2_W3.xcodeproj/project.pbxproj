@@ -15,6 +15,8 @@
 		C4A4B6091561CDD60039EBCC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A4B6081561CDD60039EBCC /* AppDelegate.m */; };
 		C4A4B60C1561CDD60039EBCC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A4B60B1561CDD60039EBCC /* ViewController.m */; };
 		C4A4B60F1561CDD60039EBCC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4A4B60D1561CDD60039EBCC /* ViewController.xib */; };
+		C4A4B6161561D1EF0039EBCC /* AddEvent.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4A4B6151561D1EF0039EBCC /* AddEvent.xib */; };
+		C4A4B6191561D2100039EBCC /* AddEventController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A4B6181561D2100039EBCC /* AddEventController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		C4A4B60A1561CDD60039EBCC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C4A4B60B1561CDD60039EBCC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C4A4B60E1561CDD60039EBCC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		C4A4B6151561D1EF0039EBCC /* AddEvent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEvent.xib; sourceTree = "<group>"; };
+		C4A4B6171561D2100039EBCC /* AddEventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventController.h; sourceTree = "<group>"; };
+		C4A4B6181561D2100039EBCC /* AddEventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,9 @@
 				C4A4B60B1561CDD60039EBCC /* ViewController.m */,
 				C4A4B60D1561CDD60039EBCC /* ViewController.xib */,
 				C4A4B5FF1561CDD60039EBCC /* Supporting Files */,
+				C4A4B6151561D1EF0039EBCC /* AddEvent.xib */,
+				C4A4B6171561D2100039EBCC /* AddEventController.h */,
+				C4A4B6181561D2100039EBCC /* AddEventController.m */,
 			);
 			path = Aoc2_W3;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 			files = (
 				C4A4B6031561CDD60039EBCC /* InfoPlist.strings in Resources */,
 				C4A4B60F1561CDD60039EBCC /* ViewController.xib in Resources */,
+				C4A4B6161561D1EF0039EBCC /* AddEvent.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +173,7 @@
 				C4A4B6051561CDD60039EBCC /* main.m in Sources */,
 				C4A4B6091561CDD60039EBCC /* AppDelegate.m in Sources */,
 				C4A4B60C1561CDD60039EBCC /* ViewController.m in Sources */,
+				C4A4B6191561D2100039EBCC /* AddEventController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

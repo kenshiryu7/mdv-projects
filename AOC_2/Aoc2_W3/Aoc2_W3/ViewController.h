@@ -10,4 +10,11 @@
 
 @interface ViewController : UIViewController
 
+//UI Elements
+{
+    IBOutlet UILabel *dateTitle;
+    IBOutlet UITextView *eventList;
+    IBOutlet UIButton *addEvent;
+}
+
 @end
