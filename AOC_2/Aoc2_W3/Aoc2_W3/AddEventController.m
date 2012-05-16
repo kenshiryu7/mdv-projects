@@ -32,6 +32,23 @@
 {
     if((datePicker != nil) && (textEvent != nil))
     {
+        //code for datePicker to have minimum of "today's" date//
+        
+        //line for min date as current date//
+        datePicker.minimumDate = [NSDate date];
+        NSDate *selectedDate = datePicker.date;
+       
+        //format date. Similar as P4 AOC1//
+        NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
+        if(dateForm != nil)
+        {
+            [dateForm setDateFormat:@"MMMM dd, yyyy  hh:mm:ss a "];
+             NSString *showDateString = [dateForm stringFromDate:selectedDate];
+            NSLog(@"%@",showDateString);
+        }
+        
+        
+        
         
     }
     [self dismissModalViewControllerAnimated:true];
