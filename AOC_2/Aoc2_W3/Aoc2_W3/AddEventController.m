@@ -44,7 +44,7 @@
         {
             [dateForm setDateFormat:@"MMMM dd, yyyy  hh:mm:ss a "];
              NSString *showDateString = [dateForm stringFromDate:selectedDate];
-            NSLog(@"%@",showDateString);
+           // NSLog(@"%@",showDateString);
         }
         
         
