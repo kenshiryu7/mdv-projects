@@ -26,6 +26,17 @@
     [textEvent resignFirstResponder];
 }
 
+//Action for saving information into first view. Save button
+
+-(IBAction)onSave:(id)sender
+{
+    if((datePicker != nil) && (textEvent != nil))
+    {
+        
+    }
+    [self dismissModalViewControllerAnimated:true];
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
