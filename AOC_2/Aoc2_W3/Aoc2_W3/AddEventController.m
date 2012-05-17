@@ -10,6 +10,8 @@
 
 @implementation AddEventController
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,6 +47,11 @@
             [dateForm setDateFormat:@"MMMM dd, yyyy  hh:mm:ss a "];
              NSString *showDateString = [dateForm stringFromDate:selectedDate];
            // NSLog(@"%@",showDateString);
+            
+            NSString *newLabel = [[NSString alloc] initWithString:@"New Event: "];
+            NSString *textInput = [[NSString alloc] initWithString:textEvent.text];
+            NSString *dateInfo = [dateForm stringFromDate:selectedDate];
+            
         }
         
         

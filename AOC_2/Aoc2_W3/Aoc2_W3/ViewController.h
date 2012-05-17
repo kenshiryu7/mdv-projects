@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddEventController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AddEventsDelegate>
 
 //UI Elements
 {

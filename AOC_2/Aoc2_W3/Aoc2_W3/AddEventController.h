@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+//following video so far//
+
+@protocol AddEventsDelegate <NSObject>
+
+-(void)didClose:(NSString*)eventSavedString;
+
+@end
+
 @interface AddEventController : UIViewController
 {
+    id<AddEventsDelegate>delegate;
+    
     IBOutlet UIButton *saveButt;
     IBOutlet UIButton *closeKeys;
     IBOutlet UITextField *textEvent;
@@ -19,4 +29,7 @@
 -(IBAction)onSave:(id)sender;
 -(IBAction)dismissKeys:(id)sender;
 
+@property (strong) id<AddEventsDelegate> delegate;
+
 @end
+

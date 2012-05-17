@@ -66,8 +66,16 @@
     AddEventController *showAddEvent = [[AddEventController alloc] initWithNibName:@"AddEvent" bundle:nil];
     if(showAddEvent != nil)
     {
+        showAddEvent.delegate = self;
         [self presentModalViewController:showAddEvent animated:TRUE];
     }
+}
+
+//Action example from video. Lets see if this works.
+
+-(void)didClose:(NSString *)eventSavedString
+{
+    
 }
 
 @end
