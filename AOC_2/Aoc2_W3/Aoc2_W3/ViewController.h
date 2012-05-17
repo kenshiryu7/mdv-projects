@@ -14,6 +14,7 @@
 //UI Elements
 {
     IBOutlet UILabel *dateTitle;
+    IBOutlet UILabel *pleaseAdd;
     IBOutlet UITextView *eventList;
     IBOutlet UIButton *addEvent;
     

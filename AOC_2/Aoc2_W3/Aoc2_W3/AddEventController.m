@@ -53,14 +53,17 @@
             NSString *newLabel = [[NSString alloc] initWithString:@"New Event: "];
             NSString *textInput = [[NSString alloc] initWithString:textEvent.text];
             NSString *dateInfo = [dateForm stringFromDate:selectedDate];
-            NSString *eventSavedString = [[NSString alloc] initWithFormat:@"%@%@\n%@\n",newLabel, textInput, dateInfo];
+            NSString *eventSavedString = [[NSString alloc] initWithFormat:@"\n%@%@\n%@\n\n",newLabel, textInput, dateInfo];
             [dateForm release];
             
             [delegate didClose:eventSavedString];
+            
+        [self dismissModalViewControllerAnimated:true];
+            
         }
         
     }
-    [self dismissModalViewControllerAnimated:true];
+    //[self dismissModalViewControllerAnimated:true];
 }
 
 - (void)didReceiveMemoryWarning

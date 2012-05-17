@@ -75,15 +75,16 @@
 
 -(void)didClose:(NSString *)eventSavedString
 {
-    if([eventList.text isEqualToString:@"Please add an event"])
+    if(eventList.text == savedUserInfo)
     {
-        eventList.text = @"";
+        
         savedUserInfo =[NSMutableString stringWithString:eventList.text];
         [savedUserInfo appendString:eventSavedString];
         eventList.text = savedUserInfo;
     }
     else
     {
+        pleaseAdd.text = @"";
         savedUserInfo =[NSMutableString stringWithString:eventList.text];
         [savedUserInfo appendString:eventSavedString];
         eventList.text = savedUserInfo;
