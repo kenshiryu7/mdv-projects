@@ -16,6 +16,10 @@
     IBOutlet UILabel *dateTitle;
     IBOutlet UITextView *eventList;
     IBOutlet UIButton *addEvent;
+    
+//Must use nsmutableString due to changing/editable info//
+    
+    NSMutableString *savedUserInfo;
 }
 
 //Action for Add Event button//

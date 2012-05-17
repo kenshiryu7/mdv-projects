@@ -45,17 +45,19 @@
         if(dateForm != nil)
         {
             [dateForm setDateFormat:@"MMMM dd, yyyy  hh:mm:ss a "];
-             NSString *showDateString = [dateForm stringFromDate:selectedDate];
+            
+        //made a second date string by accident. Just leaving this in to show what I logged out in previous commit//
+            // NSString *showDateString = [dateForm stringFromDate:selectedDate];
            // NSLog(@"%@",showDateString);
             
             NSString *newLabel = [[NSString alloc] initWithString:@"New Event: "];
             NSString *textInput = [[NSString alloc] initWithString:textEvent.text];
             NSString *dateInfo = [dateForm stringFromDate:selectedDate];
+            NSString *eventSavedString = [[NSString alloc] initWithFormat:@"%@%@\n%@\n",newLabel, textInput, dateInfo];
+            [dateForm release];
             
+            [delegate didClose:eventSavedString];
         }
-        
-        
-        
         
     }
     [self dismissModalViewControllerAnimated:true];

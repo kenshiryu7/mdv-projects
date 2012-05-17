@@ -71,11 +71,23 @@
     }
 }
 
-//Action example from video. Lets see if this works.
+//Action example from video. Lets see if this works. Should grab data from Save button action in second view
 
 -(void)didClose:(NSString *)eventSavedString
 {
-    
+    if([eventList.text isEqualToString:@"Please add an event"])
+    {
+        eventList.text = @"";
+        savedUserInfo =[NSMutableString stringWithString:eventList.text];
+        [savedUserInfo appendString:eventSavedString];
+        eventList.text = savedUserInfo;
+    }
+    else
+    {
+        savedUserInfo =[NSMutableString stringWithString:eventList.text];
+        [savedUserInfo appendString:eventSavedString];
+        eventList.text = savedUserInfo;
+    }
 }
 
 @end
