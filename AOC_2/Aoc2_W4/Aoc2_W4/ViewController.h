@@ -25,7 +25,9 @@
 
 //Action for Add Event button//
 
--(IBAction)onAddEvent:(id)sender;
+//-(IBAction)onAddEvent:(id)sender;    used for P3 add event button
+
+-(IBAction)onSaveButton:(id)sender;
 
 
 @end
