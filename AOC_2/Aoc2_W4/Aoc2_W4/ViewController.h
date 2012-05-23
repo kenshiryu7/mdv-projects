@@ -24,10 +24,15 @@
     
     //New addition for P4//  //Following video//
     
+    IBOutlet UIButton *saveButton;
     IBOutlet UILabel *swipeRightEvent;
     
     UISwipeGestureRecognizer *rightSwipe;
     UISwipeGestureRecognizer *leftSwipe;
+    
+    //just for fun//
+    
+    IBOutlet UIButton *clear;
 }
 
 //Action for Add Event button//
@@ -35,6 +40,7 @@
 //-(IBAction)onAddEvent:(id)sender;    used for P3 add event button
 
 -(IBAction)onSaveButton:(id)sender;
+-(IBAction)onClear:(id)sender;
 
 
 @end

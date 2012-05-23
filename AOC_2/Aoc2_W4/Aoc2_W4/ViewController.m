@@ -128,4 +128,10 @@
 {
     
 }
+
+-(IBAction)onClear:(id)sender
+{
+    eventList.text =@"";
+}
+
 @end
