@@ -23,6 +23,7 @@
 }
 
 
+
 //resignFirstResonder tip from AOC 1. Works at this time.
 
 -(IBAction)dismissKeys:(id)sender
@@ -31,7 +32,7 @@
 }
 
 //Action for saving information into first view. Save button
-
+/*
 -(IBAction)onSave:(id)sender
 {
     if((datePicker != nil) && (textEvent != nil))
@@ -72,7 +73,48 @@
     }
     //[self dismissModalViewControllerAnimated:true];
 }
+*/
 
+-(void)onSwipe:(UIGestureRecognizer*)recognizer
+{
+    if((datePicker != nil) && (textEvent != nil))
+    {
+        //code for datePicker to have minimum of "today's" date//
+        
+        //line for min date as current date//
+        //datePicker.minimumDate = [NSDate date];
+        
+        //NSDate *selectedDate = datePicker.date;
+        
+        NSDate *selectedDate = [NSDate date];
+        datePicker.minimumDate = selectedDate;
+        
+        
+        //format date. Similar as P4 AOC1//
+        NSDateFormatter *dateForm = [[NSDateFormatter alloc] init];
+        if(dateForm != nil)
+        {
+            [dateForm setDateFormat:@"MMMM dd, yyyy  hh:mm:ss a "];
+            
+            //made a second date string by accident. Just leaving this in to show what I logged out in previous commit//
+            // NSString *showDateString = [dateForm stringFromDate:selectedDate];
+            // NSLog(@"%@",showDateString);
+            
+            NSString *newLabel = [[NSString alloc] initWithString:@"New Event: "];
+            NSString *textInput = [[NSString alloc] initWithString:textEvent.text];
+            NSString *dateInfo = [dateForm stringFromDate:selectedDate];
+            NSString *eventSavedString = [[NSString alloc] initWithFormat:@"\n%@%@\n%@\n\n",newLabel, textInput, dateInfo];
+            [dateForm release];
+            
+            [delegate didClose:eventSavedString];
+            
+            [self dismissModalViewControllerAnimated:true];
+            
+        }
+        
+    }
+    //[self dismissModalViewControllerAnimated:true];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -105,6 +147,21 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    //Following video example//    
+    
+        
+    //only Left gesture needed. Following video to show that both can be done on same action.//
+    
+     leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+     leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+     [swipeLeftLabel addGestureRecognizer:leftSwipe];
+     
+    
+    [super viewDidAppear:animated];
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

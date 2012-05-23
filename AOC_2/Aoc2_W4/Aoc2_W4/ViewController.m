@@ -40,6 +40,19 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+//Following video example//    
+    
+    rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    [swipeRightEvent addGestureRecognizer:rightSwipe];
+    
+    //only Right gesture needed. Following video to show that both can be done on same action.//
+    
+    /*leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [swipeRightEvent addGestureRecognizer:leftSwipe];
+    */
+    
     [super viewDidAppear:animated];
 }
 
@@ -61,8 +74,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Action to lead to second view
+//Action to lead to second view....Replaced with Swipe action to do same thing.
 
+/*
 -(IBAction)onAddEvent:(id)sender
 {
     AddEventController *showAddEvent = [[AddEventController alloc] initWithNibName:@"AddEvent" bundle:nil];
@@ -70,6 +84,23 @@
     {
         showAddEvent.delegate = self;
         [self presentModalViewController:showAddEvent animated:TRUE];
+    }
+}
+*/
+
+
+//Action for swipe Right //
+
+-(void)onSwipe:(UISwipeGestureRecognizer*)recognizer
+{
+    if(recognizer.direction == UISwipeGestureRecognizerDirectionRight)
+    {
+        AddEventController *showAddEvent = [[AddEventController alloc] initWithNibName:@"AddEvent" bundle:nil];
+        if(showAddEvent != nil)
+        {
+            showAddEvent.delegate = self;
+            [self presentModalViewController:showAddEvent animated:TRUE];
+        } 
     }
 }
 

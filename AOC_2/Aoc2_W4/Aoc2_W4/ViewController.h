@@ -21,6 +21,13 @@
     //Must use nsmutableString due to changing/editable info//
     
     NSMutableString *savedUserInfo;
+    
+    //New addition for P4//  //Following video//
+    
+    IBOutlet UILabel *swipeRightEvent;
+    
+    UISwipeGestureRecognizer *rightSwipe;
+    UISwipeGestureRecognizer *leftSwipe;
 }
 
 //Action for Add Event button//

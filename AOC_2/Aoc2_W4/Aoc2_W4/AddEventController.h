@@ -24,6 +24,11 @@
     IBOutlet UIButton *closeKeys;
     IBOutlet UITextField *textEvent;
     IBOutlet UIDatePicker *datePicker;
+    
+    //New for P4//
+    
+    IBOutlet UILabel *swipeLeftLabel;
+    UISwipeGestureRecognizer *leftSwipe;
 }
 
 -(IBAction)onSave:(id)sender;
