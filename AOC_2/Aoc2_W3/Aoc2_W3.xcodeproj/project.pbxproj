@@ -283,6 +283,7 @@
 				C4A4B6141561CDD60039EBCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
