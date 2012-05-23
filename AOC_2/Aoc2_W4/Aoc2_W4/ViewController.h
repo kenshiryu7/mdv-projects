@@ -16,7 +16,7 @@
     IBOutlet UILabel *dateTitle;
     IBOutlet UILabel *pleaseAdd;
     IBOutlet UITextView *eventList;
-    IBOutlet UIButton *addEvent;
+    IBOutlet UIButton *addEvent;    //will use swipe control to add event//
     
     //Must use nsmutableString due to changing/editable info//
     
