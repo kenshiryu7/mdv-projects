@@ -68,7 +68,9 @@
     rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
     rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeRightEvent addGestureRecognizer:rightSwipe];
-    
+   
+
+
     //only Right gesture needed. Following video to show that both can be done on same action.//
     
     /*leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
