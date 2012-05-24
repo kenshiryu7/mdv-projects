@@ -82,12 +82,12 @@
         //code for datePicker to have minimum of "today's" date//
         
         //line for min date as current date//
-        //datePicker.minimumDate = [NSDate date];
+        datePicker.minimumDate = [NSDate date];
         
-        //NSDate *selectedDate = datePicker.date;
+        NSDate *selectedDate = datePicker.date;
         
-        NSDate *selectedDate = [NSDate date];
-        datePicker.minimumDate = selectedDate;
+       // NSDate *selectedDate = [NSDate date];
+        //datePicker.minimumDate = selectedDate;
         
         
         //format date. Similar as P4 AOC1//
@@ -114,6 +114,7 @@
         
     }
     //[self dismissModalViewControllerAnimated:true];
+
 }
 
 - (void)didReceiveMemoryWarning
