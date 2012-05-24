@@ -77,7 +77,8 @@
 
 -(void)onSwipe:(UIGestureRecognizer*)recognizer
 {
-    if((datePicker != nil) && (textEvent != nil))
+   // if((datePicker != nil) && (textEvent != nil))
+    if(textEvent.text.length > 0)
     {
         //code for datePicker to have minimum of "today's" date//
         
@@ -113,6 +114,16 @@
         }
         
     }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait!" message:@"Please add an event name" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        
+        if(alert != nil)
+        {
+            [alert show];
+        }
+        
+    }
     //[self dismissModalViewControllerAnimated:true];
 
 }
@@ -144,12 +155,17 @@
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
+        [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    NSDate *selectedDate = [NSDate date];
+    datePicker.minimumDate = selectedDate;
+    
+
     //Following video example//    
     
         
