@@ -40,7 +40,6 @@
 //-(IBAction)onAddEvent:(id)sender;    used for P3 add event button
 
 -(IBAction)onSaveButton:(id)sender;
--(IBAction)onClear:(id)sender;
-
+-(IBAction)clear:(id)sender;
 
 @end

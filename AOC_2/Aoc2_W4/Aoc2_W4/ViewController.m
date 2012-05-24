@@ -22,6 +22,29 @@
 
 - (void)viewDidLoad
 {
+    
+    if(eventList.text ==@"")
+    {
+        pleaseAdd.text = @"Please add an event";
+    }
+    else
+    {
+        pleaseAdd.text = @"";
+    }
+    
+
+    //Following video example//    
+    
+    //loading saved info back in as app opens. Video example
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(defaults != nil)
+    {
+        NSString *loadSaved = [defaults objectForKey:@"savedEvents"];
+        
+        eventList.text = loadSaved;
+    }
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -40,7 +63,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-//Following video example//    
+
     
     rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
     rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
@@ -126,10 +149,20 @@
 
 -(IBAction)onSaveButton:(id)sender
 {
+//following video example//
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(defaults != nil)
+    {
+        NSString *collectedData = eventList.text;
+        [defaults setObject:collectedData forKey:@"savedEvents"];
+        
+      //function that saves data//  
+        [defaults synchronize];
+    }
 }
 
--(IBAction)onClear:(id)sender
+-(IBAction)clear:(id)sender
 {
     eventList.text =@"";
 }
