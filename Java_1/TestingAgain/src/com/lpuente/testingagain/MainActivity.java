@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
 								//"Nickel: " + numN + "\r\n" +
 								//"Penny" + numP + "\r\n");
 			
-			//getting away with murder with this useless boolean variable. Hey it works!	
+			//useless boolean variable. Hey it works!	
 			   badbool = (entry > 0);
 				
 			//cheesy condition to log out. Must learn how to do conditions for strings/ints if not or if.	
