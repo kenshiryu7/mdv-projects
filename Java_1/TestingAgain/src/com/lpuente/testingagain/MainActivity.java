@@ -34,14 +34,26 @@ public class MainActivity extends Activity {
       //Edit text class/instantiate  
         EditText edText = new EditText(this);
         edText.setHint("User type here");	//adds text within text line /dissapears as user types
-        linlay.addView(edText);
+        //linlay.addView(edText); //adding to new layout
       
       //edit text button
         Button  ebutt = new Button(this);
         ebutt.setHint("Button 1");		//set text within button. Instruction
-        linlay.addView(ebutt); //adding button to the Layout
+        //linlay.addView(ebutt); //adding button to the Layout..commented out to add to new layout
+      
+      //making layout for positioning of objects
+        LinearLayout form = new LinearLayout(this);
+        form.setOrientation(LinearLayout.HORIZONTAL);  //setting layout horizontal
+        form.setLayoutParams(linParam);
+       
+      //Adding edit text and edit button to the new layout  
+        form.addView(edText); // edit text
+        form.addView(ebutt);  // edit button
         
-      //adding layout to the content view
+      //Adding the new layout to the main
+        linlay.addView(form);
+        
+      //adding Main layout to the content view
         setContentView(linlay);
     }
 
