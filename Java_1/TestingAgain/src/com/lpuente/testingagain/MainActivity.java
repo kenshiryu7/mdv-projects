@@ -59,6 +59,7 @@ public class MainActivity extends Activity {
 			
 			public void onClick(View v) 
 			{
+			//array of drugs/strings	
 				String[] drugs = {"Valium","Metaclopramide","Furisamide","Phenobarbital","Oxytetracylcine"};
 				
 			//looping through array	
@@ -100,7 +101,12 @@ public class MainActivity extends Activity {
 								//"Dime: " + numD + "\r\n" +
 								//"Nickel: " + numN + "\r\n" +
 								//"Penny" + numP + "\r\n");
-				if(entry > 0)
+			
+			//getting away with murder with this useless boolean variable. Hey it works!	
+				boolean badbool = (entry > 0);
+				
+			//cheesy condition to log out. Must learn how to do conditions for strings/ints if not or if.	
+				if(badbool)
 				{
 					
 					Log.i("GOOD", "IT CONVERTS SOMETHING");
