@@ -26,7 +26,9 @@ public class MainActivity extends Activity {
         
       //creating text view / instantiating
         TextView tview = new TextView(this);
-        tview.setText("Just an example text view.");
+        //tview.setText("Just an example text view.");
+        //keeping above as reference. Calling strings from value files / strings and integers. getString converts id to get the string value
+          tview.setText(getString(R.string.quarter)+", "+getString(R.string.dime)+", "+getString(R.string.nickel)+", "+getString(R.string.penny));
         
       //adding text view to the layout
         linlay.addView(tview);
