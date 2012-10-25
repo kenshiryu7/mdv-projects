@@ -10,39 +10,39 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	
-	LinearLayout ll;
-	LinearLayout.LayoutParams lp;
+//making the linearLayout obect and linearlayout params
+	LinearLayout linlay;
+	LinearLayout.LayoutParams linParam;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
       //Creating a layout, instantiating and applying width and height params.
-        ll = new LinearLayout(this);
-        ll.setOrientation(LinearLayout.VERTICAL);
-        lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        ll.setLayoutParams(lp);
+        linlay = new LinearLayout(this);
+        linlay.setOrientation(LinearLayout.VERTICAL);
+        linParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        linlay.setLayoutParams(linParam);
         
       //creating text view / instantiating
-        TextView tv = new TextView(this);
-        tv.setText("Just an example text view.");
+        TextView tview = new TextView(this);
+        tview.setText("Just an example text view.");
         
       //adding text view to the layout
-        ll.addView(tv);
+        linlay.addView(tview);
         
       //Edit text class/instantiate  
-        EditText et = new EditText(this);
-        et.setHint("User type here");	//adds text within text line /dissapears as user types
-        ll.addView(et);
+        EditText edText = new EditText(this);
+        edText.setHint("User type here");	//adds text within text line /dissapears as user types
+        linlay.addView(edText);
       
       //edit text button
         Button  ebutt = new Button(this);
         ebutt.setHint("Button 1");		//set text within button. Instruction
-        ll.addView(ebutt); //adding button to the Layout
+        linlay.addView(ebutt); //adding button to the Layout
         
       //adding layout to the content view
-        setContentView(ll);
+        setContentView(linlay);
     }
 
     @Override
