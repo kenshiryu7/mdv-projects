@@ -2,6 +2,7 @@ package com.lpuente.testingagain;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class MainActivity extends Activity {
 	LinearLayout.LayoutParams linParam;
 	EditText edText;
 	TextView result;
+	TextView list;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,30 @@ public class MainActivity extends Activity {
         ebutt.setHint("to Kilos");		//set text within button. Instruction
         //linlay.addView(ebutt); //adding button to the Layout..commented out to add to new layout
         
-        //add button event listener
+       //Drug list button 
+        Button drugButt = new Button(this);
+        drugButt.setHint("Drug List");
+        
+       //add drug button event listener
+        drugButt.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) 
+			{
+				String[] drugs = {"Valium","Metaclopramide","Furisamide","Phenobarbital","Oxytetracylcine"};
+				
+			//looping through array	
+				for (int i = 0; i < drugs.length; i++)
+				{
+					
+				//must be append not setText to show full array	
+					list.append((drugs[i] +"\n"));
+				}
+				
+			}
+		});
+        
+        
+        //add ebutt button event listener
         ebutt.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) 
@@ -75,27 +100,36 @@ public class MainActivity extends Activity {
 								//"Dime: " + numD + "\r\n" +
 								//"Nickel: " + numN + "\r\n" +
 								//"Penny" + numP + "\r\n");
-				
-				result.setText("Kilos: " + numKilo);
+				if(entry > 0)
+				{
+					
+					Log.i("GOOD", "IT CONVERTS SOMETHING");
+				} else {
+					Log.i("BAD but whatever", "WONT CONVERT 0");
+				}
+				result.setText("Kilos: " + numKilo + "\n");
 			}
 		});
       
       //making layout for positioning of objects
-        LinearLayout form = new LinearLayout(this);
-        form.setOrientation(LinearLayout.HORIZONTAL);  //setting layout horizontal
+        LinearLayout llay2 = new LinearLayout(this);
+        llay2.setOrientation(LinearLayout.HORIZONTAL);  //setting layout horizontal
         linParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT); //wrap content sets height as needed.
-        form.setLayoutParams(linParam);
+        llay2.setLayoutParams(linParam);
        
       //Adding edit text and edit button to the new layout  
-        form.addView(edText); // edit text
-        form.addView(ebutt);  // edit button
+        llay2.addView(edText); // edit text
+        llay2.addView(ebutt);  // edit button
+        llay2.addView(drugButt); //drug list button
         
       //Adding the new layout to the main
-        linlay.addView(form);
+        linlay.addView(llay2);
         
         result = new TextView(this);
+        list = new TextView(this);
         
         linlay.addView(result);
+        linlay.addView(list);
         
       //adding Main layout to the content view
         setContentView(linlay);
