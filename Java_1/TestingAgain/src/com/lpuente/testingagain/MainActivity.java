@@ -2,7 +2,7 @@ package com.lpuente.testingagain;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.util.Log;
+//import android.util.Log; //not used. Using system..out.println();
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -12,12 +12,15 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-//making the linearLayout obect and linearlayout params ...defining classes
+//making the linearLayout object and linearlayout params ...defining classes
 	LinearLayout linlay;
 	LinearLayout.LayoutParams linParam;
 	EditText edText;
 	TextView result;
 	TextView list;
+	boolean badbool;
+	String good = "It works!";
+	String bad = "It doesn't work";
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,7 @@ public class MainActivity extends Activity {
         
       //Edit text class/instantiate  
         edText = new EditText(this);
-        edText.setHint("User type here");	//adds text within text line /dissapears as user types
+        edText.setHint("User a number");	//adds text within text line /dissapears as user types
         //linlay.addView(edText); //adding to new layout
       
       //edit text button
@@ -62,14 +65,19 @@ public class MainActivity extends Activity {
 			//array of drugs/strings	
 				String[] drugs = {"Valium","Metaclopramide","Furisamide","Phenobarbital","Oxytetracylcine"};
 				
-			//looping through array	
+			//looping through array	with function
+				loopArray(drugs);
+				
+			}
+
+		//function to loop array	
+			private void loopArray(String[] drugs) {
 				for (int i = 0; i < drugs.length; i++)
 				{
 					
 				//must be append not setText to show full array	
 					list.append((drugs[i] +"\n"));
 				}
-				
 			}
 		});
         
@@ -95,7 +103,7 @@ public class MainActivity extends Activity {
 				//int numN =(100/nickel)*entry;
 				//int numP =(100/penny)*entry;
 				
-				int numKilo =pound * entry ;
+				int numKilo = pound * entry ;
 				
 				//result.setText("Quarter: " + numQ + "\r\n" + 
 								//"Dime: " + numD + "\r\n" +
@@ -103,19 +111,27 @@ public class MainActivity extends Activity {
 								//"Penny" + numP + "\r\n");
 			
 			//getting away with murder with this useless boolean variable. Hey it works!	
-				boolean badbool = (entry > 0);
+			   badbool = (entry > 0);
 				
 			//cheesy condition to log out. Must learn how to do conditions for strings/ints if not or if.	
 				if(badbool)
 				{
+					//log to logCat usually used for Errors 
+					//Log.i("GOOD", "IT CONVERTS SOMETHING");
 					
-					Log.i("GOOD", "IT CONVERTS SOMETHING");
-				} else {
-					Log.i("BAD but whatever", "WONT CONVERT 0");
+					//log to logcat
+					System.out.println(good);
+				} else 
+				{
+					//Log.i("BAD but whatever", "WONT CONVERT 0");
+					
+					System.out.println(bad);
 				}
 				result.setText("Kilos: " + numKilo + "\n");
 			}
 		});
+        
+      
       
       //making layout for positioning of objects
         LinearLayout llay2 = new LinearLayout(this);
