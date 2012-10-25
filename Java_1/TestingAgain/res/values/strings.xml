@@ -8,7 +8,10 @@
     <string name="quarter">Quarter</string>
     <string name="dime">Dime</string>
     <string name="nickel">Nickel</string>
-	<string name="penny">Penny</string>    
+	<string name="penny">Penny</string>  
+	
+	<string name="pounds">Pounds</string>
+	<string name="kilos">Kilos</string>
 
 </resources>
 

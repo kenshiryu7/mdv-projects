@@ -5,4 +5,7 @@
     <integer name="nickel">5</integer>
     <integer name="penny">1</integer>
     
+    <integer name="pound">1</integer>
+    <integer name="kilos">2</integer>
+    
 </resources>
