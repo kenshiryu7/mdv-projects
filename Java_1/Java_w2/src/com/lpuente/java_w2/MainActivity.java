@@ -27,6 +27,9 @@ public class MainActivity extends Activity {
 	
 	 RadioGroup fishTankOpts;
 	 ArrayList<J2Product> fishtanks;
+	 TextView result;
+	 
+	 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,11 +47,13 @@ public class MainActivity extends Activity {
         
         
      //calling linlay from pack1 package FormingStuff class passing in arguments
-        LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "View Total");
+        LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "Tank dif", "Convert");
         
      //finding edit text and button ids from FormingStuff class
         //EditText entertext = (EditText) entBox.findViewById(1);
         Button textbutt = (Button) entBox.findViewById(2);
+        
+        Button secTextButt = (Button) entBox.findViewById(3);
         
      //Adding button listener for button from FormingStuff class by calling the variable = id 
         textbutt.setOnClickListener(new View.OnClickListener() {
@@ -63,14 +68,14 @@ public class MainActivity extends Activity {
 				
 			//looping through radio to identify radio button / text	
 				
-				double cost = 0;
+				double gallonAmount = 0;
 				
 				
 				for(int i = 0; i < fishtanks.size(); i ++)
 				{
 					if(radioText.compareTo(fishtanks.get(i).getName())==0)
 					{
-						cost = fishtanks.get(i).getPrice();
+						gallonAmount = fishtanks.get(i).getPrice();
 					}
 				}
 				
@@ -89,10 +94,10 @@ public class MainActivity extends Activity {
 			//calling out double to shorten out hashMap log
 				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
 				
-				//double rtrn = hashShorten - cost;
+				double rtrn = hashShorten - gallonAmount;
 				
 			//HashMap from Data class
-				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(hashShorten);
+				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(rtrn);
 				
 				/*
 				Log.i("BUTTON CLICKED",
@@ -103,8 +108,17 @@ public class MainActivity extends Activity {
 						"Penny: " + returndata.get(Data.PENNY) 
 						);
 						*/
-				
+				/*
 				Log.i("BUTTON CLICKED",
+						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
+						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
+						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
+						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
+						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
+						);
+						*/
+				
+				result.setText(
 						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
 						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
 						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
@@ -114,13 +128,70 @@ public class MainActivity extends Activity {
 			}
 		});
         
+        
+        
+        
+        
+        
+        
+        
+        
+        secTextButt.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				
+				
+			//getting edit text from button tag 
+				EditText textnexttobutton = (EditText) v.getTag(); 
+				
+				
+				
+			//setting what user types in edit text as a string variable
+				//String test = textnexttobutton.getText().toString();
+				
+			//both work
+				//Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
+				//Log.i("SAME BUTTON CLICKED", test);
+				
+			//calling out double to shorten out hashMap log
+				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
+				
+				
+				
+			//HashMap from Data class
+				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(hashShorten);
+				
+				
+				/*
+				Log.i("BUTTON CLICKED",
+						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
+						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
+						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
+						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
+						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
+						);
+						*/
+				
+				result.setText(
+						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
+						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
+						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
+						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
+						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
+						);
+			}
+		});
+        
+        
       //define new array list for j2Product interface /InterfaceCLASS / make sure class and interface are imported
         fishtanks = new ArrayList<J2Product>();
-        fishtanks.add(new InterfacCLASS("Shark", 100000));
-        fishtanks.add(new InterfacCLASS("Marlins", 5000));
-        fishtanks.add(new InterfacCLASS("Restauraunt", 3500));
-        fishtanks.add(new InterfacCLASS("Salt", 1500));
-        fishtanks.add(new InterfacCLASS("Fish", 5));
+        fishtanks.add(new InterfacCLASS("Shark Tank", 100000));
+        fishtanks.add(new InterfacCLASS("Marlins St. Fish Tank", 5000));
+        fishtanks.add(new InterfacCLASS("Restauraunt Tank", 3500));
+        fishtanks.add(new InterfacCLASS("Salt W. Tank", 1500));
+        fishtanks.add(new InterfacCLASS("Fish Bowl", 5));
         
         //defining the array with the length of the fishtanks array with size(). String[fishtanks.size()]
         String[] tankNames = new String[fishtanks.size()];
@@ -134,7 +205,7 @@ public class MainActivity extends Activity {
         
         fishTankOpts = FormingStuff.getfishtanks(this, tankNames);
         
-        mainlinlay.addView(fishTankOpts);
+       
         
         
      //Creat main linlay
@@ -149,8 +220,11 @@ public class MainActivity extends Activity {
      //add mainlinlay
         mainlinlay.addView(entBox);
         
-        //mainlinlay.addView(fishTankOpts);
+        mainlinlay.addView(fishTankOpts);
         
+        
+        result = new TextView(this);
+        mainlinlay.addView(result);
      //setting content view / display on device
         setContentView(mainlinlay);
         

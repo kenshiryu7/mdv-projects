@@ -12,7 +12,7 @@ import android.widget.RadioGroup;
 
 public class FormingStuff {
 
-	public static LinearLayout entryButton(Context cons, String hint, String buttonText)
+	public static LinearLayout entryButton(Context cons, String hint, String buttonText, String buttonText2)
 	{
 		LinearLayout linlay = new LinearLayout(cons);
 		
@@ -49,11 +49,18 @@ public class FormingStuff {
 	//setting tag to button to edtext. The EditText field.
 		butt1.setTag(edtext);
 		
+	//Button 2
+		Button butt2 = new Button(cons);
+		butt2.setText(buttonText2);
+		butt2.setId(3);
+		butt2.setTag(edtext);
+		
 		
 		
 	//adding to linear layout
 		linlay.addView(edtext);		//add edit text to linlay
 		linlay.addView(butt1);		//add butt1 to linlay
+		linlay.addView(butt2);		//add butt2 to linlay
 		
 		
 		
