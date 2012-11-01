@@ -1,9 +1,13 @@
 package com.lpuente.java_w2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.lpuente.pack1.FormingStuff;
+import com.lpuente.pack2.InterfacCLASS;
 import com.lpuente.pack2.LiquidConv;
+import com.lpuente.pack2.J2Product;
+
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -74,6 +78,15 @@ public class MainActivity extends Activity {
 						);
 			}
 		});
+        
+      //define new array list for j2Product interface /InterfaceCLASS
+        ArrayList<J2Product> fishtanks = new ArrayList<J2Product>();
+        fishtanks.add(new InterfacCLASS("Shark Tank", 100000));
+        fishtanks.add(new InterfacCLASS("Marlins Stadium Tank", 5000));
+        fishtanks.add(new InterfacCLASS("Restauraunt Tank", 3500));
+        fishtanks.add(new InterfacCLASS("Salt water Tank", 1500));
+        fishtanks.add(new InterfacCLASS("Fish Bowl", 5));
+        
         
      //Creat main linlay
         LinearLayout mainlinlay = new LinearLayout(this);
