@@ -103,8 +103,6 @@ public class MainActivity extends Activity {
 			//HashMap from Data class
 				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(rtrn);
 				
-				
-				//good stuff to keep
 				/*
 				Log.i("BUTTON CLICKED",
 						"Dollar: " + returndata.get(Data.DOLLAR) + "\r\n" +
