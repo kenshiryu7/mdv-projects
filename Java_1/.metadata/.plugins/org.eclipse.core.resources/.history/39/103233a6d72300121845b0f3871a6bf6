@@ -1,0 +1,13 @@
+package com.lpuente.pack2;
+
+//Enums are used to create a data type the has a specific functionality
+
+public enum Data {
+
+	//Creating enum data
+	PENNY(1),
+	NICKEL(5),
+	DIME(10),
+	QUARTER(25);
+	DOLLAR(100);
+}
