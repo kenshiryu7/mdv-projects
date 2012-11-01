@@ -11,7 +11,7 @@ import com.lpuente.pack2.J2Product;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.util.Log;
+//import android.util.Log;		//removed my logs, may use later
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +23,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	
+//As always many comments. Will keep some of the code from the videos as reference
 	
 	
 	 RadioGroup fishTankOpts;
@@ -45,6 +47,8 @@ public class MainActivity extends Activity {
         TextView tview = new TextView(this);
         tview.setText("Type in number of Gallons with a decimal to view total conversion of quarts, pints, cups, and ounces" + "\r\n");
         
+        TextView bottomMessage = new TextView(this);
+        bottomMessage.setText("If number comes back a negative. That is the amount needed for the tank.");
         
      //calling linlay from pack1 package FormingStuff class passing in arguments
         LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "Tank dif", "Convert");
@@ -108,15 +112,7 @@ public class MainActivity extends Activity {
 						"Penny: " + returndata.get(Data.PENNY) 
 						);
 						*/
-				/*
-				Log.i("BUTTON CLICKED",
-						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
-						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
-						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
-						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
-						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
-						);
-						*/
+				
 				
 				result.setText(
 						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
@@ -134,52 +130,29 @@ public class MainActivity extends Activity {
         
         
         
-        
-        
+    //Setting listener for second button
         secTextButt.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				
 				
-				
 			//getting edit text from button tag 
 				EditText textnexttobutton = (EditText) v.getTag(); 
-				
-				
-				
-			//setting what user types in edit text as a string variable
-				//String test = textnexttobutton.getText().toString();
-				
-			//both work
-				//Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
-				//Log.i("SAME BUTTON CLICKED", test);
 				
 			//calling out double to shorten out hashMap log
 				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
 				
-				
-				
 			//HashMap from Data class
 				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(hashShorten);
 				
-				
-				/*
-				Log.i("BUTTON CLICKED",
-						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
-						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
-						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
-						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
-						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
-						);
-						*/
 				
 				result.setText(
 						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
 						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
 						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
 						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
-						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
+						"Ounce: " + returndata.get(LiquidConv.OUNCE) + "\r\n"
 						);
 			}
 		});
@@ -208,12 +181,7 @@ public class MainActivity extends Activity {
        
         
         
-     //Creat main linlay
-       // LinearLayout mainlinlay = new LinearLayout(this);
-        //LinearLayout.LayoutParams linParam;
-        //mainlinlay.setOrientation(LinearLayout.VERTICAL);
-        //linParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        //mainlinlay.setLayoutParams(linParam);
+ //////////////////////////////////// Adding to the linear layout of main activity //////////////////////   
         
         mainlinlay.addView(tview);
         
@@ -225,7 +193,10 @@ public class MainActivity extends Activity {
         
         result = new TextView(this);
         mainlinlay.addView(result);
-     //setting content view / display on device
+        
+        mainlinlay.addView(bottomMessage);
+     
+      //setting content view / display on device
         setContentView(mainlinlay);
         
     }
