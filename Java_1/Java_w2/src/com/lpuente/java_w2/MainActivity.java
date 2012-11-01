@@ -3,7 +3,7 @@ package com.lpuente.java_w2;
 import java.util.HashMap;
 
 import com.lpuente.pack1.FormingStuff;
-import com.lpuente.pack2.Data;
+import com.lpuente.pack2.LiquidConv;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
 			//calling out double to shorten out hashMap log
 				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
 			//HashMap from Data class
-				HashMap<Data, Integer> returndata = Data.getData(hashShorten);
+				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(hashShorten);
 				
 				/*
 				Log.i("BUTTON CLICKED",
@@ -66,11 +66,11 @@ public class MainActivity extends Activity {
 						*/
 				
 				Log.i("BUTTON CLICKED",
-						"Gallon: " + returndata.get(Data.GALLON) + "\r\n" +
-						"Quart: " + returndata.get(Data.QUART) + "\r\n" +
-						"Pint: " + returndata.get(Data.PINT) + "\r\n" +
-						"Cup: " + returndata.get(Data.CUP) + "\r\n" +
-						"Ounce: " + returndata.get(Data.OUNCE) 
+						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
+						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
+						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
+						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
+						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
 						);
 			}
 		});
