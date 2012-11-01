@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class FormingStuff {
 
@@ -56,6 +58,29 @@ public class FormingStuff {
 		
 		
 		return linlay;
+	}
+	
+	public static RadioGroup getfishtanks(Context context, String[] options)
+	{
+		RadioGroup rg = new RadioGroup(context);
+		
+		//loop through radio group
+		for (int i = 0; i < options.length; i++)
+		{
+			//declaring a radio button
+			RadioButton radiobutt = new RadioButton(context);
+			
+			//setting radio button text with String options array
+			radiobutt.setText(options[i]);
+			
+			//setting id + 1 because i cannot be 0
+			radiobutt.setId(i+1);
+			
+			//adding to radio group
+			rg.addView(radiobutt);
+		}
+		
+		return rg;
 	}
 	
 }

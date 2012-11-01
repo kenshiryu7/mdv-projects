@@ -17,14 +17,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	
+	
+	 RadioGroup fishTankOpts;
+	 ArrayList<J2Product> fishtanks;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        LinearLayout mainlinlay = new LinearLayout(this);
+        LayoutParams linParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        mainlinlay.setLayoutParams(linParam);
+        mainlinlay.setOrientation(LinearLayout.VERTICAL);
         
         
         TextView tview = new TextView(this);
@@ -44,11 +56,31 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				
+				int selRadioButtId = fishTankOpts.getCheckedRadioButtonId();
+				RadioButton selectedR = (RadioButton) fishTankOpts.findViewById(selRadioButtId);
+				
+				String radioText = (String) selectedR.getText();
+				
+			//looping through radio to identify radio button / text	
+				
+				double cost = 0;
+				
+				
+				for(int i = 0; i < fishtanks.size(); i ++)
+				{
+					if(radioText.compareTo(fishtanks.get(i).getName())==0)
+					{
+						cost = fishtanks.get(i).getPrice();
+					}
+				}
+				
 			//getting edit text from button tag 
 				EditText textnexttobutton = (EditText) v.getTag(); 
 				
+				
+				
 			//setting what user types in edit text as a string variable
-				String test = textnexttobutton.getText().toString();
+				//String test = textnexttobutton.getText().toString();
 				
 			//both work
 				//Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
@@ -56,6 +88,9 @@ public class MainActivity extends Activity {
 				
 			//calling out double to shorten out hashMap log
 				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
+				
+				//double rtrn = hashShorten - cost;
+				
 			//HashMap from Data class
 				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(hashShorten);
 				
@@ -79,26 +114,42 @@ public class MainActivity extends Activity {
 			}
 		});
         
-      //define new array list for j2Product interface /InterfaceCLASS
-        ArrayList<J2Product> fishtanks = new ArrayList<J2Product>();
-        fishtanks.add(new InterfacCLASS("Shark Tank", 100000));
-        fishtanks.add(new InterfacCLASS("Marlins Stadium Tank", 5000));
-        fishtanks.add(new InterfacCLASS("Restauraunt Tank", 3500));
-        fishtanks.add(new InterfacCLASS("Salt water Tank", 1500));
-        fishtanks.add(new InterfacCLASS("Fish Bowl", 5));
+      //define new array list for j2Product interface /InterfaceCLASS / make sure class and interface are imported
+        fishtanks = new ArrayList<J2Product>();
+        fishtanks.add(new InterfacCLASS("Shark", 100000));
+        fishtanks.add(new InterfacCLASS("Marlins", 5000));
+        fishtanks.add(new InterfacCLASS("Restauraunt", 3500));
+        fishtanks.add(new InterfacCLASS("Salt", 1500));
+        fishtanks.add(new InterfacCLASS("Fish", 5));
+        
+        //defining the array with the length of the fishtanks array with size(). String[fishtanks.size()]
+        String[] tankNames = new String[fishtanks.size()];
+        
+        //looping through fishtanks with size() instead of length
+        for (int i = 0; i<fishtanks.size(); i ++)
+        {
+        	//getting the names of the fishtanks from the for loop
+        	tankNames[i] = fishtanks.get(i).getName();
+        }
+        
+        fishTankOpts = FormingStuff.getfishtanks(this, tankNames);
+        
+        mainlinlay.addView(fishTankOpts);
         
         
      //Creat main linlay
-        LinearLayout mainlinlay = new LinearLayout(this);
-        LinearLayout.LayoutParams linParam;
-        mainlinlay.setOrientation(LinearLayout.VERTICAL);
-        linParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        mainlinlay.setLayoutParams(linParam);
+       // LinearLayout mainlinlay = new LinearLayout(this);
+        //LinearLayout.LayoutParams linParam;
+        //mainlinlay.setOrientation(LinearLayout.VERTICAL);
+        //linParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        //mainlinlay.setLayoutParams(linParam);
         
         mainlinlay.addView(tview);
         
      //add mainlinlay
         mainlinlay.addView(entBox);
+        
+        //mainlinlay.addView(fishTankOpts);
         
      //setting content view / display on device
         setContentView(mainlinlay);
