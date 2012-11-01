@@ -7,11 +7,17 @@ import java.util.HashMap;
 public enum Data {
 
 	//Creating enum data. Following video exactly. Hopefully to better understand
-	PENNY(1),
-	NICKEL(5),
-	DIME(10),
-	QUARTER(25),
-	DOLLAR(100);
+	//PENNY(1),
+	//NICKEL(5),
+	//DIME(10),
+	//QUARTER(25),
+	//DOLLAR(100);
+	
+	OUNCE(1),
+	CUP(8),
+	PINT(16),
+	QUART(32),
+	GALLON(128);
 	
 	public final int datavalue;
 	
@@ -27,10 +33,12 @@ public enum Data {
 		HashMap<Data, Integer> returndata = new HashMap <Data, Integer>();
 		
 	//Creating array/ following video/ calling values first created in ENUM. wow tons of info
-		Data[] mydata = {DOLLAR, QUARTER, DIME, NICKEL, PENNY};
+		//Data[] mydata = {DOLLAR, QUARTER, DIME, NICKEL, PENNY};
+		Data[]mydata = {GALLON, QUART, PINT, CUP, OUNCE};
 		
 	//variable to hold final outcome (change in video)
-		double whatsleft = amount*100;
+		//double whatsleft = amount*100;
+		double whatsleft = amount*128;
 		
 	//Looping through the array
 		for(int i = 0; i< mydata.length; i++)

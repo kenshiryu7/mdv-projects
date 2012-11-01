@@ -42,19 +42,29 @@ public class MainActivity extends Activity {
 				
 			//both work
 				//Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
-				Log.i("SAME BUTTON CLICKED", test);
+				//Log.i("SAME BUTTON CLICKED", test);
 				
 			//calling out double to shorten out hashMap log
 				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
 			//HashMap from Data class
 				HashMap<Data, Integer> returndata = Data.getData(hashShorten);
 				
+				/*
 				Log.i("BUTTON CLICKED",
 						"Dollar: " + returndata.get(Data.DOLLAR) + "\r\n" +
 						"Quarter: " + returndata.get(Data.QUARTER) + "\r\n" +
 						"Dime: " + returndata.get(Data.DIME) + "\r\n" +
 						"Nickel: " + returndata.get(Data.NICKEL) + "\r\n" +
 						"Penny: " + returndata.get(Data.PENNY) 
+						);
+						*/
+				
+				Log.i("BUTTON CLICKED",
+						"Gallon: " + returndata.get(Data.GALLON) + "\r\n" +
+						"Quart: " + returndata.get(Data.QUART) + "\r\n" +
+						"Pint: " + returndata.get(Data.PINT) + "\r\n" +
+						"Cup: " + returndata.get(Data.CUP) + "\r\n" +
+						"Ounce: " + returndata.get(Data.OUNCE) 
 						);
 			}
 		});
