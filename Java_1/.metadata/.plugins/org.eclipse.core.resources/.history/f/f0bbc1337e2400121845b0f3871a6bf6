@@ -167,7 +167,6 @@ public class MainActivity extends Activity {
         fishtanks.add(new InterfacCLASS("Restauraunt Tank", 3500));
         fishtanks.add(new InterfacCLASS("Salt W. Tank", 1500));
         fishtanks.add(new InterfacCLASS("Fish Bowl", 5));
-        fishtanks.add(new InterfacCLASS("None", 0));
         
         //defining the array with the length of the fishtanks array with size(). String[fishtanks.size()]
         String[] tankNames = new String[fishtanks.size()];
