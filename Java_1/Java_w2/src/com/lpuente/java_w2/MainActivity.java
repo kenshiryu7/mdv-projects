@@ -4,6 +4,7 @@ import com.lpuente.pack1.FormingStuff;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,12 @@ public class MainActivity extends Activity {
 				
 			//getting edit text from button tag 
 				EditText textnexttobutton = (EditText) v.getTag(); 
+				
+			//setting what user types in edit text as a string variable
+				String test = textnexttobutton.getText().toString();
+				
+				Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
+				Log.i("SAME BUTTON CLICKED", test);
 				
 			}
 		});
