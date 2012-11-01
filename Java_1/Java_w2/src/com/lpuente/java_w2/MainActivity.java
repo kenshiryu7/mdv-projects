@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -21,8 +22,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        
+        TextView tview = new TextView(this);
+        tview.setText("Type in number of Gallons with a decimal to view total conversion of quarts, pints, cups, and ounces" + "\r\n");
+        
+        
      //calling linlay from pack1 package FormingStuff class passing in arguments
-        LinearLayout entBox = FormingStuff.entryButton(this, "Type here", "button text butt1");
+        LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "View Total");
         
      //finding edit text and button ids from FormingStuff class
         //EditText entertext = (EditText) entBox.findViewById(1);
@@ -71,6 +77,13 @@ public class MainActivity extends Activity {
         
      //Creat main linlay
         LinearLayout mainlinlay = new LinearLayout(this);
+        LinearLayout.LayoutParams linParam;
+        mainlinlay.setOrientation(LinearLayout.VERTICAL);
+        linParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        mainlinlay.setLayoutParams(linParam);
+        
+        mainlinlay.addView(tview);
+        
      //add mainlinlay
         mainlinlay.addView(entBox);
         
