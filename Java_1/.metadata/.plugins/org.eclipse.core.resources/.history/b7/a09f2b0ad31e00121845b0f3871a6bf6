@@ -1,0 +1,14 @@
+<resources>
+    
+    <integer name="quarter">25</integer>
+    <integer name="dime">10</integer>
+    <integer name="nickel">5</integer>
+    <integer name="penny">1</integer>
+    
+    <integer name="pound">1</integer>
+    <integer name="kilos">2</integer>
+    
+    <float name="testpound">1</float>
+    <float name="testkilo">2.2</float>
+    
+</resources>
