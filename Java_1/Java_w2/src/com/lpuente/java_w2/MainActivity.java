@@ -37,7 +37,8 @@ public class MainActivity extends Activity {
 			//setting what user types in edit text as a string variable
 				String test = textnexttobutton.getText().toString();
 				
-				Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
+			//both work
+				//Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
 				Log.i("SAME BUTTON CLICKED", test);
 				
 			}
