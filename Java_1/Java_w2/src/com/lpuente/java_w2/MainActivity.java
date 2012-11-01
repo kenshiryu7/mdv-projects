@@ -5,6 +5,9 @@ import com.lpuente.pack1.FormingStuff;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 public class MainActivity extends Activity {
@@ -14,9 +17,25 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-     //calling linlay from pack1 package FormingStuff class
+     //calling linlay from pack1 package FormingStuff class passing in arguments
         LinearLayout entBox = FormingStuff.entryButton(this, "Type here", "button text butt1");
-     
+        
+     //finding edit text and button ids from FormingStuff class
+        //EditText entertext = (EditText) entBox.findViewById(1);
+        Button textbutt = (Button) entBox.findViewById(2);
+        
+     //Adding button listener for button from FormingStuff class by calling the variable = id 
+        textbutt.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+			//getting edit text from button tag 
+				EditText textnexttobutton = (EditText) v.getTag(); 
+				
+			}
+		});
+        
      //Creat main linlay
         LinearLayout mainlinlay = new LinearLayout(this);
      //add mainlinlay
