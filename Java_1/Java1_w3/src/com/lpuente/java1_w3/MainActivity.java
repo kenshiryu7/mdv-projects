@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
 	Context _context;
 	LinearLayout _appLo;
 	SearchData _findField;
+	DataDisplay _datas;
 
 	
 	
@@ -52,9 +53,18 @@ public class MainActivity extends Activity {
 				}
         	});
         	
+        	
+        	
+        //Adding data display layout
+        	_datas = new DataDisplay(_context);
+        	
         //adding findField from Search Data class to the main activity layout
+        //adding _datas from DataDisplay class to main
         	_appLo.addView(_findField);
+        	_appLo.addView(_datas);
         	    	
+        //setting layout to vertical display for grid layout
+        	_appLo.setOrientation(LinearLayout.VERTICAL);
         	
         //setting content view to the new linear layout global variable used.
         setContentView(_appLo);
