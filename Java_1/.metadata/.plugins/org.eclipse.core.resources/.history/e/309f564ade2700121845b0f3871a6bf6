@@ -21,7 +21,6 @@ public class MainActivity extends Activity {
 	LinearLayout _appLo;
 	SearchData _findField;
 	DataDisplay _datas;
-	MyFavorites _myfavs;
 
 	
 	
@@ -33,7 +32,7 @@ public class MainActivity extends Activity {
         	_context = this;
         	_appLo = new LinearLayout(this);
         
-//Calling Search Data class and context and setting to (this) or (_context) both work
+        //Calling Search Data class and context and setting to (this) or (_context) both work
         	_findField = new SearchData(this, "Look for something!", "Press to find");
         	
         	
@@ -56,18 +55,13 @@ public class MainActivity extends Activity {
         	
         	
         	
-//Adding data display layout
+        //Adding data display layout
         	_datas = new DataDisplay(_context);
-        	
-//Adding My Favorites Class
-        	_myfavs = new MyFavorites(_context);
         	
         //adding findField from Search Data class to the main activity layout
         //adding _datas from DataDisplay class to main
-        //adding _myfavs for MyFavorites class to main
         	_appLo.addView(_findField);
         	_appLo.addView(_datas);
-        	_appLo.addView(_myfavs);
         	    	
         //setting layout to vertical display for grid layout
         	_appLo.setOrientation(LinearLayout.VERTICAL);

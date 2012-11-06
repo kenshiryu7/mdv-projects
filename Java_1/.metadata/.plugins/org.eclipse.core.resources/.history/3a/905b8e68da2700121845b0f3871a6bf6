@@ -1,0 +1,20 @@
+package com.lpuente.java1_w3;
+
+import android.content.Context;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
+public class MyFavorites extends LinearLayout{
+	
+	Button _add;
+	Button _delete;
+	Spinner _favsList;
+	
+	
+	public MyFavorites(Context context)
+	{
+		super(context);
+	}
+	
+
+}
