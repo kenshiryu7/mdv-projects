@@ -1,0 +1,37 @@
+package com.lpuente.java1_w3;
+
+import android.content.Context;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+
+public class SearchData extends LinearLayout {
+
+	//creating and setting global variables with underscore naming.
+	EditText _searchDataField;
+	Button _searchButton;
+	
+	
+	//constructor created
+	public SearchData(Context context, String hint, String buttonText)
+	{
+		super(context);
+		
+		//setting layout parameters object
+		LayoutParams layParam;
+			
+	//create instance of global variables
+		_searchDataField = new EditText(context);
+		layParam = new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f);
+		_searchDataField.setLayoutParams(layParam);
+		
+		
+		_searchButton = new Button(context);
+		
+		
+	//adding instantiated variables to this LinearLayout class
+		this.addView(_searchDataField);
+		this.addView(_searchButton);
+		
+	}
+}
