@@ -12,14 +12,14 @@ public class WebData {
 	static Boolean _connection = false;
 	static String _connType = "Unavailable";
 	
-//function to call connection service and type function and return the connection type
+	//function to call connection service and type function and return the connection type
 	public static String getConnectType(Context context)
 	{
 		onlineInfo(context);	//connection service and type function
 		return _connType;		//connection type value
 	}
 
-//Function to return Boolean. Is connected? In other words connection status
+	//Function to return Boolean. Is connected? In other words connection status
 	public static Boolean getConnectStatus(Context context)
 	{
 		onlineInfo(context);	//connection service and type function
@@ -27,7 +27,7 @@ public class WebData {
 	}
 	
 	
-//function to allow if there is connection service and Type.
+	//function to allow if there is connection service and Type.
 	private static void onlineInfo(Context context)
 	{
 		//connectivity manager object

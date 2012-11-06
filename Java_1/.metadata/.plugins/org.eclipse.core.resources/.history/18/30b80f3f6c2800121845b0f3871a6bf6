@@ -1,7 +1,5 @@
 package com.lpuente.java1_w3;
 
-import com.lpuente.pack_Lib.WebData;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -57,15 +55,7 @@ public class MainActivity extends Activity {
 				}
         	});
         	
-        //DETECTING NETWORK CONNECTION FROM WEB DATA CLASS
-        	//Calling connection status boolean from web data class
-        	isConnected = WebData.getConnectStatus(_context);
-        	
-        	//condition if connected (isConnected?)
-        	if(isConnected)
-        	{
-        		Log.i("NETWORK CONNECTION", WebData.getConnectType(_context));	//logging if connected and type from WebData class
-        	}
+        	//DETECTING NETWORK CONNECTION FROM WEB DATA CLASS
         	
         	
 //Adding data display layout
