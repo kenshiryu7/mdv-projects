@@ -49,7 +49,6 @@ public class MainActivity extends Activity {
         	_appLo = new LinearLayout(this);
         	_history = getHistory();
         	
-        	//logging out history which is not equal to getHistory() method
         	Log.i("HISTORY READ", _history.toString());
         
 //Calling Search Data class and context and setting to (this) or (_context) both work
@@ -86,7 +85,7 @@ public class MainActivity extends Activity {
         	
         	
 //Adding data display layout
-        	//_datas = new DataDisplay(_context);
+        	_datas = new DataDisplay(_context);
         	
 //Adding My Favorites Class
         	_myfavs = new MyFavorites(_context);
@@ -95,7 +94,7 @@ public class MainActivity extends Activity {
         //adding _datas from DataDisplay class to main
         //adding _myfavs for MyFavorites class to main
         	_appLo.addView(_findField);
-        	//_appLo.addView(_datas);
+        	_appLo.addView(_datas);
         	_appLo.addView(_myfavs);
         	    	
         //setting layout to vertical display for grid layout

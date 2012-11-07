@@ -200,7 +200,6 @@ public class MyFiles {
 		catch(IOException e)
 		{
 			Log.e("READ ERROR", "I.O ERROR");
-			
 		}
 			return content;
 			

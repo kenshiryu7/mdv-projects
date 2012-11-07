@@ -195,12 +195,10 @@ public class MyFiles {
 		catch(FileNotFoundException e)
 		{
 			Log.e("READ ERROR", "FILE NOT FOUND" + filename);
-			return null;
 		}
 		catch(IOException e)
 		{
 			Log.e("READ ERROR", "I.O ERROR");
-			
 		}
 			return content;
 			

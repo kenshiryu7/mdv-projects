@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import android.content.Context;
@@ -90,7 +89,6 @@ public class MyFiles {
 	
 	//Methods to read objects and strings
 	
-	@SuppressWarnings("resource")
 	public static String readStrFile(Context context, String filename, Boolean saveLocation)
 	{
 		String content = "";
@@ -103,7 +101,7 @@ public class MyFiles {
 			if(saveLocation)
 			{
 				f = new File(context.getExternalFilesDir(null), filename);
-				fin = new FileInputStream(f);	//added suppressed warning
+				fin = new FileInputStream(f);
 			}
 			else
 			{
@@ -134,73 +132,6 @@ public class MyFiles {
 		catch(IOException e)
 		{
 			Log.e("READ ERROR", "I.O ERROR");
-		}
-			return content;
-			
-	}
-	
-	@SuppressWarnings("resource")
-	public static Object readObjFile(Context context, String filename, Boolean saveLocation)
-	{
-		Object content = new Object();
-		
-		try
-		{
-			File f;
-			FileInputStream fin;		//brings files in to read
-			
-			if(saveLocation)
-			{
-				f = new File(context.getExternalFilesDir(null), filename);
-				fin = new FileInputStream(f);	//added suppressed warning
-			}
-			else
-			{
-				f = new File(filename);
-				fin = context.openFileInput(filename);
-			}
-			/*// not used. copied and kept for reference
-			 * 
-					//brings bytes in over time
-					BufferedInputStream bin = new BufferedInputStream(fin);
-			
-					byte [] contentBytes = new byte[1024];
-					int bytesRead = 0;
-			
-					StringBuffer contentBuffer = new StringBuffer();
-			
-					while((bytesRead = bin.read(contentBytes)) != -1)
-					{
-						//pulls in bytes gradually
-						content = new String(contentBytes, 0, bytesRead);
-						contentBuffer.append(content);
-					}
-					content = contentBuffer.toString();
-					fin.close();
-			*/
-			ObjectInputStream ois = new ObjectInputStream(fin);
-			
-			try
-			{
-				content = (Object) ois.readObject();
-			}
-			catch(ClassNotFoundException e)
-			{
-				Log.e("READ ERROR", "INVALID JAVA FILE");
-			}
-			//object function requires to close ois and fin
-			ois.close();
-			fin.close();
-		}
-		catch(FileNotFoundException e)
-		{
-			Log.e("READ ERROR", "FILE NOT FOUND" + filename);
-			return null;
-		}
-		catch(IOException e)
-		{
-			Log.e("READ ERROR", "I.O ERROR");
-			
 		}
 			return content;
 			

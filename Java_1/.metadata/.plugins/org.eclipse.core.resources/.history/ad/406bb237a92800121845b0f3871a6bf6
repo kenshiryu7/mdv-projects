@@ -139,7 +139,6 @@ public class MyFiles {
 			
 	}
 	
-	@SuppressWarnings("resource")
 	public static Object readObjFile(Context context, String filename, Boolean saveLocation)
 	{
 		Object content = new Object();
@@ -188,19 +187,16 @@ public class MyFiles {
 			{
 				Log.e("READ ERROR", "INVALID JAVA FILE");
 			}
-			//object function requires to close ois and fin
 			ois.close();
 			fin.close();
 		}
 		catch(FileNotFoundException e)
 		{
 			Log.e("READ ERROR", "FILE NOT FOUND" + filename);
-			return null;
 		}
 		catch(IOException e)
 		{
 			Log.e("READ ERROR", "I.O ERROR");
-			
 		}
 			return content;
 			

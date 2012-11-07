@@ -47,10 +47,7 @@ public class MainActivity extends Activity {
         //setting global variables / instantiating
         	_context = this;
         	_appLo = new LinearLayout(this);
-        	_history = getHistory();
-        	
-        	//logging out history which is not equal to getHistory() method
-        	Log.i("HISTORY READ", _history.toString());
+        	_history = new HashMap<String,String>();
         
 //Calling Search Data class and context and setting to (this) or (_context) both work
         	_findField = new SearchData(this, "Look for something!", "Press to find");
@@ -86,7 +83,7 @@ public class MainActivity extends Activity {
         	
         	
 //Adding data display layout
-        	//_datas = new DataDisplay(_context);
+        	_datas = new DataDisplay(_context);
         	
 //Adding My Favorites Class
         	_myfavs = new MyFavorites(_context);
@@ -95,7 +92,7 @@ public class MainActivity extends Activity {
         //adding _datas from DataDisplay class to main
         //adding _myfavs for MyFavorites class to main
         	_appLo.addView(_findField);
-        	//_appLo.addView(_datas);
+        	_appLo.addView(_datas);
         	_appLo.addView(_myfavs);
         	    	
         //setting layout to vertical display for grid layout
@@ -144,30 +141,6 @@ public class MainActivity extends Activity {
     		finalURL = null;
     	}
     	//Log.i("CLICK", symbol);
-    }
-    
-    //new method to pull out history from internal or external storage with MyFiles class
-    @SuppressWarnings("unchecked")
-	private HashMap<String,String> getHistory()
-    {
-    	//pulls stored file
-    	Object  stored = MyFiles.readObjFile(_context, "history", false ); //internal
-    	
-    	HashMap<String,String> history;
-    	
-    	if(stored == null)
-    	{
-    		Log.i("HISTORY LOG", "NO HISTORY FILE FOUND");
-    		
-    		//another HAsh Map
-    		history = new HashMap<String, String>();
-    	}
-    	else
-    	{
-    		history = (HashMap<String, String>) stored;
-    	}
-    	
-    	return history;
     }
     
     //making a private class

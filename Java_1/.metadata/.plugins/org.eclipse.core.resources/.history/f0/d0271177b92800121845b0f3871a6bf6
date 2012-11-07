@@ -14,9 +14,6 @@ import android.widget.Spinner;
 
 public class MyFavorites extends LinearLayout{
 	
-	SearchData _findField;
-	
-	
 	Button _add;
 	Button _delete;
 	Spinner _favsList;		//Spinner is a drop down in Android
@@ -53,12 +50,6 @@ public class MyFavorites extends LinearLayout{
 			public void onItemSelected(AdapterView<?> parent, View v, int pos, long id)
 			{
 				Log.i("SELECTED A FAVORITE", parent.getItemAtPosition(pos).toString());
-				
-				if(parent.getItemAtPosition(pos).toString() == "Six Flags")
-				{
-					Log.i("YES THIS IS SIX FLAGS", "STOOP");
-					
-				}
 			}
 			
 			@Override

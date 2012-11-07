@@ -57,7 +57,7 @@ public class MyFavorites extends LinearLayout{
 				if(parent.getItemAtPosition(pos).toString() == "Six Flags")
 				{
 					Log.i("YES THIS IS SIX FLAGS", "STOOP");
-					
+					_findField = new SearchData(_context, "This Sucks!!!", "Press to find");
 				}
 			}
 			
