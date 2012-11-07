@@ -7,7 +7,6 @@ import java.net.URLConnection;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 
 public class WebData {
 
@@ -67,7 +66,6 @@ public class WebData {
 			//Calling buffered input stream. May need a better explanation on this. 
 			BufferedInputStream bin = new BufferedInputStream(urlConn.getInputStream());
 			
-			//why 1024 bytes?
 			byte[] contentBytes = new byte[1024];
 			
 			//will loop through bytes

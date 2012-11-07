@@ -109,11 +109,7 @@ public class MainActivity extends Activity {
     	String queryString;
     	
     	try{
-    		queryString = URLEncoder.encode(carrierDataString, "UTF-8");
-    	}
-    	catch(Exception e)
-    	{
-    		Log.e("BAD URL","ENCODING PROBLEM");
+    		queryString = URLEncoder.encode(carrierDataString);
     	}
     	
     	//Log.i("CLICK", symbol);

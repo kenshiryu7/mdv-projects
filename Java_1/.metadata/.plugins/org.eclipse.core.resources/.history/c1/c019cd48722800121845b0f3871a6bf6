@@ -1,7 +1,5 @@
 package com.lpuente.java1_w3;
 
-import java.net.URLEncoder;
-
 import com.lpuente.pack_Lib.WebData;
 
 import android.os.Bundle;
@@ -54,8 +52,7 @@ public class MainActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					
-					//Log.i("Button Pressed ", _findField.getSearchData().getText().toString());
-					getMyWebData(_findField.getSearchData().getText().toString());
+					Log.i("Button Pressed ", _findField.getSearchData().getText().toString());
 					
 				}
         	});
@@ -95,27 +92,5 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
-    }
-    
-    //function to return web data from some API online (stocks in video example)
-    private void getMyWebData(String symbol)
-    {
-   ////////HERES WHERE I PUT THE API URL AND ETC/////////////////////
-    	
-    	//will be testing stocks from video example. will change to something else later.
-    	String baseURL = "http://query.yahooapis.com/v1/public/yql"; //yahoo api service
-    	String carrierDataString = "select * from csv where url='http://download.finance.yahoo.com/d/quotes.csv?s" + symbol + "&f=sl1d1tc1ohgv&e=.csv' and columns='symbol,price,date,time,change,col1,high,low,col2'";
-    			
-    	String queryString;
-    	
-    	try{
-    		queryString = URLEncoder.encode(carrierDataString, "UTF-8");
-    	}
-    	catch(Exception e)
-    	{
-    		Log.e("BAD URL","ENCODING PROBLEM");
-    	}
-    	
-    	//Log.i("CLICK", symbol);
     }
 }
