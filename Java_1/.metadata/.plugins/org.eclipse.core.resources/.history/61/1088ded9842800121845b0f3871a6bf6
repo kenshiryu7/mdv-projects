@@ -1,7 +1,5 @@
 package com.lpuente.java1_w3;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.net.URLEncoder;
 
 import com.lpuente.pack_Lib.WebData;
@@ -107,7 +105,7 @@ public class MainActivity extends Activity {
     	
     	//will be testing stocks from video example. will change to something else later.
     	String baseURL = "http://query.yahooapis.com/v1/public/yql"; //yahoo api service
-    	String carrierDataString = "select * from csv where url='http://download.finance.yahoo.com/d/quotes.csv?s=" + symbol + "&f=sl1d1t1c1ohgv&e=.csv' and columns='symbol,price,date,time,change,col1,high,low,col2'";
+    	String carrierDataString = "select * from csv where url='http://download.finance.yahoo.com/d/quotes.csv?s" + symbol + "&f=sl1d1tc1ohgv&e=.csv' and columns='symbol,price,date,time,change,col1,high,low,col2'";
     			
     	String queryString;
     	
@@ -117,25 +115,11 @@ public class MainActivity extends Activity {
     	catch(Exception e)
     	{
     		Log.e("BAD URL","ENCODING PROBLEM");
-    		queryString ="";
     	}
-    	URL finalURL;
     	
-    	try
-    	{
-    		finalURL = new URL(baseURL + "?q=" + queryString + "&format=json");
-    		DataRequest dreq = new DataRequest();
-    		dreq.execute(finalURL);
-    	}
-    	catch(MalformedURLException e)
-    	{
-    		Log.e("BAD URL", "MALFORMED URL");
-    		finalURL = null;
-    	}
     	//Log.i("CLICK", symbol);
     }
     
-    //making a private class
     private class DataRequest extends AsyncTask<URL, Void, String>
     {
     	@Override
@@ -150,13 +134,9 @@ public class MainActivity extends Activity {
     		return response;
     	}
     	//runs when do in background is done.
-    	
     	@Override
-    	protected  void onPostExecute(String result)
+    	protected  void onPostEx(String result)
     	{
-    		//logging out response in with String result
-    		Log.i("URL RESPONSE", result);
-    		
     		
     	}
     }

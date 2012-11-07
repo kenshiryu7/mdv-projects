@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
     	
     	//will be testing stocks from video example. will change to something else later.
     	String baseURL = "http://query.yahooapis.com/v1/public/yql"; //yahoo api service
-    	String carrierDataString = "select * from csv where url='http://download.finance.yahoo.com/d/quotes.csv?s=" + symbol + "&f=sl1d1t1c1ohgv&e=.csv' and columns='symbol,price,date,time,change,col1,high,low,col2'";
+    	String carrierDataString = "select * from csv where url='http://download.finance.yahoo.com/d/quotes.csv?s" + symbol + "&f=sl1d1t1c1ohgv&e=.csv' and columns='symbol,price,date,time,change,col1,high,low,col2'";
     			
     	String queryString;
     	
