@@ -180,7 +180,7 @@ public class MainActivity extends Activity {
     			else
     			{
     			//Else Symbol is Valid...
-    				Toast toasty = Toast.makeText(_context, "Valid Symbol " + results.getString("symbol"), Toast.LENGTH_SHORT);
+    				Toast toasty = Toast.makeText(_context, "Valid Symbol", Toast.LENGTH_SHORT);
     				toasty.show();
     			}
     		}

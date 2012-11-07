@@ -4,7 +4,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.lpuente.pack_Lib.WebData;
@@ -18,7 +17,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
 //import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -163,31 +161,8 @@ public class MainActivity extends Activity {
     		
     		//Parsing to the data needed / desired
     		
+    		JSONObject jsonData = new JSONObject(result);
     		
-    		try
-    		{
-    			JSONObject jsonData = new JSONObject(result);
-    		//drilling down to get stock data
-    		//Was going to use google finance instead but apparently its been shut down. Im sure there's other sources out there but no time
-    			JSONObject results = jsonData.getJSONObject("query").getJSONObject("results").getJSONObject("row");
-    			
-    			if(results.getString("col1").compareTo("N/A") == 0)
-    			{
-    			//Toast is a pop-up box in android. What other edible objects will we learn?
-    				Toast toasty = Toast.makeText(_context, "Invalid Symbol", Toast.LENGTH_SHORT);
-    				toasty.show();
-    			}
-    			else
-    			{
-    			//Else Symbol is Valid...
-    				Toast toasty = Toast.makeText(_context, "Valid Symbol " + results.getString("symbol"), Toast.LENGTH_SHORT);
-    				toasty.show();
-    			}
-    		}
-    		catch(JSONException e)
-    		{
-    			Log.e("JSON", "JSON OBJECT EXCEPTION");
-    		}
     		
     	}
     }

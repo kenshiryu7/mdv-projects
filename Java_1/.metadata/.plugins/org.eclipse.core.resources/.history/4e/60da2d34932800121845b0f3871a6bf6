@@ -177,12 +177,6 @@ public class MainActivity extends Activity {
     				Toast toasty = Toast.makeText(_context, "Invalid Symbol", Toast.LENGTH_SHORT);
     				toasty.show();
     			}
-    			else
-    			{
-    			//Else Symbol is Valid...
-    				Toast toasty = Toast.makeText(_context, "Valid Symbol " + results.getString("symbol"), Toast.LENGTH_SHORT);
-    				toasty.show();
-    			}
     		}
     		catch(JSONException e)
     		{
