@@ -8,7 +8,6 @@ import java.util.HashMap;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.lpuente.pack_Lib.MyFiles;
 import com.lpuente.pack_Lib.WebData;
 
 import android.os.AsyncTask;
@@ -187,12 +186,7 @@ public class MainActivity extends Activity {
     				Toast toasty = Toast.makeText(_context, "Valid Symbol " + results.getString("symbol"), Toast.LENGTH_SHORT);
     				toasty.show();
     				
-    			//using the hashmap to store JSON object results converted to string ready to write to hard drive
-    				_history.put(results.getString("symbol"), results.toString());
     				
-    				//storing the object and string from MyFiles class to device hd
-    				MyFiles.storeObject(_context, "history", _history, false);
-    				MyFiles.storeString(_context, "temp", results.toString(), true);
     			}
     		}
     		catch(JSONException e)

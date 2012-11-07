@@ -1,0 +1,50 @@
+package com.lpuente.pack_Lib;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import android.content.Context;
+import android.util.Log;
+
+public class MyFiles {
+
+	//class made to create methods to allow storage to the device's drive and read from the drive as well
+	
+	public static Boolean storeString(Context context, String filename, String content, Boolean saveLocation)
+	{
+		try
+		{
+			File f;
+			FileOutputStream fos;
+			
+			//if saved to external location
+			if(saveLocation)
+			{
+				f = new File(context.getExternalFilesDir(null), filename);
+				fos = new FileOutputStream(f);
+			}
+			else //if saved to an internal location
+			{
+				fos = context.openFileOutput(filename, Context.MODE_PRIVATE);
+			}
+			//write contents
+			fos.write(content.getBytes());
+			
+			//when finished writing bytes. close.
+			fos.close();
+		}
+		catch(IOException e)
+		{
+			Log.e("WRITE ERROR", filename);
+		}
+		
+		return true;
+	}
+	
+	
+	public static Boolean storeObject(Context context, String contents, Boolean saveLocation)
+	{
+		return true;
+	}
+}

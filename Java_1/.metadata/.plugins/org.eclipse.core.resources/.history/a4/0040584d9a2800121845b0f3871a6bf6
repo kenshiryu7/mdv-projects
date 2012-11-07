@@ -190,9 +190,7 @@ public class MainActivity extends Activity {
     			//using the hashmap to store JSON object results converted to string ready to write to hard drive
     				_history.put(results.getString("symbol"), results.toString());
     				
-    				//storing the object and string from MyFiles class to device hd
     				MyFiles.storeObject(_context, "history", _history, false);
-    				MyFiles.storeString(_context, "temp", results.toString(), true);
     			}
     		}
     		catch(JSONException e)

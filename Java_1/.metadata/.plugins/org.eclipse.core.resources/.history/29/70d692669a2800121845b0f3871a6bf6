@@ -46,7 +46,7 @@ public class MyFiles {
 	
 	
 	@SuppressWarnings("resource")
-	public static Boolean storeObject(Context context, String filename, Object contents, Boolean saveLocation)
+	public static Boolean storeObject(Context context, String filename, String contents, Boolean saveLocation)
 	{
 		
 		try

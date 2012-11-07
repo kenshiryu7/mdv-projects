@@ -3,12 +3,10 @@ package com.lpuente.java1_w3;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.HashMap;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.lpuente.pack_Lib.MyFiles;
 import com.lpuente.pack_Lib.WebData;
 
 import android.os.AsyncTask;
@@ -36,7 +34,6 @@ public class MainActivity extends Activity {
 	DataDisplay _datas;
 	MyFavorites _myfavs;
 	Boolean _isConnected = false;
-	HashMap<String, String> _history;
 
 	
 	
@@ -44,10 +41,9 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        //setting global variables / instantiating
+        //setting global variables
         	_context = this;
         	_appLo = new LinearLayout(this);
-        	_history = new HashMap<String,String>();
         
 //Calling Search Data class and context and setting to (this) or (_context) both work
         	_findField = new SearchData(this, "Look for something!", "Press to find");
@@ -186,13 +182,6 @@ public class MainActivity extends Activity {
     			//Else Symbol is Valid...
     				Toast toasty = Toast.makeText(_context, "Valid Symbol " + results.getString("symbol"), Toast.LENGTH_SHORT);
     				toasty.show();
-    				
-    			//using the hashmap to store JSON object results converted to string ready to write to hard drive
-    				_history.put(results.getString("symbol"), results.toString());
-    				
-    				//storing the object and string from MyFiles class to device hd
-    				MyFiles.storeObject(_context, "history", _history, false);
-    				MyFiles.storeString(_context, "temp", results.toString(), true);
     			}
     		}
     		catch(JSONException e)
