@@ -176,7 +176,7 @@ public class MainActivity extends Activity {
     						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
     						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
     						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
-    						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
+    						"Ounce: " + returndata.get(LiquidConv.OUNCE) + "\r\n"
     						);
     			}
     		});
@@ -185,7 +185,7 @@ public class MainActivity extends Activity {
           //define new array list for j2Product interface /InterfaceCLASS / make sure class and interface are imported
             fishtanks = new ArrayList<J2Product>();
             fishtanks.add(new InterfacCLASS("Shark Tank", 100000));
-            //fishtanks.add(new InterfacCLASS("Marlins St. Fish Tank", 5000));
+            fishtanks.add(new InterfacCLASS("Marlins St. Fish Tank", 5000));
             fishtanks.add(new InterfacCLASS("Restauraunt Tank", 3500));
             fishtanks.add(new InterfacCLASS("Salt W. Tank", 1500));
             fishtanks.add(new InterfacCLASS("Fish Bowl", 5));

@@ -27,7 +27,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 //import android.widget.EditText;
@@ -72,137 +71,7 @@ public class MainActivity extends Activity {
         	_history = getHistory();
         	
         	
-        	//calling linlay from pack1 package FormingStuff class passing in arguments
-            LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "Tank dif", "Convert");
-            
-            //finding edit text and button ids from FormingStuff class
-            //EditText entertext = (EditText) entBox.findViewById(1);
-            Button textbutt = (Button) entBox.findViewById(2);
-            
-            Button secTextButt = (Button) entBox.findViewById(3);
-            
-          //Adding button listener for button from FormingStuff class by calling the variable = id 
-            textbutt.setOnClickListener(new View.OnClickListener() {
-    			
-    			@Override
-    			public void onClick(View v) {
-    				
-    				int selRadioButtId = fishTankOpts.getCheckedRadioButtonId();
-    				RadioButton selectedR = (RadioButton) fishTankOpts.findViewById(selRadioButtId);
-    				
-    				String radioText = (String) selectedR.getText();
-    				
-    			//looping through radio to identify radio button / text	
-    				
-    				double gallonAmount = 0;
-    				
-    				
-    				for(int i = 0; i < fishtanks.size(); i ++)
-    				{
-    					if(radioText.compareTo(fishtanks.get(i).getName())==0)
-    					{
-    						gallonAmount = fishtanks.get(i).getPrice();
-    					}
-    				}
-    				
-    			//getting edit text from button tag 
-    				EditText textnexttobutton = (EditText) v.getTag(); 
-    				
-    				
-    				
-    			//setting what user types in edit text as a string variable
-    				//String test = textnexttobutton.getText().toString();
-    				
-    			//both work
-    				//Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
-    				//Log.i("SAME BUTTON CLICKED", test);
-    				
-    			//calling out double to shorten out hashMap log
-    				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
-    				
-    				double rtrn = hashShorten - gallonAmount;
-    				
-    			//HashMap from Data class
-    				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(rtrn);
-    				
-    				
-    				//good stuff to keep
-    				/*
-    				Log.i("BUTTON CLICKED",
-    						"Dollar: " + returndata.get(Data.DOLLAR) + "\r\n" +
-    						"Quarter: " + returndata.get(Data.QUARTER) + "\r\n" +
-    						"Dime: " + returndata.get(Data.DIME) + "\r\n" +
-    						"Nickel: " + returndata.get(Data.NICKEL) + "\r\n" +
-    						"Penny: " + returndata.get(Data.PENNY) 
-    						);
-    						*/
-    				
-    				
-    				_result.setText(
-    						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
-    						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
-    						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
-    						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
-    						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
-    						);
-    			}
-    		});
-            
-            
-            
-            
-            
-            
-            
-        //Setting listener for second button
-            secTextButt.setOnClickListener(new View.OnClickListener() {
-    			
-    			@Override
-    			public void onClick(View v) {
-    				
-    				
-    			//getting edit text from button tag 
-    				EditText textnexttobutton = (EditText) v.getTag(); 
-    				
-    			//calling out double to shorten out hashMap log
-    				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
-    				
-    			//HashMap from Data class
-    				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(hashShorten);
-    				
-    				
-    				_result.setText(
-    						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
-    						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
-    						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
-    						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
-    						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
-    						);
-    			}
-    		});
-            
-            
-          //define new array list for j2Product interface /InterfaceCLASS / make sure class and interface are imported
-            fishtanks = new ArrayList<J2Product>();
-            fishtanks.add(new InterfacCLASS("Shark Tank", 100000));
-            //fishtanks.add(new InterfacCLASS("Marlins St. Fish Tank", 5000));
-            fishtanks.add(new InterfacCLASS("Restauraunt Tank", 3500));
-            fishtanks.add(new InterfacCLASS("Salt W. Tank", 1500));
-            fishtanks.add(new InterfacCLASS("Fish Bowl", 5));
-            fishtanks.add(new InterfacCLASS("None", 0));
-            
-            //defining the array with the length of the fishtanks array with size(). String[fishtanks.size()]
-            String[] tankNames = new String[fishtanks.size()];
-            
-            //looping through fishtanks with size() instead of length
-            for (int i = 0; i<fishtanks.size(); i ++)
-            {
-            	//getting the names of the fishtanks from the for loop
-            	tankNames[i] = fishtanks.get(i).getName();
-            }
-            
-            fishTankOpts = FormingStuff.getfishtanks(this, tankNames);
-            
+        	
         	//logging out history which is not equal to getHistory() method
         	Log.i("HISTORY READ", _history.toString());
         
@@ -253,16 +122,10 @@ public class MainActivity extends Activity {
         //adding _myfavs for MyFavorites class to main
         	_appLo.addView(_findField);
         	//_appLo.addView(_datas);
-        	
-        	_appLo.addView(entBox);
-            
-            _appLo.addView(fishTankOpts);
-            _result = new TextView(this);
-        	_appLo.addView(_result);
-        	
         	_appLo.addView(_myfavs);
         	
-        	
+        	_result = new TextView(this);
+        	_appLo.addView(_result);
         	    	
         //setting layout to vertical display for grid layout
         	_appLo.setOrientation(LinearLayout.VERTICAL);
