@@ -40,11 +40,6 @@ public class MainActivity extends Activity {
 	HashMap<String, String> _history;
 	
 	TextView _result;
-	JSONObject _jsonResults;
-	JSONObject _high;
-	JSONObject _low;
-	
-	JSONObject jsonRet = new JSONObject();
 
 	
 	
@@ -52,13 +47,10 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        	
         //setting global variables / instantiating
         	_context = this;
         	_appLo = new LinearLayout(this);
         	_history = getHistory();
-        	
-        	
         	
         	//logging out history which is not equal to getHistory() method
         	Log.i("HISTORY READ", _history.toString());
@@ -82,11 +74,8 @@ public class MainActivity extends Activity {
 					//Log.i("Button Pressed ", _findField.getSearchData().getText().toString());
 					getMyWebData(_findField.getSearchData().getText().toString());
 					
-					
-					
-					
 					_result.setText(
-							"High: " + _jsonResults
+							"High: " + 
 							);
 					
 					
@@ -222,9 +211,9 @@ public class MainActivity extends Activity {
     			JSONObject jsonData = new JSONObject(result);
     		//drilling down to get stock data
     		//Was going to use google finance instead but apparently its been shut down. Im sure there's other sources out there but no time
-    			_jsonResults = jsonData.getJSONObject("query").getJSONObject("results").getJSONObject("row");
+    			JSONObject jsonResults = jsonData.getJSONObject("query").getJSONObject("results").getJSONObject("row");
     			
-    			if(_jsonResults.getString("col1").compareTo("N/A") == 0)
+    			if(results.getString("col1").compareTo("N/A") == 0)
     			{
     			//Toast is a pop-up box in android. What other edible objects will we learn?
     				Toast toasty = Toast.makeText(_context, "Invalid Symbol", Toast.LENGTH_SHORT);
@@ -233,15 +222,15 @@ public class MainActivity extends Activity {
     			else
     			{
     			//Else Symbol is Valid...
-    				Toast toasty = Toast.makeText(_context, "Valid Symbol " + _jsonResults.getString("symbol"), Toast.LENGTH_SHORT);
+    				Toast toasty = Toast.makeText(_context, "Valid Symbol " + results.getString("symbol"), Toast.LENGTH_SHORT);
     				toasty.show();
     				
     			//using the hashmap to store JSON object results converted to string ready to write to hard drive
-    				_history.put(_jsonResults.getString("symbol"), _jsonResults.toString());
+    				_history.put(results.getString("symbol"), results.toString());
     				
     				//storing the object and string from MyFiles class to device hd
     				MyFiles.storeObject(_context, "history", _history, false);
-    				MyFiles.storeString(_context, "temp", _jsonResults.toString(), true);
+    				MyFiles.storeString(_context, "temp", results.toString(), true);
     			}
     		}
     		catch(JSONException e)

@@ -1,0 +1,5 @@
+package com.lpuente.pack2;
+
+public enum LiquidConv {
+
+}
