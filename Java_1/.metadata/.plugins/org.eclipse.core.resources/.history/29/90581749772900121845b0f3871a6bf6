@@ -96,7 +96,7 @@ public class MyFavorites extends LinearLayout{
 	{
 		_information.add("Six Flags");
 		_information.add("Sea World");
-		_information.add("Pet Smart");
+		_information.add("Pet Supermarket");
 		_information.add("Petco");
 		//_information.add("Apples");
 		//_information.add("Water-Melons");

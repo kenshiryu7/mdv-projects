@@ -3,6 +3,6 @@
     <string name="app_name">Java1_w3</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">Data Stuff and then some.</string>
+    <string name="title_activity_main">Testing for week 3.</string>
 
 </resources>

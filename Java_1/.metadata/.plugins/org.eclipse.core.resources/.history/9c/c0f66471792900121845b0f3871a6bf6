@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
         	
         	
         	//calling linlay from pack1 package FormingStuff class passing in arguments
-            LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "Tank dif", " Convert ");
+            LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "Tank dif", "Convert");
             
             //finding edit text and button ids from FormingStuff class
             //EditText entertext = (EditText) entBox.findViewById(1);
