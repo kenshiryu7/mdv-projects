@@ -4,13 +4,10 @@ import java.io.BufferedInputStream;
 import java.net.URL;
 import java.net.URLConnection;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
-import android.widget.Toast;
 
 public class WebData {
 
@@ -53,27 +50,6 @@ public class WebData {
 			//getting connection type by string "name"
 				_connType = netInfo.getTypeName();
 				_connection = true;
-			}
-			else
-			{
-				
-				Log.e("UH-OH", "NO NETWORK DETECTED");
-				
-				//ATTEMPT TO PROMPT THE USER THAT THERE IS NO CONNECTION WITH ALERT DIALOG
-				
-				AlertDialog.Builder adBuilder = new AlertDialog.Builder(context); //creating alert dialog
-				adBuilder.setTitle("No Network Detected.");			//Setting Title to alert dialog box
-				adBuilder.setMessage("");							//setting a message. Leaving blank for this alert.
-				
-				adBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						
-						//not sure if null is right here. 
-						Toast.makeText(null, "You clicked Ok. Just testing!", Toast.LENGTH_SHORT).show();
-					}
-				});
 			}
 		}
 	}

@@ -70,7 +70,6 @@ public class WebData {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						
-						//not sure if null is right here. 
 						Toast.makeText(null, "You clicked Ok. Just testing!", Toast.LENGTH_SHORT).show();
 					}
 				});
