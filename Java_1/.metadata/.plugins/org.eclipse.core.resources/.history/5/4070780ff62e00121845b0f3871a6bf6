@@ -76,8 +76,8 @@ public class MyFavorites extends LinearLayout{
 		
 		
 		_add = new Button(_context);
+		_add.setBackgroundColor(636363);
 		_add.setText("+");
-		
 		
 		_delete = new Button(_context);
 		_delete.setText("-");
