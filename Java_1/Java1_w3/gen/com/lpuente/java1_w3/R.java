@@ -31,9 +31,10 @@ public final class R {
         public static final int title_activity_main=0x7f040003;
     }
     public static final class style {
-        public static final int AppTheme=0x7f050003;
+        public static final int AppTheme=0x7f050004;
         public static final int MyRB=0x7f050001;
         public static final int colorET=0x7f050002;
         public static final int mytheme=0x7f050000;
+        public static final int spinnerStyle=0x7f050003;
     }
 }

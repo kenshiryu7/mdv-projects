@@ -24,6 +24,6 @@
     </style>
     
     <style name="spinnerStyle" parent="@android:style/Widget.Spinner">
-        
+        <item name="android:tint">#FFFFFF</item>
     </style>
 </resources>
