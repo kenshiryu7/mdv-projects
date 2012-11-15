@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 	
 	//testing this image view
 	
-	//ImageView image;
+	ImageView image;
 
 	
 	
@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
         	_history = getHistory();
         	
         	
-        	//image = (ImageView) findViewById(R.id.imageView1);
+        	image = (ImageView) findViewById(R.id.imageView1);
         	
         	//calling linlay from pack1 package FormingStuff class passing in arguments
             LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "Tank dif", " Convert ");
@@ -266,7 +266,7 @@ public class MainActivity extends Activity {
             _appLo.addView(fishTankOpts);
             
             _result = new TextView(this);
-        	
+        	//_appLo.addView(image);
             _appLo.addView(_result);
         	
         	_appLo.addView(_myfavs);

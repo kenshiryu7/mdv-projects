@@ -28,7 +28,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 //import android.widget.EditText;
@@ -55,10 +54,6 @@ public class MainActivity extends Activity {
 	
 	RadioGroup fishTankOpts;
 	ArrayList<J2Product> fishtanks;
-	
-	//testing this image view
-	
-	//ImageView image;
 
 	
 	
@@ -76,8 +71,6 @@ public class MainActivity extends Activity {
             
         	_history = getHistory();
         	
-        	
-        	//image = (ImageView) findViewById(R.id.imageView1);
         	
         	//calling linlay from pack1 package FormingStuff class passing in arguments
             LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "Tank dif", " Convert ");
@@ -264,10 +257,8 @@ public class MainActivity extends Activity {
         	_appLo.addView(entBox);
             
             _appLo.addView(fishTankOpts);
-            
             _result = new TextView(this);
-        	
-            _appLo.addView(_result);
+        	_appLo.addView(_result);
         	
         	_appLo.addView(_myfavs);
         	
