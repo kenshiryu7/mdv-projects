@@ -40,7 +40,7 @@ public class MyFavorites extends LinearLayout{
 		_favsList = new Spinner(_context);
 		layParam = new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f);
 		_favsList.setLayoutParams(layParam);
-		
+		_favsList.setBackgroundColor(000000);
 		
 	//Adding array adapter to populate Spinner
 		ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(_context, android.R.layout.simple_spinner_item, _information);
