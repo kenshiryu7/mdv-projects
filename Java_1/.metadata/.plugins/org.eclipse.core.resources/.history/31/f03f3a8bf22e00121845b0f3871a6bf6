@@ -7,7 +7,6 @@
         <item name="@android:typeface">serif</item>
         <item name="android:radioButtonStyle">@style/MyRB</item>
         <item name="android:editTextStyle">@style/colorET</item>
-        <item name="android:dropDownSelector">#000000</item>
         
         
     </style>
