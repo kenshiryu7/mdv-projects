@@ -12,8 +12,8 @@ public class SearchData extends LinearLayout {
 	EditText _searchDataField;
 	Button _searchButton;
 	
+	ImageView image;
 	
-	//ImageView image;
 	
 	//constructor created
 	public SearchData(Context context, String hint, String buttonText)
@@ -29,8 +29,7 @@ public class SearchData extends LinearLayout {
 		_searchDataField.setLayoutParams(layParam);
 		_searchDataField.setHint(hint);				//setting hint to String hint value passed in class call
 		
-		//image = (ImageView) findViewById(R.id.imageView1);
-		//image.setBackgroundResource(R.drawable.dsign);
+		image = (ImageView) findViewById(R.id.imageView1);
 		
 		_searchButton = new Button(context);
 		
@@ -40,7 +39,6 @@ public class SearchData extends LinearLayout {
 	//adding instantiated variables to this LinearLayout class
 		this.addView(_searchDataField);
 		this.addView(_searchButton);
-		//this.addView(image);
 		
 		layParam = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		this.setLayoutParams(layParam);
@@ -58,7 +56,6 @@ public class SearchData extends LinearLayout {
 	public Button buttonPress()
 	{
 		return _searchButton;
-		
 	}
 	
 }

@@ -23,7 +23,6 @@
 
     <style name="colorET" parent="@android:style/Widget.EditText">
        <item name="android:textColor">#660000</item>
-       
     </style>
     
     <style name="spinnerStyle" parent="@android:style/Widget.Spinner">
