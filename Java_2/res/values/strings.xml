@@ -14,5 +14,9 @@
     
     
     <string name="second_top">In case I forgot my name</string>
+    <string name="first_example">First Name</string>
+    <string name="last_example">Last Name</string>
+    <string name="phone_num">Phone Number</string>
+    <string name="phone_hint">12345678900</string>
 
 </resources>

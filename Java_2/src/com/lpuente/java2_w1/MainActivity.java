@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends Activity {
 
@@ -18,6 +19,8 @@ public class MainActivity extends Activity {
         
         //creating button using reference from xml id
         Button subButt = (Button)findViewById(R.id.button1);
+        final EditText etFirst = (EditText) findViewById(R.id.editName);
+        final EditText etLast = (EditText) findViewById(R.id.editLast);
         
         
         //on click listener for button
@@ -27,7 +30,14 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				startActivity(new Intent(MainActivity.this, SecondView.class));
+				Intent exIntent = new Intent(MainActivity.this, SecondView.class);
+				
+				//adding data to the intent with put extra
+				exIntent.putExtra("firstName", etFirst.getText().toString());
+				exIntent.putExtra("lastName", etLast.getText().toString());
+				
+				//method to start the activity when the button is pressed
+				startActivity(exIntent);
 				
 				
 			}

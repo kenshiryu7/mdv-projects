@@ -16,35 +16,13 @@
         android:textColor="#6B4226" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
         android:ems="10"
         android:hint="@string/hint_name"
-        android:inputType="textPersonName" 
-        />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="19dp"
-        android:text="@string/main_last"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#6B4226" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:ems="10"
-        android:hint="@string/hint_last"
         android:inputType="textPersonName" />
 
     <Button
@@ -54,5 +32,50 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/button_text" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/editName"
+        android:layout_marginTop="28dp"
+        android:text="@string/main_last"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#6B4226" />
+
+    <EditText
+        android:id="@+id/editLast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:hint="@string/hint_last"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/editLast"
+        android:layout_marginTop="47dp"
+        android:text="@string/phone_num"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#6B4226" />
+
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/editLast"
+        android:layout_below="@+id/textView3"
+        android:hint="@string/phone_hint"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>
