@@ -801,3 +801,6 @@ Caused by: org.eclipse.core.commands.NotHandledException: There is no handler to
 	at java.lang.reflect.Method.invoke(Method.java:597)
 	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
 	... 59 more
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-11-20 21:59:44.890
+!MESSAGE Failed to load properties file for project 'Java2_W1'
