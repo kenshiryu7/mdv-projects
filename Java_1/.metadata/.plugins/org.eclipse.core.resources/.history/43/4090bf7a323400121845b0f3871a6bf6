@@ -1,0 +1,48 @@
+package com.lpuente.java2_w1;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class SecondView extends Activity {
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.secondview);
+		
+		
+		//instance for text view string from previous view is passing into
+		
+		TextView name = (TextView) findViewById(R.id.textView2);
+		TextView last = (TextView) findViewById(R.id.textView3);
+		
+		//creating the button
+		Button callButt = (Button)findViewById(R.id.callnum);
+		
+		//string from phone num
+		String phoneNum;
+		
+		phoneNum.setText(getIntent().getExtras().getString("phoneNum"));
+		
+		name.setText(getIntent().getExtras().getString("firstName"));
+		last.setText(getIntent().getExtras().getString("lastName"));
+		
+		//listener for button
+		callButt.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				
+			}
+		});
+	}
+	
+	
+}
