@@ -46,6 +46,7 @@ public class SecondView extends Activity {
 				String phoneNum = "tel:" + callButt.getText().toString();
 				
 				//Calling the ACTION_CALL to use the typed number for the phone. NEEDS PERMISSON CALL_PHONE IN MANIFEST
+				//Hope this counts as an implicit Intent
 				Intent impIntent = new Intent(Intent.ACTION_CALL, Uri.parse(phoneNum));
 				
 				
