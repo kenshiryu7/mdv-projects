@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
         Button subButt = (Button)findViewById(R.id.button1);
         final EditText etFirst = (EditText) findViewById(R.id.editName);
         final EditText etLast = (EditText) findViewById(R.id.editLast);
+        final EditText etPhone = (EditText) findViewById(R.id.editPhone);
         
         
         //on click listener for button
@@ -32,9 +33,10 @@ public class MainActivity extends Activity {
 				
 				Intent exIntent = new Intent(MainActivity.this, SecondView.class);
 				
-				//adding data to the intent with put extra
+				//adding data to the intent with put extra AND Naming the KEY HERE!!!!!
 				exIntent.putExtra("firstName", etFirst.getText().toString());
 				exIntent.putExtra("lastName", etLast.getText().toString());
+				exIntent.putExtra("phoneNum", etPhone.getText().toString());
 				
 				//method to start the activity when the button is pressed
 				startActivity(exIntent);
