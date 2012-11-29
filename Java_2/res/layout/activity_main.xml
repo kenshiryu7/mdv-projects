@@ -12,6 +12,7 @@
         android:layout_alignParentTop="true"
         android:text="@string/main_name"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:padding="10dp"
         android:textColor="#6B4226" />
 
     <EditText
@@ -19,11 +20,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/editLast"
         android:layout_below="@+id/textView1"
         android:background="@android:drawable/editbox_background"
         android:ems="10"
         android:hint="@string/hint_name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:paddingLeft="10dp" >
+        
+        <requestFocus />
+    </EditText>
 
     <Button
         android:id="@+id/button1"
@@ -42,6 +49,7 @@
         android:layout_marginTop="28dp"
         android:text="@string/main_last"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:padding="10dp"
         android:textColor="#6B4226" />
 
     <EditText
@@ -53,7 +61,8 @@
         android:background="@android:drawable/editbox_background"
         android:ems="10"
         android:hint="@string/hint_last"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:padding="10dp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -62,60 +71,63 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/editLast"
         android:layout_marginTop="47dp"
+        android:paddingLeft="10dp"
         android:text="@string/phone_num"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#6B4226" />
 
-    <EditText
-        android:id="@+id/editPhone2"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/textView3"
-        android:background="@android:drawable/editbox_background"
-        android:ems="10"
-        android:hint="@string/phone_hint2"
-        android:inputType="phone"
-        android:padding="10dp" >
+	<LinearLayout
+   		android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentLeft="true"
+    	android:layout_below="@+id/textView3"
+    	android:padding="10dp"
+    	android:orientation="horizontal" >
 
-        <requestFocus />
-    </EditText>
+    	<TextView
+        	android:id="@+id/textView4"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/one"
+        	android:textAppearance="?android:attr/textAppearanceLarge"
+        	android:textColor="#000000" />
+    
+    	<EditText
+        	android:id="@+id/editPhone"
+       	    android:layout_width="70dp"
+        	android:layout_height="wrap_content"
+       		android:background="@android:drawable/editbox_background"
+        	android:ems="10"
+        	android:hint="@string/phone_hint1"
+        	android:maxLength="3"
+        	android:inputType="phone"
+        	android:padding="10dp" />
+    	
+    	<EditText
+        	android:id="@+id/editPhone2"
+        	android:layout_width="70dp"
+        	android:layout_height="wrap_content"
+        	android:background="@android:drawable/editbox_background"
+        	android:ems="10"
+        	android:hint="@string/phone_hint2"
+        	android:maxLength="3"
+        	android:inputType="phone"
+        	android:padding="10dp" >
 
-    <EditText
-        android:id="@+id/editPhone3"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editPhone2"
-        android:layout_alignBottom="@+id/editPhone2"
-        android:layout_toRightOf="@+id/editPhone2"
-        android:hint="@string/phone_hint3"
-        android:background="@android:drawable/editbox_background"
-        android:ems="10"
-        android:inputType="phone"
-        android:padding="10dp" />
+        	
+    	</EditText>
 
-    <EditText
-        android:id="@+id/editPhone"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editPhone2"
-        android:layout_alignBottom="@+id/editPhone2"
-        android:layout_toLeftOf="@+id/editPhone2"
-        android:background="@android:drawable/editbox_background"
-        android:ems="10"
-        android:hint="@string/phone_hint1"
-        android:inputType="phone"
-        android:padding="10dp" />
+    	<EditText
+        	android:id="@+id/editPhone3"
+        	android:layout_width="70dp"
+        	android:layout_height="wrap_content"
+        	android:background="@android:drawable/editbox_background"
+        	android:ems="10"
+        	android:hint="@string/phone_hint3"
+        	android:maxLength="3"
+        	android:inputType="phone"
+        	android:padding="10dp" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editPhone"
-        android:layout_alignBottom="@+id/editPhone"
-        android:layout_toLeftOf="@+id/editPhone"
-        android:text="@string/one"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#000000" />
+	</LinearLayout>
 
 </RelativeLayout>

@@ -38,7 +38,7 @@ public class SecondView extends Activity {
 		 callButt.setText("1" + "(" + phone1 + ")" + phone2 + "-" + phone3);
 		
 		//setting first and last name in one text view
-		test.setText(getIntent().getExtras().getString("firstName") + "  " + getIntent().getExtras().getString("lastName"));
+		test.setText(getIntent().getExtras().getString("firstName") + " " + getIntent().getExtras().getString("lastName"));
 		
 		//listener for button
 		callButt.setOnClickListener(new OnClickListener() {
@@ -48,7 +48,7 @@ public class SecondView extends Activity {
 				
 				//Adding the typed in cell number to call. Must have tel: at beginning of string
 				//Im sure there's a cleaner better way to do this
-				String phoneNum = "tel:" + "1" + callButt.getText().toString();
+				String phoneNum = "tel:" + callButt.getText().toString();
 				
 				//Calling the ACTION_CALL to use the typed number for the phone. NEEDS PERMISSON CALL_PHONE IN MANIFEST
 				//Hope this counts as an implicit Intent
