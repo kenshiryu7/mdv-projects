@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
+        android:background="@android:drawable/editbox_background"
         android:ems="10"
         android:hint="@string/hint_name"
         android:inputType="textPersonName" />
@@ -49,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView2"
+        android:background="@android:drawable/editbox_background"
         android:ems="10"
         android:hint="@string/hint_last"
         android:inputType="textPersonName" />
@@ -70,8 +72,9 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/button1"
         android:layout_below="@+id/textView3"
-        android:hint="@string/phone_hint2"
+        android:background="@android:drawable/editbox_background"
         android:ems="10"
+        android:hint="@string/phone_hint2"
         android:inputType="phone"
         android:padding="10dp" >
 
@@ -86,6 +89,7 @@
         android:layout_alignBottom="@+id/editPhone2"
         android:layout_toRightOf="@+id/editPhone2"
         android:hint="@string/phone_hint3"
+        android:background="@android:drawable/editbox_background"
         android:ems="10"
         android:inputType="phone"
         android:padding="10dp" />
@@ -97,6 +101,7 @@
         android:layout_alignBaseline="@+id/editPhone2"
         android:layout_alignBottom="@+id/editPhone2"
         android:layout_toLeftOf="@+id/editPhone2"
+        android:background="@android:drawable/editbox_background"
         android:ems="10"
         android:hint="@string/phone_hint1"
         android:inputType="phone"
