@@ -14,7 +14,8 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.firstfrag);			//setting first frag xml. commenting out first just in case for later.
         
         
         //creating button using reference from xml id
