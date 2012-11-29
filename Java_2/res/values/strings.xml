@@ -12,7 +12,10 @@
     <string name="hint_last">Doe</string>
     <string name="button_text">Submit</string>
     <string name="phone_num">Phone Number</string>
-    <string name="phone_hint">12345678900</string>
+    <string name="phone_hint1">222</string>
+    <string name="phone_hint2">333</string>
+    <string name="phone_hint3">4444</string>
+    <string name="one">1</string>
     
     
     <string name="second_top">In case I forgot my name</string>

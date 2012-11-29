@@ -1,9 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:background="@drawable/paperbg"
-    >
+    android:layout_height="match_parent"
+    android:background="@drawable/paperbg" >
 
     <TextView
         android:id="@+id/textView1"
@@ -66,16 +65,52 @@
         android:textColor="#6B4226" />
 
     <EditText
-        android:id="@+id/editPhone"
-        android:layout_width="wrap_content"
+        android:id="@+id/editPhone2"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/editLast"
+        android:layout_alignRight="@+id/button1"
         android:layout_below="@+id/textView3"
-        android:hint="@string/phone_hint"
+        android:hint="@string/phone_hint2"
         android:ems="10"
-        android:inputType="number" >
+        android:inputType="phone"
+        android:padding="10dp" >
 
         <requestFocus />
     </EditText>
+
+    <EditText
+        android:id="@+id/editPhone3"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editPhone2"
+        android:layout_alignBottom="@+id/editPhone2"
+        android:layout_toRightOf="@+id/editPhone2"
+        android:hint="@string/phone_hint3"
+        android:ems="10"
+        android:inputType="phone"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editPhone2"
+        android:layout_alignBottom="@+id/editPhone2"
+        android:layout_toLeftOf="@+id/editPhone2"
+        android:ems="10"
+        android:hint="@string/phone_hint1"
+        android:inputType="phone"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editPhone"
+        android:layout_alignBottom="@+id/editPhone"
+        android:layout_toLeftOf="@+id/editPhone"
+        android:text="@string/one"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
 
 </RelativeLayout>
