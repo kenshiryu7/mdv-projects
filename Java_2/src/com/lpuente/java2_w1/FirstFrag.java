@@ -16,6 +16,8 @@ public class FirstFrag extends Fragment {
 
 	private FirstInterface listener;
 	
+	
+//Building the interface to implement in MainActivity
 	public interface FirstInterface
 	{
 		public void onSubmit();
@@ -28,16 +30,15 @@ public class FirstFrag extends Fragment {
 		// TODO Auto-generated method stub
 		super.onCreateView(inflater, container, savedInstanceState);
 		
-		//relating to the main.xml which is a relative layout. hopefully no issues.
+	//relating to the main.xml which is a relative layout. hopefully no issues.
 		RelativeLayout view = (RelativeLayout) inflater.inflate(R.layout.activity_main, container, false);
 		
 		
 		
-		//creating button using reference from xml id
+	//creating button using reference from xml id
         Button subButt = (Button) view.findViewById(R.id.button1);
         
-        //on click listener for button
-        
+    //on click listener for button
         subButt.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -47,10 +48,7 @@ public class FirstFrag extends Fragment {
 			    
 			}
 		});
-    
-
-		
-		return view;
+        return view;
 	};
 
 	@Override

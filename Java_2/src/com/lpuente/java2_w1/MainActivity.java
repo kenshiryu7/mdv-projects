@@ -3,57 +3,24 @@ package com.lpuente.java2_w1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.Menu;
-//import android.view.View;
-//import android.view.View.OnClickListener;
-//import android.widget.Button;
 import android.widget.EditText;
+
+//Implementing From FirstFrag and FirstInterface 
 
 public class MainActivity extends Activity implements FirstFrag.FirstInterface {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
         setContentView(R.layout.firstfrag);			//setting first frag xml. commenting out first just in case for later.
    
-        
- /*       
-        //creating button using reference from xml id
-        Button subButt = (Button)findViewById(R.id.button1);
-        final EditText etFirst = (EditText) findViewById(R.id.editName);
-        final EditText etLast = (EditText) findViewById(R.id.editLast);
-        final EditText etPhone = (EditText) findViewById(R.id.editPhone);
-        
-        
-        //on click listener for button
-        
-        subButt.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-				Intent exIntent = new Intent(MainActivity.this, SecondView.class);
-				
-				//adding data to the intent with put extra AND Naming the KEY HERE!!!!!
-				exIntent.putExtra("firstName", etFirst.getText().toString());
-				exIntent.putExtra("lastName", etLast.getText().toString());
-				exIntent.putExtra("phoneNum", etPhone.getText().toString());
-				
-				//method to start the activity when the button is pressed
-				startActivity(exIntent);
-				
-				
-			}
-		});
-		
-		//comment out before i completely remove
- */
     }
 
     
-    //where did this come from? Not sure why this was automatically added.
+ //where did this come from? Not sure why this was automatically added.
+ //Erased this code and for some reason when using PHONE_CALL it takes you straight to the keypad instead of dialing the typed number.
+ //not sure why it does this so i left it in.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
@@ -63,31 +30,33 @@ public class MainActivity extends Activity implements FirstFrag.FirstInterface {
 
     
     
-  //FORM FRAGMENT METHODS HERE. MAY HAVE MORE LATER  
+  //FROM FirstFrag. FRAGMENT METHODS HERE. MAY HAVE MORE LATER  
     
 	@Override
 	public void onSubmit() {
 		// TODO Auto-generated method stub
+		
+	//Building Edit Texts for first and last name
 		 EditText etFirst = (EditText) findViewById(R.id.editName);
 	     EditText etLast = (EditText) findViewById(R.id.editLast);
 	        
+	//Building Edit Texts for the 3 input fields to make a full phone number.
 	     EditText etPhone = (EditText) findViewById(R.id.editPhone);
 	     EditText etPhone2 = (EditText) findViewById(R.id.editPhone2);
 	     EditText etPhone3 = (EditText) findViewById(R.id.editPhone3);
 	     
 	    
+	//Calling the intent to move into SecondView Activity
+		 Intent exIntent = new Intent(MainActivity.this, SecondView.class);
 	     
-		Intent exIntent = new Intent(MainActivity.this, SecondView.class);
-		
 	   
-	     
-		//adding data to the intent with put extra AND Naming the KEY HERE!!!!!
+//adding data to the intent with put extra AND Naming the KEY HERE!!!!!
 		
-		//adding the first and last name
+	//adding the first and last name
 		exIntent.putExtra("firstName", etFirst.getText().toString());
 		exIntent.putExtra("lastName", etLast.getText().toString());
 		
-		//for the phone number. Using 3 edit text fields
+	//for the phone number. Using 3 edit text fields
 		exIntent.putExtra("phoneNum", etPhone.getText().toString());
 		exIntent.putExtra("phoneNum2", etPhone2.getText().toString());
 		exIntent.putExtra("phoneNum3", etPhone3.getText().toString());

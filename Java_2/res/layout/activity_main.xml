@@ -124,7 +124,7 @@
         	android:background="@android:drawable/editbox_background"
         	android:ems="10"
         	android:hint="@string/phone_hint3"
-        	android:maxLength="3"
+        	android:maxLength="4"
         	android:inputType="phone"
         	android:padding="10dp" />
 
