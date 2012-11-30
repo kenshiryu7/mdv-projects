@@ -22,8 +22,8 @@ public class SecondView extends Activity implements SecondFrag.SecondInterface{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.secondfrag);		//setting to secondfrag.xml
-/*		
+		setContentView(R.layout.secondview);		//setting to secondfrag.xml
+		
 	//Getting id for TextView to display full name
 		TextView fullName = (TextView) findViewById(R.id.full_name);
 		
@@ -61,7 +61,7 @@ public class SecondView extends Activity implements SecondFrag.SecondInterface{
 				startActivity(impIntent);
 			}
 		});
-*/
+
 		
 		
 // FROM SEcondFrag. FRAGMENT METHODS HERE. MAY HAVE MORE LATER  		
@@ -69,12 +69,13 @@ public class SecondView extends Activity implements SecondFrag.SecondInterface{
 		// Attempted to add a second fragment for the implicit intent PHONE_CALL
 		// Tried numerous ways including global variables and etc. 
 		// Will leave this implement blank until HOPEFULLY can make use of it.
-	
+		// ok came back and tried something. Didnt work so now im just leaving things as they are.
 	}
 
 	@Override
 	public void onMakeCall() {
 		// TODO Auto-generated method stub
+		
 		//Getting id for TextView to display full name
 				TextView fullName = (TextView) findViewById(R.id.full_name);
 				
