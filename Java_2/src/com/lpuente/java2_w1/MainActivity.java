@@ -13,7 +13,7 @@ public class MainActivity extends Activity implements FirstFrag.FirstInterface {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.firstfrag);			//setting first frag xml. commenting out first just in case for later.
+        setContentView(R.layout.firstfrag);			//setting firstfrag.xml. 
    
     }
 
