@@ -12,7 +12,7 @@ import android.app.ListActivity;
 //import android.view.Menu;
 import android.content.Context;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends ListActivity implements FirstFrag.FirstInterface{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,13 @@ public class MainActivity extends ListActivity {
         
     }
 
+    
+    
+    
+    
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+    
     //Creating Inner class. May rearrange this later into separate file. Just going with this for now
     private class ListAdapter extends ArrayAdapter<String> {
 
@@ -37,10 +44,10 @@ public class MainActivity extends ListActivity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			
-			//getting layout inflator system service
+			//getting layout inflater system service
 			LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			
-			//getting inflated layout/ represnting a single row 
+			//getting inflated layout/ representing a single row 
 			View row = inflater.inflate(R.layout.list_item, parent, false);
 			
 			//getting resources for row from list item.xml layout. THIS IS STATIC
@@ -70,6 +77,17 @@ public class MainActivity extends ListActivity {
 			return row;
 		}
     }
+
+
+
+
+
+
+	@Override
+	public void onAdd() {
+		// TODO Auto-generated method stub
+		
+	}
    
     
 }
