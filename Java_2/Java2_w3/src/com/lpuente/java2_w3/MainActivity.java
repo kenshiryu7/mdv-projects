@@ -31,23 +31,11 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 
     protected void onListItemClick(ListView lv, View v, int position, long id)
     {
-    	super.onListItemClick(lv, v, position, id);
+    	//super.onListItemClick(lv, v, position, id);
     	
-    	Intent exIntent = new Intent(MainActivity.this, AddView.class);
+    	Intent exIntent = new Intent(MainActivity.this, SelectedContact.class);
     	startActivity(exIntent);
-    	/*
-    	try {
-			Class details = Class.forName("com.lpuente.java2_w3." + "SelectedContact");
-			
-			Intent selectedItem = new Intent(this, details);
-			
-			startActivity(selectedItem);
-			
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
+    	
     }
     
 //This menu onCreate was here from the beginning
@@ -114,19 +102,22 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 		}
     }
 
-   
 
 
-//Implementation from fragment
+  //Implementation from fragment
 
 	@Override
 	public void onAdd() {
 		
+
 		//Calling the intent to move into SecondView Activity
 		 Intent exIntent = new Intent(MainActivity.this, AddView.class);
 		 
 		//method to start the activity when the button is pressed
 			startActivity(exIntent);
 	}
+
+   
+	
     
 }
