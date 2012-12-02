@@ -22,7 +22,7 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);	//before firstfrag
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.firstfrag);
         
         //setting list adapter (adapting data to display in listview) from contacts resource
         setListAdapter(new ListAdapter(this, android.R.layout.simple_list_item_1, R.id.list_name, getResources().getStringArray(R.array.contacts)));
