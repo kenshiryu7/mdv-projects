@@ -1,5 +1,0 @@
-package com.lpuente.pack2;
-
-public class InterfacClass implements J2Product{
-
-}

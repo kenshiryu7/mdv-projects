@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="contacts">
+        <item name="captain">Captain America</item>
+        <item name="iron">Iron Man</item>
+        <item name="spider">Spider-Man</item>
+    </string-array>
+    
+</resources>

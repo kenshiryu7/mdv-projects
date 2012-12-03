@@ -1,0 +1,32 @@
+package com.lpuente.java2_w3;
+
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class SelectedContact extends Activity {
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.selectedfrag);		//setting to selectedfrag.xml
+		
+		//Getting id for TextView to display full name
+				TextView fullName = (TextView) findViewById(R.id.full_name);
+				
+		//Getting id for TextView to display Phone Number
+				TextView phone = (TextView) findViewById(R.id.phone_digits);
+				
+		//creating the button
+				final Button callButt = (Button)findViewById(R.id.call_button);
+				
+		//setting first and last name in one text view
+				fullName.setText(getIntent().getExtras().getString("list_name")); //passed key is in quotes
+		//setting phone number
+				phone.setText(getIntent().getExtras().getString("phoneText"));   //passed key is in quotes
+	}
+}

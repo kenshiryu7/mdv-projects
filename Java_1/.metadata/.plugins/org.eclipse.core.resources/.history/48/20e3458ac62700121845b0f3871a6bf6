@@ -1,9 +1,0 @@
-package com.lpuente.java1_w3;
-
-import android.widget.LinearLayout;
-
-public class searchData extends LinearLayout{
-	
-	public
-
-}

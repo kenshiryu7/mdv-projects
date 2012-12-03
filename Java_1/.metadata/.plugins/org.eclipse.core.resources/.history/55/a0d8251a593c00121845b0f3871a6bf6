@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="false"
+    android:orientation="vertical" >
+    
+    <LinearLayout name="butt_lin"
+        android:layout_width="match parent"
+        android:layout_height="50dp">
+        
+         <Button
+        android:id="@+id/addButt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#EBEBEB"
+        android:text="@string/add_button"
+         />
+    </LinearLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="292dp"
+        android:background="@drawable/row_bg"
+        android:focusable="true" >
+
+    </ListView>
+
+    
+
+</LinearLayout>
