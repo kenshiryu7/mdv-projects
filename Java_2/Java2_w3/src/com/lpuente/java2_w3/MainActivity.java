@@ -3,6 +3,7 @@ package com.lpuente.java2_w3;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -90,6 +91,9 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 				imageV.setImageResource(R.drawable.spider_man);
 			}
 			
+			//logging items position
+	    	Log.d("Luis", items[position]);
+			
 			//returning all data passed into "row"
 			return row;
 		}
@@ -121,6 +125,11 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     			
     	//startActivity(exIntent);
     	startActivityForResult(exIntent, 0);
+    	
+    	//logging position 
+    	Log.d("Position.Log",String.valueOf(position));
+    	Log.d("Item", String.valueOf(lv.getPositionForView(v)));
+    	
     }
 
 
