@@ -44,7 +44,7 @@ public class SecondView extends Activity implements SecondFrag.SecondInterface{
 		
 	
 	
-	//listener for callButt button
+	//listener for callButt button hopefully will work
 		callButt.setOnClickListener(new OnClickListener() {
 			
 			@Override
