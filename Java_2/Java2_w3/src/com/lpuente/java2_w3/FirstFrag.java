@@ -32,6 +32,7 @@ public class FirstFrag extends Fragment {
 			super.onCreateView(inflater, container, savedInstanceState);
 			
 		//relating to the main.xml which is a relative layout. hopefully no issues.
+			//changed to linear from before
 			LinearLayout view = (LinearLayout) inflater.inflate(R.layout.activity_main, container, false);
 			
 

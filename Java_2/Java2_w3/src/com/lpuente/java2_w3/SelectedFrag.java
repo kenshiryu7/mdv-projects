@@ -27,7 +27,7 @@ private SecondInterface secondlistener;
 		// TODO Auto-generated method stub
 		super.onCreateView(inflater, container, savedInstanceState);
 		
-		//relating to the main.xml which is a relative layout. hopefully no issues.
+		//relating to the linear layout
 		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.selectedview, container, false);
 		
 		//Getting id for TextView to display full name
@@ -69,7 +69,7 @@ private SecondInterface secondlistener;
 			}
 			catch(ClassCastException e)
 			{
-				throw new ClassCastException(activity.toString() + "must implement FirstInterface");
+				throw new ClassCastException(activity.toString() + "must implement SecondInterface");
 			}
 		}
 }

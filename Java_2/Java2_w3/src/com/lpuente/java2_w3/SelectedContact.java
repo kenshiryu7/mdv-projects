@@ -17,7 +17,7 @@ public class SelectedContact extends Activity implements SelectedFrag.SecondInte
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.selectedview);		//setting to selectedfrag.xml
+		setContentView(R.layout.selectedfrag);		//setting to selectedfrag.xml
 		
 		//Getting id for TextView to display full name
 				TextView fullName = (TextView) findViewById(R.id.full_name);
