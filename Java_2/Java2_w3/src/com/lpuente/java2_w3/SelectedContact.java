@@ -10,6 +10,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+///////////NOT SURE WHY THIS WON'T GET selected_view. KEEPS CRASHING. TRYING WITHOUT FRAGMENT!!
+
 public class SelectedContact extends Activity implements SelectedFrag.SecondInterface{
 
 	

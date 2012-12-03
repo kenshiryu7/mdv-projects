@@ -26,21 +26,21 @@ public final class R {
     public static final class id {
         public static final int addButt=0x7f080000;
         public static final int add_frag=0x7f080001;
-        public static final int call_button=0x7f080014;
+        public static final int call_button=0x7f080013;
         public static final int editLast=0x7f080004;
         public static final int editName=0x7f080003;
         public static final int editPhone=0x7f080008;
         public static final int editPhone2=0x7f080009;
         public static final int editPhone3=0x7f08000a;
         public static final int first_frag=0x7f08000c;
-        public static final int full_name=0x7f080012;
-        public static final int imageView1=0x7f080011;
+        public static final int full_name=0x7f080011;
+        public static final int imageView1=0x7f080010;
         public static final int list_image=0x7f08000d;
         public static final int list_name=0x7f08000e;
         public static final int menu_settings=0x7f080015;
         public static final int phoneText=0x7f08000f;
-        public static final int phone_digits=0x7f080013;
-        public static final int selected_frag=0x7f080010;
+        public static final int phone_digits=0x7f080012;
+        public static final int selected_frag=0x7f080014;
         public static final int sub_butt=0x7f08000b;
         public static final int textView1=0x7f080002;
         public static final int textView2=0x7f080005;
@@ -53,8 +53,9 @@ public final class R {
         public static final int addview=0x7f030002;
         public static final int firstfrag=0x7f030003;
         public static final int list_item=0x7f030004;
-        public static final int selectedfrag=0x7f030005;
-        public static final int selectedview=0x7f030006;
+        public static final int selected_view=0x7f030005;
+        public static final int selectedfrag=0x7f030006;
+        public static final int testing_view=0x7f030007;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;

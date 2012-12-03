@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+///////////NOT SURE WHY THIS WON'T GET selected_view. KEEPS CRASHING. TRYING WITHOUT FRAGMENT!!
+
 
 public class SelectedFrag extends Fragment {
 	
@@ -28,7 +30,7 @@ private SecondInterface secondlistener;
 		super.onCreateView(inflater, container, savedInstanceState);
 		
 		//relating to the linear layout
-		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.selectedview, container, false);
+		LinearLayout view = (LinearLayout) inflater.inflate(R.layout.selected_view, container, false);
 		
 		//Getting id for TextView to display full name
 		TextView fullName = (TextView) getActivity().findViewById(R.id.full_name);

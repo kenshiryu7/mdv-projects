@@ -1,6 +1,7 @@
 package com.lpuente.java2_w3;
 
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,14 +30,6 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
         
     }
 
-    protected void onListItemClick(ListView lv, View v, int position, long id)
-    {
-    	//super.onListItemClick(lv, v, position, id);
-    	
-    	Intent exIntent = new Intent(MainActivity.this, SelectedContact.class);
-    	startActivity(exIntent);
-    	
-    }
     
 //This menu onCreate was here from the beginning
     @Override
@@ -75,8 +68,8 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			String[] phoneItems = getResources().getStringArray(R.array.phone_numbers);
 			
 			ImageView imageV = (ImageView) row.findViewById(R.id.list_image);	//image for row
-			TextView textV = (TextView) row.findViewById(R.id.list_name);		//text for row
-			TextView pNum = (TextView) row.findViewById(R.id.phoneText);
+			TextView textV = (TextView) row.findViewById(R.id.list_name);		//full name for row
+			TextView pNum = (TextView) row.findViewById(R.id.phoneText);		//phone number for row
 			
 		//setting the correct text from the String xml with "position"
 			textV.setText(items[position]);
@@ -100,6 +93,34 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			//returning all data passed into "row"
 			return row;
 		}
+		
+		
+    }
+
+    protected void onListItemClick(ListView lv, View v, int position, long id)
+    {
+    	super.onListItemClick(lv, v, position, id);
+    	
+    	//creating local variables. YES i realize this repeats but I just want this TO WORK!
+    	//ImageView imageV = (ImageView) findViewById(R.id.list_image);	//image 
+		TextView textV = (TextView) findViewById(R.id.list_name);		//full name 
+		TextView pNum = (TextView) findViewById(R.id.phoneText);		//phone number 
+		
+		
+    	
+		//using Testing view to bypass view not working / SelectedContacts
+    	Intent exIntent = new Intent(MainActivity.this, TestingView.class);
+    	
+    	exIntent.putExtra("fullname", textV.getText().toString());
+    	exIntent.putExtra("fullphone", pNum.getText().toString());
+    	
+    	//trying something for the image
+    			Uri imageUri = exIntent.getData();
+    			exIntent.setData(imageUri);
+    			
+    			
+    	//startActivity(exIntent);
+    	startActivityForResult(exIntent, 0);
     }
 
 

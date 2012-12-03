@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddView"></activity>
-        <activity android:name="SelectedContact"></activity>
+        <activity android:name=".SelectedContact"></activity>
+        <activity android:name=".TestingView"></activity>
         
     </application>
 
