@@ -5007,3 +5007,9 @@ Binding(CTRL+SHIFT+ARROW_RIGHT,
 
 !ENTRY org.eclipse.ui 2 2 2012-12-02 22:37:40.978
 !MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-12-03 22:36:55.563
+!MESSAGE testing_view.xml: "3osp" in attribute "textSize" is not a valid format.
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-12-03 22:42:57.347
+!MESSAGE testing_view.xml: "10dp" in attribute "layout_weight" cannot be converted to float.
