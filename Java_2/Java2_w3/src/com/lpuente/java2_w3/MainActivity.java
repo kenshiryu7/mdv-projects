@@ -2,6 +2,8 @@ package com.lpuente.java2_w3;
 
 
 
+
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -64,9 +66,11 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			//getting inflated layout/ representing a single row 
 			View row = inflater.inflate(R.layout.list_item, parent, false);
 			
-						
+			
 		//getting resources for row from list item.xml layout. THIS IS STATIC
 			String[] items = getResources().getStringArray(R.array.contacts);
+			
+		
 		//getting resources for phone numbers for the first 3 list items. THIS IS STATIC
 			String[] phoneItems = getResources().getStringArray(R.array.phone_numbers);
 			
@@ -95,6 +99,14 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			else if(items[position].equals("Spider-Man"))
 			{
 				imageV.setImageResource(R.drawable.spider_man);
+			}
+			else if(items[position].equals("Thor"))
+			{
+				imageV.setImageResource(R.drawable.thor);
+			}
+			else if(items[position].equals("Hulk"))
+			{
+				imageV.setImageResource(R.drawable.the_hulk);
 			}
 			
 			//logging items position

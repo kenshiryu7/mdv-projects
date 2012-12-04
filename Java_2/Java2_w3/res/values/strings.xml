@@ -11,11 +11,12 @@
     <string name="hint_name">John</string>
     <string name="main_last">Last Name</string>
     <string name="hint_last">Doe</string>
-    <string name="button_text">Submit</string>
+    <string name="button_text">Add Contact</string>
     <string name="phone_num">Phone Number</string>
     <string name="phone_hint1">222</string>
     <string name="phone_hint2">333</string>
     <string name="phone_hint3">4444</string>
     <string name="one">1</string>
+    <string name="make_call">Call</string>
 
 </resources>

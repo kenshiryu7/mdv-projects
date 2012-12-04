@@ -22,6 +22,8 @@ public final class R {
         public static final int main_bg=0x7f020004;
         public static final int row_bg=0x7f020005;
         public static final int spider_man=0x7f020006;
+        public static final int the_hulk=0x7f020007;
+        public static final int thor=0x7f020008;
     }
     public static final class id {
         public static final int addButt=0x7f080000;
@@ -69,6 +71,7 @@ public final class R {
         public static final int hint_name=0x7f050006;
         public static final int main_last=0x7f050007;
         public static final int main_name=0x7f050005;
+        public static final int make_call=0x7f05000f;
         public static final int menu_settings=0x7f050002;
         public static final int one=0x7f05000e;
         public static final int phone_hint1=0x7f05000b;

@@ -2,9 +2,13 @@ package com.lpuente.java2_w3;
 
 
 
+
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.EditText;
 
 public class AddView extends Activity implements AddFrag.AddInterface{
 
@@ -31,5 +35,34 @@ public class AddView extends Activity implements AddFrag.AddInterface{
 		public void onSubmit() {
 			// TODO Auto-generated method stub
 			
+			finish();
+			
+		}
+		
+		public void finish()
+		{
+			//Building Edit Texts for first and last name
+			 EditText etFirst = (EditText) findViewById(R.id.editName);
+		     EditText etLast = (EditText) findViewById(R.id.editLast);
+		        
+		//Building Edit Texts for the 3 input fields to make a full phone number.
+		     EditText etPhone = (EditText) findViewById(R.id.editPhone);
+		     EditText etPhone2 = (EditText) findViewById(R.id.editPhone2);
+		     EditText etPhone3 = (EditText) findViewById(R.id.editPhone3);
+		     
+		   //building intent 
+			Intent finish = new Intent();
+			
+			//adding the first and last name
+			finish.putExtra("firstName", etFirst.getText().toString());
+			finish.putExtra("lastName", etLast.getText().toString());
+			
+		//for the phone number. Using 3 edit text fields
+			finish.putExtra("phoneNum", etPhone.getText().toString());
+			finish.putExtra("phoneNum2", etPhone2.getText().toString());
+			finish.putExtra("phoneNum3", etPhone3.getText().toString());
+			
+			setResult(RESULT_OK, finish);
+			super.finish();
 		}
 }
