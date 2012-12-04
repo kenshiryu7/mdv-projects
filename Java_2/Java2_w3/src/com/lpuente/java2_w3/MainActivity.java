@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 
-public class MainActivity extends ListActivity implements FirstFrag.FirstInterface{
+public class MainActivity extends ListActivity implements FirstFrag.FirstInterface, AddFrag.AddInterface{
 
 	//may need to create string array to hold pieces within listview
 	
@@ -166,6 +167,38 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			startActivityForResult(exIntent,0);
 	}
 
+
+	@Override
+	public void onSubmit() {
+		// TODO Auto-generated method stub
+		finish();
+	}
+	public void finish()
+	{
+		//Building Edit Texts for first and last name
+		 EditText etFirst = (EditText) findViewById(R.id.editName);
+	     EditText etLast = (EditText) findViewById(R.id.editLast);
+	        
+	//Building Edit Texts for the 3 input fields to make a full phone number.
+	     EditText etPhone = (EditText) findViewById(R.id.editPhone);
+	     EditText etPhone2 = (EditText) findViewById(R.id.editPhone2);
+	     EditText etPhone3 = (EditText) findViewById(R.id.editPhone3);
+	     
+	   //building intent 
+		Intent finish = new Intent();
+		
+		//adding the first and last name
+		finish.putExtra("firstName", etFirst.getText().toString());
+		finish.putExtra("lastName", etLast.getText().toString());
+		
+	//for the phone number. Using 3 edit text fields
+		finish.putExtra("phoneNum", etPhone.getText().toString());
+		finish.putExtra("phoneNum2", etPhone2.getText().toString());
+		finish.putExtra("phoneNum3", etPhone3.getText().toString());
+		
+		setResult(RESULT_OK, finish);
+		super.finish();
+	}
    
 	
     
