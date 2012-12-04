@@ -1,6 +1,7 @@
 package com.lpuente.java2_w3;
 
 
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,10 +64,13 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			//getting inflated layout/ representing a single row 
 			View row = inflater.inflate(R.layout.list_item, parent, false);
 			
+						
 		//getting resources for row from list item.xml layout. THIS IS STATIC
 			String[] items = getResources().getStringArray(R.array.contacts);
 		//getting resources for phone numbers for the first 3 list items. THIS IS STATIC
 			String[] phoneItems = getResources().getStringArray(R.array.phone_numbers);
+			
+			
 			
 			ImageView imageV = (ImageView) row.findViewById(R.id.list_image);	//image for row
 			TextView textV = (TextView) row.findViewById(R.id.list_name);		//full name for row
@@ -76,6 +80,8 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			textV.setText(items[position]);
 		//setting the correct STATIC phone numbers from string array
 			pNum.setText(phoneItems[position]);
+			
+			
 			
 			//using a conditional to place proper image by string name
 			if(items[position].equals("Captain America"))
@@ -107,8 +113,8 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     	
     	//creating local variables. YES i realize this repeats but I just want this TO WORK!
     	//ImageView imageV = (ImageView) findViewById(R.id.list_image);	//image 
-		TextView textV = (TextView) findViewById(R.id.list_name);		//full name 
-		TextView pNum = (TextView) findViewById(R.id.phoneText);		//phone number 
+		TextView textV = (TextView) v.findViewById(R.id.list_name);		//full name 
+		TextView pNum = (TextView) v.findViewById(R.id.phoneText);		//phone number 
 		
 		
     	
@@ -124,11 +130,12 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     			
     			
     	//startActivity(exIntent);
-    	startActivityForResult(exIntent, 0);
+    	startActivity(exIntent);
     	
     	//logging position 
     	Log.d("Position.Log",String.valueOf(position));
     	Log.d("Item", String.valueOf(lv.getPositionForView(v)));
+    	
     	
     }
 
@@ -144,7 +151,7 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 		 Intent exIntent = new Intent(MainActivity.this, AddView.class);
 		 
 		//method to start the activity when the button is pressed
-			startActivity(exIntent);
+			startActivityForResult(exIntent,0);
 	}
 
    
