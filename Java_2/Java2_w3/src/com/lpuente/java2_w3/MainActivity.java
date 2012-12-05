@@ -59,12 +59,12 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     	
     	
     //getting data from AddView
-    	String fname = getIntent().getExtras().getString("firstName");		//key for first name
-    	String lastname = getIntent().getExtras().getString("lastName");	//key for last name
+    	String fname = data.getExtras().getString("firstName");		//key for first name
+    	String lastname = data.getExtras().getString("lastName");	//key for last name
     	
-    	String phone1 = getIntent().getExtras().getString("phoneNum");		// these are
-    	String phone2 = getIntent().getExtras().getString("phoneNum2");		// the keys for all
-    	String phone3 = getIntent().getExtras().getString("phoneNum3");		// 3 inputs to total the phone number
+    	String phone1 = data.getExtras().getString("phoneNum");		// these are
+    	String phone2 = data.getExtras().getString("phoneNum2");		// the keys for all
+    	String phone3 = data.getExtras().getString("phoneNum3");		// 3 inputs to total the phone number
     	
     //will add data for image here later if there's time
     	//
@@ -229,6 +229,9 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 		// TODO Auto-generated method stub
 		finish();
 	}
+	
+	
+	/*
 	public void finish()
 	{
 		//Building Edit Texts for first and last name
@@ -255,7 +258,7 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 		setResult(RESULT_OK, data);
 		super.finish();
 	}
-   
+   */
 	
     
 }

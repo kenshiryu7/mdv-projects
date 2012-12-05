@@ -74,6 +74,7 @@ public final class R {
         public static final int main_last=0x7f050007;
         public static final int main_name=0x7f050005;
         public static final int make_call=0x7f05000f;
+        public static final int make_call2=0x7f050010;
         public static final int menu_settings=0x7f050002;
         public static final int one=0x7f05000e;
         public static final int phone_hint1=0x7f05000b;

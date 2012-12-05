@@ -17,6 +17,7 @@
     <string name="phone_hint2">333</string>
     <string name="phone_hint3">4444</string>
     <string name="one">1</string>
-    <string name="make_call">Call</string>
+    <string name="make_call">Call This Number</string>
+    <string name="make_call2"> Call This Number </string>
 
 </resources>

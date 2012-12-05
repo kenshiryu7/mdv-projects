@@ -41,7 +41,7 @@
         android:layout_marginTop="25dp"
         android:background="#FFFF00"
         android:text="@string/make_call"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:typeface="serif" />
 
 </LinearLayout>
