@@ -51,18 +51,18 @@ public class AddView extends Activity implements AddFrag.AddInterface{
 		     EditText etPhone3 = (EditText) findViewById(R.id.editPhone3);
 		     
 		   //building intent 
-			Intent finish = new Intent();
+			Intent data = new Intent();
 			
 			//adding the first and last name
-			finish.putExtra("firstName", etFirst.getText().toString());
-			finish.putExtra("lastName", etLast.getText().toString());
+			data.putExtra("firstName", etFirst.getText().toString());
+			data.putExtra("lastName", etLast.getText().toString());
 			
 		//for the phone number. Using 3 edit text fields
-			finish.putExtra("phoneNum", etPhone.getText().toString());
-			finish.putExtra("phoneNum2", etPhone2.getText().toString());
-			finish.putExtra("phoneNum3", etPhone3.getText().toString());
+			data.putExtra("phoneNum", etPhone.getText().toString());
+			data.putExtra("phoneNum2", etPhone2.getText().toString());
+			data.putExtra("phoneNum3", etPhone3.getText().toString());
 			
-			setResult(RESULT_OK, finish);
+			setResult(RESULT_OK, data);
 			super.finish();
 		}
 }

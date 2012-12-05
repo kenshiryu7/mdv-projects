@@ -33,8 +33,17 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
         //setting list adapter (adapting data to display in listview) from contacts resource
         setListAdapter(new ListAdapter(this, android.R.layout.simple_list_item_1, R.id.list_name, getResources().getStringArray(R.array.contacts)));
         
+      
     }
 
+    
+  //method to collect data from AddView to place in the ListAdapter  
+    public void onActivityResult() 
+    {
+    	
+    }
+    
+    
     
 //This menu onCreate was here from the beginning
     @Override
@@ -185,18 +194,18 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 	     EditText etPhone3 = (EditText) findViewById(R.id.editPhone3);
 	     
 	   //building intent 
-		Intent finish = new Intent();
+		Intent data = new Intent();
 		
 		//adding the first and last name
-		finish.putExtra("firstName", etFirst.getText().toString());
-		finish.putExtra("lastName", etLast.getText().toString());
+		data.putExtra("firstName", etFirst.getText().toString());
+		data.putExtra("lastName", etLast.getText().toString());
 		
 	//for the phone number. Using 3 edit text fields
-		finish.putExtra("phoneNum", etPhone.getText().toString());
-		finish.putExtra("phoneNum2", etPhone2.getText().toString());
-		finish.putExtra("phoneNum3", etPhone3.getText().toString());
+		data.putExtra("phoneNum", etPhone.getText().toString());
+		data.putExtra("phoneNum2", etPhone2.getText().toString());
+		data.putExtra("phoneNum3", etPhone3.getText().toString());
 		
-		setResult(RESULT_OK, finish);
+		setResult(RESULT_OK, data);
 		super.finish();
 	}
    
