@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.app.ListActivity;
@@ -33,15 +34,61 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
         //setting list adapter (adapting data to display in listview) from contacts resource
         setListAdapter(new ListAdapter(this, android.R.layout.simple_list_item_1, R.id.list_name, getResources().getStringArray(R.array.contacts)));
         
+        
       
     }
 
     
+    
+    
+    
   //method to collect data from AddView to place in the ListAdapter  
-    public void onActivityResult() 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) 
     {
+    	super.onActivityResult(requestCode, resultCode, data);
     	
+    //ViewGroup variable. Not sure if this will work
+    	ViewGroup parent = null;
+    	
+    //Instantiating Layout Inflater
+    	LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    	
+    //Adding the View (the way Josh recommended)
+    	LinearLayout added = (LinearLayout) inflater.inflate(R.layout.list_item, parent, false);
+    	
+    	
+    //getting data from AddView
+    	String fname = getIntent().getExtras().getString("firstName");		//key for first name
+    	String lastname = getIntent().getExtras().getString("lastName");	//key for last name
+    	
+    	String phone1 = getIntent().getExtras().getString("phoneNum");		// these are
+    	String phone2 = getIntent().getExtras().getString("phoneNum2");		// the keys for all
+    	String phone3 = getIntent().getExtras().getString("phoneNum3");		// 3 inputs to total the phone number
+    	
+    //will add data for image here later if there's time
+    	//
+    	//
+    	//
+    	
+    //Text Views of the list_item view
+    	TextView fullname = (TextView) added.findViewById(R.id.list_name);	//the text view for the full name
+    	TextView phoneTotal =  (TextView) added.findViewById(R.id.phoneText);	//the text view for the complete phone number
+    	
+    //Setting the text views of the view
+    	fullname.setText(fname + " " + lastname);
+    	phoneTotal.setText("1" + "(" + phone1 + ")" + phone2 + "-" + phone3);
+    	
+    //adds the layout to the list adapter
+    	//getListAdapter().add(added);
+    		//or
+    	//ListAdapter.getListAdapter.add(added);
+    	
+    	//WHAT AM I DOING WRONG??
     }
+    
+    
+    
     
     
     
@@ -178,7 +225,7 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 
 
 	@Override
-	public void onSubmit() {
+	public void onAddContact() {
 		// TODO Auto-generated method stub
 		finish();
 	}

@@ -23,7 +23,7 @@ public class AddFrag extends Fragment {
 	//Building the interface to implement in AddView
 		public interface AddInterface
 		{
-			public void onSubmit();
+			public void onAddContact();
 		}
 
 	
@@ -47,7 +47,7 @@ public class AddFrag extends Fragment {
 				@Override
 				public void onClick(View v) {
 					
-				     listener.onSubmit();
+				     listener.onAddContact();
 				    
 				}
 			});

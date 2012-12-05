@@ -32,7 +32,7 @@ public class AddView extends Activity implements AddFrag.AddInterface{
 
 
 		@Override
-		public void onSubmit() {
+		public void onAddContact() {
 			// TODO Auto-generated method stub
 			
 			finish();
