@@ -4,6 +4,8 @@ package com.lpuente.java2_w3;
 
 
 
+import java.util.ArrayList;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +24,16 @@ import android.content.Context;
 import android.content.Intent;
 
 public class MainActivity extends ListActivity implements FirstFrag.FirstInterface, AddFrag.AddInterface{
+	
+	//member variables
+	
+	ArrayList<String> mylist = new ArrayList<String>();
+	
+
+	
+	
+	
+	
 
 	//may need to create string array to hold pieces within listview
 	
@@ -31,11 +43,12 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
         //setContentView(R.layout.activity_main);	//before firstfrag
         setContentView(R.layout.firstfrag);
         
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mylist);
+        
         //setting list adapter (adapting data to display in listview) from contacts resource
-        setListAdapter(new ListAdapter(this, android.R.layout.simple_list_item_1, R.id.list_name, getResources().getStringArray(R.array.contacts)));
+        //setListAdapter(new ListAdapter(this, android.R.layout.simple_list_item_1, R.id.list_name, getResources().getStringArray(R.array.contacts)));
         
-        
-      
+        setListAdapter(adapter);
     }
 
     
@@ -125,8 +138,9 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			
 			
 		//getting resources for row from list item.xml layout. THIS IS STATIC
-			String[] items = getResources().getStringArray(R.array.contacts);
+			//String[] items = getResources().getStringArray(R.array.contacts);
 			
+			mylist = getResources().getStringArray(R.array.contacts);
 		
 		//getting resources for phone numbers for the first 3 list items. THIS IS STATIC
 			String[] phoneItems = getResources().getStringArray(R.array.phone_numbers);
