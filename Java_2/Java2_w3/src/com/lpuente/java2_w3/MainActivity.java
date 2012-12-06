@@ -6,6 +6,8 @@ package com.lpuente.java2_w3;
 
 import java.util.ArrayList;
 
+import org.w3c.dom.Text;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,9 +31,8 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 	
 	ArrayList<String> mylist = new ArrayList<String>();
 	
-
-	
-	
+//string to adapter which should handle the data for listview
+	ArrayAdapter<String> adapter;
 	
 	
 
@@ -43,7 +44,12 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
         //setContentView(R.layout.activity_main);	//before firstfrag
         setContentView(R.layout.firstfrag);
         
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mylist);
+        //this was suggested to me but not using.
+       String[] contactsArray = getResources().getStringArray(R.array.contacts);
+       
+       
+       mylist = new ArrayList<String>();
+       adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mylist);
         
         //setting list adapter (adapting data to display in listview) from contacts resource
         //setListAdapter(new ListAdapter(this, android.R.layout.simple_list_item_1, R.id.list_name, getResources().getStringArray(R.array.contacts)));
@@ -79,6 +85,8 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     	String phone2 = data.getExtras().getString("phoneNum2");		// the keys for all
     	String phone3 = data.getExtras().getString("phoneNum3");		// 3 inputs to total the phone number
     	
+    	
+    	String nameComplete = fname + "  " + lastname;
     //will add data for image here later if there's time
     	//
     	//
@@ -97,6 +105,14 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     		//or
     	//ListAdapter.getListAdapter.add(added);
     	
+    	
+    	//All this is being added to a new list adapter. Completely different from before. Wont load details view now.
+    	//right now only passes from one edit Text.class first name
+    	
+    	mylist.add(nameComplete);
+    	
+    
+    	adapter.notifyDataSetChanged();
     	//WHAT AM I DOING WRONG??
     }
     
@@ -138,10 +154,9 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 			
 			
 		//getting resources for row from list item.xml layout. THIS IS STATIC
-			//String[] items = getResources().getStringArray(R.array.contacts);
+			String[] items = getResources().getStringArray(R.array.contacts);
 			
-			mylist = getResources().getStringArray(R.array.contacts);
-		
+			
 		//getting resources for phone numbers for the first 3 list items. THIS IS STATIC
 			String[] phoneItems = getResources().getStringArray(R.array.phone_numbers);
 			
@@ -184,6 +199,8 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
 	    	Log.d("Luis", items[position]);
 			
 			//returning all data passed into "row"
+	    	
+	    	
 			return row;
 		}
 		
