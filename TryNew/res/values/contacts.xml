@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <string-array name="contacts">
+        <item name="captain">Captain America</item>
+        <item name="iron">Iron Man</item>
+        <item name="spider">Spider-Man</item>
+        <item name="thor">Thor</item>
+        <item name="hulk">Hulk</item>
+    </string-array>
+    
+    <string-array name="phone_numbers">
+        <item name="steve">1(222)333-4444</item>
+        <item name="tony">1(555)555-5555</item>
+        <item name="peter">1(777)777-7777</item>
+        <item name="thunder">1(999)999-9999</item>
+        <item name="bruce">1(800)226-7625</item>
+    </string-array>
+    
+</resources>

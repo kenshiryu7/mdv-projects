@@ -6,4 +6,6 @@
     <string name="title_activity_main">Trying to meet requirements</string>
 
     <string name="none"></string>
+    <string name="static_list">See Static List</string>
+    <string name="make_call"> Call This Number </string>
 </resources>

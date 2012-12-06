@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.graphics.Bitmap;
@@ -15,11 +16,25 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
 	
+	/*Trying to meet the requirements this week with content providers, services and etc. Had to remake this app.
+	 * Lynda and some others had a good start for imlementing content provider for contacts. Went in that direction
+	 * found a few examples on various parts and answers in stack overflow. took all day and night. Some of this is from
+	 * Lynda and a listview tutorial, some is from stack overflow. Putting it all together and trying to get this to work
+	 */
+	
+	//member variables
+	
+	//Simple cursor to map textviews and images. 
 	SimpleCursorAdapter mAdapter;
+	
+	//mutable cursor/able to add/remove
 	MatrixCursor mMatrixCursor;	
 
     @Override
@@ -32,39 +47,63 @@ public class MainActivity extends Activity {
         
         // Adapter to set data in the listview
         mAdapter = new SimpleCursorAdapter(getBaseContext(),
-                R.layout.lv_layout,
+                R.layout.list_layout,
                 null,
                 new String[] { "name","photo","details"},
                 new int[] { R.id.tv_name,R.id.iv_photo,R.id.tv_details}, 0);
         
+       
+        
         // Getting reference to listview
-        ListView lstContacts = (ListView) findViewById(R.id.lst_contacts);
+        ListView lvMainId = (ListView) findViewById(R.id.main_list);
         
         // Setting the adapter to listview
-        lstContacts.setAdapter(mAdapter);        
+        lvMainId.setAdapter(mAdapter);        
         
-        // Creating an AsyncTask object to retrieve and load listview with contacts
-        ListViewContactsLoader listViewContactsLoader = new ListViewContactsLoader();
+        // AsyncTask  to get/ load data to listview wth contacts/ with builit inner class
+        ListViewLoader listLoader = new ListViewLoader();
         
-        // Starting the AsyncTask process to retrieve and load listview with contacts
-        listViewContactsLoader.execute();        
+        //Button for See Static List
+        Button toStaticList = (Button) findViewById(R.id.see_list);
+        
+        toStaticList.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+
+				//using Testing view to bypass view not working / SelectedContacts
+		    	Intent exIntent = new Intent(MainActivity.this, StaticListView.class);
+		    	startActivity(exIntent);
+				
+			}
+		});
+        // Starting the AsyncTask process using .execute(). Guess this is like startActivity.
+        listLoader.execute();        
         
     }    
     
-    /** An AsyncTask class to retrieve and load listview with contacts */
-    private class ListViewContactsLoader extends AsyncTask<Void, Void, Cursor>{   	
+   ////////////
+    //Inner class built for AsyncTask. Function that gets all the data in other words
+   
+    private class ListViewLoader extends AsyncTask<Void, Void, Cursor>{   	
 
 		@Override
 		protected Cursor doInBackground(Void... params) {
 			Uri contactsUri = ContactsContract.Contacts.CONTENT_URI;
 			
 			// Querying the table ContactsContract.Contacts to retrieve all the contacts
-			Cursor contactsCursor = getContentResolver().query(contactsUri, null, null, null, 
+			Cursor conCursor = getContentResolver().query(contactsUri, null, null, null, 
 									ContactsContract.Contacts.DISPLAY_NAME + " ASC ");
 			
-			if(contactsCursor.moveToFirst()){
+			
+			//moveToFirst is bool this is saying if the cursor is at the first row
+			//while loop to go through the data. do While i remember is to use code block at least once
+			if(conCursor.moveToFirst()){
 				do{
-					long contactId = contactsCursor.getLong(contactsCursor.getColumnIndex("_ID"));
+					
+					//getting the id of the specific row/column of contact
+					long contactId = conCursor.getLong(conCursor.getColumnIndex("_ID"));
 					
 					
 					Uri dataUri = ContactsContract.Data.CONTENT_URI;
@@ -75,24 +114,31 @@ public class MainActivity extends Activity {
 											ContactsContract.Data.CONTACT_ID + "=" + contactId, 
 											null, null);
 					
-					
-					String displayName="";
+					//setting up strings in which data will be collected
+					//these are collections the people app uses
+					//will be able to retrieve saved data from that app to display here 
+					String fullname="";
 					String nickName="";
-					String homePhone="";
-					String mobilePhone="";
-					String workPhone="";
-					String photoPath="" + R.drawable.blank;
-					byte[] photoByte=null;
+					String homePh="";
+					String mobilePh="";
+					String workPh="";
+					
+					//here is the idea that Josh mentioned in getting the photo info with Byte.
+					//This content provider example/ from stack overflow/ used it
+					//tested and it works.
+					String imagePath="" + R.drawable.blank;
+					byte[] imageByte=null;
+					
 					String homeEmail="";
 					String workEmail="";
-					String companyName="";
+					String comName="";
 					String title="";
 					
 					
 					
 					if(dataCursor.moveToFirst()){
 						// Getting Display Name
-						displayName = dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Data.DISPLAY_NAME ));
+						fullname = dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Data.DISPLAY_NAME ));
 						do{
 												
 							// Getting NickName
@@ -103,13 +149,13 @@ public class MainActivity extends Activity {
 							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)){
 								switch(dataCursor.getInt(dataCursor.getColumnIndex("data2"))){
 									case ContactsContract.CommonDataKinds.Phone.TYPE_HOME : 
-										homePhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+										homePh = dataCursor.getString(dataCursor.getColumnIndex("data1"));
 										break;
 									case ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE : 
-										mobilePhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+										mobilePh = dataCursor.getString(dataCursor.getColumnIndex("data1"));
 										break;
 									case ContactsContract.CommonDataKinds.Phone.TYPE_WORK : 
-										workPhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+										workPh = dataCursor.getString(dataCursor.getColumnIndex("data1"));
 										break;	
 								}
 							}
@@ -128,83 +174,108 @@ public class MainActivity extends Activity {
 							
 							// Getting Organization details
 							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Organization.CONTENT_ITEM_TYPE)){
-								companyName = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+								comName = dataCursor.getString(dataCursor.getColumnIndex("data1"));
 								title = dataCursor.getString(dataCursor.getColumnIndex("data4"));
 							}
 								
 							// Getting Photo	
 							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE)){								
-								photoByte = dataCursor.getBlob(dataCursor.getColumnIndex("data15"));
+								imageByte = dataCursor.getBlob(dataCursor.getColumnIndex("data15"));
 								
-								if(photoByte != null) {							
-									Bitmap bitmap = BitmapFactory.decodeByteArray(photoByte, 0, photoByte.length);
+								if(imageByte != null) {							
+									Bitmap bitmap = BitmapFactory.decodeByteArray(imageByte, 0, imageByte.length);
 									
 									// Getting Caching directory 
-				                    File cacheDirectory = getBaseContext().getCacheDir();
+				                    File cache = getBaseContext().getCacheDir();
 	
 				                    // Temporary file to store the contact image 
-				                    File tmpFile = new File(cacheDirectory.getPath() + "/wpta_"+contactId+".png");
+				                    //Example used /wpta_ and .png to start. I'LL BE HONEST. I UNDERSTAND the .png or .jpg. why the /wpta?
+				                    //in case of jpg or png. May need a conditinal
+				                    
+				                    File tempImageFile1 = new File(cache.getPath() + "/wpta_"+contactId+".png");
+				                    //File tempImageFile2 = new File(cache.getPath() + "/wpta_"+contactId+".jpg");
 	
-				                    // The FileOutputStream to the temporary file
+				                    // The FileOutputStream to the tempImageFile 1 & 2
 				                    try {
-										FileOutputStream fOutStream = new FileOutputStream(tmpFile);
+										FileOutputStream filestream1 = new FileOutputStream(tempImageFile1);
+										//FileOutputStream filestream2 = new FileOutputStream(tempImageFile2);
 										
-										// Writing the bitmap to the temporary file as png file
-					                    bitmap.compress(Bitmap.CompressFormat.PNG,100, fOutStream);
+										// Writing the bitmap to the temp Image file
+					                    bitmap.compress(Bitmap.CompressFormat.PNG,100, filestream1);
+					                    //bitmap.compress(Bitmap.CompressFormat.JPEG,100, filestream2);
 	
-					                    // Flush the FileOutputStream
-					                    fOutStream.flush();
+					                    // Flushing it all out. flush is used to clear but keeps stream open
+					                    filestream1.flush();
+					                    //filestream2.flush();
 	
-					                    //Close the FileOutputStream
-					                    fOutStream.close();
+					                    //Closing the stream. CLoses stream AFTER Flushing. NECESSARY
+					                    filestream1.close();
+					                    //filestream2.close();
 	
+					                    //typical catch nothing fance here
 									} catch (Exception e) {
 										e.printStackTrace();
 									}
 	
-				                    photoPath = tmpFile.getPath();
+				                    //Leaving just PNG format for now. Im sure theres a way to check
+				                    //if either or. Right now I'll be happy if only a few work.
+				                    imagePath = tempImageFile1.getPath();
+				                   // imagePath = tempImageFile2.getParent();
 								}
 								
 							}
 							
 						}while(dataCursor.moveToNext());					
 						
+						//constant of details variable
 						String details = "";
 						
-						// Concatenating various information to single string
-						if(homePhone != null && !homePhone.equals("") )
-							details = "HomePhone : " + homePhone + "\n";
-						if(mobilePhone != null && !mobilePhone.equals("") )
-							details += "MobilePhone : " + mobilePhone + "\n";
-						if(workPhone != null && !workPhone.equals("") )
-							details += "WorkPhone : " + workPhone + "\n";
-						if(nickName != null && !nickName.equals("") )
-							details += "NickName : " + nickName + "\n";
-						if(homeEmail != null && !homeEmail.equals("") )
-							details += "HomeEmail : " + homeEmail + "\n";
-						if(workEmail != null && !workEmail.equals("") )
-							details += "WorkEmail : " + workEmail + "\n";
-						if(companyName != null && !companyName.equals("") )
-							details += "CompanyName : " + companyName + "\n";
-						if(title != null && !title.equals("") )
-							details += "Title : " + title + "\n";
+						// Concatenating various data to single string
+						//IF variable AND variables STring is empty then the constant "details" string equals
+						//a concat of string and collected variables plus \n to allow for the next line to be below
 						
-						// Adding id, display name, path to photo and other details to cursor
-						mMatrixCursor.addRow(new Object[]{ Long.toString(contactId),displayName,photoPath,details});
+						
+						//All fields work when detials has += not just =. 
+						if(homePh != null && !homePh.equals("") )
+							details += "HomePhone : " + homePh + "\n";			//home number details
+						if(mobilePh != null && !mobilePh.equals("") )
+							details += "MobilePhone : " + mobilePh + "\n";		//mobile phone details
+						if(workPh != null && !workPh.equals("") )
+							details += "WorkPhone : " + workPh + "\n";			//work phone details
+						if(nickName != null && !nickName.equals("") )
+							details += "NickName : " + nickName + "\n";			//nick name details
+						if(homeEmail != null && !homeEmail.equals("") )
+							details += "HomeEmail : " + homeEmail + "\n";		//home email details
+						if(workEmail != null && !workEmail.equals("") )
+							details += "WorkEmail : " + workEmail + "\n";		//work email details
+						if(comName != null && !comName.equals("") )
+							details += "CompanyName : " + comName + "\n";		//company name details
+						if(title != null && !title.equals("") )
+							details += "Title : " + title + "\n";				//title details. Title within company
+						
+						// Adding ID,  fullname, imagePath and details result to cursor
+						//kind of like adding to a ListAdapter
+						mMatrixCursor.addRow(new Object[]{ Long.toString(contactId),fullname,imagePath,details});
 					}
 					
-				}while(contactsCursor.moveToNext());
+				}while(conCursor.moveToNext());
 			}
+			
+			//returning the mutable constant declared in member variables
 			return mMatrixCursor;
 		}
     	
 		@Override
 		protected void onPostExecute(Cursor result) {			
-			// Setting the cursor containing contacts to listview
+			// Setting the cursor containing contacts to listview myAdapter.add(whatever your adding); Makes sense
 			mAdapter.swapCursor(result);
 		}		
     }
 
+    //This menu seems to be coming up when opening a project. Doesn't really do anything at this time. Not using it is what i mean
+    //From what ive seen in adding contact info to emulator/ it can be used well within an application
+    //Should probably at least read up on this and get some ideas how to is this later. Will just leave blank instead of removing
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
