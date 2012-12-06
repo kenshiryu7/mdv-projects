@@ -116,7 +116,7 @@ public class StaticListView extends ListActivity {
 	    {
 	    	super.onListItemClick(lv, v, position, id);
 	    	
-	    	String details = lv.getItemAtPosition(position).toString();
+	    	//String details = lv.getItemAtPosition(position).toString();
 	    	
 	    	//creating local variables. YES i realize this repeats but I just want this TO WORK!
 	    	//ImageView imageV = (ImageView) findViewById(R.id.list_image);	//image 
@@ -125,7 +125,7 @@ public class StaticListView extends ListActivity {
 			
 			
 	    	
-			//using Testing view to bypass view not working / SelectedContacts
+			//Creating intent to pass data/open new activity
 	    	Intent exIntent = new Intent(StaticListView.this, DetailsView.class);
 	    	
 	    	exIntent.putExtra("fullname", textV.getText().toString());

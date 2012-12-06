@@ -53,4 +53,5 @@ public class DetailsView extends Activity {
       			}
       		});
 	}
+	
 }
