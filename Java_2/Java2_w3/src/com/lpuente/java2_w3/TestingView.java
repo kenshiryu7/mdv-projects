@@ -19,7 +19,7 @@ public class TestingView extends Activity {
         //setContentView(R.layout.activity_main);	//before firstfrag
         setContentView(R.layout.testing_view);
         
-        
+       /* 
         //calling for the proper id's
         TextView name = (TextView) findViewById(R.id.full_name);
         final TextView phone = (TextView) findViewById(R.id.phone_digits);
@@ -51,6 +51,6 @@ public class TestingView extends Activity {
       			//Code to Start intent
       				startActivity(impIntent);
       			}
-      		});
+      		});*/
 	}
 }

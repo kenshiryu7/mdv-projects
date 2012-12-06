@@ -211,10 +211,12 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     {
     	super.onListItemClick(lv, v, position, id);
     	
+    	String details = lv.getItemAtPosition(position).toString();
+    	
     	//creating local variables. YES i realize this repeats but I just want this TO WORK!
     	//ImageView imageV = (ImageView) findViewById(R.id.list_image);	//image 
-		TextView textV = (TextView) v.findViewById(R.id.list_name);		//full name 
-		TextView pNum = (TextView) v.findViewById(R.id.phoneText);		//phone number 
+		TextView textV = (TextView) lv.findViewById(R.id.list_name);		//full name 
+		TextView pNum = (TextView) lv.findViewById(R.id.phoneText);		//phone number 
 		
 		
     	
@@ -222,7 +224,7 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     	Intent exIntent = new Intent(MainActivity.this, TestingView.class);
     	
     	exIntent.putExtra("fullname", textV.getText().toString());
-    	exIntent.putExtra("fullphone", pNum.getText().toString());
+    	//exIntent.putExtra("fullphone", pNum.getText().toString());
     	
     	//trying something for the image
     			Uri imageUri = exIntent.getData();
