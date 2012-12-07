@@ -8,4 +8,7 @@
     <string name="none"></string>
     <string name="static_list">See Static List</string>
     <string name="make_call"> Call This Number </string>
+    <string name="service"> See Services </string>
+    <string name="start"> Start this Crappy Service</string>
+    <string name="stop"> STOP!!!!</string>
 </resources>

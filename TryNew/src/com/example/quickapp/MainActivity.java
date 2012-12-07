@@ -78,6 +78,22 @@ public class MainActivity extends Activity {
 				
 			}
 		});
+        
+        //Button for services view
+        Button toService = (Button) findViewById(R.id.see_services);
+        
+        //listener for to Service.
+        toService.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent service = new Intent(MainActivity.this, Services.class);
+		    	startActivity(service);
+				
+			}
+		});
+        
         // Starting the AsyncTask process using .execute(). Guess this is like startActivity.
         listLoader.execute();        
         
