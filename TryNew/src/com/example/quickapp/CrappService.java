@@ -10,7 +10,7 @@ public class CrappService extends Service {
 
 	MediaPlayer song;
 	
-	//auto generated on bind. Binds activity to service
+	//auto generated on bind. Binds activity to service. Yippy
 	@Override
 	public IBinder onBind(Intent arg0) {
 		// TODO Auto-generated method stub
