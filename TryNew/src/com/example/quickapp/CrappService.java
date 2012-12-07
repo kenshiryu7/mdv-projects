@@ -25,7 +25,7 @@ public class CrappService extends Service {
 		//Using a toast just to say the silly thing started
 		Toast.makeText(this, "The Service Started!!! Yeah!!", Toast.LENGTH_LONG).show();
 		
-		song = MediaPlayer.create(this, R.raw.growl);
+		song = MediaPlayer.create(this, R.raw.mxpx);
 		song.start();
 		
 		//service will continue until told to stop
