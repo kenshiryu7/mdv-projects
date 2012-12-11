@@ -24,7 +24,7 @@ import android.widget.ListView;
 public class MainActivity extends Activity {
 	
 	/*Trying to meet the requirements this week with content providers, services and etc. Had to remake this app.
-	 * Lynda and some others had a good start for imlementing content provider for contacts. Went in that direction
+	 * Lynda and some others had a good start for implementing content provider for contacts. Went in that direction
 	 * found a few examples on various parts and answers in stack overflow. took all day and night. Some of this is from
 	 * Lynda and a listview tutorial, some is from stack overflow. Putting it all together and trying to get this to work
 	 */
@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
         
        
         
-        // Getting reference to listview
+        // Getting reference to listview 
         ListView lvMainId = (ListView) findViewById(R.id.main_list);
         
         // Setting the adapter to listview
@@ -109,6 +109,7 @@ public class MainActivity extends Activity {
 			Uri contactsUri = ContactsContract.Contacts.CONTENT_URI;
 			
 			// Querying the table ContactsContract.Contacts to retrieve all the contacts
+			//ASC ascending order
 			Cursor conCursor = getContentResolver().query(contactsUri, null, null, null, 
 									ContactsContract.Contacts.DISPLAY_NAME + " ASC ");
 			
@@ -121,7 +122,7 @@ public class MainActivity extends Activity {
 					//getting the id of the specific row/column of contact
 					long contactId = conCursor.getLong(conCursor.getColumnIndex("_ID"));
 					
-					
+					//uri of content
 					Uri dataUri = ContactsContract.Data.CONTENT_URI;
 					
 					// Querying the table ContactsContract.Data to retrieve individual items like
