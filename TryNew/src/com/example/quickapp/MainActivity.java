@@ -157,10 +157,12 @@ public class MainActivity extends Activity {
 						// Getting Display Name
 						fullname = dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Data.DISPLAY_NAME ));
 						do{
-												
+							/*					
 							// Getting NickName
 							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Nickname.CONTENT_ITEM_TYPE))
 								nickName = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+							*/
+							
 							
 							// Getting Phone numbers
 							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)){
@@ -176,7 +178,7 @@ public class MainActivity extends Activity {
 										break;	
 								}
 							}
-							
+							/*
 							// Getting EMails
 							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Email.CONTENT_ITEM_TYPE ) ) {									
 								switch(dataCursor.getInt(dataCursor.getColumnIndex("data2"))){
@@ -187,14 +189,16 @@ public class MainActivity extends Activity {
 										workEmail = dataCursor.getString(dataCursor.getColumnIndex("data1"));
 										break;										
 								}
-							}
-							
+							}*/
+							/*
 							// Getting Organization details
 							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Organization.CONTENT_ITEM_TYPE)){
 								comName = dataCursor.getString(dataCursor.getColumnIndex("data1"));
 								title = dataCursor.getString(dataCursor.getColumnIndex("data4"));
 							}
-								
+							*/
+							
+							
 							// Getting Photo	
 							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE)){								
 								imageByte = dataCursor.getBlob(dataCursor.getColumnIndex("data15"));
@@ -256,7 +260,7 @@ public class MainActivity extends Activity {
 						if(homePh != null && !homePh.equals("") )
 							details += "HomePhone : " + homePh + "\n";			//home number details
 						if(mobilePh != null && !mobilePh.equals("") )
-							details += "MobilePhone : " + mobilePh + "\n";		//mobile phone details
+							details += "Phone : " + mobilePh + "\n";		//mobile phone details//changing to just phone to have just 1 number listed
 						if(workPh != null && !workPh.equals("") )
 							details += "WorkPhone : " + workPh + "\n";			//work phone details
 						if(nickName != null && !nickName.equals("") )

@@ -33,7 +33,7 @@ public final class R {
         public static final int first_frag=0x7f090011;
         public static final int full_name=0x7f090005;
         public static final int imageView1=0x7f090004;
-        public static final int iv_photo=0x7f09000c;
+        public static final int iv_photo=0x7f09000b;
         public static final int list_image=0x7f090008;
         public static final int list_name=0x7f090009;
         public static final int main_list=0x7f090002;
@@ -47,7 +47,7 @@ public final class R {
         public static final int staticfrag=0x7f090010;
         public static final int stop=0x7f09000f;
         public static final int tv_details=0x7f09000d;
-        public static final int tv_name=0x7f09000b;
+        public static final int tv_name=0x7f09000c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
