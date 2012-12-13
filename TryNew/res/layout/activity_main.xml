@@ -34,6 +34,13 @@
     <ListView
         android:id="@+id/main_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="341dp" >
+    </ListView>
+
+    <Button
+        android:id="@+id/add_butt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add" />
 
 </LinearLayout>

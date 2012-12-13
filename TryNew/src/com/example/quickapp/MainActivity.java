@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 
 
 import android.app.Activity;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -14,6 +15,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.Menu;
 import android.view.View;
@@ -90,6 +92,21 @@ public class MainActivity extends Activity {
 				
 				Intent service = new Intent(MainActivity.this, Services.class);
 		    	startActivity(service);
+				
+			}
+		});
+        
+        //Button for See Static List
+        Button toAdd = (Button) findViewById(R.id.add_butt);
+        
+        //listener for to Service.
+        toAdd.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent add = new Intent(MainActivity.this, AddContact.class);
+		    	startActivity(add);
 				
 			}
 		});

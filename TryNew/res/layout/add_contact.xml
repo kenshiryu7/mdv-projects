@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:padding="10dp"
+        android:text="@string/first"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFB00F"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+    
+    <EditText
+        android:id="@+id/first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="@string/first_hint"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+    
+     <TextView
+         android:id="@+id/textView2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="7dp"
+         android:padding="10dp"
+         android:text="@string/last"
+         android:textAppearance="?android:attr/textAppearanceMedium"
+         android:textColor="#FFB00F"
+         android:textSize="22sp"
+         android:textStyle="bold" />
+     
+      <EditText
+        android:id="@+id/last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="@string/last_hint"
+        android:inputType="textPersonName" />
+
+          <TextView
+              android:id="@+id/textView3"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7dp"
+              android:padding="10dp"
+              android:text="@string/phone"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textColor="#FFB00F"
+              android:textSize="22sp"
+              android:textStyle="bold" />
+     
+      <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+         android:hint="@string/phone_hint"
+        android:inputType="textPersonName" >
+       
+    </EditText>
+
+      <Button
+          android:id="@+id/submit_contact"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="30dp"
+          android:background="#00688B"
+          android:text="@string/button_add" />
+    
+</LinearLayout>
