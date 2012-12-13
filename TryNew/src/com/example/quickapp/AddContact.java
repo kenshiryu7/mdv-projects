@@ -36,8 +36,9 @@ public class AddContact extends Activity {
 		setContentView(R.layout.add_contact);
 		
 			
+		//This code is to submit info/input to contact data base on the emulator/phone
 	
-	
+	//creating button to submit
 	 Button toAdd = (Button) findViewById(R.id.submit_contact);
 	 toAdd.setOnClickListener(new OnClickListener() {
 			
@@ -57,6 +58,8 @@ public class AddContact extends Activity {
 	
 	 
 	}
+	//method to save contact
+	
 	boolean SaveContact()
 	 {
 		firstName = (EditText) findViewById(R.id.first_name);
@@ -100,7 +103,7 @@ public class AddContact extends Activity {
 				 .build());
 		 
 		 
-		 //This is something I need to look deeper into understanding
+		 //This is something I need to look deeper into understanding. when a try catch must be implemented, and these different types of catches.
 		 
 		 Uri newContactUri = null;
 		 try

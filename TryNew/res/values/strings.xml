@@ -3,7 +3,7 @@
     <string name="app_name">quickApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">Trying to meet requirements</string>
+    <string name="title_activity_main">Press Menu For More</string>
 
     <string name="none"></string>
     <string name="static_list">See Static List</string>
@@ -20,4 +20,8 @@
      <string name="last_hint">Enter Your Last Name</string>
      <string name="phone_hint">12223334444</string>
      <string name="button_add">Add Contact</string>
+     
+     <string name="start_serv">Start Service</string>
+     <string name="stop_serv">Stop Service</string>
+     <string name="to_mylist">See Static List</string>
 </resources>

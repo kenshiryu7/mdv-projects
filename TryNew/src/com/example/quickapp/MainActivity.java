@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 
+
+
 import android.app.Activity;
 
 import android.content.Intent;
@@ -18,6 +20,7 @@ import android.provider.ContactsContract;
 
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -65,6 +68,10 @@ public class MainActivity extends Activity {
         // AsyncTask  to get/ load data to listview wth contacts/ with builit inner class
         ListViewLoader listLoader = new ListViewLoader();
         
+        
+        //Removed buttons and placed in menu
+        
+        /*
         //Button for See Static List
         Button toStaticList = (Button) findViewById(R.id.see_list);
         
@@ -95,8 +102,12 @@ public class MainActivity extends Activity {
 				
 			}
 		});
+        */
         
-        //Button for See Static List
+        
+        
+        
+        //Button to add contact
         Button toAdd = (Button) findViewById(R.id.add_butt);
         
         //listener for to Service.
@@ -314,9 +325,41 @@ public class MainActivity extends Activity {
     //From what ive seen in adding contact info to emulator/ it can be used well within an application
     //Should probably at least read up on this and get some ideas how to is this later. Will just leave blank instead of removing
     
+    
+    
+    
+    //trying out menu stuff. This would be the action bar on touch screens. "honeycomb"
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+    
+    //clicking menu item
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	
+    	Intent intent = new Intent(this, CrappService.class);
+    	
+    	switch (item.getItemId())
+    	{
+    		case R.id.start_service:
+    		startService(intent);
+    		return true;
+    		
+    		case R.id.stop_service:
+    		stopService(intent);
+    		return true;
+    		
+    		case R.id.to_list:
+    			Intent exIntent = new Intent(MainActivity.this, StaticListView.class);
+		    	startActivity(exIntent);
+        		return true;
+        		
+        	default:
+        		return false;
+    	}
+    }
+    
 }

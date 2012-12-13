@@ -27,35 +27,36 @@ public final class R {
         public static final int thor=0x7f020009;
     }
     public static final class id {
-        public static final int add_butt=0x7f090003;
-        public static final int add_frag=0x7f09001b;
-        public static final int call_button=0x7f09000f;
-        public static final int detailsfrag=0x7f09000b;
-        public static final int first_frag=0x7f090019;
-        public static final int first_name=0x7f090005;
-        public static final int full_name=0x7f09000d;
-        public static final int imageView1=0x7f09000c;
-        public static final int iv_photo=0x7f090013;
-        public static final int last_name=0x7f090007;
-        public static final int list_image=0x7f090010;
-        public static final int list_name=0x7f090011;
-        public static final int main_list=0x7f090002;
-        public static final int menu_settings=0x7f09001c;
-        public static final int phoneText=0x7f090012;
-        public static final int phone_digits=0x7f09000e;
-        public static final int phone_number=0x7f090009;
-        public static final int scroll=0x7f09001a;
-        public static final int see_list=0x7f090000;
-        public static final int see_services=0x7f090001;
-        public static final int start=0x7f090016;
-        public static final int staticfrag=0x7f090018;
-        public static final int stop=0x7f090017;
-        public static final int submit_contact=0x7f09000a;
-        public static final int textView1=0x7f090004;
-        public static final int textView2=0x7f090006;
-        public static final int textView3=0x7f090008;
-        public static final int tv_details=0x7f090015;
-        public static final int tv_name=0x7f090014;
+        public static final int add_butt=0x7f090000;
+        public static final int add_frag=0x7f090019;
+        public static final int call_button=0x7f09000d;
+        public static final int detailsfrag=0x7f090009;
+        public static final int first_frag=0x7f090017;
+        public static final int first_name=0x7f090003;
+        public static final int full_name=0x7f09000b;
+        public static final int imageView1=0x7f09000a;
+        public static final int iv_photo=0x7f090011;
+        public static final int last_name=0x7f090005;
+        public static final int list_image=0x7f09000e;
+        public static final int list_name=0x7f09000f;
+        public static final int main_list=0x7f090001;
+        public static final int menu_settings=0x7f09001a;
+        public static final int phoneText=0x7f090010;
+        public static final int phone_digits=0x7f09000c;
+        public static final int phone_number=0x7f090007;
+        public static final int scroll=0x7f090018;
+        public static final int start=0x7f090014;
+        public static final int start_service=0x7f09001b;
+        public static final int staticfrag=0x7f090016;
+        public static final int stop=0x7f090015;
+        public static final int stop_service=0x7f09001c;
+        public static final int submit_contact=0x7f090008;
+        public static final int textView1=0x7f090002;
+        public static final int textView2=0x7f090004;
+        public static final int textView3=0x7f090006;
+        public static final int to_list=0x7f09001d;
+        public static final int tv_details=0x7f090013;
+        public static final int tv_name=0x7f090012;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -69,7 +70,7 @@ public final class R {
         public static final int static_listview=0x7f030008;
     }
     public static final class menu {
-        public static final int activity_main=0x7f080000;
+        public static final int menu_main=0x7f080000;
     }
     public static final class raw {
         public static final int mxpx=0x7f040000;
@@ -89,9 +90,12 @@ public final class R {
         public static final int phone_hint=0x7f06000f;
         public static final int service=0x7f060007;
         public static final int start=0x7f060008;
+        public static final int start_serv=0x7f060011;
         public static final int static_list=0x7f060005;
         public static final int stop=0x7f060009;
+        public static final int stop_serv=0x7f060012;
         public static final int title_activity_main=0x7f060003;
+        public static final int to_mylist=0x7f060013;
     }
     public static final class style {
         public static final int AppTheme=0x7f070000;
