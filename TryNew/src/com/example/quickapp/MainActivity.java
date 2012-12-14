@@ -34,6 +34,11 @@ public class MainActivity extends Activity {
 	 * Lynda and a listview tutorial, some is from stack overflow. Putting it all together and trying to get this to work
 	 */
 	
+	//supposed to add ActionBarSherlock but had an error jar mismatch. fix you're dependencies
+	//was suggested to remove jar from libs folder. Works on another project but not this one. Not sure why.
+	//looked for other reasons this may be or how to fix. No other suggestions found.
+	
+	
 	//member variables
 	
 	//Simple cursor to map textviews and images. 
