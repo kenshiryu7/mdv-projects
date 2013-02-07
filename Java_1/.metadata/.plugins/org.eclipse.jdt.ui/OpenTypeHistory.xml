@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=Java_w2/src&lt;com.lpuente.pack2{J2Product.java[J2Product" modifiers="513" timestamp="1351749443000"/>
-<typeInfo handle="=Java2_W1/\/Users\/kenshiryu7\/Documents\/android-sdk-macosx-3\/platforms\/android-16\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1351037089000"/>
 <typeInfo handle="=Java2_W1/\/Users\/kenshiryu7\/Documents\/android-sdk-macosx-3\/platforms\/android-16\/android.jar&lt;android.app(Fragment.class[Fragment" modifiers="33" timestamp="1351037089000"/>
-<typeInfo handle="=Java2_w3/src&lt;com.lpuente.java2_w3{SelectedContact.java[SelectedContact" modifiers="1" timestamp="1354503311000"/>
+<typeInfo handle="=Java2_w3/src&lt;com.lpuente.java2_w3{SelectedContact.java[SelectedContact" modifiers="1" timestamp="1354508718000"/>
+<typeInfo handle="=Java2_w3/\/Users\/kenshiryu7\/Documents\/android-sdk-macosx-3\/platforms\/android-16\/android.jar&lt;android.content(ContentProvider.class[ContentProvider" modifiers="1057" timestamp="1351037089000"/>
+<typeInfo handle="=quickApp/\/Users\/kenshiryu7\/Documents\/android-sdk-macosx-3\/platforms\/android-16\/android.jar&lt;android.app(Service.class[Service" modifiers="1057" timestamp="1351037089000"/>
+<typeInfo handle="=Java2_W1/\/Users\/kenshiryu7\/Documents\/android-sdk-macosx-3\/platforms\/android-16\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1351037089000"/>
 </typeInfoHistroy>

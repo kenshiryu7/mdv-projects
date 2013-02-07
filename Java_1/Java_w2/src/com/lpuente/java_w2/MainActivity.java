@@ -1,207 +1,207 @@
 package com.lpuente.java_w2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.io.File;
+import java.io.FileOutputStream;
 
-import com.lpuente.pack1.FormingStuff;
-import com.lpuente.pack2.InterfacCLASS;
-import com.lpuente.pack2.LiquidConv;
-import com.lpuente.pack2.J2Product;
-
-
-import android.os.Bundle;
 import android.app.Activity;
-//import android.util.Log;		//removed my logs, may use later
+import android.database.Cursor;
+import android.database.MatrixCursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
 	
-//As always many comments. Will keep some of the code from the videos as reference
-	
-	
-	 RadioGroup fishTankOpts;
-	 ArrayList<J2Product> fishtanks;
-	 TextView result;
-	 
-	 
+	SimpleCursorAdapter mAdapter;
+	MatrixCursor mMatrixCursor;	
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        LinearLayout mainlinlay = new LinearLayout(this);
-        LayoutParams linParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        mainlinlay.setLayoutParams(linParam);
-        mainlinlay.setOrientation(LinearLayout.VERTICAL);
+        // The contacts from the contacts content provider is stored in this cursor
+        mMatrixCursor = new MatrixCursor(new String[] { "_id","name","photo","details"} );
         
+        // Adapter to set data in the listview
+        mAdapter = new SimpleCursorAdapter(getBaseContext(),
+                R.layout.lv_layout,
+                null,
+                new String[] { "name","photo","details"},
+                new int[] { R.id.tv_name,R.id.iv_photo,R.id.tv_details}, 0);
         
-        TextView tview = new TextView(this);
-        tview.setText("Type in number of Gallons with a decimal to view total conversion of quarts, pints, cups, and ounces" + "\r\n");
+        // Getting reference to listview
+        ListView lstContacts = (ListView) findViewById(R.id.lst_contacts);
         
-        TextView bottomMessage = new TextView(this);
-        bottomMessage.setText("If number comes back a negative. That is the amount needed for the tank.");
+        // Setting the adapter to listview
+        lstContacts.setAdapter(mAdapter);        
         
-     //calling linlay from pack1 package FormingStuff class passing in arguments
-        LinearLayout entBox = FormingStuff.entryButton(this, "Ex. 54.67", "Tank dif", "Convert");
+        // Creating an AsyncTask object to retrieve and load listview with contacts
+        ListViewContactsLoader listViewContactsLoader = new ListViewContactsLoader();
         
-     //finding edit text and button ids from FormingStuff class
-        //EditText entertext = (EditText) entBox.findViewById(1);
-        Button textbutt = (Button) entBox.findViewById(2);
+        // Starting the AsyncTask process to retrieve and load listview with contacts
+        listViewContactsLoader.execute();        
         
-        Button secTextButt = (Button) entBox.findViewById(3);
-        
-     //Adding button listener for button from FormingStuff class by calling the variable = id 
-        textbutt.setOnClickListener(new View.OnClickListener() {
+    }    
+    
+    /** An AsyncTask class to retrieve and load listview with contacts */
+    private class ListViewContactsLoader extends AsyncTask<Void, Void, Cursor>{   	
+
+		@Override
+		protected Cursor doInBackground(Void... params) {
+			Uri contactsUri = ContactsContract.Contacts.CONTENT_URI;
 			
-			@Override
-			public void onClick(View v) {
-				
-				int selRadioButtId = fishTankOpts.getCheckedRadioButtonId();
-				RadioButton selectedR = (RadioButton) fishTankOpts.findViewById(selRadioButtId);
-				
-				String radioText = (String) selectedR.getText();
-				
-			//looping through radio to identify radio button / text	
-				
-				double gallonAmount = 0;
-				
-				
-				for(int i = 0; i < fishtanks.size(); i ++)
-				{
-					if(radioText.compareTo(fishtanks.get(i).getName())==0)
-					{
-						gallonAmount = fishtanks.get(i).getPrice();
+			// Querying the table ContactsContract.Contacts to retrieve all the contacts
+			Cursor contactsCursor = getContentResolver().query(contactsUri, null, null, null, 
+									ContactsContract.Contacts.DISPLAY_NAME + " ASC ");
+			
+			if(contactsCursor.moveToFirst()){
+				do{
+					long contactId = contactsCursor.getLong(contactsCursor.getColumnIndex("_ID"));
+					
+					
+					Uri dataUri = ContactsContract.Data.CONTENT_URI;
+					
+					// Querying the table ContactsContract.Data to retrieve individual items like
+					// home phone, mobile phone, work email etc corresponding to each contact 
+					Cursor dataCursor = getContentResolver().query(dataUri, null, 
+											ContactsContract.Data.CONTACT_ID + "=" + contactId, 
+											null, null);
+					
+					
+					String displayName="";
+					String nickName="";
+					String homePhone="";
+					String mobilePhone="";
+					String workPhone="";
+					String photoPath="" + R.drawable.blank;
+					byte[] photoByte=null;
+					String homeEmail="";
+					String workEmail="";
+					String companyName="";
+					String title="";
+					
+					
+					
+					if(dataCursor.moveToFirst()){
+						// Getting Display Name
+						displayName = dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Data.DISPLAY_NAME ));
+						do{
+												
+							// Getting NickName
+							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Nickname.CONTENT_ITEM_TYPE))
+								nickName = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+							
+							// Getting Phone numbers
+							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)){
+								switch(dataCursor.getInt(dataCursor.getColumnIndex("data2"))){
+									case ContactsContract.CommonDataKinds.Phone.TYPE_HOME : 
+										homePhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+										break;
+									case ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE : 
+										mobilePhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+										break;
+									case ContactsContract.CommonDataKinds.Phone.TYPE_WORK : 
+										workPhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+										break;	
+								}
+							}
+							
+							// Getting EMails
+							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Email.CONTENT_ITEM_TYPE ) ) {									
+								switch(dataCursor.getInt(dataCursor.getColumnIndex("data2"))){
+									case ContactsContract.CommonDataKinds.Email.TYPE_HOME : 
+										homeEmail = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+										break;
+									case ContactsContract.CommonDataKinds.Email.TYPE_WORK : 
+										workEmail = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+										break;										
+								}
+							}
+							
+							// Getting Organization details
+							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Organization.CONTENT_ITEM_TYPE)){
+								companyName = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+								title = dataCursor.getString(dataCursor.getColumnIndex("data4"));
+							}
+								
+							// Getting Photo	
+							if(dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE)){								
+								photoByte = dataCursor.getBlob(dataCursor.getColumnIndex("data15"));
+								
+								if(photoByte != null) {							
+									Bitmap bitmap = BitmapFactory.decodeByteArray(photoByte, 0, photoByte.length);
+									
+									// Getting Caching directory 
+				                    File cacheDirectory = getBaseContext().getCacheDir();
+	
+				                    // Temporary file to store the contact image 
+				                    File tmpFile = new File(cacheDirectory.getPath() + "/wpta_"+contactId+".png");
+	
+				                    // The FileOutputStream to the temporary file
+				                    try {
+										FileOutputStream fOutStream = new FileOutputStream(tmpFile);
+										
+										// Writing the bitmap to the temporary file as png file
+					                    bitmap.compress(Bitmap.CompressFormat.PNG,100, fOutStream);
+	
+					                    // Flush the FileOutputStream
+					                    fOutStream.flush();
+	
+					                    //Close the FileOutputStream
+					                    fOutStream.close();
+	
+									} catch (Exception e) {
+										e.printStackTrace();
+									}
+	
+				                    photoPath = tmpFile.getPath();
+								}
+								
+							}
+							
+						}while(dataCursor.moveToNext());					
+						
+						String details = "";
+						
+						// Concatenating various information to single string
+						if(homePhone != null && !homePhone.equals("") )
+							details = "HomePhone : " + homePhone + "\n";
+						if(mobilePhone != null && !mobilePhone.equals("") )
+							details += "MobilePhone : " + mobilePhone + "\n";
+						if(workPhone != null && !workPhone.equals("") )
+							details += "WorkPhone : " + workPhone + "\n";
+						if(nickName != null && !nickName.equals("") )
+							details += "NickName : " + nickName + "\n";
+						if(homeEmail != null && !homeEmail.equals("") )
+							details += "HomeEmail : " + homeEmail + "\n";
+						if(workEmail != null && !workEmail.equals("") )
+							details += "WorkEmail : " + workEmail + "\n";
+						if(companyName != null && !companyName.equals("") )
+							details += "CompanyName : " + companyName + "\n";
+						if(title != null && !title.equals("") )
+							details += "Title : " + title + "\n";
+						
+						// Adding id, display name, path to photo and other details to cursor
+						mMatrixCursor.addRow(new Object[]{ Long.toString(contactId),displayName,photoPath,details});
 					}
-				}
-				
-			//getting edit text from button tag 
-				EditText textnexttobutton = (EditText) v.getTag(); 
-				
-				
-				
-			//setting what user types in edit text as a string variable
-				//String test = textnexttobutton.getText().toString();
-				
-			//both work
-				//Log.i("BUTTON ClICKED", textnexttobutton.getText().toString());
-				//Log.i("SAME BUTTON CLICKED", test);
-				
-			//calling out double to shorten out hashMap log
-				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
-				
-				double rtrn = hashShorten - gallonAmount;
-				
-			//HashMap from Data class
-				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(rtrn);
-				
-				
-				//good stuff to keep
-				/*
-				Log.i("BUTTON CLICKED",
-						"Dollar: " + returndata.get(Data.DOLLAR) + "\r\n" +
-						"Quarter: " + returndata.get(Data.QUARTER) + "\r\n" +
-						"Dime: " + returndata.get(Data.DIME) + "\r\n" +
-						"Nickel: " + returndata.get(Data.NICKEL) + "\r\n" +
-						"Penny: " + returndata.get(Data.PENNY) 
-						);
-						*/
-				
-				
-				result.setText(
-						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
-						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
-						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
-						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
-						"Ounce: " + returndata.get(LiquidConv.OUNCE) 
-						);
+					
+				}while(contactsCursor.moveToNext());
 			}
-		});
-        
-        
-        
-        
-        
-        
-        
-    //Setting listener for second button
-        secTextButt.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-				
-			//getting edit text from button tag 
-				EditText textnexttobutton = (EditText) v.getTag(); 
-				
-			//calling out double to shorten out hashMap log
-				double hashShorten = Double.parseDouble(textnexttobutton.getText().toString());
-				
-			//HashMap from Data class
-				HashMap<LiquidConv, Integer> returndata = LiquidConv.getData(hashShorten);
-				
-				
-				result.setText(
-						"Gallon: " + returndata.get(LiquidConv.GALLON) + "\r\n" +
-						"Quart: " + returndata.get(LiquidConv.QUART) + "\r\n" +
-						"Pint: " + returndata.get(LiquidConv.PINT) + "\r\n" +
-						"Cup: " + returndata.get(LiquidConv.CUP) + "\r\n" +
-						"Ounce: " + returndata.get(LiquidConv.OUNCE) + "\r\n"
-						);
-			}
-		});
-        
-        
-      //define new array list for j2Product interface /InterfaceCLASS / make sure class and interface are imported
-        fishtanks = new ArrayList<J2Product>();
-        fishtanks.add(new InterfacCLASS("Shark Tank", 100000));
-        fishtanks.add(new InterfacCLASS("Marlins St. Fish Tank", 5000));
-        fishtanks.add(new InterfacCLASS("Restauraunt Tank", 3500));
-        fishtanks.add(new InterfacCLASS("Salt W. Tank", 1500));
-        fishtanks.add(new InterfacCLASS("Fish Bowl", 5));
-        fishtanks.add(new InterfacCLASS("None", 0));
-        
-        //defining the array with the length of the fishtanks array with size(). String[fishtanks.size()]
-        String[] tankNames = new String[fishtanks.size()];
-        
-        //looping through fishtanks with size() instead of length
-        for (int i = 0; i<fishtanks.size(); i ++)
-        {
-        	//getting the names of the fishtanks from the for loop
-        	tankNames[i] = fishtanks.get(i).getName();
-        }
-        
-        fishTankOpts = FormingStuff.getfishtanks(this, tankNames);
-        
-       
-        
-        
- //////////////////////////////////// Adding to the linear layout of main activity //////////////////////   
-        
-        mainlinlay.addView(tview);
-        
-     //add mainlinlay
-        mainlinlay.addView(entBox);
-        
-        mainlinlay.addView(fishTankOpts);
-        
-        
-        result = new TextView(this);
-        mainlinlay.addView(result);
-        
-        mainlinlay.addView(bottomMessage);
-     
-      //setting content view / display on device
-        setContentView(mainlinlay);
-        
+			return mMatrixCursor;
+		}
+    	
+		@Override
+		protected void onPostExecute(Cursor result) {			
+			// Setting the cursor containing contacts to listview
+			mAdapter.swapCursor(result);
+		}		
     }
 
     @Override
