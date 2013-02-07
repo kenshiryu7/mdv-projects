@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.lpuente.java2_w3;
+package com.actionbarsherlock;
 
 public final class R {
     public static final class array {

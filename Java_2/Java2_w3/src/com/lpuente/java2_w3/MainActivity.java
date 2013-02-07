@@ -6,7 +6,9 @@ package com.lpuente.java2_w3;
 
 import java.util.ArrayList;
 
-import org.w3c.dom.Text;
+import com.actionbarsherlock.app.SherlockListActivity;
+
+//import org.w3c.dom.Text;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,7 +27,7 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 
-public class MainActivity extends ListActivity implements FirstFrag.FirstInterface, AddFrag.AddInterface{
+public class MainActivity extends SherlockListActivity implements FirstFrag.FirstInterface, AddFrag.AddInterface{
 	
 	//member variables
 	
@@ -120,13 +122,7 @@ public class MainActivity extends ListActivity implements FirstFrag.FirstInterfa
     
     
     
-    
-//This menu onCreate was here from the beginning
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
+ 
     
     
     
