@@ -34,7 +34,6 @@ public class Main extends Activity {
         	e.printStackTrace();
         }
         
-        //loading url into webview.
         WebView webview = (WebView) findViewById(R.id.webView1);
         
         webview.loadUrl(url.toString());
