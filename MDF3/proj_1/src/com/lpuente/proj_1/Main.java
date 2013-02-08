@@ -1,8 +1,13 @@
 package com.lpuente.proj_1;
 
+import java.net.URL;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.webkit.WebView;
 
 public class Main extends Activity {
 
@@ -10,8 +15,33 @@ public class Main extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_lay);
+        
+        //get intent method
+        Intent getintent = getIntent();
+        
+        //getting data from intent
+        Uri data = getintent.getData();
+        
+        URL url = null;
+        
+        //code to collect uri from button selected in previous fake app
+        try
+        {
+        	url = new URL(data.getScheme(), data.getHost(), data.getPath());
+        }
+        catch(Exception e)
+        {
+        	e.printStackTrace();
+        }
+        
+        WebView webview = (WebView) findViewById(R.id.webView1);
+        
+        webview.loadUrl(url.toString());
     }
 
+    
+    
+    //Not used
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_lay, menu);
