@@ -5,6 +5,11 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Main</string>
     
-    <string name="main_text">Select A Song To Play</string>
-
+    <string name="main_text">Listen or Watch "Doing Time"</string>
+    <string name="stop">Stop Video</string>
+	<string name="listen">Listen</string>
+	<string name="watch">Watch</string>
+	<string name="video">Video</string>
+	
+    
 </resources>

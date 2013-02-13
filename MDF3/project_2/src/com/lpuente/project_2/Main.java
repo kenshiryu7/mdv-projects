@@ -1,23 +1,31 @@
 package com.lpuente.project_2;
 
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
-public class Main extends Activity {
+public class Main extends Activity{
 	
 	//Really enjoyed the video for media will use as example as well as example from
 	//previous project using audio mp
 	
-	//Global Vars
+	//Global Vars audio
 	String playButtonText;
 	MediaPlayer mP;
 	Button playButt;
+	
+	//Glob. Vars for video
+	String vidText;
+	VideoView vw;
 	
 	//seen this done various times. I'll just go with it
 	Context _this;
@@ -26,6 +34,10 @@ public class Main extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_lay);
+        
+        
+        //im sure theres a better way around the audio issues when changing from port to land. but locking it is ok for now
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
         //Setting Context
         _this = this;	
@@ -40,7 +52,7 @@ public class Main extends Activity {
         playButt = (Button) findViewById(R.id.playB);
         
         //beginning with Play for the button text setting before onClickListener
-        playButtonText = "Play";
+        playButtonText = " Play ";
         
         
         
@@ -55,7 +67,7 @@ public class Main extends Activity {
 				
 				//using conditional to start or pause song
 				
-				if(playButtonText.equals("Play"))
+				if(playButtonText.equals(" Play "))
 				{
 					//starts song
 					mP.start();
@@ -70,7 +82,7 @@ public class Main extends Activity {
 					//same idea here as above except in reverse and pausing the mP. easy to do this since there are
 					//only two options of play and pause
 					mP.pause();
-					playButtonText = "Play";
+					playButtonText = " Play ";
 					playButt.setText(playButtonText);
 				}
 				
@@ -79,6 +91,40 @@ public class Main extends Activity {
         
         //set the play button text to the String to determine whether text is Play or Pause
         playButt.setText(playButtonText);
+        
+       
+		////////////////Code for Video//////////////Similar to audio above////////////////
+        
+        Button vidButt = (Button) findViewById(R.id.playVid);
+        
+        //video button listener
+        
+        vidButt.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+			
+				//Set to play the video
+				
+				vw = (VideoView) findViewById(R.id.vidview);
+				
+				//using a URI for video path for raw folder/file path
+				
+				String uriPath = "android.resource://" + getPackageName() + "/" + R.raw.doing_time;
+				
+				//collecting path then parsing string to uri
+				vw.setVideoURI(Uri.parse(uriPath));
+				
+				//setting media controller to context _this
+				vw.setMediaController(new MediaController(_this));
+				
+				//starting video
+				vw.start();
+				
+			}
+		});
+        
         
         
     }
