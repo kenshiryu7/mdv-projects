@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.TabHost;
+import android.widget.Toast;
 import android.widget.TabHost.TabSpec;
 import android.widget.VideoView;
 
@@ -31,6 +32,9 @@ public class Main extends Activity{
 	
 	//seen this done various times. I'll just go with it
 	Context _this;
+	
+	//var for tab 2 GPS class
+	GPSclass gps;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -154,8 +158,42 @@ public class Main extends Activity{
 /////////////////////////SETUP FOR TAB 2////////////////////////////////////////////////
         tspecs = th.newTabSpec("tag2");
         tspecs.setContent(R.id.tab2);				//LinearLay/tab by id 
-        tspecs.setIndicator("Tab 2");		//name within tab
+        tspecs.setIndicator("GPS");		//name within tab
         th.addTab(tspecs);		
+        
+        
+        Button showLocation = (Button) findViewById(R.id.locationB);
+        
+        //"Where I'm At" listener
+        showLocation.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				//class object for gps class
+				gps = new GPSclass(Main.this);
+				
+				
+				//Checking if GPS is on
+				if(gps.canGetLocation())
+				{
+					double latitude = gps.getLatitude();
+					double longitude = gps.getLongitude();
+					
+					//displaying results in a toast
+					Toast.makeText(getApplicationContext(), 
+							"I am somewhere very close to: \n Lat: " + latitude +
+							"\n Long: " + longitude, Toast.LENGTH_LONG).show();
+				}
+				else
+				{
+					//allow user to view alert to give option to turn gps on if it is off
+					gps.showSetting();
+				}
+			}
+		});
+        
 /////////////////////////////////////////////////////////////TAB 2 END////////////////// 
         
 /////////////////////////SETUP FOR TAB 3////////////////////////////////////////////////

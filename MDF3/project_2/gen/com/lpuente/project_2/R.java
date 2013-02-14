@@ -15,12 +15,13 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int menu_settings=0x7f08000a;
+        public static final int locationB=0x7f080009;
+        public static final int menu_settings=0x7f08000b;
         public static final int playB=0x7f080003;
         public static final int playVid=0x7f080005;
         public static final int tab1=0x7f080001;
         public static final int tab2=0x7f080008;
-        public static final int tab3=0x7f080009;
+        public static final int tab3=0x7f08000a;
         public static final int tabhost=0x7f080000;
         public static final int textView1=0x7f080002;
         public static final int textView2=0x7f080004;
@@ -43,6 +44,7 @@ public final class R {
         public static final int listen=0x7f050006;
         public static final int main_text=0x7f050004;
         public static final int menu_settings=0x7f050002;
+        public static final int showLocText=0x7f050009;
         public static final int stop=0x7f050005;
         public static final int title_activity_main=0x7f050003;
         public static final int video=0x7f050008;

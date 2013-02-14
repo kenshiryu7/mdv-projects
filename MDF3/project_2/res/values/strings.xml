@@ -11,5 +11,7 @@
 	<string name="watch">Watch</string>
 	<string name="video">Video</string>
 	
+	<string name="showLocText"> Where I\'m At </string>
+	
     
 </resources>
