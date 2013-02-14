@@ -1,5 +1,9 @@
 package com.lpuente.project_2;
 
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,11 +16,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.TabHost.TabSpec;
 import android.widget.VideoView;
 
-public class Main extends Activity{
+public class Main extends Activity implements SensorEventListener{
 	
 	//Really enjoyed the video for media will use as example as well as example from
 	//previous project using audio mp
@@ -35,6 +40,13 @@ public class Main extends Activity{
 	
 	//var for tab 2 GPS class
 	GPSclass gps;
+	
+	//var tab 3
+	Sensor accelerometer;
+	SensorManager senseMan;
+	TextView acceleration;
+	
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -154,6 +166,8 @@ public class Main extends Activity{
 			}
 		});
 /////////////////////////////////////////////////////////////TAB 1 END//////////////////       
+     
+        
         
 /////////////////////////SETUP FOR TAB 2////////////////////////////////////////////////
         tspecs = th.newTabSpec("tag2");
@@ -196,11 +210,27 @@ public class Main extends Activity{
         
 /////////////////////////////////////////////////////////////TAB 2 END////////////////// 
         
+        
+        
 /////////////////////////SETUP FOR TAB 3////////////////////////////////////////////////
 tspecs = th.newTabSpec("tag3");
 tspecs.setContent(R.id.tab3);				//LinearLay/tab by id 
 tspecs.setIndicator("Tab 3");		//name within tab
 th.addTab(tspecs);		
+
+//sensor object
+senseMan = (SensorManager)getSystemService(SENSOR_SERVICE);
+
+//getting sensor type
+accelerometer = senseMan.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+//registering the sensor manager
+senseMan.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+
+//textview id
+acceleration = (TextView) findViewById(R.id.accellText);
+
+
 /////////////////////////////////////////////////////////////TAB 3 END////////////////// 
     }
 
@@ -216,4 +246,31 @@ th.addTab(tspecs);
         getMenuInflater().inflate(R.menu.main_lay, menu);
         return true;
     }
+
+
+
+
+
+
+	@Override
+	public void onAccuracyChanged(Sensor arg0, int arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+//method that will show value changes in text view
+	
+	@Override
+	public void onSensorChanged(SensorEvent arg0) {
+		// TODO Auto-generated method stub
+		
+		//displaying values to X, Y, Z using values of the ais 0 being x y being 1 z being 2.
+		acceleration.setText(" X: " +arg0.values[0] +
+				"\n Y: " +arg0.values[1] +
+				"\n Z: " +arg0.values[2]);
+	}
 }
