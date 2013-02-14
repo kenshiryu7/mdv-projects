@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.MediaController;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
 import android.widget.VideoView;
 
 public class Main extends Activity{
@@ -41,6 +43,26 @@ public class Main extends Activity{
         
         //Setting Context
         _this = this;	
+        
+        
+        
+        
+        
+        //setting up the tab host and etc. This is new to me but mostly makes sense
+        
+        TabHost th = (TabHost) findViewById(R.id.tabhost);
+        
+        th.setup();
+        
+        
+        
+/////////////////////////SETUP FOR TAB 1////////////////////////////////////////////////
+        TabSpec tspecs = th.newTabSpec("tag1");
+        tspecs.setContent(R.id.tab1);				//LinearLay/tab by id 
+        tspecs.setIndicator("Audio & Video");		//name within tab
+        th.addTab(tspecs);							//adding all above to tabs
+        
+        
         
        
         //Setting Media Player song
@@ -98,6 +120,7 @@ public class Main extends Activity{
         Button vidButt = (Button) findViewById(R.id.playVid);
         
         //video button listener
+        vw = (VideoView) findViewById(R.id.vidview);
         
         vidButt.setOnClickListener(new OnClickListener() {
 			
@@ -107,7 +130,8 @@ public class Main extends Activity{
 			
 				//Set to play the video
 				
-				vw = (VideoView) findViewById(R.id.vidview);
+				//vw = (VideoView) findViewById(R.id.vidview);
+				
 				
 				//using a URI for video path for raw folder/file path
 				
@@ -119,14 +143,27 @@ public class Main extends Activity{
 				//setting media controller to context _this
 				vw.setMediaController(new MediaController(_this));
 				
+				
 				//starting video
 				vw.start();
 				
 			}
 		});
+/////////////////////////////////////////////////////////////TAB 1 END//////////////////       
         
+/////////////////////////SETUP FOR TAB 2////////////////////////////////////////////////
+        tspecs = th.newTabSpec("tag2");
+        tspecs.setContent(R.id.tab2);				//LinearLay/tab by id 
+        tspecs.setIndicator("Tab 2");		//name within tab
+        th.addTab(tspecs);		
+/////////////////////////////////////////////////////////////TAB 2 END////////////////// 
         
-        
+/////////////////////////SETUP FOR TAB 3////////////////////////////////////////////////
+tspecs = th.newTabSpec("tag3");
+tspecs.setContent(R.id.tab3);				//LinearLay/tab by id 
+tspecs.setIndicator("Tab 3");		//name within tab
+th.addTab(tspecs);		
+/////////////////////////////////////////////////////////////TAB 3 END////////////////// 
     }
 
     
