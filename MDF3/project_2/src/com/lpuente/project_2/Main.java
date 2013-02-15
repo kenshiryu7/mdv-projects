@@ -6,6 +6,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.Notification;
@@ -13,6 +14,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+
 import android.content.pm.ActivityInfo;
 import android.view.Menu;
 import android.view.View;
@@ -179,6 +181,12 @@ public class Main extends Activity implements SensorEventListener{
         tspecs.setIndicator("GPS");		//name within tab
         th.addTab(tspecs);		
         
+        
+        
+        
+        
+        
+        
         //setting notify button
         Button notifyB = (Button) findViewById(R.id.notifyB);
         
@@ -190,6 +198,7 @@ public class Main extends Activity implements SensorEventListener{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
+			   
 				
 				//get reference notification manager
 				NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
@@ -199,7 +208,10 @@ public class Main extends Activity implements SensorEventListener{
 						"Last minute notification", System.currentTimeMillis());
 				Context context = Main.this;
 				
+				//title of notification String
 				CharSequence title = "You've been Notified!!!";
+				
+				//Contents/message of that notification.
 				CharSequence details = "Go ahead, keep doing what you're doing";
 				
 				Intent intent = new Intent(context, Main.class);
