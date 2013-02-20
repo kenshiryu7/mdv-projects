@@ -1,0 +1,160 @@
+package com.lpuente.project_2;
+
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.util.Log;
+
+public class GPSclass extends Service implements LocationListener{
+
+	private final Context _context;
+	
+	//GSP status bool
+	boolean isGPSon = false;
+	
+	//Network status bool
+	boolean isNetworkOn = false;
+	
+	//location get bool
+	boolean canGetLoc = false;
+	
+	//location, long and lat. Works with double
+	Location location;
+	double latitude;
+	double longitude;
+	
+	//Minimum distance for update change. In meters
+	private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 5;
+	
+	//Minimum time for updates milliseconds. Using multiplication helps see the minutes easier
+	//this case 1 minute
+	private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 1;
+	
+	//Location manager
+	protected LocationManager locationManager;
+	
+	public GPSclass(Context context) {
+		this._context = context;
+		getLocation();
+	}
+	
+	
+	public Location getLocation(){
+		
+		try
+		{
+			//loc man object/instant...
+			locationManager = (LocationManager) _context.getSystemService(LOCATION_SERVICE);
+			
+			//GPS status
+			isGPSon = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+			
+			//Network status
+			isNetworkOn =  locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+			
+			//condition to see if GPS is provided/ON
+			if(!isGPSon && !isNetworkOn)
+			{
+				//no provider enabled
+			}
+			else
+			{
+				this.canGetLoc = true;
+				
+				//network prov. location
+				if(isNetworkOn)
+				{
+					locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 
+							MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+					
+					//Log out
+					Log.d("Network", "Network");
+					
+					if(locationManager != null)
+					{
+						location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+						
+						//condition to get lat and long if not null
+						if(location != null)
+						{
+							latitude = location.getLatitude();
+							longitude = location.getLongitude();
+						}
+					}
+				}
+				
+				//So if and when the GPS is enabled. similar to above
+				if(isGPSon)
+				{
+					if(location == null)
+					{
+						locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME_BW_UPDATES,
+								MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+						
+						//Log out
+						Log.d("GPS Enabled", "GPS Enabled");
+						
+						if(locationManager !=null)
+						{
+							location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+							
+							//getting lat and long for gps
+							if(location != null)
+							{
+								latitude = location.getLatitude();
+								longitude = location.getLongitude();
+							}
+						}
+					}
+				}
+				
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return location;
+	}
+	
+	
+//methods for location listener//	
+	@Override
+	public void onLocationChanged(Location location) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public IBinder onBind(Intent intent) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

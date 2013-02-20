@@ -1,0 +1,47 @@
+package com.lpuente.project_2;
+
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Context;
+import android.view.Menu;
+import android.widget.Button;
+
+public class Main extends Activity {
+	
+	//Really enjoyed the video for media will use as example as well as example from
+	//previous project using audio mp
+	
+	//Global Vars
+	String playButtonText;
+	MediaPlayer mP;
+	Button playButt;
+	
+	//seen this done various times. I'll just go with it
+	Context _this;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main_lay);
+        
+        //Setting Context
+        _this = this;	
+        
+        //Setting Media Player song
+        mP = MediaPlayer.create(Main.this, R.raw.mxpx);
+    }
+
+    
+    
+    
+    
+    
+ ////////////////////////////////////////////////////////   
+    //Unused
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_lay, menu);
+        return true;
+    }
+}
