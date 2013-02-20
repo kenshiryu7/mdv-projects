@@ -14,5 +14,7 @@
 	<string name="showLocText"> Where I\'m At </string>
 	<string name="notify">Notify</string>
 	
+	<string name="widget_text">Testing 123</string>
+	
     
 </resources>
