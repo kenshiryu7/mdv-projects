@@ -26,20 +26,26 @@ public final class R {
     }
     public static final class id {
         public static final int accellText=0x7f0a0000;
-        public static final int action_settings=0x7f0a000e;
+        public static final int action_settings=0x7f0a0011;
+        public static final int item1=0x7f0a0012;
+        public static final int item2=0x7f0a0013;
+        public static final int item3=0x7f0a0014;
         public static final int locationB=0x7f0a0008;
         public static final int main_butt=0x7f0a0009;
         public static final int notifyB=0x7f0a0007;
         public static final int playB=0x7f0a0002;
         public static final int playVid=0x7f0a0004;
-        public static final int tab1=0x7f0a000b;
-        public static final int tab2=0x7f0a000c;
-        public static final int tab3=0x7f0a000d;
-        public static final int tabhost=0x7f0a000a;
+        public static final int tab1=0x7f0a000c;
+        public static final int tab2=0x7f0a000d;
+        public static final int tab3=0x7f0a000e;
+        public static final int tabhost=0x7f0a000b;
         public static final int textView1=0x7f0a0001;
         public static final int textView2=0x7f0a0003;
         public static final int textView3=0x7f0a0005;
+        public static final int update_text=0x7f0a000f;
         public static final int vidview=0x7f0a0006;
+        public static final int w_butt=0x7f0a000a;
+        public static final int widget_button=0x7f0a0010;
     }
     public static final class layout {
         public static final int acellerom_lay=0x7f030000;
@@ -47,9 +53,10 @@ public final class R {
         public static final int gps_lay=0x7f030002;
         public static final int main_lay=0x7f030003;
         public static final int main_stuff_lay=0x7f030004;
+        public static final int widget_layout=0x7f030005;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main_menu=0x7f090000;
     }
     public static final class raw {
         public static final int doing_time=0x7f050000;
@@ -59,11 +66,15 @@ public final class R {
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
         public static final int hello_world=0x7f070002;
+        public static final int i1=0x7f07000c;
+        public static final int i2=0x7f07000d;
+        public static final int i3=0x7f07000e;
         public static final int listen=0x7f070005;
         public static final int main_text=0x7f070003;
         public static final int notify=0x7f070009;
         public static final int showLocText=0x7f070008;
         public static final int stop=0x7f070004;
+        public static final int test_w=0x7f07000b;
         public static final int to_main=0x7f07000a;
         public static final int video=0x7f070007;
         public static final int watch=0x7f070006;
