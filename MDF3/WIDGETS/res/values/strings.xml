@@ -14,11 +14,15 @@
 	<string name="showLocText"> Where I\'m At </string>
 	<string name="notify">Notify</string>
 	
-	<string name="to_main">To Main Stuff</string>
+	<string name="to_main">Project 2 format</string>
 	<string name="test_w">Testing Widget</string>
 	
-	<string name="i1">Audi/Video</string>
+	<string name="i1">Audio/Video</string>
 	<string name="i2">GPS/Nav</string>
 	<string name="i3">Accel.</string>
+	<string name="i4">Action Bar Dev</string>
+	<string name="i5">Full Sail</string>
+	<string name="i6">Yahoo</string>
+	<string name="i7">Google</string>
 
 </resources>

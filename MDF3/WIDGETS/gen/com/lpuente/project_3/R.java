@@ -30,6 +30,10 @@ public final class R {
         public static final int item1=0x7f0a0012;
         public static final int item2=0x7f0a0013;
         public static final int item3=0x7f0a0014;
+        public static final int item4=0x7f0a0015;
+        public static final int item5=0x7f0a0016;
+        public static final int item6=0x7f0a0017;
+        public static final int item7=0x7f0a0018;
         public static final int locationB=0x7f0a0008;
         public static final int main_butt=0x7f0a0009;
         public static final int notifyB=0x7f0a0007;
@@ -69,6 +73,10 @@ public final class R {
         public static final int i1=0x7f07000c;
         public static final int i2=0x7f07000d;
         public static final int i3=0x7f07000e;
+        public static final int i4=0x7f07000f;
+        public static final int i5=0x7f070010;
+        public static final int i6=0x7f070011;
+        public static final int i7=0x7f070012;
         public static final int listen=0x7f070005;
         public static final int main_text=0x7f070003;
         public static final int notify=0x7f070009;

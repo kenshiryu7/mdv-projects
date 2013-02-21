@@ -14,7 +14,7 @@ import android.widget.RemoteViews;
 public class WidgetConfigActivity extends AppWidgetProvider{
 	
 	
-	private static final String ACTION_CLICK ="ACTION_CLICK";
+	
 	
 	
 	@Override
@@ -56,7 +56,7 @@ public class WidgetConfigActivity extends AppWidgetProvider{
 		
 		
 		
-		//super.onUpdate(context, appWidgetManager, appWidgetIds);
+		super.onUpdate(context, appWidgetManager, appWidgetIds);
 	}
 
 	

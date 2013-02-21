@@ -7,6 +7,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -100,6 +101,39 @@ public boolean onOptionsItemSelected(MenuItem item)
 		
 		
 		return true;
+	case R.id.item4:
+		Log.i(TAG, "item 4 CLICKED");
+		
+		Intent ointent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://developer.android.com/design/patterns/actionbar.html"));
+		
+		startActivity(ointent1);
+		
+		return true;
+	case R.id.item5:
+		Log.i(TAG, "item 5 CLICKED");
+		
+		Intent ointent2 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fullsail.com"));
+		
+		startActivity(ointent2);
+		
+		return true;
+	case R.id.item6:
+		Log.i(TAG, "item 6 CLICKED");
+		
+		Intent ointent3 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.yahoo.com"));
+		
+		startActivity(ointent3);
+		
+		return true;
+	case R.id.item7:
+		Log.i(TAG, "item 7 CLICKED");
+		
+		Intent ointent4 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+		
+		startActivity(ointent4);
+		
+		return true;
+		
 		
 		default: return super.onOptionsItemSelected(item);
 	}
