@@ -7,6 +7,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.RemoteViews;
 public class Main extends Activity implements OnClickListener{
 
 	final String URI = "http://yahoo.com";
+	private final String TAG = "Main Activity";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,34 @@ public class Main extends Activity implements OnClickListener{
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		switch(item.getItemId())
+		{
+		case R.id.item1:
+			Log.i(TAG, "item 1 CLICKED");
+			
+			Intent audioInt = new Intent(Main.this, AudioVideo.class);
+			startActivity(audioInt);
+			
+			
+			return true;
+		case R.id.item2:
+			Log.i(TAG, "item 2 CLICKED");
+			
+			Intent gpsInt = new Intent(Main.this, GPS.class);
+			startActivity(gpsInt);
+			
+			
+			return true;
+		case R.id.item3:
+			Log.i(TAG, "item 3 CLICKED");
+			
+			Intent acellInt = new Intent(Main.this, Acellerom.class);
+			startActivity(acellInt);
+			
+			
+			return true;
+			
+			default: return super.onOptionsItemSelected(item);
+		}
 	}
 	
 	

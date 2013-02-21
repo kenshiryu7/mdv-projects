@@ -34,6 +34,11 @@
         </activity>
         
         <activity android:name=".TheMainStuff"/>
+        <activity android:name=".AudioVideo"/>
+        <activity android:name=".GPS"/>
+        <activity android:name=".Acellerom"/>
+        
+        
         
        
         
