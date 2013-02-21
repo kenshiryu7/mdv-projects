@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:configure="com.lpuente.project_3.WidgetClass"
+    android:initialLayout="@layout/widget_layout"
+    android:minHeight="40dp"
+    android:minResizeHeight="40dp"
+    android:minResizeWidth="100dp"
+    android:minWidth="180dp"
+    android:updatePeriodMillis="1800000" 
+    android:previewImage="@drawable/headphone"
+    android:widgetCategory="home_screen" 
+    android:resizeMode="horizontal"
+    android:initialKeyguardLayout="@layout/widget_layout">
+
+</appwidget-provider>

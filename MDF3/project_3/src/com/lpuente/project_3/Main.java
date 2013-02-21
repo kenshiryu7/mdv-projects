@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+
 import android.content.Context;
 import android.content.Intent;
 
@@ -21,6 +22,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.MediaController;
+
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +53,11 @@ public class Main extends Activity implements SensorEventListener{
 	Sensor accelerometer;
 	SensorManager senseMan;
 	TextView acceleration;
+	
+	//TESTING FOR TAB 4 FOR WIDGETS
+		Sensor accelerometer1;
+		SensorManager senseMan1;
+		TextView acceleration1;
 	
 
 
@@ -109,6 +116,9 @@ public class Main extends Activity implements SensorEventListener{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
+				
+				
+			
 				//using conditional to start or pause song
 				
 				if(playButtonText.equals(" Play "))
@@ -283,6 +293,27 @@ acceleration = (TextView) findViewById(R.id.accellText);
 
 
 /////////////////////////////////////////////////////////////TAB 3 END////////////////// 
+
+/////////////////////////SETUP FOR TAB 4////////////////////////////////////////////////
+tspecs = th.newTabSpec("tag4");
+tspecs.setContent(R.id.tab4);				//LinearLay/tab by id 
+tspecs.setIndicator("Widget Example");		//name within tab
+th.addTab(tspecs);		
+
+//sensor object
+senseMan1 = (SensorManager)getSystemService(SENSOR_SERVICE);
+
+//getting sensor type
+accelerometer1 = senseMan.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+//registering the sensor manager
+senseMan1.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+
+//textview id
+acceleration1 = (TextView) findViewById(R.id.tab4_text);
+
+
+/////////////////////////////////////////////////////////////TAB 3 END//////////////////
     }
 
     
@@ -321,6 +352,10 @@ acceleration = (TextView) findViewById(R.id.accellText);
 		
 		//displaying values to X, Y, Z using values of the ais 0 being x y being 1 z being 2.
 		acceleration.setText(" X: " +arg0.values[0] +
+				"\n Y: " +arg0.values[1] +
+				"\n Z: " +arg0.values[2]);
+		
+		acceleration1.setText(" X: " +arg0.values[0] +
 				"\n Y: " +arg0.values[1] +
 				"\n Z: " +arg0.values[2]);
 	}

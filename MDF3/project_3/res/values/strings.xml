@@ -14,7 +14,10 @@
 	<string name="showLocText"> Where I\'m At </string>
 	<string name="notify">Notify</string>
 	
-	<string name="widget_text">Testing 123</string>
+	<string name="test">Testing 123</string>
+	<string name="hint1">Type Something Here!!!</string>
+	
+	<string name="widget_button">Check Out My Widget</string>
 	
     
 </resources>
