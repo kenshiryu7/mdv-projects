@@ -13,5 +13,7 @@
 	
 	<string name="showLocText"> Where I\'m At </string>
 	<string name="notify">Notify</string>
+	
+	<string name="to_main">To Main Stuff</string>
 
 </resources>
