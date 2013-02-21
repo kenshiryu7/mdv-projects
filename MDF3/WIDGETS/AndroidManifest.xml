@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <reciever
-                android:name=".WidgetConfigActivity">
+                android:name="WidgetConfigActivity">
                 <intent-filters>
                     <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
                 </intent-filters>
@@ -35,6 +35,15 @@
                     android:resource="@xml/my_widget"/>
             </reciever>
         </activity>
+        
+        
+        <activity android:name="WidgetConfigActivity" android:label="@string/app_name">
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+            
+        </activity>
+        
         
         <activity android:name=".TheMainStuff"/>
         <activity android:name=".AudioVideo"/>
