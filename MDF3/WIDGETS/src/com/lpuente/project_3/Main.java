@@ -138,7 +138,7 @@ public class Main extends Activity implements OnClickListener{
 	
 	
 	
-	
+	//the onclick example and adjustment from video. blahhhhh
 	
 	@Override
 	public void onClick(View v) {
