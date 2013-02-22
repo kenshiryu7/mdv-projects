@@ -17,7 +17,7 @@ import android.widget.RemoteViews;
 
 
 
-
+//had a hard time this project. Bleh!
 
 public class Main extends Activity implements OnClickListener{
 
