@@ -31,7 +31,7 @@ public final class R {
         public static final int action_settings=0x7f080003;
         public static final int button1=0x7f080001;
         public static final int message=0x7f080000;
-        public static final int webView1=0x7f080002;
+        public static final int webView=0x7f080002;
     }
     public static final class layout {
         public static final int main_lay=0x7f030000;

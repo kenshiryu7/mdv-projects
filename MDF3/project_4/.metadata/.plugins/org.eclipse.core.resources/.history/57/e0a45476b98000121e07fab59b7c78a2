@@ -1,7 +1,6 @@
 package com.lpuente.project4;
 
 import android.os.Bundle;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-@SuppressLint("SetJavaScriptEnabled")
 public class Main extends Activity {
 
     @Override
@@ -29,13 +27,13 @@ public class Main extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
         //webview stuff
-        final WebView myWV = (WebView) findViewById(R.id.webView);
+        WebView myWV = (WebView) findViewById(R.id.webView);
         WebSettings webSettings = myWV.getSettings();
         webSettings.setJavaScriptEnabled(true);
         
         
         //Edit text stuff
-        final EditText  message = (EditText) findViewById(R.id.message);
+        EditText  message = (EditText) findViewById(R.id.message);
         
         
         //The Main Button Stuff
@@ -48,10 +46,8 @@ public class Main extends Activity {
 			
 				
 				//going to try to send typed input to webview and have the 
-				//text viewed in the webview with a button to go to the web site
-
-				String messageSent = message.getText().toString(); //getting input from Edit text
-        		myWV.loadUrl("javascript:callFromActivity(\"" + messageSent + "\")");
+				//text viewed in the webview with a button to go to the website
+				
 			}
 		});
         
