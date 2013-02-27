@@ -13,13 +13,6 @@ public class Main extends Activity {
     }
 
 
-    
-    
-    
-    
-    
-    
-    //may use this later for action bar purposes.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
