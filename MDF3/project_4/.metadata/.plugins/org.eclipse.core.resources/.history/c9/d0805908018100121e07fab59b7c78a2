@@ -26,8 +26,6 @@ public class Main extends Activity {
 	Button collectInputButt;
 	
 	
-	
-	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +87,9 @@ public class Main extends Activity {
     
     //creating the java script interface inner class
     
-    public class MyJavaScriptInterface{Context _context;
+    public class MyJavaScriptInterface{
+    	
+    	Context _context;
     	
     	MyJavaScriptInterface(Context c){
     		_context = c;
@@ -110,7 +110,6 @@ public class Main extends Activity {
     	
     	AlertDialog.Builder myDialog = new AlertDialog.Builder(Main.this);
     	
-    	//alert stuff
     	myDialog.setTitle("This is the Title");
     	myDialog.setMessage("This is the Message");
     	myDialog.setPositiveButton("Positive", null); //null is for the listener

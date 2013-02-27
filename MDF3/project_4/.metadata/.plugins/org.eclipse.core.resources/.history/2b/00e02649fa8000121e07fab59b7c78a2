@@ -2,20 +2,20 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width; user-scalable=0;" />
+	<meta name="viewport" content="width=device-width; user scalable=0;" />
 
-	<title>The HTML Stuff</title>
+	<title> The HTML Stuff</title>
 	</head>
 	
 	<body>
-	<h1>Go to Web Site</h1>
-	<p id="webtext">ex:Google</p>
+	<h1>The HTML Stuff</h1>
+	<p id="webtext">Yo!</p>
 	
-	<input type="button" value="Toast test" onClick="showAndroidToast('Yo Chump!')"/>
+	<input type="button" value="Say something" onClick="showAndroidToast('Yo Chump!')"/>
 
-	<input type="button" value="Alert test" onClick="openAndroidDialog()"/>
+	<input type="button" value="Open Dialog" onClick="openAndroidDialog()"/>
 
-		<script language="text/javascript">
+		<script language="javascript">
 
 			function showAndroidToast(toast) {
 				AndroidFunction.showToast(toast);

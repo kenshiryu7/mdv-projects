@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -24,8 +23,6 @@ public class Main extends Activity {
 	WebView myWV;
 	EditText message;
 	Button collectInputButt;
-	
-	
 	
 	
     @Override
@@ -89,14 +86,15 @@ public class Main extends Activity {
     
     //creating the java script interface inner class
     
-    public class MyJavaScriptInterface{Context _context;
+    public class MyJavaScriptInterface{
+    	
+    	Context _context;
     	
     	MyJavaScriptInterface(Context c){
     		_context = c;
     	}
     	
     	//will try a toast first
-    	@JavascriptInterface
     	public void showToast(String toast){
     		
     		Toast.makeText(_context, toast, Toast.LENGTH_LONG).show();
@@ -105,12 +103,10 @@ public class Main extends Activity {
     	
     	//now a simple alert 
     	//Will change these as i go. Probably to call intents. Something simple first
-    	@JavascriptInterface
     	public void openAndroidDialog(){
     	
     	AlertDialog.Builder myDialog = new AlertDialog.Builder(Main.this);
     	
-    	//alert stuff
     	myDialog.setTitle("This is the Title");
     	myDialog.setMessage("This is the Message");
     	myDialog.setPositiveButton("Positive", null); //null is for the listener

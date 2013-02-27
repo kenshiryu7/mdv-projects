@@ -25,7 +25,7 @@ public class Main extends Activity {
 	EditText message;
 	Button collectInputButt;
 	
-	
+	Context _context;
 	
 	
     @Override
@@ -47,7 +47,7 @@ public class Main extends Activity {
       
       //adding java script interface class
         
-        final MyJavaScriptInterface myJSI = new MyJavaScriptInterface(this);
+        final MyJavaScriptInterface myJSI = new MyJavaScriptInterface();
         myWV.addJavascriptInterface(myJSI, "AndroidFunction");
         
         WebSettings webSettings = myWV.getSettings();
@@ -89,11 +89,11 @@ public class Main extends Activity {
     
     //creating the java script interface inner class
     
-    public class MyJavaScriptInterface{Context _context;
+    public class MyJavaScriptInterface{//Context _context;
     	
-    	MyJavaScriptInterface(Context c){
-    		_context = c;
-    	}
+    	//MyJavaScriptInterface(Context c){
+    		//_context = c;
+    	//}
     	
     	//will try a toast first
     	@JavascriptInterface

@@ -26,8 +26,6 @@ public class Main extends Activity {
 	Button collectInputButt;
 	
 	
-	
-	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +87,7 @@ public class Main extends Activity {
     
     //creating the java script interface inner class
     
-    public class MyJavaScriptInterface{Context _context;
+    public class WebAppInterface{Context _context;
     	
     	MyJavaScriptInterface(Context c){
     		_context = c;

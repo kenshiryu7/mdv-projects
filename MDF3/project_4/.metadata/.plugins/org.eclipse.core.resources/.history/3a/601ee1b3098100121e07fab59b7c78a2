@@ -15,7 +15,7 @@
 
 	<input type="button" value="Alert test" onClick="openAndroidDialog()"/>
 
-		<script language="text/javascript">
+		<script language="javascript">
 
 			function showAndroidToast(toast) {
 				AndroidFunction.showToast(toast);

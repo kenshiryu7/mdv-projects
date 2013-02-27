@@ -8,14 +8,14 @@
 	</head>
 	
 	<body>
-	<h1>Go to Web Site</h1>
+	<h1>The Web Site You Typed:</h1>
 	<p id="webtext">ex:Google</p>
 	
-	<input type="button" value="Toast test" onClick="showAndroidToast('Yo Chump!')"/>
+	<input type="button" value="Say something" onClick="showAndroidToast('Yo Chump!')"/>
 
-	<input type="button" value="Alert test" onClick="openAndroidDialog()"/>
+	<input type="button" value="Open Dialog" onClick="openAndroidDialog()"/>
 
-		<script language="text/javascript">
+		<script language="javascript">
 
 			function showAndroidToast(toast) {
 				AndroidFunction.showToast(toast);
