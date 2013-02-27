@@ -18,11 +18,11 @@
 		<script language="text/javascript">
 
 			function showAndroidToast(toast) {
-				Android.showToast(toast);
+				AndroidFunction.showToast(toast);
 			}
 
 			function openAndroidDialog() {
-				Android.openAndroidDialog():
+				AndroidFunction.openAndroidDialog():
 			}
 
 			function callFromActivity(message) {

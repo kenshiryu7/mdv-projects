@@ -47,11 +47,8 @@ public class Main extends Activity {
       
       //adding java script interface class
         
-        //final MyJavaScriptInterface myJSI = new MyJavaScriptInterface(this);
-       // myWV.addJavascriptInterface(myJSI, "AndroidFunction");
-        
-        //same as stuff above
-        myWV.addJavascriptInterface(new MyJavaScriptInterface(this), "Android");
+        final MyJavaScriptInterface myJSI = new MyJavaScriptInterface(this);
+        myWV.addJavascriptInterface(myJSI, "AndroidFunction");
         
         WebSettings webSettings = myWV.getSettings();
         webSettings.setJavaScriptEnabled(true);
