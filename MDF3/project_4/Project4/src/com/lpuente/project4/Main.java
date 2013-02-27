@@ -2,6 +2,7 @@ package com.lpuente.project4;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.view.Menu;
 
 public class Main extends Activity {
@@ -12,6 +13,9 @@ public class Main extends Activity {
         setContentView(R.layout.main_lay);
         
         
+        //im sure theres a better way around the audio issues when changing from port to land.
+        //but locking it is ok for now
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         
         
     }
