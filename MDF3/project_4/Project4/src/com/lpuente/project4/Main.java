@@ -1,10 +1,14 @@
 package com.lpuente.project4;
 
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
+
 import android.content.pm.ActivityInfo;
 import android.util.Log;
 import android.view.Menu;
@@ -26,6 +30,7 @@ public class Main extends Activity {
 	WebView myWV;
 	EditText message;
 	Button collectInputButt;
+	String messageSent;
 	
 	
 	
@@ -101,8 +106,9 @@ public class Main extends Activity {
 				}
 				else
 				{
-					String messageSent = message.getText().toString(); //getting input from Edit text
+					messageSent = message.getText().toString(); //getting input from Edit text
 					myWV.loadUrl("javascript:callFromActivity(\"" + messageSent + "\")");
+					
 					
 					//puts the edit text back to default after pressing button
 					message.setText("");
@@ -125,9 +131,12 @@ public class Main extends Activity {
     		_context = c;
     	}
     	
+    	
+    	
     	//will try a toast first
     	@JavascriptInterface
     	public void showToast(String toast){
+    		
     		
     		Toast.makeText(_context, toast, Toast.LENGTH_LONG).show();
     		Log.d("JS", "TOAST CLICKED");
@@ -137,18 +146,41 @@ public class Main extends Activity {
     	//now a simple alert 
     	//Will change these as i go. Probably to call intents. Something simple first
     	@JavascriptInterface
-    	public void openDialog(){
+    	public void openWebSite(){
     	
+    		
+    		Log.d("WEB", "WEB CLICKED");
+    		
+    
+    		
+    		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www." + messageSent +".com"));
+			
+    		startActivity(intent);
+			
+    		//Intent cameraInt = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+    		//startActivityForResult(cameraInt, 2);
+    		
+    	}
+    	
+    	@JavascriptInterface
+    	public void startAlert(){
+    			
     		Log.d("ALERT", "ALERT CLICKED");
     		
-    	AlertDialog.Builder myDialog = new AlertDialog.Builder(Main.this);
-    	
-    	//alert stuff
-    	myDialog.setTitle("This is the Title");
-    	myDialog.setMessage("This is the Message");
-    	myDialog.setPositiveButton("Positive", null); //null is for the listener
-    	myDialog.show(); 
+        	AlertDialog.Builder myDialog = new AlertDialog.Builder(Main.this);
+        	
+        	//alert stuff
+        	myDialog.setTitle("ALERT !!!");
+        	myDialog.setMessage("You've never seen an alert before??");
+        	myDialog.setPositiveButton("Get outa here!", null); //null is for the listener
+        	myDialog.show(); 
+        	
     	}
+    	@JavascriptInterface
+    	public void openTheCamera(){
+    		
+    	}
+    	
     	
     	
     }

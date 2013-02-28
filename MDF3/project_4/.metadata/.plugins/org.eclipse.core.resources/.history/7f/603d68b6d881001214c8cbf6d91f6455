@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>The HTML Stuff</title>
+	</head>
+	
+	
+	<body>
+	<h1>Go to Web Site</h1>
+	<p id="mytext" style="text-align=center;" >ex:Google</p>
+
+
+	
+	<input type="button" value="Go to Site!" onclick="openWeb()"/>
+	
+	<p>
+	<input type="button" value="Toast Test" onclick="showAndroidToast('I just wanted to tell the world that....I Like it Toasty!!!')"/>
+	
+	<input type="button" value="Alert Test" onclick="doAlert()"/>
+	
+	<input type="button" value=" Camera " onclick="openCamera()"/>
+	</p>
+	</body>
+	
+	
+	
+		<script type="text/javascript">
+
+			function openWeb() {
+				//document.getElementById("mytext").innerHTML = actualData;
+				Android.openWebSite();
+			};
+			
+			function showAndroidToast(toast) {
+			//document.getElementById("mytext").innerHTML = "toast";
+				Android.showToast(toast);
+				
+			};
+
+			function doAlert(){
+				Android.startAlert();			
+			};
+
+			function openCamera(){
+				Android.openTheCamera();
+			};
+			
+			
+			function callFromActivity(message) {
+				document.getElementById("mytext").innerHTML = message;
+			};
+			
+			
+	
+		</script>
+		<style type ="text/css">
+			body{
+				color:#00FF00;
+				background-color:#262626}
+				
+			h1{
+				text-align:center}
+			
+		</style>
+</html>

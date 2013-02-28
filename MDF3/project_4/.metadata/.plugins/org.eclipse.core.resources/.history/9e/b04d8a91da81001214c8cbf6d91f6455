@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>The HTML Stuff</title>
+	</head>
+	
+	
+	<body>
+	<h1 id="title">Go to Web Site</h1>
+	<p id="mytext">ex:Google</p>
+
+
+	
+	<input type="button" value="Go to Site!" onclick="openWeb()"/>
+	
+	<p>
+	<input type="button" value="Toast Test" onclick="showAndroidToast('I just wanted to tell the world that....I Like it Toasty!!!')"/>
+	
+	<input type="button" value="Alert Test" onclick="doAlert()"/>
+	
+	<input type="button" value=" Camera " onclick="openCamera()"/>
+	</p>
+	</body>
+	
+	
+	
+		<script type="text/javascript">
+
+			function openWeb() {
+				//document.getElementById("mytext").innerHTML = actualData;
+				Android.openWebSite();
+			};
+			
+			function showAndroidToast(toast) {
+			//document.getElementById("mytext").innerHTML = "toast";
+				Android.showToast(toast);
+				
+			};
+
+			function doAlert(){
+				Android.startAlert();			
+			};
+
+			function openCamera(){
+				Android.openTheCamera();
+			};
+			
+			
+			function callFromActivity(message) {
+				document.getElementById("mytext").innerHTML = message;
+			};
+			
+			
+	
+		</script>
+		<style type ="text/css">
+			body{
+				background-color:#330000}
+				
+			h1{
+				text-align:center}
+				
+			#title{
+				color:#FFD700;
+				font-weight:bolder}
+					
+			#mytext{
+				text-align:center;
+				font-weight:lighter;
+				font-size:175%}
+			
+		</style>
+</html>

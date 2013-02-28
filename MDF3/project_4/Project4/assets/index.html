@@ -8,31 +8,70 @@
 	
 	
 	<body>
-	<h1>Go to Web Site</h1>
+	<h1 id="title">Go to Web Site</h1>
 	<p id="mytext">ex:Google</p>
-	
-	<input type="button" value="Toast test" onclick="showAndroidToast('Yo Chump!')"/>
 
-	<input type="button" value="Alert test" onclick="openAndroidDialog()"/>
+
+	
+	<input type="button" value="Go to Site!" onclick="openWeb()"/>
+	
+	<p>
+	<input type="button" value="Toast Test" onclick="showAndroidToast('I just wanted to tell the world that....I Like it Toasty!!!')"/>
+	
+	<input type="button" value="Alert Test" onclick="doAlert()"/>
+	
+	<input type="button" value=" Camera " onclick="openCamera()"/>
+	</p>
 	</body>
+	
 	
 	
 		<script type="text/javascript">
 
+			function openWeb() {
+				//document.getElementById("mytext").innerHTML = actualData;
+				Android.openWebSite();
+			};
+			
 			function showAndroidToast(toast) {
-			//document.getElementById("mytext").innerHTML = "";
+			//document.getElementById("mytext").innerHTML = "toast";
 				Android.showToast(toast);
 				
 			};
 
-			function openAndroidDialog() {
-				//document.getElementById("mytext").innerHTML = "dialog";
-				Android.openDialog();
+			function doAlert(){
+				Android.startAlert();			
 			};
 
+			function openCamera(){
+				Android.openTheCamera();
+			};
+			
+			
 			function callFromActivity(message) {
 				document.getElementById("mytext").innerHTML = message;
 			};
+			
+			
 	
 		</script>
+		<style type ="text/css">
+			body{
+				background-color:#330000}
+				
+			h1{
+				font-size:270%;
+				text-align:center}
+				
+			#title{
+				color:#FFD700;
+				font-weight:bolder}
+					
+			#mytext{
+				color:#FFD700;
+				text-align:center;
+				font-weight:lighter;
+				font-size:175%}
+			
+		</style>
 </html>

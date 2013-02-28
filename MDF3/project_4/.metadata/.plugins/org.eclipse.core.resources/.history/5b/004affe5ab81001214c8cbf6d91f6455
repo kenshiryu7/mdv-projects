@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>The HTML Stuff</title>
+	</head>
+	
+	
+	<body>
+	<h1>Go to Web Site</h1>
+	<p id="mytext">ex:Google</p>
+	
+	<input type="button" value="Toast test" onclick="showAndroidToast('Yo Chump!')"/>
+
+	<input type="button" value="Alert test" onclick="openAndroidDialog()"/>
+	
+	<input type="button" value="get Name" onclick="getData()"/>
+	</body>
+	
+	
+		<script type="text/javascript">
+
+			function showAndroidToast(toast) {
+			//document.getElementById("mytext").innerHTML = "toast";
+				Android.showToast(toast);
+				
+			};
+
+			//function openAndroidDialog(actualData) {
+				//document.getElementById("mytext").innerHTML = actualData;
+				//Android.openDialog();
+			//};
+			
+			function getData() {
+				document.getElementById("mytext").value = Android.getNameFromAndroidET();
+				var HTML = ""+document.getElementById("mytext").value;
+				alert("Javascript says: Name is" + HTML);
+			};
+
+			function callFromActivity(message) {
+				document.getElementById("mytext").innerHTML = message;
+			};
+	
+		</script>
+</html>

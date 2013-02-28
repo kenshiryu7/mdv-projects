@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>The HTML Stuff</title>
+	</head>
+	
+	
+	<body>
+	<h1>Go to Web Site</h1>
+	<p id="mytext">ex:Google</p>
+	
+	<input type="button" value="Toast test" onclick="showAndroidToast('Yo Chump!')"/>
+
+	<input type="button" value="Alert test" onclick="openAndroidDialog()"/>
+	</body>
+	
+	
+		<script type="text/javascript">
+
+			function showAndroidToast(toast) {
+			//document.getElementById("mytext").innerHTML = "";
+				Android.showToast(toast);
+				
+			};
+
+			function openAndroidDialog(message) {
+				document.getElementById("mytext").innerHTML = message;
+				Android.openDialog();
+			};
+
+			function callFromActivity(message) {
+				document.getElementById("mytext").innerHTML = message;
+			};
+	
+		</script>
+</html>
