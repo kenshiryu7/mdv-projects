@@ -6,9 +6,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
@@ -78,12 +80,37 @@ public class Main extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 			
+				Log.d("ET", "ET-BUTT CLICKED");
 				
 				//going to try to send typed input to web view and have the 
 				//text viewed in the web view with a button to go to the web site
 
-				String messageSent = message.getText().toString(); //getting input from Edit text
-        		myWV.loadUrl("javascript:callFromActivity(\"" + messageSent + "\")");
+				
+				if(message.getText().toString().equals(""))
+				{
+					Log.d("NONE", "NOTHING WAS TYPED");
+					
+					//alert
+					AlertDialog.Builder emptyET = new AlertDialog.Builder(Main.this);
+			    	
+			    	//alert stuff
+			    	emptyET.setTitle("Oops!!!");
+			    	emptyET.setMessage("You forgot to type something in dummy!");
+			    	emptyET.setPositiveButton("OK", null); //null is for the listener
+			    	emptyET.show(); 
+				}
+				else
+				{
+					String messageSent = message.getText().toString(); //getting input from Edit text
+					myWV.loadUrl("javascript:callFromActivity(\"" + messageSent + "\")");
+					
+					//puts the edit text back to default after pressing button
+					message.setText("");
+					
+					//dismissing keyboard after pressing button with text
+					InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+					imm.hideSoftInputFromWindow(message.getWindowToken(), 0);
+				}
 			}
 		});
         
@@ -103,21 +130,24 @@ public class Main extends Activity {
     	public void showToast(String toast){
     		
     		Toast.makeText(_context, toast, Toast.LENGTH_LONG).show();
+    		Log.d("JS", "TOAST CLICKED");
     	}
     	
     	
     	//now a simple alert 
     	//Will change these as i go. Probably to call intents. Something simple first
     	@JavascriptInterface
-    	public void openAndroidDialog(){
+    	public void openDialog(){
     	
+    		Log.d("ALERT", "ALERT CLICKED");
+    		
     	AlertDialog.Builder myDialog = new AlertDialog.Builder(Main.this);
     	
     	//alert stuff
     	myDialog.setTitle("This is the Title");
     	myDialog.setMessage("This is the Message");
     	myDialog.setPositiveButton("Positive", null); //null is for the listener
-    	myDialog.show();
+    	myDialog.show(); 
     	}
     	
     	
