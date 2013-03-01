@@ -1,8 +1,11 @@
 package com.lpuente.project4;
 
 
+
+
 import android.net.Uri;
 import android.os.Bundle;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -90,7 +93,8 @@ public class Main extends Activity {
 				//going to try to send typed input to web view and have the 
 				//text viewed in the web view with a button to go to the web site
 
-				
+				//condition if nothing is typed in = alert
+				//if something typed, goes through
 				if(message.getText().toString().equals(""))
 				{
 					Log.d("NONE", "NOTHING WAS TYPED");
@@ -106,7 +110,10 @@ public class Main extends Activity {
 				}
 				else
 				{
-					messageSent = message.getText().toString(); //getting input from Edit text
+					//getting input from Edit text
+					messageSent = message.getText().toString(); 
+					
+					//sending collected typed input (EditText) into Javascript Interface
 					myWV.loadUrl("javascript:callFromActivity(\"" + messageSent + "\")");
 					
 					
@@ -122,8 +129,8 @@ public class Main extends Activity {
         
     }
 
-    
-    //creating the java script interface inner class
+//////////////////////////////////////////////////////////////////////    
+///////creating the java script interface inner class/////////////////
     
     public class MyJavaScriptInterface{Context _context;
     	
@@ -133,7 +140,7 @@ public class Main extends Activity {
     	
     	
     	
-    	//will try a toast first
+    //method for Toast
     	@JavascriptInterface
     	public void showToast(String toast){
     		
@@ -143,8 +150,7 @@ public class Main extends Activity {
     	}
     	
     	
-    	//now a simple alert 
-    	//Will change these as i go. Probably to call intents. Something simple first
+    //method for opening Web page with passed data from ET in Java
     	@JavascriptInterface
     	public void openWebSite(){
     	
@@ -157,11 +163,10 @@ public class Main extends Activity {
 			
     		startActivity(intent);
 			
-    		//Intent cameraInt = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-    		//startActivityForResult(cameraInt, 2);
-    		
     	}
+    
     	
+    //method for alert
     	@JavascriptInterface
     	public void startAlert(){
     			
@@ -176,9 +181,20 @@ public class Main extends Activity {
         	myDialog.show(); 
         	
     	}
+    	
+    //method for open camera
     	@JavascriptInterface
     	public void openTheCamera(){
     		
+    		
+    		Log.d("CAMERA", "CLICKED THE CAMERA BUTTON");
+    		
+    		
+    		Intent cameraInt = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+    		
+    		
+    		
+    		startActivityForResult(cameraInt, 1);
     	}
     	
     	
