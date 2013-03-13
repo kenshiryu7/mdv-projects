@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- when selected -->
+    
+    <item android:drawable="@drawable/list_hd3"
+        android:state_pressed="true"/>
+    
+    <!--  when NOT selected -->
+    
+     <item android:drawable="@drawable/list_hd2"/>
+       
+	
+
+</selector>
