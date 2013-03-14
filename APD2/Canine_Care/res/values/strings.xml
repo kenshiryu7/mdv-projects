@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Canine_Care</string>
+    <string name="app_name">Canine Care</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
@@ -15,4 +15,9 @@
     <string name="i5">Opt 1</string>
     <string name="i6">Opt 2</string>
     <string name="i7">Opt 3</string>
+    
+    
+    <string name="map_test">The Map stuff will go here!</string>
+    <string name="vid_test">The Videos stuff will go here!</string>
+    
 </resources>

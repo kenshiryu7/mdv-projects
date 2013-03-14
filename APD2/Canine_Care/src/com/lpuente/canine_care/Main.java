@@ -1,12 +1,14 @@
 package com.lpuente.canine_care;
 
 import android.os.Bundle;
-import android.app.ActionBar;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+
 
 public class Main extends Activity {
 	
@@ -15,7 +17,12 @@ public class Main extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+       
+        
         setContentView(R.layout.main_lay);
+      
+       
     }
 
 
@@ -38,27 +45,36 @@ public class Main extends Activity {
 		
 		switch(item.getItemId())
 		{
+		
+		//intent to List View
 		case R.id.item1:
-			
 			Log.i(TAG, "item 1 CLICKED");
 			
 			
 			
 			
 			return true;
+			
+		//intent to Map
 		case R.id.item2:
 			Log.i(TAG, "item 2 CLICKED");
 			
-			
+			Intent mapInt = new Intent(Main.this, Map_Class.class);
+			startActivity(mapInt);
 			
 			return true;
+			
+		//intent to Videos
 		case R.id.item3:
 			Log.i(TAG, "item 3 CLICKED");
 			
-			
+			Intent vidInt = new Intent(Main.this, Videos.class);
+			startActivity(vidInt);
 			
 			
 			return true;
+			
+		//intent to dev info
 		case R.id.item4:
 			Log.i(TAG, "item 4 CLICKED");
 			
