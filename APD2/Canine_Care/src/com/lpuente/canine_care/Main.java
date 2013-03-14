@@ -1,35 +1,139 @@
 package com.lpuente.canine_care;
 
+import java.util.List;
+
 import android.os.Bundle;
 
-import android.app.Activity;
+//import android.app.Activity;
+import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 
-public class Main extends Activity {
+public class Main extends ListActivity {
 	
 	private final String TAG = "Main Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-       
-        
         setContentView(R.layout.main_lay);
       
-       
+       //setting list adapter for list view with array adapter of items. toxins.xml in values
+       //array of strings 
+        //MyAdapter is an adapter made with an inner class below
+        
+        setListAdapter(new MyAdapter(this, android.R.layout.simple_list_item_1, R.id.list_name, 
+        		getResources().getStringArray(R.array.toxins)));
     }
 
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////////////    
+  //inner adapter class used above for listview
+    private class MyAdapter extends ArrayAdapter<String>{
+    
+    
+		public MyAdapter(Context context, int resource, int textViewResourceId,
+				String[] strings) {
+    		super(context, resource, textViewResourceId, strings);
+			// TODO Auto-generated constructor stub
+		}
+	
+		//called for every row to display correct image
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent){
+			
+			LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			//single row
+			View row = inflater.inflate(R.layout.list_item, parent, false);
+			
+			//string array
+			String[] items = getResources().getStringArray(R.array.toxins);
+			
+			//refs to images view and text view
+			ImageView  img = (ImageView) row.findViewById(R.id.list_image);
+			TextView toxName = (TextView) row.findViewById(R.id.list_name);
+			
+			//setting text of list
+			toxName.setText(items[position]);
+			
+			//IF statements for images WILL ADD IMGS LATER
+			
+			if(items[position].equals("Chocolate"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Onions"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Grapes and Raisons"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Coffee"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Macadamia Nuts"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Azalea Plant"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Crocus Plant"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Foxglove Plant"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Juniper Plant"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Mistletoe Plant"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Ethylene Glycol"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Rat Poison"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			else if(items[position].equals("Snail Bait"))
+			{
+				img.setImageResource(R.drawable.list_hd3);
+			}
+			
+			
+			
+			return row;
+		}
+		
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////    
+    
+    
 
-    
-    
-    
- //Menu / Action Bar Stuff
+
+    //Menu / Action Bar Stuff
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
 		getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -50,8 +154,8 @@ public class Main extends Activity {
 		case R.id.item1:
 			Log.i(TAG, "item 1 CLICKED");
 			
-			
-			
+			//Intent mainInt = new Intent(Main.this, Main.class);
+			//startActivity(mainInt);
 			
 			return true;
 			
@@ -78,7 +182,8 @@ public class Main extends Activity {
 		case R.id.item4:
 			Log.i(TAG, "item 4 CLICKED");
 			
-			
+			Intent devInt = new Intent(Main.this, Dev_Info.class);
+			startActivity(devInt);
 			
 			return true;
 		case R.id.item5:

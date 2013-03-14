@@ -19,5 +19,6 @@
     
     <string name="map_test">The Map stuff will go here!</string>
     <string name="vid_test">The Videos stuff will go here!</string>
+    <string name="dev_test">Dev Info stuff will go here!</string>
     
 </resources>

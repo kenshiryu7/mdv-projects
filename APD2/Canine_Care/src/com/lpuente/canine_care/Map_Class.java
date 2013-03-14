@@ -70,7 +70,8 @@ public class Map_Class extends Activity {
 			case R.id.item4:
 				Log.i(TAG, "item 4 CLICKED");
 				
-				
+				Intent devInt = new Intent(Map_Class.this, Dev_Info.class);
+				startActivity(devInt);
 				
 				return true;
 			case R.id.item5:

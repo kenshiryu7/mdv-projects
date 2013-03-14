@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="toxins">
+        
+        <item name="chocolate">Chocolate</item>
+        <item name="onions">Onions</item>
+        <item name="grapes">Grapes and Raisons</item>
+        <item name="coffee">Coffee</item>
+        <item name="nuts">Macadamia Nuts</item>
+        
+        <item name="azalea">Azalea Plant</item>
+        <item name="crocus">Crocus Plant</item>
+        <item name="foxglove">Foxglove Plant</item>
+        <item name="juniper">Juniper Plant</item>
+        <item name="mistletoe">Mistletoe Plant</item>
+        
+        <item name="afreeze">Ethylene Glycol</item>
+        <item name="ratp">Rat Poison</item>
+        <item name="snail">Snail Bait</item>
+        
+    </string-array>
+</resources>
