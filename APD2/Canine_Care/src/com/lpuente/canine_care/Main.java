@@ -142,7 +142,8 @@ public class Main extends ListActivity {
     	
     	String element = lv.getItemAtPosition(position).toString();
     	
-    	
+    	//passing texts from list names collected in the listview. Must be with the View not the ListView.
+    	//in other words. v NOT lv.
 		TextView tnames = (TextView) v.findViewById(R.id.list_name);		//toxic name 
 		
 		
