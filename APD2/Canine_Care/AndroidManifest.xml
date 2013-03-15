@@ -27,6 +27,7 @@
          <activity android:name=".Map_Class"/>
          <activity android:name=".Videos"/>
           <activity android:name=".Dev_Info"/>
+          <activity android:name=".Details"/>
     </application>
 
 </manifest>

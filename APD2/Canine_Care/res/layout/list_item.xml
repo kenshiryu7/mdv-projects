@@ -8,6 +8,7 @@
         android:id="@+id/list_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/lst_img"
         android:maxHeight="50dp"
         android:maxWidth="70dp"
         android:padding="2dp"
@@ -24,10 +25,10 @@
     	    android:layout_height="wrap_content"
     	    android:layout_marginLeft="7dp"
     	    android:layout_marginTop="3dp"
-    	    android:text="TextView"
+    	    android:contentDescription="@string/lst_img"
+    	    android:text=""
     	    android:textColor="#330000"
     	    android:textSize="20sp" />
-
 
     </LinearLayout>
 

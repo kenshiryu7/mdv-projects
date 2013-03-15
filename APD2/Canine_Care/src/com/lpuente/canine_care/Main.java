@@ -14,8 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -35,6 +37,8 @@ public class Main extends ListActivity {
         
         setListAdapter(new MyAdapter(this, android.R.layout.simple_list_item_1, R.id.list_name, 
         		getResources().getStringArray(R.array.toxins)));
+        
+       
     }
 
     
@@ -128,6 +132,43 @@ public class Main extends ListActivity {
 		}
 		
     }
+    
+   
+
+    protected void onListItemClick(ListView lv, View v, int position, long id)
+    {
+    	super.onListItemClick(lv, v, position, id);
+    	
+    	
+    	String element = lv.getItemAtPosition(position).toString();
+    	
+    	
+		TextView tnames = (TextView) v.findViewById(R.id.list_name);		//toxic name 
+		
+		
+		
+    	
+		//using Testing view to bypass view not working / SelectedContacts
+    	Intent detInt = new Intent(Main.this, Details.class);
+    	
+    	detInt.putExtra("elements", tnames.getText().toString());
+    	
+    			
+    			
+    	//startActivity(exIntent);
+    	startActivity(detInt);
+    	
+    	//logging position 
+    	Log.d("Position.Log",String.valueOf(position));
+    	Log.d("Item", String.valueOf(lv.getPositionForView(v)));
+    	
+    	
+    }
+
+    
+    
+    
+    
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////    
     
     

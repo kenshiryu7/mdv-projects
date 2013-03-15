@@ -16,9 +16,13 @@
     <string name="i6">Opt 2</string>
     <string name="i7">Opt 3</string>
     
+    <string name="lst_img">List Image</string>
+    <string name="d_img">Details Image</string>
     
     <string name="map_test">The Map stuff will go here!</string>
     <string name="vid_test">The Videos stuff will go here!</string>
     <string name="dev_test">Dev Info stuff will go here!</string>
+    <string name="details">Details from list</string>
+    
     
 </resources>
