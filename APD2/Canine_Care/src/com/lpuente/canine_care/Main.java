@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -147,13 +148,19 @@ public class Main extends ListActivity {
 		TextView tnames = (TextView) v.findViewById(R.id.list_name);		//toxic name 
 		
 		
+		//trying images stuff. Need help
+		ImageView  imgs = (ImageView) v.findViewById(R.id.list_image);
+		
+		
 		
     	
-		//using Testing view to bypass view not working / SelectedContacts
+		//to Details. Intent
     	Intent detInt = new Intent(Main.this, Details.class);
     	
-    	detInt.putExtra("elements", tnames.getText().toString());
-    	
+    	//passing text of list
+    	detInt.putExtra("elements", tnames.getText().toString()); //same as below. Leaving both just in case
+    	//detInt.putExtra("elements", element);
+    
     			
     			
     	//startActivity(exIntent);
@@ -162,7 +169,7 @@ public class Main extends ListActivity {
     	//logging position 
     	Log.d("Position.Log",String.valueOf(position));
     	Log.d("Item", String.valueOf(lv.getPositionForView(v)));
-    	
+    	//Log.d("TEST", element);
     	
     }
 
