@@ -18,6 +18,9 @@ public class Details extends Activity {
 	        
 	        //image view id
 	        ImageView passedIMG = (ImageView) findViewById(R.id.det_img);
+	        
+	        Intent i = getIntent();
+	        int number = i.getIntExtra("int", -1);
 	      
 	        
 	        
@@ -29,7 +32,13 @@ public class Details extends Activity {
 	        
 	      //setting first and last name in one text view
 			passedText.setText(getIntent().getExtras().getString("elements"));
-			//Log.d("TEST", String.valueOf(passedText));
+			Log.d("TEST_DET", String.valueOf(number));
+			
+			if(number == 0)
+			{
+				Log.d("Chocolate", "okeedokee");
+				passedIMG.setImageResource(R.drawable.list_hd2);
+			}
 			
 			
 			

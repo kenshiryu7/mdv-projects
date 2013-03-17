@@ -76,7 +76,7 @@ public class Main extends ListActivity {
 			
 			if(items[position].equals("Chocolate"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.ic_launcher);
 			}
 			else if(items[position].equals("Onions"))
 			{
@@ -161,15 +161,16 @@ public class Main extends ListActivity {
     	detInt.putExtra("elements", tnames.getText().toString()); //same as below. Leaving both just in case
     	//detInt.putExtra("elements", element);
     
+    	detInt.putExtra("int", position);
     			
     			
     	//startActivity(exIntent);
     	startActivity(detInt);
     	
     	//logging position 
-    	Log.d("Position.Log",String.valueOf(position));
-    	Log.d("Item", String.valueOf(lv.getPositionForView(v)));
-    	//Log.d("TEST", element);
+    	//Log.d("Position.Log",String.valueOf(position));
+    	//Log.d("Item", String.valueOf(lv.getPositionForView(v)));
+    	Log.d("TEST",String.valueOf(position));
     	
     }
 
