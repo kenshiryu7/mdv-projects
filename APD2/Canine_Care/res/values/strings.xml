@@ -24,6 +24,13 @@
     <string name="dev_test">Dev Info stuff will go here!</string>
     <string name="details">Details from list</string>
     
+    
+    <string name="sym">Symptoms:</string>
+    <string name="sym_det">details</string>
+    <string name="descr">Description:</string>
+    <string name="desc_det">Details</string>
+    
+    
     <string name="dev">Developer Info</string>
     <string name="dev_det">Vet Tech Development is committed to informing dog owners of toxicity to better inform and prepare the owner to handle a toxicity related issue. It is recommended to view this application prior to any emergency situation.</string>
     <string name="dev_web">Please Visit Our Website</string>
