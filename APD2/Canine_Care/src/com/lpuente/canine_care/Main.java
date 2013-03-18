@@ -1,6 +1,6 @@
 package com.lpuente.canine_care;
 
-import java.util.List;
+//import java.util.List;
 
 import android.os.Bundle;
 
@@ -76,55 +76,55 @@ public class Main extends ListActivity {
 			
 			if(items[position].equals("Chocolate"))
 			{
-				img.setImageResource(R.drawable.ic_launcher);
+				img.setImageResource(R.drawable.choco);
 			}
 			else if(items[position].equals("Onions"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.onions);
 			}
 			else if(items[position].equals("Grapes and Raisons"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.grapes);
 			}
 			else if(items[position].equals("Coffee"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.coffee);
 			}
 			else if(items[position].equals("Macadamia Nuts"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.mnuts);
 			}
 			else if(items[position].equals("Azalea Plant"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.azalea);
 			}
 			else if(items[position].equals("Crocus Plant"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.crocus);
 			}
 			else if(items[position].equals("Foxglove Plant"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.foxglove);
 			}
 			else if(items[position].equals("Juniper Plant"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.juniper);
 			}
 			else if(items[position].equals("Mistletoe Plant"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.mistletoe);
 			}
 			else if(items[position].equals("Ethylene Glycol"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.afreeze);
 			}
 			else if(items[position].equals("Rat Poison"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.ratpoison);
 			}
 			else if(items[position].equals("Snail Bait"))
 			{
-				img.setImageResource(R.drawable.list_hd3);
+				img.setImageResource(R.drawable.snailbait);
 			}
 			
 			
@@ -141,7 +141,7 @@ public class Main extends ListActivity {
     	super.onListItemClick(lv, v, position, id);
     	
     	
-    	String element = lv.getItemAtPosition(position).toString();
+    	//String element = lv.getItemAtPosition(position).toString();
     	
     	//passing texts from list names collected in the listview. Must be with the View not the ListView.
     	//in other words. v NOT lv.
@@ -149,7 +149,7 @@ public class Main extends ListActivity {
 		
 		
 		//trying images stuff. Need help
-		ImageView  imgs = (ImageView) v.findViewById(R.id.list_image);
+		//ImageView  imgs = (ImageView) v.findViewById(R.id.list_image);
 		
 		
 		

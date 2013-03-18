@@ -37,9 +37,56 @@ public class Details extends Activity {
 			if(number == 0)
 			{
 				Log.d("Chocolate", "okeedokee");
-				passedIMG.setImageResource(R.drawable.list_hd2);
+				passedIMG.setImageResource(R.drawable.choco);
 			}
-			
+			else if(number == 1)
+			{
+				passedIMG.setImageResource(R.drawable.onions);
+			}
+			else if(number == 2)
+			{
+				passedIMG.setImageResource(R.drawable.grapes);
+			}
+			else if(number == 3)
+			{
+				passedIMG.setImageResource(R.drawable.coffee);
+			}
+			else if(number == 4)
+			{
+				passedIMG.setImageResource(R.drawable.mnuts);
+			}
+			else if(number == 5)
+			{
+				passedIMG.setImageResource(R.drawable.azalea);
+			}
+			else if(number == 6)
+			{
+				passedIMG.setImageResource(R.drawable.crocus);
+			}
+			else if(number == 7)
+			{
+				passedIMG.setImageResource(R.drawable.foxglove);
+			}
+			else if(number == 8)
+			{
+				passedIMG.setImageResource(R.drawable.juniper);
+			}
+			else if(number == 9)
+			{
+				passedIMG.setImageResource(R.drawable.mistletoe);
+			}
+			else if(number == 10)
+			{
+				passedIMG.setImageResource(R.drawable.afreeze);
+			}
+			else if(number == 11)
+			{
+				passedIMG.setImageResource(R.drawable.ratpoison);	
+			}	
+			else if(number == 12)
+			{
+				passedIMG.setImageResource(R.drawable.snailbait);
+			}
 			
 			
 			
