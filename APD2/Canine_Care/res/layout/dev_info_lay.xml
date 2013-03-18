@@ -2,14 +2,94 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AAAAAA"
+    android:background="#00688B"
     android:orientation="vertical" >
+ 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        
+ <TextView
+     android:id="@+id/dev"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_gravity="center"
+     android:layout_marginTop="5dp"
+     android:gravity="center"
+     android:text="@string/dev"
+     android:textColor="#FFFFAA"
+     android:textSize="28sp"
+     android:textStyle="bold"
+     android:typeface="serif" />
+ 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/lst_img"
+        android:src="@drawable/dogs" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dev_test"
-        android:textSize="30sp" />
-
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/dev_det"
+        android:textColor="#FFFFAA"
+        android:textSize="18sp" />
+    
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/dev_web"
+        android:textColor="#FFFFAA"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    
+    
+            <Button
+                android:id="@+id/web"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/to_web" />
+    
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/dev_con_string"
+        android:textColor="#FFFFAA"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/dev_contact"
+        android:textColor="#FFFFAA"
+        android:textSize="18sp" />
+    </LinearLayout>
+	</ScrollView>
 </LinearLayout>

@@ -34,55 +34,71 @@ public class Details extends Activity {
 			passedText.setText(getIntent().getExtras().getString("elements"));
 			Log.d("TEST_DET", String.valueOf(number));
 			
+			
+			//not the best solution. But it works
+			//selecting
+		//chocolate
 			if(number == 0)
 			{
 				Log.d("Chocolate", "okeedokee");
 				passedIMG.setImageResource(R.drawable.choco);
 			}
+		//onions
 			else if(number == 1)
 			{
 				passedIMG.setImageResource(R.drawable.onions);
 			}
+		//grapes and raisons
 			else if(number == 2)
 			{
 				passedIMG.setImageResource(R.drawable.grapes);
 			}
+		//coffee
 			else if(number == 3)
 			{
 				passedIMG.setImageResource(R.drawable.coffee);
 			}
+		//macadamia nuts
 			else if(number == 4)
 			{
 				passedIMG.setImageResource(R.drawable.mnuts);
 			}
+		//azalea plant
 			else if(number == 5)
 			{
 				passedIMG.setImageResource(R.drawable.azalea);
 			}
+		//crocus plant
 			else if(number == 6)
 			{
 				passedIMG.setImageResource(R.drawable.crocus);
 			}
+		//foxglove plant
 			else if(number == 7)
 			{
 				passedIMG.setImageResource(R.drawable.foxglove);
 			}
+		//juniper plant
 			else if(number == 8)
 			{
 				passedIMG.setImageResource(R.drawable.juniper);
 			}
+		//mistletoe plant
 			else if(number == 9)
 			{
 				passedIMG.setImageResource(R.drawable.mistletoe);
 			}
+		//ethylene glycol
 			else if(number == 10)
 			{
 				passedIMG.setImageResource(R.drawable.afreeze);
 			}
+		//rat poison
 			else if(number == 11)
 			{
 				passedIMG.setImageResource(R.drawable.ratpoison);	
 			}	
+		//snail bait
 			else if(number == 12)
 			{
 				passedIMG.setImageResource(R.drawable.snailbait);

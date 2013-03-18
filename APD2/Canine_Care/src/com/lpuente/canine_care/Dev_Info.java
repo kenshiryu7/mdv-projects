@@ -2,10 +2,15 @@ package com.lpuente.canine_care;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class Dev_Info extends Activity {
 
@@ -14,10 +19,28 @@ public class Dev_Info extends Activity {
 	 @Override
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        
-	       
-	        
 	        setContentView(R.layout.dev_info_lay);
+	        
+	      //once again locking the screen in portrait. Eh, makes things a bit
+	        //easier to see and sort through.
+	          
+	          setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	          
+	          
+	          //button
+	          Button webButt = (Button) findViewById(R.id.web);
+	          
+	          webButt.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					
+					Intent ointent3 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.aspca.org/pet-care/ask-the-expert/ask-the-expert-poison-control/people-foods.aspx"));
+					
+					startActivity(ointent3);
+				}
+			});
 }
 
 	   
