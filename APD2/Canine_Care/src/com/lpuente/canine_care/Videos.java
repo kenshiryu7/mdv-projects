@@ -2,10 +2,15 @@ package com.lpuente.canine_care;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class Videos extends Activity{
 	
@@ -18,7 +23,66 @@ public class Videos extends Activity{
 	       
 	        
 	        setContentView(R.layout.videos_lay);
+	        
+	      //locking screen
+	        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	        
+	        
+	        //button ids
+	        Button care = (Button) findViewById(R.id.button1);
+	        Button pill = (Button) findViewById(R.id.button2);
+	        Button flea = (Button) findViewById(R.id.button3);
+	        Button sx = (Button) findViewById(R.id.button4);
 
+	        
+	        
+	        care.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					
+					Intent care_youtube = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=vJKKFsyBRS4"));
+					
+					startActivity(care_youtube);
+				}
+			});
+	        
+	        pill.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					
+					Intent pill_youtube = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=oytYLAjo2_0"));
+					
+					startActivity(pill_youtube);
+				}
+			});
+ 
+	        flea.setOnClickListener(new OnClickListener() {
+		
+	        	@Override
+	        	public void onClick(View v) {
+	        		// TODO Auto-generated method stub
+			
+	        		Intent flea_youtube = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=xsb_ajb9tto"));
+					
+					startActivity(flea_youtube);
+	        	}
+	        });
+ 
+	        sx.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			
+			Intent sx_youtube = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=JNIgGvhrAY0"));
+			
+			startActivity(sx_youtube);
+		}
+	});
 }
 
 	   

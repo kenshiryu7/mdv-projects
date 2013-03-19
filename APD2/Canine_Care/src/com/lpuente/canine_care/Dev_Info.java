@@ -36,9 +36,10 @@ public class Dev_Info extends Activity {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					
-					Intent ointent3 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.aspca.org/pet-care/ask-the-expert/ask-the-expert-poison-control/people-foods.aspx"));
+					Intent web_site = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.aspca.org/pet-care/ask-the-expert/ask-the-expert-poison-control/people-foods.aspx"));
 					
-					startActivity(ointent3);
+					startActivity(web_site);
+					
 				}
 			});
 }

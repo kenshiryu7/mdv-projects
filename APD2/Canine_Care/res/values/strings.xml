@@ -30,6 +30,16 @@
     <string name="descr">Description:</string>
     <string name="desc_det">Details</string>
     
+    <string name="vid_1">Review basic information in the care of your best friend.</string>
+    <string name="vid_2">Learn how to administer a pill to your pet.</string>
+    <string name="vid_3">Watch a demonstration of how to apply flea prevention</string>
+    <string name="vid_4">Review information of the process of a surgery.</string>
+    
+    <string name="b_1">Go to Care Video</string>
+    <string name="b_2">Go to Pill Video</string>
+    <string name="b_3">Go to flea prevent Video</string>
+    <string name="b_4">Go to Surgery Video</string>
+    
     
     <string name="dev">Developer Info</string>
     <string name="dev_det">Vet Tech Development is committed to informing dog owners of toxicity to better inform and prepare the owner to handle a toxicity related issue. It is recommended to view this application prior to any emergency situation.</string>
