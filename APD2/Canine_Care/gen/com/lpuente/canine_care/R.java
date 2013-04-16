@@ -9,9 +9,11 @@ package com.lpuente.canine_care;
 
 public final class R {
     public static final class array {
-        public static final int descr=0x7f080001;
-        public static final int symps=0x7f080000;
-        public static final int toxins=0x7f080002;
+        public static final int descr=0x7f070003;
+        public static final int place_type=0x7f070000;
+        public static final int place_type_name=0x7f070001;
+        public static final int symps=0x7f070002;
+        public static final int toxins=0x7f070004;
     }
     public static final class attr {
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -180,12 +182,13 @@ containing a value of this type.
         public static final int vid_2=0x7f020021;
     }
     public static final class id {
-        public static final int action_settings=0x7f040018;
-        public static final int arrow=0x7f040012;
-        public static final int button1=0x7f040014;
-        public static final int button2=0x7f040015;
-        public static final int button3=0x7f040016;
-        public static final int button4=0x7f040017;
+        public static final int action_settings=0x7f04001b;
+        public static final int arrow=0x7f040013;
+        public static final int btn_find=0x7f040015;
+        public static final int button1=0x7f040017;
+        public static final int button2=0x7f040018;
+        public static final int button3=0x7f040019;
+        public static final int button4=0x7f04001a;
         public static final int description=0x7f04000a;
         public static final int det_img=0x7f040005;
         public static final int det_text=0x7f040006;
@@ -193,20 +196,22 @@ containing a value of this type.
         public static final int dev=0x7f04000b;
         public static final int hybrid=0x7f040004;
         public static final int imageView1=0x7f04000c;
-        public static final int item1=0x7f040019;
-        public static final int item2=0x7f04001a;
-        public static final int item3=0x7f04001b;
-        public static final int item4=0x7f04001c;
-        public static final int item5=0x7f04001d;
-        public static final int item6=0x7f04001e;
-        public static final int item7=0x7f04001f;
-        public static final int list_image=0x7f040010;
-        public static final int list_name=0x7f040011;
-        public static final int map=0x7f040013;
+        public static final int item1=0x7f04001c;
+        public static final int item2=0x7f04001d;
+        public static final int item3=0x7f04001e;
+        public static final int item4=0x7f04001f;
+        public static final int item5=0x7f040020;
+        public static final int item6=0x7f040021;
+        public static final int item7=0x7f040022;
+        public static final int list_image=0x7f040011;
+        public static final int list_name=0x7f040012;
+        public static final int map=0x7f040016;
         public static final int none=0x7f040000;
         public static final int normal=0x7f040001;
         public static final int satellite=0x7f040002;
+        public static final int spr_place_type=0x7f040014;
         public static final int terrain=0x7f040003;
+        public static final int text=0x7f040010;
         public static final int textView1=0x7f040007;
         public static final int textView2=0x7f04000d;
         public static final int textView3=0x7f040009;
@@ -216,10 +221,11 @@ containing a value of this type.
     public static final class layout {
         public static final int details_lay=0x7f030000;
         public static final int dev_info_lay=0x7f030001;
-        public static final int list_item=0x7f030002;
-        public static final int main_lay=0x7f030003;
-        public static final int map_lay=0x7f030004;
-        public static final int videos_lay=0x7f030005;
+        public static final int legal_notices_lay=0x7f030002;
+        public static final int list_item=0x7f030003;
+        public static final int main_lay=0x7f030004;
+        public static final int map_lay=0x7f030005;
+        public static final int videos_lay=0x7f030006;
     }
     public static final class menu {
         public static final int main_menu=0x7f090000;
@@ -236,10 +242,10 @@ containing a value of this type.
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
         public static final int auth_client_requested_by_msg=0x7f050010;
-        public static final int b_1=0x7f05002a;
-        public static final int b_2=0x7f05002b;
-        public static final int b_3=0x7f05002c;
-        public static final int b_4=0x7f05002d;
+        public static final int b_1=0x7f05002c;
+        public static final int b_2=0x7f05002d;
+        public static final int b_3=0x7f05002e;
+        public static final int b_4=0x7f05002f;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -293,35 +299,37 @@ containing a value of this type.
         find the service-side assets. [CHAR LIMIT=25] 
          */
         public static final int common_signin_button_text_long=0x7f05000d;
-        public static final int d_img=0x7f05001d;
-        public static final int desc_det=0x7f050025;
-        public static final int descr=0x7f050024;
-        public static final int details=0x7f050021;
-        public static final int dev=0x7f05002e;
-        public static final int dev_con_string=0x7f050032;
-        public static final int dev_contact=0x7f050033;
-        public static final int dev_det=0x7f05002f;
-        public static final int dev_test=0x7f050020;
-        public static final int dev_web=0x7f050030;
+        public static final int d_img=0x7f05001f;
+        public static final int desc_det=0x7f050027;
+        public static final int descr=0x7f050026;
+        public static final int details=0x7f050023;
+        public static final int dev=0x7f050030;
+        public static final int dev_con_string=0x7f050034;
+        public static final int dev_contact=0x7f050035;
+        public static final int dev_det=0x7f050031;
+        public static final int dev_test=0x7f050022;
+        public static final int dev_web=0x7f050032;
         public static final int hello_world=0x7f050013;
-        public static final int i1=0x7f050015;
-        public static final int i2=0x7f050016;
-        public static final int i3=0x7f050017;
-        public static final int i4=0x7f050018;
-        public static final int i5=0x7f050019;
-        public static final int i6=0x7f05001a;
-        public static final int i7=0x7f05001b;
-        public static final int lst_img=0x7f05001c;
-        public static final int map_test=0x7f05001e;
-        public static final int sym=0x7f050022;
-        public static final int sym_det=0x7f050023;
+        public static final int i1=0x7f050017;
+        public static final int i2=0x7f050018;
+        public static final int i3=0x7f050019;
+        public static final int i4=0x7f05001a;
+        public static final int i5=0x7f05001b;
+        public static final int i6=0x7f05001c;
+        public static final int i7=0x7f05001d;
+        public static final int legal=0x7f050015;
+        public static final int lst_img=0x7f05001e;
+        public static final int map_test=0x7f050020;
+        public static final int str_btn_find=0x7f050016;
+        public static final int sym=0x7f050024;
+        public static final int sym_det=0x7f050025;
         public static final int title_activity_legal_notices=0x7f050014;
-        public static final int to_web=0x7f050031;
-        public static final int vid_1=0x7f050026;
-        public static final int vid_2=0x7f050027;
-        public static final int vid_3=0x7f050028;
-        public static final int vid_4=0x7f050029;
-        public static final int vid_test=0x7f05001f;
+        public static final int to_web=0x7f050033;
+        public static final int vid_1=0x7f050028;
+        public static final int vid_2=0x7f050029;
+        public static final int vid_3=0x7f05002a;
+        public static final int vid_4=0x7f05002b;
+        public static final int vid_test=0x7f050021;
     }
     public static final class style {
         /** 
@@ -345,11 +353,11 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.

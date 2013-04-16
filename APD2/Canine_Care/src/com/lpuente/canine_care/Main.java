@@ -2,6 +2,8 @@ package com.lpuente.canine_care;
 
 //import java.util.List;
 
+
+
 import android.os.Bundle;
 
 //import android.app.Activity;
@@ -236,10 +238,14 @@ public class Main extends ListActivity {
 			startActivity(devInt);
 			
 			return true;
+			
+			//map legal notices
 		case R.id.item5:
 			Log.i(TAG, "item 5 CLICKED");
 			
+			Intent mapIn = new Intent(Main.this, LegalNotices.class);
 			
+			startActivity(mapIn);
 			
 			return true;
 		case R.id.item6:

@@ -143,7 +143,9 @@ public class Videos extends Activity{
 			case R.id.item5:
 				Log.i(TAG, "item 5 CLICKED");
 				
+				Intent mapIn = new Intent(Videos.this, LegalNotices.class);
 				
+				startActivity(mapIn);
 				
 				return true;
 			case R.id.item6:

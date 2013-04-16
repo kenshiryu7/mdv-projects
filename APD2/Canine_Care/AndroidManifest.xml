@@ -6,7 +6,8 @@
 
     <uses-sdk
         android:minSdkVersion="11"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="17" 
+        />
    
     <permission
         android:name="com.lpuente.canine_care.permission.MAPS_RECEIVE"
@@ -38,7 +39,7 @@
         
          <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyA4N1omWJuTUGFqGyohHaS4cufNiOUyE4Y" />
+            android:value="0nsnqewVfJjZSUXOM2sClZJAtp-AIBiff_QuHSQ" />
          
         <activity
             android:name="com.lpuente.canine_care.Main"
