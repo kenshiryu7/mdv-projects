@@ -55,6 +55,8 @@
          <activity android:name=".Videos"/>
           <activity android:name=".Dev_Info"/>
           <activity android:name=".Details"/>
+          <activity android:name=".ImageGrid"/>
+          <activity android:name=".FullImage"/>
           
            <activity
             android:name="com.lpuente.canine_care.LegalNotices"
