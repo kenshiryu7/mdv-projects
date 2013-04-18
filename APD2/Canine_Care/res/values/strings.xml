@@ -39,6 +39,8 @@
     <string name="sym_det">details</string>
     <string name="descr">Description:</string>
     <string name="desc_det">Details</string>
+    <string name="more">Click here to View More Images</string>
+    <string name="more_img">View More Images</string>
     
 				    <string name="vid_1">Review basic information in the care of your best friend.</string>
 				    <string name="vid_2">Learn how to administer a pill to your pet.</string>
@@ -57,5 +59,7 @@
     <string name="to_web">Click to Visit Site</string>
     <string name="dev_con_string">Developer Name</string>
     <string name="dev_contact">Luis Puente \n \nCanine Care 2013</string>
+    
+    <string name="cont1">Content Description1</string>
     
 </resources>

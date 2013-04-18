@@ -74,7 +74,8 @@ public class Main extends ListActivity {
 			//setting text of list
 			toxName.setText(items[position]);
 			
-			//IF statements for images WILL ADD IMGS LATER
+			//IF statements for images 
+			//by clicking item with equal String name
 			
 			if(items[position].equals("Chocolate"))
 			{
@@ -130,13 +131,14 @@ public class Main extends ListActivity {
 			}
 			
 			
-			
+			//returns list item variable from list_item.xml
 			return row;
 		}
 		
     }
     
    
+    //method for when item in the listview is clicked
 
     protected void onListItemClick(ListView lv, View v, int position, long id)
     {

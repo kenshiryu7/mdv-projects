@@ -21,6 +21,7 @@ public class Dev_Info extends Activity {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.dev_info_lay);
 	        
+	  
 	      //once again locking the screen in portrait. Eh, makes things a bit
 	        //easier to see and sort through.
 	          
