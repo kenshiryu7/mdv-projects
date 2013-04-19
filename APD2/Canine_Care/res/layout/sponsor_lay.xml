@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="#FF7256"
+    android:orientation="vertical" >
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+			    <ImageButton
+			        android:id="@+id/sponsor1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:src="@drawable/hills1" />
+			    
+			     <ImageButton
+			         android:id="@+id/sponsor2"
+			         android:layout_width="wrap_content"
+			         android:layout_height="wrap_content"
+			         android:layout_gravity="center"
+			         android:src="@drawable/petco1" />
+			     
+			     <ImageButton
+			        android:id="@+id/sponsor3"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="center"
+			        android:src="@drawable/cosq" />
+			    
+			     <ImageButton
+			         android:id="@+id/sponsor4"
+			         android:layout_width="wrap_content"
+			         android:layout_height="wrap_content"
+			         android:layout_gravity="center"
+			         android:src="@drawable/sentinal1" />
+			     
+			     <ImageButton
+			         android:id="@+id/sponsor5"
+			         android:layout_width="wrap_content"
+			         android:layout_height="wrap_content"
+			         android:layout_gravity="center"
+			         android:src="@drawable/rc1" />
+			     
+			     </LinearLayout>
+			     </ScrollView>
+
+</LinearLayout>

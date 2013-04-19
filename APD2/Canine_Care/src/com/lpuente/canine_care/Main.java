@@ -250,10 +250,13 @@ public class Main extends ListActivity {
 			startActivity(mapIn);
 			
 			return true;
+			
 		case R.id.item6:
 			Log.i(TAG, "item 6 CLICKED");
 			
+			Intent sponsor = new Intent(Main.this, Sponsors.class);
 			
+			startActivity(sponsor);
 			
 			return true;
 		case R.id.item7:

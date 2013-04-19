@@ -151,7 +151,9 @@ public class Videos extends Activity{
 			case R.id.item6:
 				Log.i(TAG, "item 6 CLICKED");
 				
+				Intent sponsor = new Intent(Videos.this, Sponsors.class);
 				
+				startActivity(sponsor);
 				
 				return true;
 			case R.id.item7:

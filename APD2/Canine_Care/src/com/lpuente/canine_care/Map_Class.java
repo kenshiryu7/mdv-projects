@@ -370,7 +370,9 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 			case R.id.item6:
 				Log.i(TAG, "item 6 CLICKED");
 				
+				Intent sponsor = new Intent(Map_Class.this, Sponsors.class);
 				
+				startActivity(sponsor);
 				
 				return true;
 			case R.id.item7:

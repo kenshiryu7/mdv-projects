@@ -111,7 +111,9 @@ public class Dev_Info extends Activity {
 				case R.id.item6:
 					Log.i(TAG, "item 6 CLICKED");
 					
+					Intent sponsor = new Intent(Dev_Info.this, Sponsors.class);
 					
+					startActivity(sponsor);
 					
 					return true;
 				case R.id.item7:
