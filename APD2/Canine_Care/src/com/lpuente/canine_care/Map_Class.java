@@ -50,11 +50,15 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 	//google map
 	GoogleMap gMap;
 	
-	//spinner
+	//spinner 1
 	Spinner mSprPlaceType;
+	//spinner 2
+	Spinner mapType;
 	
 	String[] mPlaceType = null;
 	String[] mPlaceTypeName = null;
+	
+	String[] maps = null;
 	
 	double mLatitude = 0;
 	double mLongitude = 0;
@@ -83,6 +87,54 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 		
 		//Button id
 		Button btnFind = (Button) findViewById(R.id.btn_find);
+		
+	//second spinner Map options stuff./////////////
+		
+		maps = getResources().getStringArray(R.array.map_opts);
+		
+		ArrayAdapter<String> adapter_map = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, maps);
+		
+		mapType = (Spinner) findViewById(R.id.map_views);
+		
+		mapType.setAdapter(adapter_map);
+		//
+	//button OK 
+		Button okButt = (Button) findViewById(R.id.ok);
+		
+		okButt.setOnClickListener(new OnClickListener() {
+			
+			@SuppressWarnings("static-access")
+			@Override
+			public void onClick(View v) {
+				int selectedPosition = mapType.getSelectedItemPosition();
+				String type = maps[selectedPosition];
+				
+			//Normal Map
+				if(type.equals("Normal"))
+				{
+					gMap.setMapType(gMap.MAP_TYPE_NORMAL);
+					Log.i("PRESSED OK", "N");
+				}
+			//Satellite Map
+				else if(type.equals("Satellite"))
+				{
+					gMap.setMapType(gMap.MAP_TYPE_SATELLITE);
+					Log.i("PRESSED OK", "S");
+				}
+			//Hybrid Map
+				else if(type.equals("Hybrid"))
+				{
+					gMap.setMapType(gMap.MAP_TYPE_HYBRID);
+					Log.i("PRESSED OK", "H");
+				}
+			//Terrain Map
+				else if(type.equals("Terrain"))
+				{
+					gMap.setMapType(gMap.MAP_TYPE_TERRAIN);
+					Log.i("PRESSED OK", "T");
+				}
+			}
+		});
 		
 		//Google play availability status
 		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());

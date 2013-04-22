@@ -17,6 +17,23 @@
 		android:layout_alignParentTop="true"
 		android:layout_toRightOf="@id/spr_place_type"
 		android:text="@string/str_btn_find" />    
+		
+    <Spinner
+        android:id="@+id/map_views"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/btn_find" />
+    
+    <Button
+        android:id="@+id/ok"
+		android:layout_width="wrap_content"
+		android:layout_height="60dp"		
+		android:layout_alignParentTop="true"
+		android:layout_toRightOf="@id/map_views"
+		android:text="@string/ok_string" />    
+    
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
 		android:id="@+id/map"

@@ -16,6 +16,15 @@
         <item>Pet Stores</item>
     </string-array>
     <string name="str_btn_find">Find</string>
+    
+    <string-array name="map_opts">
+        <item>Normal</item>
+        <item>Satellite</item>
+        <item>Hybrid</item>
+        <item>Terrain</item>
+    </string-array>
+    
+    <string name="ok_string">OK</string>
    
     
     <string name="i1">Toxins</string>
