@@ -39,7 +39,8 @@
         
          <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="0nsnqewVfJjZSUXOM2sClZJAtp-AIBiff_QuHSQ" />
+            android:value="AIzaSyAECDSIlgafPC6quZcf9B6cLXsGBSYUsUc" />
+         <!--AIzaSyAECDSIlgafPC6quZcf9B6cLXsGBSYUsUc old GMAP v2 KEY -->
          
         <activity
             android:name="com.lpuente.canine_care.Main"

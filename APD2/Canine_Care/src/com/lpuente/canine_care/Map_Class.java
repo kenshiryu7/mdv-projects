@@ -39,6 +39,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -87,7 +88,7 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 		//setting adapter for spinner
 		mSprPlaceType.setAdapter(adapter);
 		
-		
+	
 		//Button id
 		Button btnFind = (Button) findViewById(R.id.btn_find);
 		
@@ -138,6 +139,12 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 				}
 			}
 		});
+	
+		
+		
+		
+		
+		
 		
 		//Google play availability status
 		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
@@ -194,9 +201,14 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 					sb.append("&radius=5000");
 					sb.append("&types=" + type);
 					sb.append("&sensor=true");
-					//sb.append("&key=AIzaSyA4N1omWJuTUGFqGyohHaS4cufNiOUyE4Y");
-					sb.append("AIzaSyBMBp9zZn3k1bIzsNnv7iF-8XCUXKYddr4");
-
+					//1st attempted  now obsolete key
+					sb.append("&key=AIzaSyA4N1omWJuTUGFqGyohHaS4cufNiOUyE4Y");
+					
+					//new API key browser apps
+					//sb.append("AIzaSyBMBp9zZn3k1bIzsNnv7iF-8XCUXKYddr4");
+					
+					//android apps key with certificate
+					//sb.append("AIzaSyAECDSIlgafPC6quZcf9B6cLXsGBSYUsUc");
 					
 					//new non-ui thread/ downlaod json data
 					PlacesTask tasks = new PlacesTask(); 
