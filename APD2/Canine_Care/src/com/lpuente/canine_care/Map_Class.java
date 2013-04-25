@@ -194,7 +194,9 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 					sb.append("&radius=5000");
 					sb.append("&types=" + type);
 					sb.append("&sensor=true");
-					sb.append("&key=AIzaSyA4N1omWJuTUGFqGyohHaS4cufNiOUyE4Y");
+					//sb.append("&key=AIzaSyA4N1omWJuTUGFqGyohHaS4cufNiOUyE4Y");
+					sb.append("AIzaSyBMBp9zZn3k1bIzsNnv7iF-8XCUXKYddr4");
+
 					
 					//new non-ui thread/ downlaod json data
 					PlacesTask tasks = new PlacesTask(); 
