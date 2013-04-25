@@ -27,6 +27,17 @@ public class Dev_Info extends Activity {
 	          
 	          setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	          
+	          //Music Off button
+	          Button musicOff = (Button) findViewById(R.id.mOff);
+	          
+	          musicOff.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					
+					 stopService(new Intent(getBaseContext(), MusicService.class));
+				}
+			});
 	          
 	          //button
 	          Button webButt = (Button) findViewById(R.id.web);
@@ -37,6 +48,9 @@ public class Dev_Info extends Activity {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					
+					//Stopping the service/music when opening this activity
+			        stopService(new Intent(getBaseContext(), MusicService.class));
+			        
 					Intent web_site = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.aspca.org/pet-care/ask-the-expert/ask-the-expert-poison-control/people-foods.aspx"));
 					
 					startActivity(web_site);
@@ -92,7 +106,7 @@ public class Dev_Info extends Activity {
 					
 					return true;
 					
-				//intent to dev info
+				//intent to dev info. Left unusable
 				case R.id.item4:
 					Log.i(TAG, "item 4 CLICKED");
 					

@@ -16,6 +16,9 @@ public class Sponsors extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sponsor_lay);
         
+        //Stopping the service/music when opening this activity
+        stopService(new Intent(getBaseContext(), MusicService.class));
+        
         
       //hills science diet sponsor/ad  
         ImageButton sponsor1 = (ImageButton) findViewById(R.id.sponsor1);

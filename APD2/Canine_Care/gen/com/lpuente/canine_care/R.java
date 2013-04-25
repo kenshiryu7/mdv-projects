@@ -9,12 +9,12 @@ package com.lpuente.canine_care;
 
 public final class R {
     public static final class array {
-        public static final int descr=0x7f070004;
-        public static final int map_opts=0x7f070002;
-        public static final int place_type=0x7f070000;
-        public static final int place_type_name=0x7f070001;
-        public static final int symps=0x7f070003;
-        public static final int toxins=0x7f070005;
+        public static final int descr=0x7f080004;
+        public static final int map_opts=0x7f080002;
+        public static final int place_type=0x7f080000;
+        public static final int place_type_name=0x7f080001;
+        public static final int symps=0x7f080003;
+        public static final int toxins=0x7f080005;
     }
     public static final class attr {
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -143,8 +143,8 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
     }
     public static final class drawable {
         public static final int afreeze=0x7f020000;
@@ -196,82 +196,85 @@ containing a value of this type.
         public static final int list_hd2=0x7f02002e;
         public static final int list_hd3=0x7f02002f;
         public static final int list_selector=0x7f020030;
-        public static final int map_1=0x7f020031;
-        public static final int map_2=0x7f020032;
-        public static final int mistletoe=0x7f020033;
-        public static final int mnuts=0x7f020034;
-        public static final int mnuts2=0x7f020035;
-        public static final int mnuts3=0x7f020036;
-        public static final int mnuts4=0x7f020037;
-        public static final int mtoe2=0x7f020038;
-        public static final int mtoe3=0x7f020039;
-        public static final int mtoe4=0x7f02003a;
-        public static final int onion2=0x7f02003b;
-        public static final int onion3=0x7f02003c;
-        public static final int onion4=0x7f02003d;
-        public static final int onions=0x7f02003e;
-        public static final int petco1=0x7f02003f;
-        public static final int pill=0x7f020040;
-        public static final int rat2=0x7f020041;
-        public static final int rat3=0x7f020042;
-        public static final int rat4=0x7f020043;
-        public static final int ratpoison=0x7f020044;
-        public static final int rc1=0x7f020045;
-        public static final int sentinal1=0x7f020046;
-        public static final int snail2=0x7f020047;
-        public static final int snail3=0x7f020048;
-        public static final int snail4=0x7f020049;
-        public static final int snailbait=0x7f02004a;
-        public static final int sx=0x7f02004b;
-        public static final int vid_1=0x7f02004c;
-        public static final int vid_2=0x7f02004d;
+        public static final int logo=0x7f020031;
+        public static final int logo1=0x7f020032;
+        public static final int map_1=0x7f020033;
+        public static final int map_2=0x7f020034;
+        public static final int mistletoe=0x7f020035;
+        public static final int mnuts=0x7f020036;
+        public static final int mnuts2=0x7f020037;
+        public static final int mnuts3=0x7f020038;
+        public static final int mnuts4=0x7f020039;
+        public static final int mtoe2=0x7f02003a;
+        public static final int mtoe3=0x7f02003b;
+        public static final int mtoe4=0x7f02003c;
+        public static final int onion2=0x7f02003d;
+        public static final int onion3=0x7f02003e;
+        public static final int onion4=0x7f02003f;
+        public static final int onions=0x7f020040;
+        public static final int petco1=0x7f020041;
+        public static final int pill=0x7f020042;
+        public static final int rat2=0x7f020043;
+        public static final int rat3=0x7f020044;
+        public static final int rat4=0x7f020045;
+        public static final int ratpoison=0x7f020046;
+        public static final int rc1=0x7f020047;
+        public static final int sentinal1=0x7f020048;
+        public static final int snail2=0x7f020049;
+        public static final int snail3=0x7f02004a;
+        public static final int snail4=0x7f02004b;
+        public static final int snailbait=0x7f02004c;
+        public static final int sx=0x7f02004d;
+        public static final int vid_1=0x7f02004e;
+        public static final int vid_2=0x7f02004f;
     }
     public static final class id {
-        public static final int action_settings=0x7f040025;
-        public static final int arrow=0x7f040016;
-        public static final int btn_find=0x7f040018;
-        public static final int button1=0x7f040021;
-        public static final int button2=0x7f040022;
-        public static final int button3=0x7f040023;
-        public static final int button4=0x7f040024;
-        public static final int description=0x7f04000a;
-        public static final int det_img=0x7f040005;
-        public static final int det_text=0x7f040006;
-        public static final int details=0x7f040008;
-        public static final int dev=0x7f04000c;
-        public static final int full_image_view=0x7f040011;
-        public static final int grid_view=0x7f040012;
-        public static final int hybrid=0x7f040004;
-        public static final int imageView1=0x7f04000d;
-        public static final int item1=0x7f040026;
-        public static final int item2=0x7f040027;
-        public static final int item3=0x7f040028;
-        public static final int item4=0x7f040029;
-        public static final int item5=0x7f04002a;
-        public static final int item6=0x7f04002b;
-        public static final int item7=0x7f04002c;
-        public static final int list_image=0x7f040014;
-        public static final int list_name=0x7f040015;
-        public static final int map=0x7f04001b;
-        public static final int map_views=0x7f040019;
-        public static final int more_images=0x7f04000b;
-        public static final int none=0x7f040000;
-        public static final int normal=0x7f040001;
-        public static final int ok=0x7f04001a;
-        public static final int satellite=0x7f040002;
-        public static final int sponsor1=0x7f04001c;
-        public static final int sponsor2=0x7f04001d;
-        public static final int sponsor3=0x7f04001e;
-        public static final int sponsor4=0x7f04001f;
-        public static final int sponsor5=0x7f040020;
-        public static final int spr_place_type=0x7f040017;
-        public static final int terrain=0x7f040003;
-        public static final int text=0x7f040013;
-        public static final int textView1=0x7f040007;
-        public static final int textView2=0x7f04000e;
-        public static final int textView3=0x7f040009;
-        public static final int textView4=0x7f040010;
-        public static final int web=0x7f04000f;
+        public static final int action_settings=0x7f050026;
+        public static final int arrow=0x7f050017;
+        public static final int btn_find=0x7f050019;
+        public static final int button1=0x7f050022;
+        public static final int button2=0x7f050023;
+        public static final int button3=0x7f050024;
+        public static final int button4=0x7f050025;
+        public static final int description=0x7f05000a;
+        public static final int det_img=0x7f050005;
+        public static final int det_text=0x7f050006;
+        public static final int details=0x7f050008;
+        public static final int dev=0x7f05000d;
+        public static final int full_image_view=0x7f050012;
+        public static final int grid_view=0x7f050013;
+        public static final int hybrid=0x7f050004;
+        public static final int imageView1=0x7f05000e;
+        public static final int item1=0x7f050027;
+        public static final int item2=0x7f050028;
+        public static final int item3=0x7f050029;
+        public static final int item4=0x7f05002a;
+        public static final int item5=0x7f05002b;
+        public static final int item6=0x7f05002c;
+        public static final int item7=0x7f05002d;
+        public static final int list_image=0x7f050015;
+        public static final int list_name=0x7f050016;
+        public static final int mOff=0x7f05000c;
+        public static final int map=0x7f05001c;
+        public static final int map_views=0x7f05001a;
+        public static final int more_images=0x7f05000b;
+        public static final int none=0x7f050000;
+        public static final int normal=0x7f050001;
+        public static final int ok=0x7f05001b;
+        public static final int satellite=0x7f050002;
+        public static final int sponsor1=0x7f05001d;
+        public static final int sponsor2=0x7f05001e;
+        public static final int sponsor3=0x7f05001f;
+        public static final int sponsor4=0x7f050020;
+        public static final int sponsor5=0x7f050021;
+        public static final int spr_place_type=0x7f050018;
+        public static final int terrain=0x7f050003;
+        public static final int text=0x7f050014;
+        public static final int textView1=0x7f050007;
+        public static final int textView2=0x7f05000f;
+        public static final int textView3=0x7f050009;
+        public static final int textView4=0x7f050011;
+        public static final int web=0x7f050010;
     }
     public static final class layout {
         public static final int details_lay=0x7f030000;
@@ -282,115 +285,122 @@ containing a value of this type.
         public static final int list_item=0x7f030005;
         public static final int main_lay=0x7f030006;
         public static final int map_lay=0x7f030007;
-        public static final int sponsor_lay=0x7f030008;
-        public static final int videos_lay=0x7f030009;
+        public static final int splash_lay=0x7f030008;
+        public static final int sponsor_lay=0x7f030009;
+        public static final int videos_lay=0x7f03000a;
     }
     public static final class menu {
-        public static final int main_menu=0x7f090000;
+        public static final int main_menu=0x7f0a0000;
+    }
+    public static final class raw {
+        public static final int music=0x7f040000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050012;
-        public static final int app_name=0x7f050011;
+        public static final int action_settings=0x7f060012;
+        public static final int app_name=0x7f060011;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 
          */
-        public static final int auth_client_availability_notification_title=0x7f05000e;
+        public static final int auth_client_availability_notification_title=0x7f06000e;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=42] 
          */
-        public static final int auth_client_play_services_err_notification_msg=0x7f05000f;
+        public static final int auth_client_play_services_err_notification_msg=0x7f06000f;
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
-        public static final int auth_client_requested_by_msg=0x7f050010;
-        public static final int b_1=0x7f05002e;
-        public static final int b_2=0x7f05002f;
-        public static final int b_3=0x7f050030;
-        public static final int b_4=0x7f050031;
+        public static final int auth_client_requested_by_msg=0x7f060010;
+        public static final int b_1=0x7f06002f;
+        public static final int b_2=0x7f060030;
+        public static final int b_3=0x7f060031;
+        public static final int b_4=0x7f060032;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_button=0x7f050006;
+        public static final int common_google_play_services_enable_button=0x7f060006;
         /**  Message in confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_enable_text=0x7f050005;
+        public static final int common_google_play_services_enable_text=0x7f060005;
         /**  Title of confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_title=0x7f050004;
+        public static final int common_google_play_services_enable_title=0x7f060004;
         /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_button=0x7f050003;
+        public static final int common_google_play_services_install_button=0x7f060003;
         /**  (For phones) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_phone=0x7f050001;
+        public static final int common_google_play_services_install_text_phone=0x7f060001;
         /**  (For tablets) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_tablet=0x7f050002;
+        public static final int common_google_play_services_install_text_tablet=0x7f060002;
         /**  Title of confirmation dialog informing user that they need to install
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_title=0x7f050000;
+        public static final int common_google_play_services_install_title=0x7f060000;
         /**  Message in confirmation dialog informing user there is an unknown issue in Google Play
         services [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unknown_issue=0x7f050009;
+        public static final int common_google_play_services_unknown_issue=0x7f060009;
         /**  Message in confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unsupported_text=0x7f05000b;
+        public static final int common_google_play_services_unsupported_text=0x7f06000b;
         /**  Title of confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_unsupported_title=0x7f05000a;
+        public static final int common_google_play_services_unsupported_title=0x7f06000a;
         /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_button=0x7f05000c;
+        public static final int common_google_play_services_update_button=0x7f06000c;
         /**  Message in confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_update_text=0x7f050008;
+        public static final int common_google_play_services_update_text=0x7f060008;
         /**  Title of confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_title=0x7f050007;
+        public static final int common_google_play_services_update_title=0x7f060007;
         /**  Long form sign-in button text. This is the placeholder text, used if we can't
         find the service-side assets. [CHAR LIMIT=25] 
          */
-        public static final int common_signin_button_text_long=0x7f05000d;
-        public static final int cont1=0x7f050038;
-        public static final int d_img=0x7f05001f;
-        public static final int desc_det=0x7f050027;
-        public static final int descr=0x7f050026;
-        public static final int details=0x7f050023;
-        public static final int dev=0x7f050032;
-        public static final int dev_con_string=0x7f050036;
-        public static final int dev_contact=0x7f050037;
-        public static final int dev_det=0x7f050033;
-        public static final int dev_test=0x7f050022;
-        public static final int dev_web=0x7f050034;
-        public static final int hello_world=0x7f050013;
-        public static final int i1=0x7f050017;
-        public static final int i2=0x7f050018;
-        public static final int i3=0x7f050019;
-        public static final int i4=0x7f05001a;
-        public static final int i6=0x7f05001c;
-        public static final int i7=0x7f05001d;
-        public static final int legal=0x7f05001b;
-        public static final int lst_img=0x7f05001e;
-        public static final int map_test=0x7f050020;
-        public static final int more=0x7f050028;
-        public static final int more_img=0x7f050029;
-        public static final int ok_string=0x7f050016;
-        public static final int str_btn_find=0x7f050015;
-        public static final int sym=0x7f050024;
-        public static final int sym_det=0x7f050025;
-        public static final int title_activity_legal_notices=0x7f050014;
-        public static final int to_web=0x7f050035;
-        public static final int vid_1=0x7f05002a;
-        public static final int vid_2=0x7f05002b;
-        public static final int vid_3=0x7f05002c;
-        public static final int vid_4=0x7f05002d;
-        public static final int vid_test=0x7f050021;
+        public static final int common_signin_button_text_long=0x7f06000d;
+        public static final int cont1=0x7f060039;
+        public static final int d_img=0x7f060020;
+        public static final int desc_det=0x7f060028;
+        public static final int descr=0x7f060027;
+        public static final int details=0x7f060024;
+        public static final int dev=0x7f060033;
+        public static final int dev_con_string=0x7f060037;
+        public static final int dev_contact=0x7f060038;
+        public static final int dev_det=0x7f060034;
+        public static final int dev_test=0x7f060023;
+        public static final int dev_web=0x7f060035;
+        public static final int hello_world=0x7f060013;
+        public static final int i1=0x7f060018;
+        public static final int i2=0x7f060019;
+        public static final int i3=0x7f06001a;
+        public static final int i4=0x7f06001b;
+        public static final int i6=0x7f06001d;
+        public static final int i7=0x7f06001e;
+        public static final int legal=0x7f06001c;
+        public static final int lst_img=0x7f06001f;
+        public static final int map_test=0x7f060021;
+        public static final int more=0x7f060029;
+        public static final int more_img=0x7f06002a;
+        public static final int music_off=0x7f06003b;
+        public static final int my_info=0x7f06003a;
+        public static final int ok_string=0x7f060017;
+        public static final int splash=0x7f060015;
+        public static final int str_btn_find=0x7f060016;
+        public static final int sym=0x7f060025;
+        public static final int sym_det=0x7f060026;
+        public static final int title_activity_legal_notices=0x7f060014;
+        public static final int to_web=0x7f060036;
+        public static final int vid_1=0x7f06002b;
+        public static final int vid_2=0x7f06002c;
+        public static final int vid_3=0x7f06002d;
+        public static final int vid_4=0x7f06002e;
+        public static final int vid_test=0x7f060022;
     }
     public static final class style {
         /** 
@@ -414,11 +424,11 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
+        public static final int AppTheme=0x7f090001;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.

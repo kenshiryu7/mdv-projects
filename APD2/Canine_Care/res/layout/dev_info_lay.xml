@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:background="#00688B"
     android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/mOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/music_off" />
  
     <ScrollView
         android:layout_width="match_parent"
@@ -13,20 +20,22 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            
+             
 
-        
- <TextView
-     android:id="@+id/dev"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_gravity="center"
-     android:layout_marginTop="5dp"
-     android:gravity="center"
-     android:text="@string/dev"
-     android:textColor="#FFFFAA"
-     android:textSize="28sp"
-     android:textStyle="bold"
-     android:typeface="serif" />
+					 <TextView
+					     android:id="@+id/dev"
+					     android:layout_width="275dp"
+					     android:layout_height="wrap_content"
+					     android:layout_gravity="center"
+					     android:layout_marginTop="5dp"
+					     android:gravity="center"
+					     android:text="@string/dev"
+					     android:textColor="#FFFFAA"
+					     android:textSize="28sp"
+					     android:textStyle="bold"
+					     android:typeface="serif" />
+
  
     <ImageView
         android:id="@+id/imageView1"

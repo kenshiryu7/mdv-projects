@@ -58,11 +58,17 @@
           <activity android:name=".ImageGrid"/>
           <activity android:name=".FullImage"/>
           <activity android:name=".Sponsors"/>
+          <activity android:name=".Dev_Splash"/>
           
            <activity
             android:name="com.lpuente.canine_care.LegalNotices"
             android:label="@string/title_activity_legal_notices" >
        	 </activity>
+       	 
+           
+        <service 
+            android:enabled="true"
+            android:name=".MusicService"></service>
     </application>
 
 </manifest>

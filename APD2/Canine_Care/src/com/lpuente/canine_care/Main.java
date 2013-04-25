@@ -33,6 +33,9 @@ public class Main extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_lay);
+        
+        //Stopping the service/music when opening this activity
+        stopService(new Intent(getBaseContext(), MusicService.class));
       
        //setting list adapter for list view with array adapter of items. toxins.xml in values
        //array of strings 
@@ -232,11 +235,11 @@ public class Main extends ListActivity {
 			
 			return true;
 			
-		//intent to dev info
+		//intent to dev info first Splash screen
 		case R.id.item4:
 			Log.i(TAG, "item 4 CLICKED");
 			
-			Intent devInt = new Intent(Main.this, Dev_Info.class);
+			Intent devInt = new Intent(Main.this, Dev_Splash.class);
 			startActivity(devInt);
 			
 			return true;

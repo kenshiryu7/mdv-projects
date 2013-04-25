@@ -24,6 +24,9 @@ public class Videos extends Activity{
 	        
 	        setContentView(R.layout.videos_lay);
 	        
+	        //Stopping the service/music when opening this activity
+	        stopService(new Intent(getBaseContext(), MusicService.class));
+	        
 	      //locking screen
 	        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	        
@@ -136,7 +139,7 @@ public class Videos extends Activity{
 			case R.id.item4:
 				Log.i(TAG, "item 4 CLICKED");
 				
-				Intent devInt = new Intent(Videos.this, Dev_Info.class);
+				Intent devInt = new Intent(Videos.this, Dev_Splash.class);
 				startActivity(devInt);
 				
 				return true;

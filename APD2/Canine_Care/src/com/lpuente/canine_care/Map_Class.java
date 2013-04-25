@@ -69,6 +69,9 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.map_lay);
 		
+		  //Stopping the service/music when opening this activity
+        stopService(new Intent(getBaseContext(), MusicService.class));
+        
 		//array of place types
 		mPlaceType = getResources().getStringArray(R.array.place_type);
 		
@@ -407,7 +410,7 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 			case R.id.item4:
 				Log.i(TAG, "item 4 CLICKED");
 				
-				Intent devInt = new Intent(Map_Class.this, Dev_Info.class);
+				Intent devInt = new Intent(Map_Class.this, Dev_Splash.class);
 				startActivity(devInt);
 				
 				return true;
