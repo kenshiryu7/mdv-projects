@@ -1,6 +1,9 @@
 package com.lpuente.canine_care;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,6 +34,9 @@ public class Sponsors extends Activity{
 				Intent hills = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.hillspet.com/science-diet-dog-food.html"));
 				
 				startActivity(hills);
+				
+				//notification shows when clicked
+				notifyStuff();
 			}
 		});
         
@@ -45,6 +51,9 @@ public class Sponsors extends Activity{
 				Intent petco = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.petco.com"));
 				
 				startActivity(petco);
+				
+				//notification shows when clicked
+				notifyStuff();
 			}
 		});
         
@@ -60,6 +69,9 @@ public class Sponsors extends Activity{
 				Intent coq = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.nutramaxlabs.com/index.php/dog/dog-joint-bone-health/cosequin-dog-product-selector"));
 				
 				startActivity(coq);
+				
+				//notification shows when clicked
+				notifyStuff();
 			}
 		});
         
@@ -75,6 +87,9 @@ public class Sponsors extends Activity{
 				Intent sentinal = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sentinelpet.com"));
 				
 				startActivity(sentinal);
+				
+				//notification shows when clicked
+				notifyStuff();
 			}
 		});
         
@@ -90,7 +105,41 @@ public class Sponsors extends Activity{
 				Intent rc = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.royalcanin.us"));
 				
 				startActivity(rc);
+				
+				//notification shows when clicked
+				notifyStuff();
 			}
 		});
 	}
+	
+	
+	public void notifyStuff(){
+		
+		//Intent noteInt = new Intent();
+		Intent noteInt = new Intent(Sponsors.this, Sponsors.class);
+		
+		PendingIntent pInt = PendingIntent.getActivity(this, 0, noteInt, 0);
+		
+		//setting all the notification stuff
+		@SuppressWarnings("deprecation")
+		
+		Notification note = new Notification.Builder(this)
+		.setTicker("Canine Care ")
+		.setContentTitle("Canine Care Sponsors")
+		.setContentText("Check back for more Deals!")
+		.setSmallIcon(R.drawable.l_icon)
+		.setContentIntent(pInt).getNotification();
+		
+		//cancels notifcation after viewing once
+		note.flags = Notification.FLAG_AUTO_CANCEL;
+		
+		NotificationManager noteMan = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+		
+		//first argument is app idd for notification, second is notification var
+		noteMan.notify(0, note);
+		
+	}
+	
+	
+	
 }
