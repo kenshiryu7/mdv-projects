@@ -17,6 +17,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 //import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
+
 //import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 //import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -185,7 +186,7 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 				onLocationChanged(location);
 			}
 			
-			locationManager.requestLocationUpdates(provider, 2000, 0, this);
+			locationManager.requestLocationUpdates(provider, 20000, 0, this);
 			
 		//Listener for FIND button
 			btnFind.setOnClickListener(new OnClickListener() {
@@ -201,11 +202,12 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 					sb.append("&radius=5000");
 					sb.append("&types=" + type);
 					sb.append("&sensor=true");
+					
 					//1st attempted  now obsolete key
-					sb.append("&key=AIzaSyA4N1omWJuTUGFqGyohHaS4cufNiOUyE4Y");
+					//sb.append("&key=AIzaSyA4N1omWJuTUGFqGyohHaS4cufNiOUyE4Y");
 					
 					//new API key browser apps
-					//sb.append("AIzaSyBMBp9zZn3k1bIzsNnv7iF-8XCUXKYddr4");
+					sb.append("&key=AIzaSyBMBp9zZn3k1bIzsNnv7iF-8XCUXKYddr4");
 					
 					//android apps key with certificate
 					//sb.append("AIzaSyAECDSIlgafPC6quZcf9B6cLXsGBSYUsUc");
@@ -369,6 +371,7 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 				gMap.addMarker(markerOptions);
 				
 				Log.i("MARKER NAMES", name + "...and..." +  vicinity);
+				
 				
 			}
 		}
