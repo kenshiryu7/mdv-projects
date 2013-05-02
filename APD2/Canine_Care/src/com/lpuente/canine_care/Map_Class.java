@@ -450,7 +450,9 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 			case R.id.item7:
 				Log.i(TAG, "item 7 CLICKED");
 				
+				Intent tSearch = new Intent(Map_Class.this, TwitterSearch.class);
 				
+				startActivity(tSearch);
 				
 				return true;
 				

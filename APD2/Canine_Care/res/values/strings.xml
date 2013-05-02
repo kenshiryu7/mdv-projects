@@ -6,6 +6,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_legal_notices">Legal Notices</string>
     <string name="splash">Developed By</string>
+    <string name="intro">Enter your Twitter search term</string>
+    <string name="hint">Enter Search Term</string>
+    <string name="search_label">Search</string>
+    <string name="placeholder">-----</string>
    
 
     <string-array name="place_type">
@@ -34,7 +38,7 @@
     <string name="i4">Developer Info</string>
      <string name="legal">Map Legal Notices</string>
     <string name="i6">Sponsors/Ads</string>
-    <string name="i7">-extra-</string>
+    <string name="i7">Search Twitter</string>
     
     <string name="lst_img">List Image</string>
     <string name="d_img">Details Image</string>

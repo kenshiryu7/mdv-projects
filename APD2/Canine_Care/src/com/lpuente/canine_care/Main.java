@@ -262,10 +262,13 @@ public class Main extends ListActivity {
 			startActivity(sponsor);
 			
 			return true;
+			
 		case R.id.item7:
 			Log.i(TAG, "item 7 CLICKED");
 			
+			Intent tSearch = new Intent(Main.this, TwitterSearch.class);
 			
+			startActivity(tSearch);
 			
 			return true;
 			

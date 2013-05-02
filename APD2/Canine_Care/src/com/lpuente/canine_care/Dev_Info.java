@@ -133,7 +133,9 @@ public class Dev_Info extends Activity {
 				case R.id.item7:
 					Log.i(TAG, "item 7 CLICKED");
 					
+					Intent tSearch = new Intent(Dev_Info.this, TwitterSearch.class);
 					
+					startActivity(tSearch);
 					
 					return true;
 					

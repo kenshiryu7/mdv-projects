@@ -162,7 +162,9 @@ public class Videos extends Activity{
 			case R.id.item7:
 				Log.i(TAG, "item 7 CLICKED");
 				
+				Intent tSearch = new Intent(Videos.this, TwitterSearch.class);
 				
+				startActivity(tSearch);
 				
 				return true;
 				

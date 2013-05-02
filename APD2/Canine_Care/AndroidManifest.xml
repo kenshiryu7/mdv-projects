@@ -60,6 +60,7 @@
           <activity android:name=".FullImage"/>
           <activity android:name=".Sponsors"/>
           <activity android:name=".Dev_Splash"/>
+          <activity android:name=".TwitterSearch"/>
           
            <activity
             android:name="com.lpuente.canine_care.LegalNotices"
