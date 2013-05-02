@@ -18,6 +18,7 @@ import com.google.android.gms.maps.GoogleMap;
 //import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
 
+
 //import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 //import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -209,8 +210,10 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 					//new API key browser apps
 					sb.append("&key=AIzaSyBMBp9zZn3k1bIzsNnv7iF-8XCUXKYddr4");
 					
+					
+					
 					//android apps key with certificate
-					//sb.append("AIzaSyAECDSIlgafPC6quZcf9B6cLXsGBSYUsUc");
+					//sb.append("&key=AIzaSyAECDSIlgafPC6quZcf9B6cLXsGBSYUsUc");
 					
 					//new non-ui thread/ downlaod json data
 					PlacesTask tasks = new PlacesTask(); 
@@ -366,6 +369,7 @@ public class Map_Class extends FragmentActivity implements LocationListener{
 				//setting the title for the marker
 				//title to be displayed 
 				markerOptions.title(name + " : " + vicinity);
+				
 				
 				//placing a marker on the touched position
 				gMap.addMarker(markerOptions);
